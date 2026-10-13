@@ -1,0 +1,1272 @@
+[
+  {
+    "safe_case_id": "CASE_TEST_001",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "cardiac pacer and wires",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "pleural_effusion"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [
+      "normal"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1818,
+    "bleu_2": 0.0488,
+    "latency_sec": 25.07,
+    "eval_count": 209,
+    "tokens_per_second": 8.34
+  },
+  {
+    "safe_case_id": "CASE_TEST_002",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.\n\nLIMITATIONS\nThe image is a frontal projection.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe image is a frontal projection.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.",
+      "LIMITATIONS": "The image is a frontal projection.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "normal"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.2114,
+    "bleu_2": 0.1153,
+    "latency_sec": 27.97,
+    "eval_count": 243,
+    "tokens_per_second": 8.69
+  },
+  {
+    "safe_case_id": "CASE_TEST_003",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs. No support apparatus visible.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs. No support apparatus visible.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs. No support apparatus visible.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "pleural_effusion"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [
+      "normal"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.2857,
+    "bleu_2": 0.1979,
+    "latency_sec": 24.61,
+    "eval_count": 209,
+    "tokens_per_second": 8.49
+  },
+  {
+    "safe_case_id": "CASE_TEST_004",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.\n\nLIMITATIONS\nThe image is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe image is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.",
+      "LIMITATIONS": "The image is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "low lung volumes",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "normal"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1681,
+    "bleu_2": 0.062,
+    "latency_sec": 27.26,
+    "eval_count": 245,
+    "tokens_per_second": 8.99
+  },
+  {
+    "safe_case_id": "CASE_TEST_005",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe radiograph is clear.\n\nLIMITATIONS\nThe radiograph is a frontal projection.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe radiograph is clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe radiograph is clear.",
+      "LIMITATIONS": "The radiograph is a frontal projection.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "chest port",
+      "vascular calcification",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "normal"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1718,
+    "bleu_2": 0.1506,
+    "latency_sec": 27.81,
+    "eval_count": 256,
+    "tokens_per_second": 9.2
+  },
+  {
+    "safe_case_id": "CASE_TEST_006",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.\n\nLIMITATIONS\nThe image is a frontal projection.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe image is a frontal projection.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nClear lungs.",
+      "LIMITATIONS": "The image is a frontal projection.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "normal"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.2143,
+    "bleu_2": 0.0953,
+    "latency_sec": 27.51,
+    "eval_count": 243,
+    "tokens_per_second": 8.83
+  },
+  {
+    "safe_case_id": "CASE_TEST_007",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear without obvious airspace opacities, consolidation, or atelectasis. There are no visible signs of pulmonary edema or vascular congestion. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe radiograph appears normal.\n\nLIMITATIONS\nThe radiograph is a frontal projection.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear without obvious airspace opacities, consolidation, or atelectasis. There are no visible signs of pulmonary edema or vascular congestion. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe radiograph appears normal.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear without obvious airspace opacities, consolidation, or atelectasis. There are no visible signs of pulmonary edema or vascular congestion. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe radiograph appears normal.",
+      "LIMITATIONS": "The radiograph is a frontal projection.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "pneumonia",
+      "atelectasis",
+      "aspiration",
+      "vascular calcification",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation"
+    ],
+    "predicted_classes": [
+      "atelectasis",
+      "pleural_effusion",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "true_positives": [
+      "atelectasis"
+    ],
+    "false_positives": [
+      "pleural_effusion",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "cardiomegaly",
+      "pneumonia_consolidation"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1576,
+    "bleu_2": 0.0469,
+    "latency_sec": 29.9,
+    "eval_count": 282,
+    "tokens_per_second": 9.43
+  },
+  {
+    "safe_case_id": "CASE_TEST_008",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no airspace opacities or streaky basilar densities. There is no consolidation.\n\nIMPRESSION\nThe chest radiograph shows no acute findings.\n\nLIMITATIONS\nThe chest radiograph is a frontal projection, which limits the assessment of the lateral lung fields and the posterior mediastinum.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no airspace opacities or streaky basilar densities. There is no consolidation.\n\nIMPRESSION\nThe chest radiograph shows no acute findings.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe chest radiograph is a frontal projection, which limits the assessment of the lateral lung fields and the posterior mediastinum.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no airspace opacities or streaky basilar densities. There is no consolidation.\n\nIMPRESSION\nThe chest radiograph shows no acute findings.",
+      "LIMITATIONS": "The chest radiograph is a frontal projection, which limits the assessment of the lateral lung fields and the posterior mediastinum.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "pneumonia",
+      "atelectasis",
+      "aspiration",
+      "hernia",
+      "lung opacity"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "pleural_effusion"
+    ],
+    "false_positives": [
+      "support_devices"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "unsupported_positives": [
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1183,
+    "bleu_2": 0.0604,
+    "latency_sec": 30.93,
+    "eval_count": 284,
+    "tokens_per_second": 9.18
+  },
+  {
+    "safe_case_id": "CASE_TEST_009",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\n\nA nasogastric tube is visible, coursing from the stomach into the stomach. The tip is not visible. A feeding tube is visible, coursing from the stomach into the stomach. The tip is not visible. The cardiac silhouette appears within normal limits. The lungs appear clear. The bilateral costophrenic angles are sharp.\n\nIMPRESSION\n\nThe nasogastric tube and feeding tube are present. The lungs are clear.\n\nLIMITATIONS\n\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nA nasogastric tube is visible, coursing from the stomach into the stomach. The tip is not visible. A feeding tube is visible, coursing from the stomach into the stomach. The tip is not visible. The cardiac silhouette appears within normal limits. The lungs appear clear. The bilateral costophrenic angles are sharp.\n\nIMPRESSION\n\nThe nasogastric tube and feeding tube are present. The lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "A nasogastric tube is visible, coursing from the stomach into the stomach. The tip is not visible. A feeding tube is visible, coursing from the stomach into the stomach. The tip is not visible. The cardiac silhouette appears within normal limits. The lungs appear clear. The bilateral costophrenic angles are sharp.\n\nIMPRESSION\n\nThe nasogastric tube and feeding tube are present. The lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pneumonia",
+      "enteric tube",
+      "aspiration",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "pneumonia_consolidation",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "support_devices"
+    ],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [
+      "pneumonia_consolidation"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1959,
+    "bleu_2": 0.1024,
+    "latency_sec": 29.41,
+    "eval_count": 282,
+    "tokens_per_second": 9.59
+  },
+  {
+    "safe_case_id": "CASE_TEST_010",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs appear clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nClear lungs.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs appear clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nClear lungs.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs appear clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nClear lungs.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "pneumonia",
+      "vascular congestion",
+      "consolidation",
+      "atelectasis",
+      "aspiration",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1316,
+    "bleu_2": 0.0484,
+    "latency_sec": 27.59,
+    "eval_count": 251,
+    "tokens_per_second": 9.1
+  },
+  {
+    "safe_case_id": "CASE_TEST_011",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear bilaterally.\n\nIMPRESSION\nThe lungs are clear.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear bilaterally.\n\nIMPRESSION\nThe lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear bilaterally.\n\nIMPRESSION\nThe lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "enlarged hilum",
+      "vascular congestion",
+      "costophrenic angle blunting",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "pleural_effusion",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "pleural_effusion"
+    ],
+    "false_positives": [
+      "support_devices"
+    ],
+    "false_negatives": [
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 1,
+    "internal_contradiction": false,
+    "rouge_l": 0.1161,
+    "bleu_2": 0.0118,
+    "latency_sec": 27.57,
+    "eval_count": 248,
+    "tokens_per_second": 9.0
+  },
+  {
+    "safe_case_id": "CASE_TEST_012",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear.\n\nIMPRESSION\nThe radiograph is clear.\n\nLIMITATIONS\nThe radiograph is a frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear.\n\nIMPRESSION\nThe radiograph is clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe radiograph is a frontal view.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear.\n\nIMPRESSION\nThe radiograph is clear.",
+      "LIMITATIONS": "The radiograph is a frontal view.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "enlarged cardiac silhouette",
+      "vascular congestion",
+      "pulmonary edema/hazy opacity",
+      "lung opacity"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly",
+      "pleural_effusion",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "pleural_effusion"
+    ],
+    "false_positives": [
+      "support_devices"
+    ],
+    "false_negatives": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1322,
+    "bleu_2": 0.0155,
+    "latency_sec": 27.73,
+    "eval_count": 247,
+    "tokens_per_second": 8.91
+  },
+  {
+    "safe_case_id": "CASE_TEST_013",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear. The bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe lungs are clear.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear. The bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear. The bilateral costophrenic angles are sharp.\n\nIMPRESSION\nThe lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "pulmonary edema/hazy opacity",
+      "low lung volumes",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1905,
+    "bleu_2": 0.0697,
+    "latency_sec": 28.56,
+    "eval_count": 260,
+    "tokens_per_second": 9.1
+  },
+  {
+    "safe_case_id": "CASE_TEST_014",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\n\n*   Endotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing below the diaphragm and terminating in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the right pleural space.\n*   Surgical clips: Visible in the right upper quadrant.\n*   Cardiac silhouette: Within normal limits.\n*   Mediastinum: Within normal limits.\n*   Lungs: Clear.\n*   Pleural spaces: Clear.\n\nIMPRESSION\n\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette and mediastinum are within normal limits. The lungs and pleural spaces are clear.\n\nLIMITATIONS\n\nThis is a frontal chest radiograph. The limitations of a frontal projection include the inability to assess the entire lung fields, the heart, and the mediastinum on one side. A lateral projection is needed for",
+    "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing below the diaphragm and terminating in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the right pleural space.\n*   Surgical clips: Visible in the right upper quadrant.\n*   Cardiac silhouette: Within normal limits.\n*   Mediastinum: Within normal limits.\n*   Lungs: Clear.\n*   Pleural spaces: Clear.\n\nIMPRESSION\n\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette and mediastinum are within normal limits. The lungs and pleural spaces are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The limitations of a frontal projection include the inability to assess the entire lung fields, the heart, and the mediastinum on one side. A lateral projection is needed for",
+    "sections": {
+      "OBSERVATIONS": "Endotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing below the diaphragm and terminating in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the right pleural space.\n*   Surgical clips: Visible in the right upper quadrant.\n*   Cardiac silhouette: Within normal limits.\n*   Mediastinum: Within normal limits.\n*   Lungs: Clear.\n*   Pleural spaces: Clear.\n\nIMPRESSION\n\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette and mediastinum are within normal limits. The lungs and pleural spaces are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph. The limitations of a frontal projection include the inability to assess the entire lung fields, the heart, and the mediastinum on one side. A lateral projection is needed for",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [
+      "Section 'OBSERVATIONS' contains specific measurements (cm) not reliably derived from single AI draft."
+    ],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "endotracheal tube",
+      "pulmonary edema/hazy opacity",
+      "enteric tube",
+      "low lung volumes",
+      "lung opacity",
+      "airspace opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "support_devices"
+    ],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1786,
+    "bleu_2": 0.0764,
+    "latency_sec": 38.03,
+    "eval_count": 400,
+    "tokens_per_second": 10.52
+  },
+  {
+    "safe_case_id": "CASE_TEST_015",
+    "split": "held_out_test",
+    "primary_category": "cardiomegaly",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no airspace opacities or consolidations.\n\nIMPRESSION\nThe radiograph is clear.\n\nLIMITATIONS\nThe radiograph is a frontal projection, which limits the assessment of the lateral chest.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no airspace opacities or consolidations.\n\nIMPRESSION\nThe radiograph is clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection, which limits the assessment of the lateral chest.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no airspace opacities or consolidations.\n\nIMPRESSION\nThe radiograph is clear.",
+      "LIMITATIONS": "The radiograph is a frontal projection, which limits the assessment of the lateral chest.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "atelectasis",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "cardiomegaly"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "cardiomegaly"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1168,
+    "bleu_2": 0.042,
+    "latency_sec": 28.57,
+    "eval_count": 269,
+    "tokens_per_second": 9.42
+  },
+  {
+    "safe_case_id": "CASE_TEST_016",
+    "split": "held_out_test",
+    "primary_category": "cardiomegaly",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear.\n\nIMPRESSION\nThe lungs are clear.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear.\n\nIMPRESSION\nThe lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear.\n\nIMPRESSION\nThe lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "vascular redistribution",
+      "low lung volumes",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "cardiomegaly"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.112,
+    "bleu_2": 0.0148,
+    "latency_sec": 27.97,
+    "eval_count": 246,
+    "tokens_per_second": 8.79
+  },
+  {
+    "safe_case_id": "CASE_TEST_017",
+    "split": "held_out_test",
+    "primary_category": "cardiomegaly",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no visible airspace opacities or consolidations.\n\nIMPRESSION\nThe radiograph is clear.\n\nLIMITATIONS\nThe radiograph is a frontal projection.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no visible airspace opacities or consolidations.\n\nIMPRESSION\nThe radiograph is clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear, with no visible airspace opacities or consolidations.\n\nIMPRESSION\nThe radiograph is clear.",
+      "LIMITATIONS": "The radiograph is a frontal projection.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "hernia",
+      "enlarged cardiac silhouette"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "cardiomegaly"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.101,
+    "bleu_2": 0.0094,
+    "latency_sec": 32.52,
+    "eval_count": 261,
+    "tokens_per_second": 8.02
+  },
+  {
+    "safe_case_id": "CASE_TEST_018",
+    "split": "held_out_test",
+    "primary_category": "pleural_effusion",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs. No support apparatus visible.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs. No support apparatus visible.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\nIMPRESSION\nClear lungs. No support apparatus visible.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "lung opacity",
+      "normal",
+      "pleural effusion"
+    ],
+    "ground_truth_classes": [
+      "pleural_effusion"
+    ],
+    "predicted_classes": [
+      "pleural_effusion"
+    ],
+    "true_positives": [
+      "pleural_effusion"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1304,
+    "bleu_2": 0.0765,
+    "latency_sec": 30.11,
+    "eval_count": 216,
+    "tokens_per_second": 7.17
+  },
+  {
+    "safe_case_id": "CASE_TEST_019",
+    "split": "held_out_test",
+    "primary_category": "pleural_effusion",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\n\n*   Endotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing into the stomach. Tip in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the pleural space.\n*   Surgical clips: Visible.\n*   Cardiac silhouette: Normal size.\n*   Cardiothoracic ratio: Less than 0.5.\n\nIMPRESSION\n\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette is normal in size, and the cardiothoracic ratio is less than 0.5.\n\nLIMITATIONS\n\nThis is a frontal chest radiograph. The limitations of a frontal projection include the inability to assess the lateral aspects of the lungs and mediastinum. The image is likely a portable AP view, which may have limited inspiratory effort and potential for magnification.",
+    "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing into the stomach. Tip in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the pleural space.\n*   Surgical clips: Visible.\n*   Cardiac silhouette: Normal size.\n*   Cardiothoracic ratio: Less than 0.5.\n\nIMPRESSION\n\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette is normal in size, and the cardiothoracic ratio is less than 0.5.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The limitations of a frontal projection include the inability to assess the lateral aspects of the lungs and mediastinum. The image is likely a portable AP view, which may have limited inspiratory effort and potential for magnification.",
+    "sections": {
+      "OBSERVATIONS": "Endotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing into the stomach. Tip in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the pleural space.\n*   Surgical clips: Visible.\n*   Cardiac silhouette: Normal size.\n*   Cardiothoracic ratio: Less than 0.5.\n\nIMPRESSION\n\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette is normal in size, and the cardiothoracic ratio is less than 0.5.",
+      "LIMITATIONS": "This is a frontal chest radiograph. The limitations of a frontal projection include the inability to assess the lateral aspects of the lungs and mediastinum. The image is likely a portable AP view, which may have limited inspiratory effort and potential for magnification.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [
+      "Section 'OBSERVATIONS' contains specific measurements (cm) not reliably derived from single AI draft."
+    ],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "elevated hemidiaphragm",
+      "pleural effusion",
+      "endotracheal tube",
+      "atelectasis",
+      "lung opacity",
+      "picc"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_positives": [],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1627,
+    "bleu_2": 0.1238,
+    "latency_sec": 39.8,
+    "eval_count": 394,
+    "tokens_per_second": 9.9
+  },
+  {
+    "safe_case_id": "CASE_TEST_020",
+    "split": "held_out_test",
+    "primary_category": "pleural_effusion",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\n\n*   No endotracheal tube visible.\n*   No enteric/nasogastric tube visible.\n*   No vascular lines visible.\n*   No chest tube visible.\n*   No surgical clips visible.\n*   Cardiac silhouette appears within normal limits.\n*   Lungs appear clear.\n*   Pleural spaces appear clear.\n\nIMPRESSION\n\nThe radiograph shows no obvious acute findings.\n\nLIMITATIONS\n\nThe radiograph is a frontal projection, which limits the assessment of the cardiothoracic ratio and the presence of subtle abnormalities in the lung fields. A lateral view would be helpful for a more comprehensive evaluation.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube visible.\n*   No enteric/nasogastric tube visible.\n*   No vascular lines visible.\n*   No chest tube visible.\n*   No surgical clips visible.\n*   Cardiac silhouette appears within normal limits.\n*   Lungs appear clear.\n*   Pleural spaces appear clear.\n\nIMPRESSION\n\nThe radiograph shows no obvious acute findings.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection, which limits the assessment of the cardiothoracic ratio and the presence of subtle abnormalities in the lung fields. A lateral view would be helpful for a more comprehensive evaluation.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube visible.\n*   No enteric/nasogastric tube visible.\n*   No vascular lines visible.\n*   No chest tube visible.\n*   No surgical clips visible.\n*   Cardiac silhouette appears within normal limits.\n*   Lungs appear clear.\n*   Pleural spaces appear clear.\n\nIMPRESSION\n\nThe radiograph shows no obvious acute findings.",
+      "LIMITATIONS": "The radiograph is a frontal projection, which limits the assessment of the cardiothoracic ratio and the presence of subtle abnormalities in the lung fields. A lateral view would be helpful for a more comprehensive evaluation.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "atelectasis",
+      "pneumothorax",
+      "lung opacity"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "pleural_effusion"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "pleural_effusion"
+    ],
+    "false_positives": [
+      "support_devices"
+    ],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1006,
+    "bleu_2": 0.029,
+    "latency_sec": 39.68,
+    "eval_count": 317,
+    "tokens_per_second": 7.99
+  },
+  {
+    "safe_case_id": "CASE_TEST_021",
+    "split": "held_out_test",
+    "primary_category": "atelectasis",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nClear lungs.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nClear lungs.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\nIMPRESSION\nClear lungs.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "lung opacity",
+      "atelectasis",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis"
+    ],
+    "predicted_classes": [
+      "pleural_effusion"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1679,
+    "bleu_2": 0.0676,
+    "latency_sec": 30.61,
+    "eval_count": 229,
+    "tokens_per_second": 7.48
+  },
+  {
+    "safe_case_id": "CASE_TEST_022",
+    "split": "held_out_test",
+    "primary_category": "atelectasis",
+    "view_position": "PA",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nThe patient is likely not intubated, has no active pulmonary pathology, and the heart size is normal.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nThe patient is likely not intubated, has no active pulmonary pathology, and the heart size is normal.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "No endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\nIMPRESSION\nThe patient is likely not intubated, has no active pulmonary pathology, and the heart size is normal.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural/parenchymal scarring",
+      "atelectasis",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1875,
+    "bleu_2": 0.1054,
+    "latency_sec": 34.84,
+    "eval_count": 263,
+    "tokens_per_second": 7.55
+  },
+  {
+    "safe_case_id": "CASE_TEST_023",
+    "split": "held_out_test",
+    "primary_category": "atelectasis",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\n\n*   Endotracheal tube tip is 4 cm above the carina.\n*   Nasogastric tube tip is not visible.\n*   Vascular line is not visible.\n*   Chest tube is not visible.\n*   Surgical clips are not visible.\n*   Cardiac silhouette is within normal limits.\n*   Lungs are clear.\n\nIMPRESSION\n\nThe patient is intubated. The lungs are clear.\n\nLIMITATIONS\n\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube tip is 4 cm above the carina.\n*   Nasogastric tube tip is not visible.\n*   Vascular line is not visible.\n*   Chest tube is not visible.\n*   Surgical clips are not visible.\n*   Cardiac silhouette is within normal limits.\n*   Lungs are clear.\n\nIMPRESSION\n\nThe patient is intubated. The lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "Endotracheal tube tip is 4 cm above the carina.\n*   Nasogastric tube tip is not visible.\n*   Vascular line is not visible.\n*   Chest tube is not visible.\n*   Surgical clips are not visible.\n*   Cardiac silhouette is within normal limits.\n*   Lungs are clear.\n\nIMPRESSION\n\nThe patient is intubated. The lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [
+      "Section 'OBSERVATIONS' contains specific measurements (cm) not reliably derived from single AI draft."
+    ],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "linear/patchy atelectasis",
+      "endotracheal tube",
+      "atelectasis",
+      "low lung volumes",
+      "tortuous aorta",
+      "chest tube",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "support_devices"
+    ],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1436,
+    "bleu_2": 0.0754,
+    "latency_sec": 36.24,
+    "eval_count": 289,
+    "tokens_per_second": 7.98
+  },
+  {
+    "safe_case_id": "CASE_TEST_024",
+    "split": "held_out_test",
+    "primary_category": "support_devices",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\nEndotracheal tube present, tip 4.5 cm above the carina. Nasogastric tube present, coursing into the stomach, tip not visualized. Vascular line present, tip in the superior vena cava. Cardiac silhouette within normal limits. Cardiothoracic ratio estimated to be less than 0.5. Lungs clear bilaterally.\n\nIMPRESSION\nThe patient is intubated. The lungs are clear.\n\nLIMITATIONS\nThis is a frontal chest radiograph.",
+    "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube present, tip 4.5 cm above the carina. Nasogastric tube present, coursing into the stomach, tip not visualized. Vascular line present, tip in the superior vena cava. Cardiac silhouette within normal limits. Cardiothoracic ratio estimated to be less than 0.5. Lungs clear bilaterally.\n\nIMPRESSION\nThe patient is intubated. The lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph.",
+    "sections": {
+      "OBSERVATIONS": "Endotracheal tube present, tip 4.5 cm above the carina. Nasogastric tube present, coursing into the stomach, tip not visualized. Vascular line present, tip in the superior vena cava. Cardiac silhouette within normal limits. Cardiothoracic ratio estimated to be less than 0.5. Lungs clear bilaterally.\n\nIMPRESSION\nThe patient is intubated. The lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [
+      "Section 'OBSERVATIONS' contains specific measurements (cm) not reliably derived from single AI draft."
+    ],
+    "gold_affirmed_labels": [
+      "enteric tube",
+      "ij line",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "support_devices"
+    ],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.0896,
+    "bleu_2": 0.0121,
+    "latency_sec": 36.32,
+    "eval_count": 284,
+    "tokens_per_second": 7.82
+  },
+  {
+    "safe_case_id": "CASE_TEST_025",
+    "split": "held_out_test",
+    "primary_category": "support_devices",
+    "view_position": "AP",
+    "prompt_version": "revised_grounded",
+    "generated_raw": "OBSERVATIONS\n\n*   **Support Apparatus:** An endotracheal tube is visible, with the tip located approximately 4.5 cm above the carina. A nasogastric tube is visible, coursing below the diaphragm and terminating in the stomach. The tip is not clearly visualized. No vascular line is visible. No chest tube is visible. No surgical clips are visible.\n*   **Cardiac Silhouette:** The cardiac silhouette appears within normal limits. The heart size is not enlarged (cardiothoracic ratio is less than 0.5).\n*   **Lungs:** The lungs appear clear. No focal consolidation, pleural effusion, or pneumothorax is evident.\n\nIMPRESSION\n\nThe patient is intubated. The lungs are clear.\n\nLIMITATIONS\n\nThis is a frontal chest radiograph. The limited view of the left lung makes it difficult to assess for subtle abnormalities. The image is not a lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\n**Support Apparatus:** An endotracheal tube is visible, with the tip located approximately 4.5 cm above the carina. A nasogastric tube is visible, coursing below the diaphragm and terminating in the stomach. The tip is not clearly visualized. No vascular line is visible. No chest tube is visible. No surgical clips are visible.\n*   **Cardiac Silhouette:** The cardiac silhouette appears within normal limits. The heart size is not enlarged (cardiothoracic ratio is less than 0.5).\n*   **Lungs:** The lungs appear clear. No focal consolidation, pleural effusion, or pneumothorax is evident.\n\nIMPRESSION\n\nThe patient is intubated. The lungs are clear.\n\n**POSSIBLE FINDINGS**\nNo focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.\n\n**ASSESSMENT AND UNCERTAINTY**\nIndeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The limited view of the left lung makes it difficult to assess for subtle abnormalities. The image is not a lateral view.",
+    "sections": {
+      "OBSERVATIONS": "**Support Apparatus:** An endotracheal tube is visible, with the tip located approximately 4.5 cm above the carina. A nasogastric tube is visible, coursing below the diaphragm and terminating in the stomach. The tip is not clearly visualized. No vascular line is visible. No chest tube is visible. No surgical clips are visible.\n*   **Cardiac Silhouette:** The cardiac silhouette appears within normal limits. The heart size is not enlarged (cardiothoracic ratio is less than 0.5).\n*   **Lungs:** The lungs appear clear. No focal consolidation, pleural effusion, or pneumothorax is evident.\n\nIMPRESSION\n\nThe patient is intubated. The lungs are clear.",
+      "LIMITATIONS": "This is a frontal chest radiograph. The limited view of the left lung makes it difficult to assess for subtle abnormalities. The image is not a lateral view.",
+      "POSSIBLE FINDINGS": "No focal consolidation, acute pleural effusion, or definite pneumothorax identified on available views.",
+      "ASSESSMENT AND UNCERTAINTY": "Indeterminate for subtle parenchymal abnormalities without prior comparison studies or lateral projection."
+    },
+    "validation_warnings": [
+      "Section 'OBSERVATIONS' contains specific measurements (cm) not reliably derived from single AI draft."
+    ],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "hyperaeration",
+      "copd/emphysema",
+      "enteric tube",
+      "vascular calcification",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "true_positives": [
+      "support_devices"
+    ],
+    "false_positives": [
+      "pleural_effusion"
+    ],
+    "false_negatives": [],
+    "unsupported_positives": [
+      "pleural_effusion"
+    ],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 0,
+    "internal_contradiction": false,
+    "rouge_l": 0.1423,
+    "bleu_2": 0.1026,
+    "latency_sec": 43.33,
+    "eval_count": 371,
+    "tokens_per_second": 8.56
+  }
+]

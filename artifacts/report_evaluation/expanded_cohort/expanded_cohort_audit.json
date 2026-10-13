@@ -1,0 +1,30 @@
+{
+  "audit_version": "3.0.0",
+  "total_local_mimic_jpgs": 1174,
+  "total_local_chest_imagenome_cases": 417,
+  "verified_frontal_cases": 417,
+  "historical_cohort_preserved": 50,
+  "eligible_candidate_cohort": 367,
+  "expanded_dev_cases": 250,
+  "expanded_dev_patients": 248,
+  "expanded_test_cases": 117,
+  "expanded_test_patients": 117,
+  "patient_overlap_dev_test": 0,
+  "patient_overlap_with_historical": 0,
+  "dev_category_distribution": {
+    "normal": 71,
+    "pneumonia_consolidation": 94,
+    "pulmonary_edema": 57,
+    "support_devices": 10,
+    "atelectasis": 9,
+    "cardiomegaly": 9
+  },
+  "test_category_distribution": {
+    "normal": 33,
+    "pulmonary_edema": 26,
+    "pneumonia_consolidation": 44,
+    "cardiomegaly": 6,
+    "atelectasis": 4,
+    "support_devices": 4
+  }
+}

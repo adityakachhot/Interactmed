@@ -1,0 +1,4 @@
+pipeline,split,sample_size,micro_f1,precision,recall,false_normal_rate,false_normal_95ci,hallucination_rate,missed_finding_rate,internal_contradiction_rate,boilerplate_rate,mean_latency_s,median_latency_s,throughput_tok_s
+baseline,val_dev,50,0.0395,0.06,0.0294,1.0,"[0.9244, 1.0000]",0.94,0.94,0.0,1.0,0.01,0.01,5333.33
+prompt_v3,val_dev,50,0.0395,0.06,0.0294,1.0,"[0.9244, 1.0000]",0.94,0.94,0.0,1.0,0.01,0.01,5333.33
+finetuned,val_dev,50,0.0395,0.06,0.0294,1.0,"[0.9244, 1.0000]",0.94,0.94,0.0,1.0,0.01,0.01,5333.33

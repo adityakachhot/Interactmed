@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-10-09T20:35:22.052967Z",
+  "split_seed": 42,
+  "val_fraction": 0.15,
+  "test_fraction": 0.15,
+  "total_positive_patients": 6012,
+  "split_counts": {
+    "train": 4210,
+    "val": 901,
+    "test": 901
+  },
+  "negative_patients": 20672
+}

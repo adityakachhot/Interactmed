@@ -1,0 +1,2 @@
+safe_case_id,partition,primary_category,ground_truth_classes,baseline_predictions,prompt_v3_predictions,baseline_missed,prompt_v3_missed,baseline_laterality,prompt_v3_laterality,baseline_unsupported_neg,prompt_v3_unsupported_neg,baseline_latency_sec,prompt_v3_latency_sec,baseline_tokens,prompt_v3_tokens
+CASE_EXP_DEV_001,expanded_dev,normal,normal,normal,normal,,,concordant_or_not_applicable,concordant_or_not_applicable,none,none,13.77,8.2,186,170

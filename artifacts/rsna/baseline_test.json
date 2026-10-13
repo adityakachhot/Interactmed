@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-10T16:27:23.289565Z",
+  "experiment": {
+    "name": "rsna_zero_shot_baseline",
+    "description": "Zero-shot external evaluation of the pretrained TransVG-AGPT checkpoint on the RSNA Pneumonia Detection Challenge 2018 dataset. No model weights are modified. No query or threshold selection is performed using test-set outcomes.\n",
+    "phase": "3B",
+    "checkpoint": "/Users/adityakachhot/interactmed/checkpoints/transvg.pth",
+    "task": "pneumonia_localization"
+  },
+  "split": "test",
+  "primary_query": "pneumonia",
+  "query_used": "pneumonia",
+  "total_wall_time_s": 256.35,
+  "primary_metrics": {
+    "split": "test",
+    "query": "pneumonia",
+    "n_total_positive_images": 901,
+    "n_evaluable": 901,
+    "n_excluded": 0,
+    "exclusion_reasons": {},
+    "mean_best_match_iou": 0.313,
+    "recall_at_iou_0.50": 0.2397,
+    "recall_at_iou_0.75": 0.0555,
+    "inference_success_rate": 1.0,
+    "mean_latency_ms": 141.03,
+    "matching_rule": "best_overlap_max_iou_gt",
+    "multi_gt_rule": "max(IoU(pred, gt_i)) over all gt_i for same image"
+  },
+  "secondary_metrics_val_only": null,
+  "matching_rule": {
+    "strategy": "best_overlap",
+    "multi_gt_rule": "max_iou_gt",
+    "iou_thresholds": [
+      0.5,
+      0.75
+    ],
+    "negative_handling": "report_separately_excluded_from_recall"
+  }
+}

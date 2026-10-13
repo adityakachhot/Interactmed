@@ -1,0 +1,59 @@
+# ==============================================================================
+# InteractMed-VLM Whole-Image Report Generation Evaluation Configuration
+# ==============================================================================
+
+evaluation:
+  version: "1.0.0"
+  date: "2026-10-12"
+  task: "whole_chest_xray_research_report_generation"
+  model:
+    provider: "ollama"
+    model_name: "medgemma:4b"
+    endpoint: "http://127.0.0.1:11434"
+    keep_alive: "30m"
+    max_side: 1024
+    temperature: 0.1
+    num_predict: 220
+    timeout_sec: 240
+
+splits:
+  manifest_path: "artifacts/report_evaluation/image_report_manifest.csv"
+  reference_store_path: "artifacts/report_evaluation/local_reference_store.json"
+  dev_size: 25
+  test_size: 25
+  patient_grouped: true
+  zero_patient_leakage: true
+
+categories:
+  - "normal"
+  - "pneumonia_consolidation"
+  - "pulmonary_edema"
+  - "cardiomegaly"
+  - "pleural_effusion"
+  - "atelectasis"
+  - "support_devices"
+
+metrics:
+  clinical:
+    - "clinical_entity_overlap"
+    - "finding_label_agreement"
+    - "chexpert_label_f1"
+  textual:
+    - "rouge_l"
+    - "bleu_2"
+    - "bleu_4"
+  error_taxonomy:
+    - "unsupported_positive_claims"
+    - "incorrect_or_unsupported_negatives"
+    - "repeated_generic_normal_statements"
+    - "missing_important_reference_findings"
+    - "laterality_location_errors"
+    - "internal_contradictions"
+
+artifacts:
+  current_prompt_results: "artifacts/report_evaluation/current_prompt_results.json"
+  revised_prompt_results: "artifacts/report_evaluation/revised_prompt_results.json"
+  comparison_csv: "artifacts/report_evaluation/comparison.csv"
+  comparison_summary_json: "artifacts/report_evaluation/comparison_summary.json"
+  evaluation_report_md: "docs/REPORT_QUALITY_EVALUATION.md"
+  data_audit_md: "docs/REPORT_DATA_AUDIT.md"

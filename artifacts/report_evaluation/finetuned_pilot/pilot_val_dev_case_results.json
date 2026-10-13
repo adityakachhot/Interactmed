@@ -1,0 +1,3158 @@
+[
+  {
+    "safe_case_id": "CASE_EXP_DEV_011",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_016",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_020",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_025",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_028",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_029",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_047",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_061",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumothorax",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_067",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_072",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_074",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_085",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_087",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_092",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_097",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_105",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_108",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_116",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_126",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_133",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_137",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_140",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_144",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_146",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation",
+      "pneumothorax",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 5,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_151",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "cardiomegaly",
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_152",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_156",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_160",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_161",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_164",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_175",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_176",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_184",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_187",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_190",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_197",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_199",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_200",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_204",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "cardiomegaly",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_206",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_208",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_220",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_224",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_231",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "cardiomegaly",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_232",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_233",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_234",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_236",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_245",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_250",
+    "pipeline": "baseline",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 2,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS:\nThe cardiomediastinal silhouette is within normal limits. Lungs are clear bilaterally with no focal consolidation or pneumothorax.\nIMPRESSION:\nNo acute cardiopulmonary abnormality."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_011",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_016",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_020",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_025",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_028",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_029",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_047",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_061",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumothorax",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_067",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_072",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_074",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_085",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_087",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_092",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_097",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_105",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_108",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_116",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_126",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_133",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_137",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_140",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_144",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_146",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation",
+      "pneumothorax",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 5,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_151",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "cardiomegaly",
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_152",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_156",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_160",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_161",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_164",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_175",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_176",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_184",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_187",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_190",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_197",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_199",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_200",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_204",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "cardiomegaly",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_206",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_208",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_220",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_224",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_231",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "cardiomegaly",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_232",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_233",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_234",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_236",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_245",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_250",
+    "pipeline": "prompt_v3",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nSupport apparatus: Not identified.\nCardiac silhouette: Normal.\nLungs & opacities: Clear bilaterally, no consolidation or atelectasis.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal contour.\n\nIMPRESSION\nNo acute cardiopulmonary disease identified.\n\nLIMITATIONS\nSingle frontal projection."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_011",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_016",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_020",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_025",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_028",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_029",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_047",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_061",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumothorax",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_067",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_072",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_074",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_085",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_087",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_092",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_097",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_105",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_108",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_116",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_126",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_133",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_137",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_140",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_144",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_146",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation",
+      "pneumothorax",
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 5,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_151",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "cardiomegaly",
+      "pleural_effusion",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_152",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_156",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_160",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "normal"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 1,
+    "fp": 0,
+    "fn": 0,
+    "false_normal": false,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_161",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_164",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_175",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_176",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_184",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_187",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 4,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_190",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_197",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_199",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_200",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_204",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "cardiomegaly",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_206",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_208",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_220",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "support_devices"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_224",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_231",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "cardiomegaly",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_232",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_233",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "laterality_omitted",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_234",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pleural_effusion",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_236",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_245",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "pneumonia_consolidation",
+      "pneumothorax"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  },
+  {
+    "safe_case_id": "CASE_EXP_DEV_250",
+    "pipeline": "finetuned",
+    "ref_labels": [
+      "atelectasis",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "gen_labels": [
+      "normal"
+    ],
+    "tp": 0,
+    "fp": 1,
+    "fn": 3,
+    "false_normal": true,
+    "boilerplate_phrases": 1,
+    "laterality_status": "concordant_or_not_applicable",
+    "internal_contradiction": false,
+    "latency_ms": 15.0,
+    "tokens": 80,
+    "generated_report": "OBSERVATIONS\nCardiomediastinal contour is normal in size and shape. No focal consolidation, effusion, or pneumothorax is identified. No acute osseous abnormality.\n\nIMPRESSION\nNo acute cardiopulmonary process.\n\nLIMITATIONS\nSingle frontal view; evaluation limited by lack of lateral view."
+  }
+]

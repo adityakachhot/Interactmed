@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-10-09T19:36:06Z",
+  "checkpoint": {
+    "path": "checkpoints/transvg.pth",
+    "file_size_mb": 2001.94,
+    "load_time_sec": 0.694,
+    "missing_keys_count": 0,
+    "unexpected_keys_count": 0,
+    "total_weights_loaded": 523
+  },
+  "model_architecture": {
+    "model_name": "TransVG",
+    "backbone": "resnet50",
+    "bert_model": "medicalai/ClinicalBERT",
+    "image_size": 640,
+    "hidden_dim": 256,
+    "instantiation_time_sec": 2.343
+  },
+  "device_benchmarks": {
+    "cpu": {
+      "status": "SUCCESS",
+      "mean_latency_sec": 0.2735,
+      "min_latency_sec": 0.2566,
+      "samples_evaluated": 4
+    },
+    "mps": {
+      "status": "SUCCESS",
+      "mean_latency_sec": 0.2579,
+      "min_latency_sec": 0.1345,
+      "samples_evaluated": 4
+    }
+  },
+  "sample_predictions": [
+    {
+      "image": "0ae1a7ad-fcc627aa-01e96e50-cb14cf17-23f441ac.jpg",
+      "phrase": "small left apical pneumothorax",
+      "pred_box_norm_xyxy": [
+        0.52,
+        0.1148,
+        0.7712,
+        0.2095
+      ],
+      "ground_truth_xywh": [
+        345,
+        70,
+        141,
+        45
+      ],
+      "plot_path": "artifacts/model_smoke_test/pred_mps_0ae1a7ad-fcc627aa-01e96e50-cb14cf17-23f441ac.jpg"
+    },
+    {
+      "image": "3aa9ee81-08355b5d-713a3a03-6cd20281-6222326c.jpg",
+      "phrase": "Left perihilar opacity",
+      "pred_box_norm_xyxy": [
+        0.6071,
+        0.3828,
+        0.7703,
+        0.6462
+      ],
+      "ground_truth_xywh": [
+        400,
+        274,
+        94,
+        140
+      ],
+      "plot_path": "artifacts/model_smoke_test/pred_mps_3aa9ee81-08355b5d-713a3a03-6cd20281-6222326c.jpg"
+    },
+    {
+      "image": "8350f725-7918f8aa-abc95fec-a3d62a15-a47db0d9.jpg",
+      "phrase": "patchy consolidation in the right lower",
+      "pred_box_norm_xyxy": [
+        0.0894,
+        0.5313,
+        0.3475,
+        0.8193
+      ],
+      "ground_truth_xywh": [
+        60,
+        293,
+        146,
+        216
+      ],
+      "plot_path": "artifacts/model_smoke_test/pred_mps_8350f725-7918f8aa-abc95fec-a3d62a15-a47db0d9.jpg"
+    },
+    {
+      "image": "f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47.jpg",
+      "phrase": "there is mild cardiomegaly",
+      "pred_box_norm_xyxy": [
+        0.308,
+        0.4672,
+        0.8201,
+        0.7533
+      ],
+      "ground_truth_xywh": [
+        195,
+        281,
+        338,
+        198
+      ],
+      "plot_path": "artifacts/model_smoke_test/pred_mps_f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47.jpg"
+    }
+  ]
+}

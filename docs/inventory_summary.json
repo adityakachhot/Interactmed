@@ -1,0 +1,249 @@
+{
+  "execution_summary": {
+    "status": "SUCCESS",
+    "host": "MacBook Air M3 (16 GB Unified Memory)",
+    "python": "3.10.19"
+  },
+  "local_image_storage": {
+    "status": "available",
+    "root_dir": "/Users/adityakachhot/Downloads/data/mimic-cxr",
+    "total_images": 1174
+  },
+  "ms_cxr": {
+    "status": "available",
+    "csv_path": "/Users/adityakachhot/Downloads/data/ms-cxr/MS_CXR_Local_Alignment_v1.1.0.csv",
+    "json_path": "/Users/adityakachhot/Downloads/data/ms-cxr/MS_CXR_Local_Alignment_v1.1.0.json",
+    "columns": [
+      "dicom_id",
+      "category_name",
+      "label_text",
+      "path",
+      "x",
+      "y",
+      "w",
+      "h",
+      "image_width",
+      "image_height",
+      "split"
+    ],
+    "total_records": 1448,
+    "unique_dicom_ids": 1047,
+    "categories": [
+      "Cardiomegaly",
+      "Lung Opacity",
+      "Edema",
+      "Consolidation",
+      "Pneumonia",
+      "Atelectasis",
+      "Pneumothorax",
+      "Pleural Effusion"
+    ],
+    "splits": {
+      "train": 1020,
+      "test": 216,
+      "val": 212
+    },
+    "bbox_format": "[x, y, w, h] in absolute pixel coordinates (unnormalized)",
+    "json_annotations_count": 1448,
+    "json_images_count": 1120,
+    "records_with_existing_images": 1056,
+    "records_missing_images": 392,
+    "unique_images_locally_present": 764,
+    "unique_images_missing": 283,
+    "image_coverage_pct": 72.97
+  },
+  "chest_imagenome_gold": {
+    "status": "available",
+    "bbox_csv": "/Users/adityakachhot/Downloads/data/chest-imagenome/gold_dataset/gold_bbox_coordinate_annotations_1000images.csv",
+    "columns": [
+      "image_id",
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "width",
+      "height",
+      "bbox_name",
+      "annot_id",
+      "original_x1",
+      "original_x2",
+      "original_y1",
+      "original_y2",
+      "original_width",
+      "original_height",
+      "annotator",
+      "coord224",
+      "coord_original"
+    ],
+    "total_records": 25989,
+    "unique_dicom_ids": 1000,
+    "unique_annotators": [
+      "C&&W",
+      "C&&C&&W",
+      "C&&W&&W",
+      "S&&J",
+      "S",
+      "S&&S&&J",
+      "S&&J&&J",
+      "J"
+    ],
+    "bbox_formats": {
+      "coord224": "[x1, y1, x2, y2] scaled to 224x224 square bounding box",
+      "coord_original": "[original_x1, original_y1, original_x2, original_y2] in native DICOM resolution",
+      "components": [
+        "x1",
+        "y1",
+        "x2",
+        "y2",
+        "width",
+        "height",
+        "original_x1",
+        "original_y1",
+        "original_x2",
+        "original_y2",
+        "original_width",
+        "original_height"
+      ]
+    },
+    "records_with_existing_images": 10840,
+    "records_missing_images": 15149,
+    "unique_images_locally_present": 417,
+    "unique_images_missing": 583,
+    "image_coverage_pct": 41.7,
+    "has_patient_context_metadata": true,
+    "patient_context_columns": [
+      "subject_id",
+      "study_id",
+      "path",
+      "gender",
+      "age_decile"
+    ],
+    "sentence_records_available": 16744
+  },
+  "unified_manifest": {
+    "status": "available",
+    "manifest_path": "/Users/adityakachhot/interactmedVLM/manifests/unified_manifest.csv",
+    "download_list_path": "/Users/adityakachhot/interactmedVLM/manifests/download_list.txt",
+    "columns": [
+      "dicom_id",
+      "subject_id",
+      "study_id",
+      "image_relative_path",
+      "region_label",
+      "bbox",
+      "phrase",
+      "finding_text",
+      "split",
+      "source",
+      "raw_region",
+      "bbox_x",
+      "bbox_y",
+      "bbox_w",
+      "bbox_h",
+      "exists"
+    ],
+    "total_records": 17135,
+    "unique_dicoms": 1541,
+    "unique_studies": 1541,
+    "unique_subjects": 1335,
+    "records_with_existing_images": 13992,
+    "records_missing_images": 3143,
+    "unique_images_locally_present": 1174,
+    "unique_images_missing": 367,
+    "image_coverage_pct": 76.18,
+    "by_source": {
+      "chest_imagenome_gold": {
+        "total_records": 15687,
+        "records_with_images": 12936,
+        "unique_dicoms": 500,
+        "unique_dicoms_present": 415,
+        "coverage_pct": 83.0
+      },
+      "ms_cxr": {
+        "total_records": 1448,
+        "records_with_images": 1056,
+        "unique_dicoms": 1047,
+        "unique_dicoms_present": 764,
+        "coverage_pct": 72.97
+      }
+    },
+    "download_list_summary": {
+      "total_requested_paths": 1541,
+      "present_locally": 1174,
+      "pending_download": 367
+    }
+  },
+  "mimic_cxr_vqa": {
+    "status": "available",
+    "dir": "/Users/adityakachhot/Downloads/data/mimic-cxr-vqa",
+    "splits": {
+      "valid.json": {
+        "count": 73567,
+        "sample_keys": [
+          "split",
+          "idx",
+          "subject_id",
+          "study_id",
+          "image_id",
+          "image_path",
+          "question",
+          "semantic_type",
+          "content_type",
+          "template",
+          "template_program",
+          "template_arguments",
+          "answer"
+        ]
+      },
+      "test.json": {
+        "count": 13793,
+        "sample_keys": [
+          "split",
+          "idx",
+          "subject_id",
+          "study_id",
+          "image_id",
+          "image_path",
+          "question",
+          "semantic_type",
+          "content_type",
+          "template",
+          "template_program",
+          "template_arguments",
+          "answer"
+        ]
+      }
+    },
+    "total_qa_pairs": 87360
+  },
+  "external_rsna_pneumonia": {
+    "status": "MISSING_NOT_DOWNLOADED",
+    "required_for": "External grounding evaluation and optional domain fine-tuning",
+    "target_dir": "data/rsna",
+    "expected_files": [
+      "stage_2_train_labels.csv",
+      "stage_2_train_images/*.dcm"
+    ]
+  },
+  "model_checkpoints": {
+    "transvg_agpt": {
+      "status": "MISSING_NOT_DOWNLOADED",
+      "required_for": "Pretrained TransVG-AGPT medical phrase grounding inference and baseline evaluation",
+      "target_path": "checkpoints/transvg.pth",
+      "upstream_gdrive_folder": "1lFaqAlG6AJExCjkW3Pbb24CX-LWSstrK",
+      "upstream_github": "https://github.com/Claire1217/AGPT"
+    }
+  },
+  "cross_dataset_overlap": {
+    "total_unique_dicoms_across_all_benchmarks": 2038,
+    "ms_cxr_total_dicoms": 1047,
+    "cig_gold_total_dicoms": 1000,
+    "manifest_total_dicoms": 1541,
+    "ms_cxr_intersect_cig_gold": 9,
+    "ms_cxr_intersect_local_images": 764,
+    "cig_gold_intersect_local_images": 417,
+    "manifest_intersect_local_images": 1174,
+    "all_known_intersect_local_images": 1174,
+    "local_images_not_in_any_benchmark": 0
+  }
+}

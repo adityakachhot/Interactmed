@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-10-10T16:51:43.295312Z",
+  "config": {
+    "experiment": {
+      "name": "rsna_finetuning_stage1",
+      "description": "Fine-tuning TransVG-AGPT multimodal transformer and box head on the RSNA Pneumonia Detection Challenge training split (4,210 positive patients). Visual backbone (ResNet-50 + DETR) and text backbone (ClinicalBERT) are frozen.\n",
+      "phase": "4B",
+      "task": "pneumonia_localization_finetuning"
+    },
+    "data": {
+      "rsna_root": "/Users/adityakachhot/interactmed/data/raw/rsna",
+      "train_split_csv": "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_train_positive.csv",
+      "val_split_csv": "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_val_positive.csv",
+      "test_split_csv": "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_test_positive.csv",
+      "images_dir": "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images",
+      "primary_query": "pneumonia",
+      "imsize": 640
+    },
+    "model": {
+      "base_checkpoint": "/Users/adityakachhot/interactmed/checkpoints/transvg.pth",
+      "freeze_encoders": true,
+      "device": "auto"
+    },
+    "training": {
+      "epochs": 8,
+      "batch_size": 4,
+      "num_workers": 0,
+      "lr": 5e-05,
+      "weight_decay": 0.0001,
+      "clip_max_norm": 0.1,
+      "l1_loss_coef": 5.0,
+      "giou_loss_coef": 2.0,
+      "lr_scheduler": "cosine",
+      "warmup_epochs": 1,
+      "min_lr": 1e-06,
+      "eval_every_epoch": true,
+      "save_best_metric": "mean_best_match_iou"
+    },
+    "output": {
+      "checkpoints_dir": "/Users/adityakachhot/interactmed/checkpoints/finetuned_rsna/run_01_3ep",
+      "artifacts_dir": "/Users/adityakachhot/interactmed/artifacts/rsna/finetuning/run_01_3ep",
+      "log_file": "/Users/adityakachhot/interactmed/artifacts/rsna/finetuning/run_01_3ep/training_history.json"
+    }
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "duration_s": 708.15,
+      "train_loss": 2.9026,
+      "train_l1_loss": 0.2993,
+      "train_giou_loss": 0.703,
+      "val_mean_best_match_iou": 0.3789,
+      "val_recall_at_0.50": 0.3751,
+      "val_recall_at_0.75": 0.04,
+      "learning_rate": 3.775e-05
+    },
+    {
+      "epoch": 2,
+      "duration_s": 895.51,
+      "train_loss": 2.6819,
+      "train_l1_loss": 0.2744,
+      "train_giou_loss": 0.655,
+      "val_mean_best_match_iou": 0.4168,
+      "val_recall_at_0.50": 0.4473,
+      "val_recall_at_0.75": 0.0499,
+      "learning_rate": 1.3250000000000009e-05
+    },
+    {
+      "epoch": 3,
+      "duration_s": 823.64,
+      "train_loss": 2.542,
+      "train_l1_loss": 0.2593,
+      "train_giou_loss": 0.6227,
+      "val_mean_best_match_iou": 0.4493,
+      "val_recall_at_0.50": 0.495,
+      "val_recall_at_0.75": 0.0688,
+      "learning_rate": 1e-06
+    }
+  ]
+}

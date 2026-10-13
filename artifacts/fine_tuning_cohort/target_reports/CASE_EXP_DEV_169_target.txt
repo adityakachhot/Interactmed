@@ -1,0 +1,8 @@
+OBSERVATIONS
+Findings detailed in clinical impression.
+
+IMPRESSION
+No failure.
+
+LIMITATIONS
+Single frontal PA projection without orthogonal lateral view.

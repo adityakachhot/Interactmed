@@ -1,0 +1,122 @@
+# ==============================================================================
+# InteractMed-VLM Dataset & Environment Path Configuration
+# Discovered and verified on MacBook Air M3 (16 GB Unified Memory)
+# ==============================================================================
+
+environment:
+  platform: "macOS (Apple Silicon M3)"
+  memory_gb: 16
+  torch_accelerator: "mps"  # Apple Metal Performance Shaders verified working
+  python_interpreter: "/Users/adityakachhot/miniforge3/envs/dl/bin/python"
+  conda_env: "dl"
+
+# ------------------------------------------------------------------------------
+# 1. Local Image Storage (MIMIC-CXR-JPG Subset)
+# ------------------------------------------------------------------------------
+mimic_cxr:
+  root_dir: "/Users/adityakachhot/Downloads/data/mimic-cxr"
+  files_dir: "/Users/adityakachhot/Downloads/data/mimic-cxr/files"
+  total_local_jpgs: 1174
+  format: "JPEG"
+  relative_path_pattern: "files/p{prefix}/p{subject_id}/s{study_id}/{dicom_id}.jpg"
+  status: "partially_available"  # 1,174 out of 1,541 manifest images present
+
+# ------------------------------------------------------------------------------
+# 2. Chest ImaGenome Dataset
+# ------------------------------------------------------------------------------
+chest_imagenome:
+  gold_dataset_dir: "/Users/adityakachhot/Downloads/data/chest-imagenome/gold_dataset"
+  raw_package_dir: "/Users/adityakachhot/Downloads/chest-imagenome-dataset-1.0.0"
+  utils_dir: "/Users/adityakachhot/Downloads/chest-imagenome-dataset-1.0.0/utils"
+  semantics_dir: "/Users/adityakachhot/Downloads/chest-imagenome-dataset-1.0.0/semantics"
+  silver_dataset_dir: "/Users/adityakachhot/Downloads/chest-imagenome-dataset-1.0.0/silver_dataset"
+  files:
+    gold_bbox_csv: "/Users/adityakachhot/Downloads/data/chest-imagenome/gold_dataset/gold_bbox_coordinate_annotations_1000images.csv"
+    gold_attributes_txt: "/Users/adityakachhot/Downloads/data/chest-imagenome/gold_dataset/gold_object_attribute_with_coordinates.txt"
+    gold_sentences_txt: "/Users/adityakachhot/Downloads/data/chest-imagenome/gold_dataset/gold_all_sentences_500pts_1000studies.txt"
+    gold_scaling_csv: "/Users/adityakachhot/Downloads/data/chest-imagenome/gold_dataset/gold_bbox_scaling_factors_original_to_224x224.csv"
+    cxr_record_list_view: "/Users/adityakachhot/Downloads/chest-imagenome-dataset-1.0.0/utils/cxr-record-list_view.csv"
+    cxr_study_list_v2: "/Users/adityakachhot/Downloads/chest-imagenome-dataset-1.0.0/utils/cxr-study-list_v2.csv"
+  status: "metadata_complete_images_partial"  # 1,000 gold images cataloged, 417 JPGs local
+
+# ------------------------------------------------------------------------------
+# 3. MS-CXR Dataset
+# ------------------------------------------------------------------------------
+ms_cxr:
+  root_dir: "/Users/adityakachhot/Downloads/data/ms-cxr"
+  raw_package_dir: "/Users/adityakachhot/Downloads/ms-cxr-making-the-most-of-text-semantics-to-improve-biomedical-vision-language-processing-1.1.0"
+  files:
+    csv: "/Users/adityakachhot/Downloads/data/ms-cxr/MS_CXR_Local_Alignment_v1.1.0.csv"
+    json: "/Users/adityakachhot/Downloads/data/ms-cxr/MS_CXR_Local_Alignment_v1.1.0.json"
+  status: "metadata_complete_images_partial"  # 1,047 DICOMs cataloged, 764 JPGs local
+
+# ------------------------------------------------------------------------------
+# 4. MIMIC-CXR-VQA Dataset
+# ------------------------------------------------------------------------------
+mimic_cxr_vqa:
+  root_dir: "/Users/adityakachhot/Downloads/data/mimic-cxr-vqa"
+  raw_package_dir: "/Users/adityakachhot/Downloads/mimic-ext-mimic-cxr-vqa-a-complex-diverse-and-large-scale-visual-question-answering-dataset-for-chest-x-ray-images-1.0.0/MIMIC-Ext-MIMIC-CXR-VQA/dataset"
+  files:
+    valid_json: "/Users/adityakachhot/Downloads/data/mimic-cxr-vqa/valid.json"
+    test_json: "/Users/adityakachhot/Downloads/data/mimic-cxr-vqa/test.json"
+    train_json: "/Users/adityakachhot/Downloads/mimic-ext-mimic-cxr-vqa-a-complex-diverse-and-large-scale-visual-question-answering-dataset-for-chest-x-ray-images-1.0.0/MIMIC-Ext-MIMIC-CXR-VQA/dataset/train.json"
+  status: "available"
+
+# ------------------------------------------------------------------------------
+# 5. Prior Unified Manifest & Preprocessing (from interactmedVLM)
+# ------------------------------------------------------------------------------
+prior_project:
+  root_dir: "/Users/adityakachhot/interactmedVLM"
+  files:
+    unified_manifest_csv: "/Users/adityakachhot/interactmedVLM/manifests/unified_manifest.csv"
+    download_list_txt: "/Users/adityakachhot/interactmedVLM/manifests/download_list.txt"
+    model_config_yaml: "/Users/adityakachhot/interactmedVLM/configs/model_config.yaml"
+  status: "available_verified"
+
+# ------------------------------------------------------------------------------
+# 6. External Evaluation: RSNA Pneumonia Detection Challenge
+# ------------------------------------------------------------------------------
+rsna_pneumonia:
+  root_dir: "/Users/adityakachhot/interactmed/data/raw/rsna"
+  labels_csv: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_labels.csv"
+  class_info_csv: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_detailed_class_info.csv"
+  sample_submission_csv: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_sample_submission.csv"
+  images_dir: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images"
+  test_images_dir: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_test_images"
+  status: "present_and_validated"
+  coordinate_format: "[x, y, width, height]"     # native pixel space; same format as MS-CXR v1.1.0
+  image_resolution: "1024x1024"                  # typical DICOM pixel dimensions
+  positive_phrase: "airspace opacity"             # grounding query phrase for zero-shot evaluation
+  expected_train_images: 26684
+  expected_positive_cases: 6012
+  expected_negative_cases: 20672
+  expected_total_label_rows: 30227
+  source_url: "https://www.rsna.org/artificial-intelligence/ai-image-challenge/rsna-pneumonia-detection-challenge-2018"
+  kaggle_competition: "rsna-pneumonia-detection-challenge"
+  kaggle_data_page: "https://www.kaggle.com/c/rsna-pneumonia-detection-challenge/data"
+  download_guide: "/Users/adityakachhot/interactmed/docs/RSNA_DOWNLOAD.md"
+  validation_script: "/Users/adityakachhot/interactmed/scripts/validate_rsna.py"
+  citation_doi: "https://doi.org/10.1148/ryai.2019180041"
+
+# ------------------------------------------------------------------------------
+# 7. Model Checkpoints & Pretrained Weights
+# ------------------------------------------------------------------------------
+models:
+  agpt_repo_dir: "/Users/adityakachhot/interactmed/third_party/AGPT"
+  transvg_agpt_checkpoint: "/Users/adityakachhot/interactmed/checkpoints/transvg.pth"
+  transvg_agpt_symlink: "/Users/adityakachhot/interactmed/third_party/AGPT/model_weight/transvg.pth"
+  checkpoint_gdrive_folder_id: "1lFaqAlG6AJExCjkW3Pbb24CX-LWSstrK"
+  checkpoint_file_id: "1INXf6rhAizBKf4IfC_Zi-pmyIbcdHKW9"
+  status: "available_verified"
+
+# ------------------------------------------------------------------------------
+# 8. Processed Local Data Layer (Phase 2 Validated Artifacts)
+# ------------------------------------------------------------------------------
+processed_data:
+  root_dir: "/Users/adityakachhot/interactmed/data/processed"
+  master_catalog_csv: "/Users/adityakachhot/interactmed/data/processed/unified_grounding_master.csv"
+  local_verified_csv: "/Users/adityakachhot/interactmed/data/processed/local_grounding_verified.csv"
+  metadata_summary_json: "/Users/adityakachhot/interactmed/data/processed/metadata_summary.json"
+  coordinate_audit_json: "/Users/adityakachhot/interactmed/docs/coordinate_audit_report.json"
+  dataset_overlap_json: "/Users/adityakachhot/interactmed/docs/dataset_overlap_report.json"
+  status: "generated_and_validated"

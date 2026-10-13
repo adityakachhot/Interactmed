@@ -1,0 +1,8 @@
+OBSERVATIONS
+Findings detailed in clinical impression.
+
+IMPRESSION
+AP chest reviewed in the absence of prior chest imaging: Lungs mildly hyperinflated, could be emphysematous. No consolidation or edema. No pleural effusion. Heart size normal. No free subdiaphragmatic gas.
+
+LIMITATIONS
+Single frontal AP projection. Evaluation limited by absence of orthogonal lateral view.

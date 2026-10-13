@@ -1,0 +1,48 @@
+# ==============================================================================
+# InteractMed-VLM — Phase 4: RSNA Fine-Tuning Configuration (Local M3)
+# ==============================================================================
+# Configured for MacBook Air M3 (16 GB Unified Memory) with Apple Metal (MPS)
+# ==============================================================================
+
+experiment:
+  name: "rsna_finetuning_stage1"
+  description: >
+    Fine-tuning TransVG-AGPT multimodal transformer and box head on the RSNA
+    Pneumonia Detection Challenge training split (4,210 positive patients).
+    Visual backbone (ResNet-50 + DETR) and text backbone (ClinicalBERT) are frozen.
+  phase: "4B"
+  task: "pneumonia_localization_finetuning"
+
+data:
+  rsna_root: "/Users/adityakachhot/interactmed/data/raw/rsna"
+  train_split_csv: "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_train_positive.csv"
+  val_split_csv: "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_val_positive.csv"
+  test_split_csv: "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_test_positive.csv"
+  images_dir: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images"
+  primary_query: "pneumonia"
+  imsize: 640
+
+model:
+  base_checkpoint: "/Users/adityakachhot/interactmed/checkpoints/transvg.pth"
+  freeze_encoders: true          # Stage 1: freeze ResNet-50, DETR encoder, and ClinicalBERT
+  device: "auto"                 # "auto" selects "mps" if available on Apple Silicon, else "cpu"
+
+training:
+  epochs: 8
+  batch_size: 4                  # Memory-safe for 16 GB unified memory
+  num_workers: 0                 # Safe for macOS multiprocessing
+  lr: 5.0e-5                     # Learning rate for trainable fusion & box head
+  weight_decay: 1.0e-4
+  clip_max_norm: 0.1
+  l1_loss_coef: 5.0
+  giou_loss_coef: 2.0
+  lr_scheduler: "cosine"         # Cosine annealing with linear warmup
+  warmup_epochs: 1
+  min_lr: 1.0e-6
+  eval_every_epoch: true         # Evaluate on validation split after each epoch
+  save_best_metric: "mean_best_match_iou"
+
+output:
+  checkpoints_dir: "/Users/adityakachhot/interactmed/checkpoints/finetuned_rsna/run_01_3ep"
+  artifacts_dir: "/Users/adityakachhot/interactmed/artifacts/rsna/finetuning/run_01_3ep"
+  log_file: "/Users/adityakachhot/interactmed/artifacts/rsna/finetuning/run_01_3ep/training_history.json"

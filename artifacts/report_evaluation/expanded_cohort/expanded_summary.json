@@ -1,0 +1,208 @@
+{
+  "evaluation_partition": "expanded_dev",
+  "sample_size": 30,
+  "baseline_single_stage": {
+    "sample_size": 30,
+    "abnormal_cohort_size": 19,
+    "micro_precision": 0.561,
+    "micro_precision_95_ci": [
+      0.4104,
+      0.7011
+    ],
+    "micro_recall": 0.451,
+    "micro_recall_95_ci": [
+      0.3227,
+      0.5862
+    ],
+    "micro_f1": 0.5,
+    "total_tp": 23,
+    "total_fp": 18,
+    "total_fn": 28,
+    "false_normal_count": 6,
+    "false_normal_rate_abnormal": 0.3158,
+    "unsupported_positive_rate": 0.4333,
+    "boilerplate_normal_count": 15,
+    "boilerplate_normal_rate": 0.5,
+    "internal_contradiction_count": 1,
+    "internal_contradiction_rate": 0.0333,
+    "laterality_omissions_count": 12,
+    "laterality_concordant_count": 3,
+    "laterality_swaps_count": 0,
+    "mean_latency_ms": 18848.19,
+    "median_latency_ms": 19128.34,
+    "std_latency_ms": 3328.56,
+    "mean_total_tokens": 161.2,
+    "tokens_per_second": 8.55,
+    "category_level_metrics": {
+      "cardiomegaly": {
+        "cohort_cases": 1,
+        "true_positives": 1,
+        "false_positives": 5,
+        "false_negatives": 0,
+        "precision": 0.1667,
+        "recall": 1.0,
+        "f1": 0.2858
+      },
+      "pleural_effusion": {
+        "cohort_cases": 0,
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "pneumonia_consolidation": {
+        "cohort_cases": 7,
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 6,
+        "precision": 1.0,
+        "recall": 0.1429,
+        "f1": 0.2501
+      },
+      "pulmonary_edema": {
+        "cohort_cases": 7,
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 3,
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7272
+      },
+      "atelectasis": {
+        "cohort_cases": 2,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "support_devices": {
+        "cohort_cases": 2,
+        "true_positives": 2,
+        "false_positives": 7,
+        "false_negatives": 0,
+        "precision": 0.2222,
+        "recall": 1.0,
+        "f1": 0.3636
+      },
+      "normal": {
+        "cohort_cases": 11,
+        "true_positives": 7,
+        "false_positives": 5,
+        "false_negatives": 4,
+        "precision": 0.5833,
+        "recall": 0.6364,
+        "f1": 0.6087
+      }
+    }
+  },
+  "production_prompt_v3": {
+    "sample_size": 30,
+    "abnormal_cohort_size": 19,
+    "micro_precision": 0.4516,
+    "micro_precision_95_ci": [
+      0.2916,
+      0.6223
+    ],
+    "micro_recall": 0.2745,
+    "micro_recall_95_ci": [
+      0.1711,
+      0.4095
+    ],
+    "micro_f1": 0.3415,
+    "total_tp": 14,
+    "total_fp": 17,
+    "total_fn": 37,
+    "false_normal_count": 8,
+    "false_normal_rate_abnormal": 0.4211,
+    "unsupported_positive_rate": 0.3333,
+    "boilerplate_normal_count": 0,
+    "boilerplate_normal_rate": 0.0,
+    "internal_contradiction_count": 0,
+    "internal_contradiction_rate": 0.0,
+    "laterality_omissions_count": 12,
+    "laterality_concordant_count": 3,
+    "laterality_swaps_count": 0,
+    "mean_latency_ms": 13542.27,
+    "median_latency_ms": 12938.21,
+    "std_latency_ms": 3548.16,
+    "mean_total_tokens": 179.9,
+    "tokens_per_second": 13.29,
+    "category_level_metrics": {
+      "cardiomegaly": {
+        "cohort_cases": 1,
+        "true_positives": 1,
+        "false_positives": 3,
+        "false_negatives": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "f1": 0.4
+      },
+      "pleural_effusion": {
+        "cohort_cases": 0,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "pneumonia_consolidation": {
+        "cohort_cases": 7,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "pulmonary_edema": {
+        "cohort_cases": 7,
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 4,
+        "precision": 1.0,
+        "recall": 0.4286,
+        "f1": 0.6
+      },
+      "atelectasis": {
+        "cohort_cases": 2,
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "support_devices": {
+        "cohort_cases": 2,
+        "true_positives": 2,
+        "false_positives": 7,
+        "false_negatives": 0,
+        "precision": 0.2222,
+        "recall": 1.0,
+        "f1": 0.3636
+      },
+      "normal": {
+        "cohort_cases": 11,
+        "true_positives": 6,
+        "false_positives": 7,
+        "false_negatives": 5,
+        "precision": 0.4615,
+        "recall": 0.5455,
+        "f1": 0.5
+      }
+    }
+  },
+  "deltas_v3_vs_baseline": {
+    "f1_delta": -0.1585,
+    "precision_delta": -0.1094,
+    "recall_delta": -0.1765,
+    "boilerplate_delta": -0.5,
+    "laterality_omissions_delta": 0,
+    "mean_latency_delta_sec": -5.31
+  }
+}

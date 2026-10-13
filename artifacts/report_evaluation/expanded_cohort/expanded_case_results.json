@@ -1,0 +1,40 @@
+{
+  "baseline_single_stage": [
+    {
+      "safe_case_id": "CASE_EXP_DEV_001",
+      "primary_category": "normal",
+      "total_ms": 13766.325375981978,
+      "total_tokens": 186,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 1,
+      "cleaned_report": "**OBSERVATIONS**\n**\n\n*   **Lungs:** The lungs appear relatively clear bilaterally. There are no obvious focal consolidations, effusions, or pneumothoraces. The lung markings are present, but without specific abnormalities.\n*   **Heart:** The cardiac silhouette appears within normal limits in size.\n*   **Pleural Spaces:** The pleural spaces are clear, without evidence of pleural effusion or pneumothorax.\n*   **Mediastinum:** The mediastinum appears unremarkable.\n*   **Bones:** The visualized bony structures (clavicles, ribs, and upper portions of the spine) appear intact.\n*   **Other:** The image quality is adequate for the portable nature of the study.\n\n**IMPRESSION**\n**\n\nThe chest radiograph is unremarkable. No acute cardiopulmonary abnormalities are identified.\n\n**LIMITATIONS**\nSingle frontal projection; AI research draft; requires formal radiologist verification."
+    }
+  ],
+  "production_prompt_v3": [
+    {
+      "safe_case_id": "CASE_EXP_DEV_001",
+      "primary_category": "normal",
+      "total_ms": 8199.594875986804,
+      "total_tokens": 170,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal.\n3.  Lungs & opacities: No focal consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles are sharp.\n5.  Mediastinum: Normal contour.\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    }
+  ]
+}

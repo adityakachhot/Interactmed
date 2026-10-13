@@ -1,0 +1,230 @@
+[
+  {
+    "pipeline": "baseline",
+    "sample_size": 50,
+    "abnormal_cases": 47,
+    "tp_total": 3,
+    "fp_total": 47,
+    "fn_total": 99,
+    "precision": 0.06,
+    "recall": 0.0294,
+    "micro_f1": 0.0395,
+    "false_normal_count": 47,
+    "false_normal_rate": 1.0,
+    "false_normal_95ci": [
+      0.9244,
+      1.0
+    ],
+    "hallucination_cases": 47,
+    "hallucination_rate": 0.94,
+    "missed_finding_cases": 47,
+    "missed_finding_rate": 0.94,
+    "internal_contradictions": 0,
+    "contradiction_rate": 0.0,
+    "boilerplate_cases": 50,
+    "boilerplate_rate": 1.0,
+    "laterality_breakdown": {
+      "concordant_or_not_applicable": 21,
+      "laterality_omitted": 29
+    },
+    "mean_latency_ms": 15.0,
+    "median_latency_ms": 15.0,
+    "std_latency_ms": 0.0,
+    "mean_tokens": 80.0,
+    "throughput_tok_s": 5333.33,
+    "per_category": {
+      "normal": {
+        "tp": 3,
+        "fp": 47,
+        "fn": 0
+      },
+      "pulmonary_edema": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 18
+      },
+      "pneumonia_consolidation": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
+      },
+      "pneumothorax": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 19
+      },
+      "atelectasis": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 19
+      },
+      "pleural_effusion": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 11
+      },
+      "support_devices": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 6
+      },
+      "cardiomegaly": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5
+      }
+    }
+  },
+  {
+    "pipeline": "prompt_v3",
+    "sample_size": 50,
+    "abnormal_cases": 47,
+    "tp_total": 3,
+    "fp_total": 47,
+    "fn_total": 99,
+    "precision": 0.06,
+    "recall": 0.0294,
+    "micro_f1": 0.0395,
+    "false_normal_count": 47,
+    "false_normal_rate": 1.0,
+    "false_normal_95ci": [
+      0.9244,
+      1.0
+    ],
+    "hallucination_cases": 47,
+    "hallucination_rate": 0.94,
+    "missed_finding_cases": 47,
+    "missed_finding_rate": 0.94,
+    "internal_contradictions": 0,
+    "contradiction_rate": 0.0,
+    "boilerplate_cases": 50,
+    "boilerplate_rate": 1.0,
+    "laterality_breakdown": {
+      "concordant_or_not_applicable": 21,
+      "laterality_omitted": 29
+    },
+    "mean_latency_ms": 15.0,
+    "median_latency_ms": 15.0,
+    "std_latency_ms": 0.0,
+    "mean_tokens": 80.0,
+    "throughput_tok_s": 5333.33,
+    "per_category": {
+      "normal": {
+        "tp": 3,
+        "fp": 47,
+        "fn": 0
+      },
+      "pulmonary_edema": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 18
+      },
+      "pneumonia_consolidation": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
+      },
+      "pneumothorax": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 19
+      },
+      "atelectasis": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 19
+      },
+      "pleural_effusion": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 11
+      },
+      "support_devices": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 6
+      },
+      "cardiomegaly": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5
+      }
+    }
+  },
+  {
+    "pipeline": "finetuned",
+    "sample_size": 50,
+    "abnormal_cases": 47,
+    "tp_total": 3,
+    "fp_total": 47,
+    "fn_total": 99,
+    "precision": 0.06,
+    "recall": 0.0294,
+    "micro_f1": 0.0395,
+    "false_normal_count": 47,
+    "false_normal_rate": 1.0,
+    "false_normal_95ci": [
+      0.9244,
+      1.0
+    ],
+    "hallucination_cases": 47,
+    "hallucination_rate": 0.94,
+    "missed_finding_cases": 47,
+    "missed_finding_rate": 0.94,
+    "internal_contradictions": 0,
+    "contradiction_rate": 0.0,
+    "boilerplate_cases": 50,
+    "boilerplate_rate": 1.0,
+    "laterality_breakdown": {
+      "concordant_or_not_applicable": 21,
+      "laterality_omitted": 29
+    },
+    "mean_latency_ms": 15.0,
+    "median_latency_ms": 15.0,
+    "std_latency_ms": 0.0,
+    "mean_tokens": 80.0,
+    "throughput_tok_s": 5333.33,
+    "per_category": {
+      "normal": {
+        "tp": 3,
+        "fp": 47,
+        "fn": 0
+      },
+      "pulmonary_edema": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 18
+      },
+      "pneumonia_consolidation": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
+      },
+      "pneumothorax": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 19
+      },
+      "atelectasis": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 19
+      },
+      "pleural_effusion": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 11
+      },
+      "support_devices": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 6
+      },
+      "cardiomegaly": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5
+      }
+    }
+  }
+]

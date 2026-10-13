@@ -1,0 +1,963 @@
+{
+  "CASE_DEV_001": {
+    "safe_case_id": "CASE_DEV_001",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19989918/s53487857/5da30295-f1eadf3e-001ddb71-3b07c00c-2883f874.jpg",
+    "study_uid_hash": "hash_36cc9fc4125e6c7e",
+    "image_uid_hash": "hash_75c5f0b59f3a3432",
+    "view_position": "AP",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "Portable AP radiograph of the chest was reviewed in comparison to ___.\nHeart size is top normal.\nMediastinum is unremarkable.\nLungs are essentially\n clear.\nNo pleural effusion or pneumothorax is seen.",
+    "reference_impression": "",
+    "reference_full_report": "Portable AP radiograph of the chest was reviewed in comparison to ___.\nHeart size is top normal.\nMediastinum is unremarkable.\nLungs are essentially\n clear.\nNo pleural effusion or pneumothorax is seen."
+  },
+  "CASE_DEV_002": {
+    "safe_case_id": "CASE_DEV_002",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11218589/s59138139/7a1e4762-c176bd78-6281fe5c-6b0c9734-e9a4c8f1.jpg",
+    "study_uid_hash": "hash_6ceed84115541ca2",
+    "image_uid_hash": "hash_4e76f49bbeb427ea",
+    "view_position": "AP",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "COMPARISONS:  None available.\nTECHNIQUE:  PA and lateral chest radiographs.\nFINDINGS:  The lungs are well inflated and clear.\nCardiomediastinal and hilar\n contours are unremarkable.\nThere is no pleural effusion or pneumothorax.",
+    "reference_impression": "IMPRESSION:  No evidence of acute cardiopulmonary process.",
+    "reference_full_report": "COMPARISONS:  None available.\nTECHNIQUE:  PA and lateral chest radiographs.\nFINDINGS:  The lungs are well inflated and clear.\nCardiomediastinal and hilar\n contours are unremarkable.\nThere is no pleural effusion or pneumothorax.\nIMPRESSION:  No evidence of acute cardiopulmonary process."
+  },
+  "CASE_DEV_003": {
+    "safe_case_id": "CASE_DEV_003",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11587177/s56080545/3a85d727-e4bedaf5-1010c474-b7c5ffde-88539057.jpg",
+    "study_uid_hash": "hash_31fb40a07777ac54",
+    "image_uid_hash": "hash_78daf1f4c9d5a0f0",
+    "view_position": "AP",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "COMPARISON:  ___.\nUPRIGHT AP AND LATERAL VIEWS OF THE CHEST:  Cardiac silhouette size is normal.\nThe mediastinal and hilar contours are unremarkable.\nPulmonary vascularity is\n normal.\nNo focal consolidation, pleural effusion or pneumothorax is present.\nThere are no acute osseous abnormalities.",
+    "reference_impression": "IMPRESSION:  No acute cardiopulmonary abnormality.",
+    "reference_full_report": "COMPARISON:  ___.\nUPRIGHT AP AND LATERAL VIEWS OF THE CHEST:  Cardiac silhouette size is normal.\nThe mediastinal and hilar contours are unremarkable.\nPulmonary vascularity is\n normal.\nNo focal consolidation, pleural effusion or pneumothorax is present.\nThere are no acute osseous abnormalities.\nIMPRESSION:  No acute cardiopulmonary abnormality."
+  },
+  "CASE_DEV_004": {
+    "safe_case_id": "CASE_DEV_004",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p15/p15170034/s59267660/6fa659e1-21e9ce49-6e0f9a40-ab7eff97-8287c1b0.jpg",
+    "study_uid_hash": "hash_fff87ecbeb099790",
+    "image_uid_hash": "hash_b52544c8f260cdba",
+    "view_position": "AP",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "CHEST, SINGLE AP PORTABLE VIEW.\nSlightly rotated positioning.\nThe heart is\n not enlarged.\nThere is no CHF, focal infiltrate, or effusion.\nWithin the\n limits of plain film radiography, no hilar or mediastinal lymphadenopathy is\n detected.\nOsseous structures are grossly unremarkable.\nNo radiopaque foreign\n body is identified.",
+    "reference_impression": "",
+    "reference_full_report": "CHEST, SINGLE AP PORTABLE VIEW.\nSlightly rotated positioning.\nThe heart is\n not enlarged.\nThere is no CHF, focal infiltrate, or effusion.\nWithin the\n limits of plain film radiography, no hilar or mediastinal lymphadenopathy is\n detected.\nOsseous structures are grossly unremarkable.\nNo radiopaque foreign\n body is identified."
+  },
+  "CASE_DEV_005": {
+    "safe_case_id": "CASE_DEV_005",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p16/p16141064/s53910196/56d7a8a4-901a8224-d762733f-a5a0d4b5-2be8e489.jpg",
+    "study_uid_hash": "hash_401597c61c70001b",
+    "image_uid_hash": "hash_cc222b65cadc4c01",
+    "view_position": "PA",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "COMPARISON:  None\nFINDINGS:  PA and lateral chest radiographs were obtained.\nThe lungs are well expanded and clear.\nThere is no focal consolidation,\n effusion, or pneumothorax.\nSignificant soft tissue attenuation does limit\n fine parenchymal detail.\nCardiac and mediastinal contours are normal.",
+    "reference_impression": "IMPRESSION:  No acute cardiopulmonary process.",
+    "reference_full_report": "COMPARISON:  None\nFINDINGS:  PA and lateral chest radiographs were obtained.\nThe lungs are well expanded and clear.\nThere is no focal consolidation,\n effusion, or pneumothorax.\nSignificant soft tissue attenuation does limit\n fine parenchymal detail.\nCardiac and mediastinal contours are normal.\nIMPRESSION:  No acute cardiopulmonary process."
+  },
+  "CASE_DEV_006": {
+    "safe_case_id": "CASE_DEV_006",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p17/p17033197/s55486789/810da8a0-8a89650f-74545e4d-9cdbf128-5546f6d7.jpg",
+    "study_uid_hash": "hash_b7a52a2bf9937e58",
+    "image_uid_hash": "hash_5078d801fae82f5d",
+    "view_position": "PA",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "mediastinal widening",
+      "normal",
+      "superior mediastinal mass/enlargement",
+      "tortuous aorta"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PA AND LAT)\nTECHNIQUE:  Chest PA and lateral\nCOMPARISON:  None.\nFINDINGS:\nExtensive lobulated widening of the anterior superior mediastinum is highly\n concerning for a mass.\nHeart size is normal.\nThe aorta is tortuous.\nThe\n pulmonary vasculature is normal.\nLungs are clear.\nNo pleural effusion or\n pneumothorax is seen.\nS-shaped scoliosis of the thoracolumbar spine is\n present.\nNo acute osseous abnormalities demonstrated.",
+    "reference_impression": "IMPRESSION:\nLarge anterior mediastinal mass.\nFurther assessment with contrast-enhanced CT\n is recommended.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PA AND LAT)\nTECHNIQUE:  Chest PA and lateral\nCOMPARISON:  None.\nFINDINGS:\nExtensive lobulated widening of the anterior superior mediastinum is highly\n concerning for a mass.\nHeart size is normal.\nThe aorta is tortuous.\nThe\n pulmonary vasculature is normal.\nLungs are clear.\nNo pleural effusion or\n pneumothorax is seen.\nS-shaped scoliosis of the thoracolumbar spine is\n present.\nNo acute osseous abnormalities demonstrated.\nIMPRESSION:\nLarge anterior mediastinal mass.\nFurther assessment with contrast-enhanced CT\n is recommended."
+  },
+  "CASE_DEV_007": {
+    "safe_case_id": "CASE_DEV_007",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p13/p13428588/s52911993/410d01c1-6aead94d-6a7d3a59-76c11055-2524bc1e.jpg",
+    "study_uid_hash": "hash_5422ce46a4642a0d",
+    "image_uid_hash": "hash_5cb593c0a39c07a1",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "low lung volumes",
+      "lung opacity",
+      "normal",
+      "pneumonia"
+    ],
+    "reference_findings": "FINAL REPORT\n CHEST RADIOGRAPH PERFORMED ON ___.\nCOMPARISON:  None.\nFINDINGS:  AP upright portable chest radiograph is obtained.\nThe lung volumes\n are low.\nThere is perihilar mid and lower lung streaky opacity which could\n represent atelectasis and/or atypical pneumonia.\nNo effusion or pneumothorax.\nCardiomediastinal silhouette is normal.\nBony structures are intact.",
+    "reference_impression": "IMPRESSION:  Streaky lower lung opacities could represent an atypical\n pneumonia or atelectasis.",
+    "reference_full_report": "FINAL REPORT\n CHEST RADIOGRAPH PERFORMED ON ___.\nCOMPARISON:  None.\nFINDINGS:  AP upright portable chest radiograph is obtained.\nThe lung volumes\n are low.\nThere is perihilar mid and lower lung streaky opacity which could\n represent atelectasis and/or atypical pneumonia.\nNo effusion or pneumothorax.\nCardiomediastinal silhouette is normal.\nBony structures are intact.\nIMPRESSION:  Streaky lower lung opacities could represent an atypical\n pneumonia or atelectasis."
+  },
+  "CASE_DEV_008": {
+    "safe_case_id": "CASE_DEV_008",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12108393/s56499319/205a7c51-26e00535-29a3c5a3-87761873-ca8d8d46.jpg",
+    "study_uid_hash": "hash_8e5eb1425da0cca2",
+    "image_uid_hash": "hash_d45cc5df3a23ae2e",
+    "view_position": "PA",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "airspace opacity",
+      "aspiration",
+      "enlarged hilum",
+      "lung opacity",
+      "normal",
+      "pneumonia"
+    ],
+    "reference_findings": "COMPARISON:  Radiographs from",
+    "reference_impression": "IMPRESSION:\nCardiomediastinal silhouette is within normal limits.\nThere are diffuse\n airspace opacities most prominent within the perihilar regions, right greater\n than left.\nThis may represent focal pneumonia or aspiration.\nPulmonary edema\n is felt to be unlikely due to the normal vascular pedicle.\nFollowup to\n resolution of the opacities is recommended.\nThere are no pneumothoraces or\n pleural effusions.",
+    "reference_full_report": "COMPARISON:  Radiographs from\nIMPRESSION:\nCardiomediastinal silhouette is within normal limits.\nThere are diffuse\n airspace opacities most prominent within the perihilar regions, right greater\n than left.\nThis may represent focal pneumonia or aspiration.\nPulmonary edema\n is felt to be unlikely due to the normal vascular pedicle.\nFollowup to\n resolution of the opacities is recommended.\nThere are no pneumothoraces or\n pleural effusions."
+  },
+  "CASE_DEV_009": {
+    "safe_case_id": "CASE_DEV_009",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12049932/s52642828/7ae2a8a2-4e7105b1-82150bd1-58b34bca-162be4d0.jpg",
+    "study_uid_hash": "hash_8e09a7665d63f5d2",
+    "image_uid_hash": "hash_75706bc0432ec91a",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "airspace opacity",
+      "atelectasis",
+      "endotracheal tube",
+      "enteric tube",
+      "lung lesion",
+      "lung opacity",
+      "mass/nodule (not otherwise specified)",
+      "multiple masses/nodules",
+      "normal",
+      "pleural effusion",
+      "pneumonia",
+      "subclavian line"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nCOMPARISON:  No comparison.",
+    "reference_impression": "IMPRESSION:\nThe patient is intubated.\nThe tip of the endotracheal tube projects 2.5 cm\n above the Carina.\nThe patient also has a nasogastric tube that shows a normal\n course.\nThe tip of the tube is not included on the image.\nThe left subclavian\n vein projects with its tip over the mid SVC.\nThere is no complication common\n notably no pneumothorax.\nNormal size of the cardiac silhouette.\nWidespread bilateral nodular\n parenchymal opacities, right more than left, with abnormal contours at the\n level of the right mediastinal border, a right pleural effusion and a left\n lower lobe atelectasis.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nCOMPARISON:  No comparison.\nIMPRESSION:\nThe patient is intubated.\nThe tip of the endotracheal tube projects 2.5 cm\n above the Carina.\nThe patient also has a nasogastric tube that shows a normal\n course.\nThe tip of the tube is not included on the image.\nThe left subclavian\n vein projects with its tip over the mid SVC.\nThere is no complication common\n notably no pneumothorax.\nNormal size of the cardiac silhouette.\nWidespread bilateral nodular\n parenchymal opacities, right more than left, with abnormal contours at the\n level of the right mediastinal border, a right pleural effusion and a left\n lower lobe atelectasis."
+  },
+  "CASE_DEV_010": {
+    "safe_case_id": "CASE_DEV_010",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p15/p15611926/s56080935/08425bef-816537fa-3a32d75e-ba9cf091-3b3d9bbb.jpg",
+    "study_uid_hash": "hash_be69934e054e9c40",
+    "image_uid_hash": "hash_210dcef6ead2e54b",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "airspace opacity",
+      "aspiration",
+      "atelectasis",
+      "endotracheal tube",
+      "ij line",
+      "lung opacity",
+      "pneumonia"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)",
+    "reference_impression": "IMPRESSION:\nAs compared to the previous radiograph, the patient has been intubated.\nThe\n tip of the endotracheal tube projects 4 cm above the carinal.\nThe patient has\n received a right internal jugular vein introduction sheet.\nNo pneumothorax or\n other complication.\nThe right PICC line has been removed.\nIncreasing\n parenchymal opacities at the left lung base, suspicious for a combination of\n aspiration and, potentially, a pneumonia.\nSmall atelectasis at the right lung\n bases is constant in appearance.\nBorderline size of the cardiac silhouette\n without pulmonary edema.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nIMPRESSION:\nAs compared to the previous radiograph, the patient has been intubated.\nThe\n tip of the endotracheal tube projects 4 cm above the carinal.\nThe patient has\n received a right internal jugular vein introduction sheet.\nNo pneumothorax or\n other complication.\nThe right PICC line has been removed.\nIncreasing\n parenchymal opacities at the left lung base, suspicious for a combination of\n aspiration and, potentially, a pneumonia.\nSmall atelectasis at the right lung\n bases is constant in appearance.\nBorderline size of the cardiac silhouette\n without pulmonary edema."
+  },
+  "CASE_DEV_011": {
+    "safe_case_id": "CASE_DEV_011",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19949061/s58693436/605d9eac-c25103ac-e3ebcd05-eeed053a-9e1761c2.jpg",
+    "study_uid_hash": "hash_0551e2430421751b",
+    "image_uid_hash": "hash_263bf4801c50ad27",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "low lung volumes",
+      "lung opacity",
+      "pulmonary edema/hazy opacity"
+    ],
+    "reference_findings": "COMPARISONS:  Chest radiograph, ___.\nCTA chest, ___.\nFINDINGS:  The lung volumes are low.\nThere is interstitial prominence\n consistent with mild pulmonary edema.\nNo pleural effusion is present.\nThe\n cardiac silhouette is moderately enlarged.\nThere is no consolidation or\n pneumothorax.",
+    "reference_impression": "IMPRESSION:\n 1.  Mild pulmonary edema.\n2.  Moderate cardiomegaly.",
+    "reference_full_report": "COMPARISONS:  Chest radiograph, ___.\nCTA chest, ___.\nFINDINGS:  The lung volumes are low.\nThere is interstitial prominence\n consistent with mild pulmonary edema.\nNo pleural effusion is present.\nThe\n cardiac silhouette is moderately enlarged.\nThere is no consolidation or\n pneumothorax.\nIMPRESSION:\n 1.  Mild pulmonary edema.\n2.  Moderate cardiomegaly."
+  },
+  "CASE_DEV_012": {
+    "safe_case_id": "CASE_DEV_012",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11959746/s52209033/5f721863-610a9bee-d359ae3e-773e15d7-4f6b5b38.jpg",
+    "study_uid_hash": "hash_fe63ae7448eda429",
+    "image_uid_hash": "hash_65faad6557804646",
+    "view_position": "PA",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "fluid overload/heart failure",
+      "increased reticular markings/ild pattern",
+      "interstitial lung disease",
+      "lung lesion",
+      "lung opacity",
+      "multiple masses/nodules",
+      "pleural effusion",
+      "pleural/parenchymal scarring",
+      "pulmonary edema/hazy opacity"
+    ],
+    "reference_findings": "TECHNIQUE:  Chest PA and lateral\nCOMPARISON:  CT chest from\nFINDINGS:\nProminent interstitial markings are identified compatible with pulmonary edema\n with fluid within the fissures.\nThe cardiac silhouette is mildly enlarged.\nBiapical scarring is again noted.\nKnown pulmonary nodules seen on the prior\n CT is not clearly identified on this study.\nTrace pleural effusions are\n noted.\nThere is no pneumothorax.",
+    "reference_impression": "IMPRESSION:\n1. Mild interstitial edema, trace bilateral pleural effusions, and mild\n cardiomegaly .\n2.  No pneumothorax.",
+    "reference_full_report": "TECHNIQUE:  Chest PA and lateral\nCOMPARISON:  CT chest from\nFINDINGS:\nProminent interstitial markings are identified compatible with pulmonary edema\n with fluid within the fissures.\nThe cardiac silhouette is mildly enlarged.\nBiapical scarring is again noted.\nKnown pulmonary nodules seen on the prior\n CT is not clearly identified on this study.\nTrace pleural effusions are\n noted.\nThere is no pneumothorax.\nIMPRESSION:\n1. Mild interstitial edema, trace bilateral pleural effusions, and mild\n cardiomegaly .\n2.  No pneumothorax."
+  },
+  "CASE_DEV_013": {
+    "safe_case_id": "CASE_DEV_013",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19345192/s55475239/169fa166-dd271e8f-3d0ab126-6db68e96-f7571d92.jpg",
+    "study_uid_hash": "hash_a932d579f3ab445b",
+    "image_uid_hash": "hash_01cfb519ec7f02db",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "enlarged cardiac silhouette",
+      "fluid overload/heart failure",
+      "lung opacity",
+      "pulmonary edema/hazy opacity"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PA AND LAT)\nTECHNIQUE:  Chest PA and lateral\nCOMPARISON:  CT chest\nFINDINGS:\nThere are scattered bilateral reticular opacities that likely reflect a mild\n pulmonary edema.\nAtelectasis is also present at the lung bases bilaterally.\nNo confluent consolidation, pleural effusion or pneumothorax.\nHeart size is\n moderately enlarged.\nKnown right 8th rib fracture is better visualized on the\n subsequent CT.",
+    "reference_impression": "IMPRESSION:\n1. Moderate cardiomegaly with mild pulmonary edema.\n2. Known right 8th rib fracture is better visualized on the subsequent CT.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PA AND LAT)\nTECHNIQUE:  Chest PA and lateral\nCOMPARISON:  CT chest\nFINDINGS:\nThere are scattered bilateral reticular opacities that likely reflect a mild\n pulmonary edema.\nAtelectasis is also present at the lung bases bilaterally.\nNo confluent consolidation, pleural effusion or pneumothorax.\nHeart size is\n moderately enlarged.\nKnown right 8th rib fracture is better visualized on the\n subsequent CT.\nIMPRESSION:\n1. Moderate cardiomegaly with mild pulmonary edema.\n2. Known right 8th rib fracture is better visualized on the subsequent CT."
+  },
+  "CASE_DEV_014": {
+    "safe_case_id": "CASE_DEV_014",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p15/p15112603/s56228640/301e7483-9b092dad-5acfc9e7-e88a71b2-126aa494.jpg",
+    "study_uid_hash": "hash_b9a00ec04f6cd7f6",
+    "image_uid_hash": "hash_119d79e867fe5788",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "costophrenic angle blunting",
+      "low lung volumes",
+      "lung opacity",
+      "normal",
+      "pleural effusion",
+      "tortuous aorta",
+      "vascular calcification",
+      "vascular congestion"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  Single frontal view of the chest\nCOMPARISON:  None.\nFINDINGS:\nThere are low lung volumes, which accentuate the bronchovascular markings.\nThere is subtle left basilar retrocardiac opacity, which most likely relates\n to atelectasis.\nIf patient able, dedicated PA and lateral views would be\n helpful further assessment.\nNo large pleural effusion is seen, however, there\n is slight blunting of the left costophrenic angle and trace pleural effusion\n may be present.\nNo evidence of pneumothorax is seen.\nThe aorta is calcified\n and tortuous.\nThe cardiac silhouette is top-normal, likely exaggerated by AP\n technique.",
+    "reference_impression": "IMPRESSION:\nThere are low lung volumes, which accentuate the bronchovascular markings.\nThere is subtle left basilar retrocardiac opacity, which most likely relates\n to atelectasis.\nIf patient able, dedicated PA and lateral views would be\n helpful further assessment.\nNo large pleural effusion is seen, however, there\n is slight blunting of the left costophrenic angle and trace pleural effusion\n may be present.\nNo evidence of pneumothorax is seen.\nThe aorta is calcified\n and tortuous.\nThe cardiac silhouette is top-normal, likely exaggerated by AP\n technique.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  Single frontal view of the chest\nCOMPARISON:  None.\nFINDINGS:\nThere are low lung volumes, which accentuate the bronchovascular markings.\nThere is subtle left basilar retrocardiac opacity, which most likely relates\n to atelectasis.\nIf patient able, dedicated PA and lateral views would be\n helpful further assessment.\nNo large pleural effusion is seen, however, there\n is slight blunting of the left costophrenic angle and trace pleural effusion\n may be present.\nNo evidence of pneumothorax is seen.\nThe aorta is calcified\n and tortuous.\nThe cardiac silhouette is top-normal, likely exaggerated by AP\n technique.\nIMPRESSION:\nThere are low lung volumes, which accentuate the bronchovascular markings.\nThere is subtle left basilar retrocardiac opacity, which most likely relates\n to atelectasis.\nIf patient able, dedicated PA and lateral views would be\n helpful further assessment.\nNo large pleural effusion is seen, however, there\n is slight blunting of the left costophrenic angle and trace pleural effusion\n may be present.\nNo evidence of pneumothorax is seen.\nThe aorta is calcified\n and tortuous.\nThe cardiac silhouette is top-normal, likely exaggerated by AP\n technique."
+  },
+  "CASE_DEV_015": {
+    "safe_case_id": "CASE_DEV_015",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p17/p17005222/s56937906/7970d40b-63cd4bca-0e9d32e9-33b0c4cb-fab1f7a7.jpg",
+    "study_uid_hash": "hash_6b19331feee9359a",
+    "image_uid_hash": "hash_d8bcf219efa59137",
+    "view_position": "PA",
+    "primary_category": "cardiomegaly",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "normal",
+      "tortuous aorta"
+    ],
+    "reference_findings": "COMPARISON:  Chest radiograph from ___, CTA chest from ___.\nCHEST, PA AND LATERAL:  Mild cardiomegaly is unchanged.\nAorta is tortuous and\n generally large, but not clearly aneurysmal or changed over more than ___\n years.\nAn aorta with this appearance is prone to dissection which might not be\n diagnosable on conventional chest radiographs.\nThe lungs are well expanded and\n clear.\nNo pleural effusion or pneumothorax is present.\nMultilevel anterior\n osteophytes in the thoracolumbar spine, with severe loss of disc height in the\n visualized upper lumbar spine.",
+    "reference_impression": "IMPRESSION:  Mild cardiomegaly.\nNo acute cardiopulmonary process.\nAortic\n dissection is not excluded by this radiographic appearance and should be\n considered in clinical context.",
+    "reference_full_report": "COMPARISON:  Chest radiograph from ___, CTA chest from ___.\nCHEST, PA AND LATERAL:  Mild cardiomegaly is unchanged.\nAorta is tortuous and\n generally large, but not clearly aneurysmal or changed over more than ___\n years.\nAn aorta with this appearance is prone to dissection which might not be\n diagnosable on conventional chest radiographs.\nThe lungs are well expanded and\n clear.\nNo pleural effusion or pneumothorax is present.\nMultilevel anterior\n osteophytes in the thoracolumbar spine, with severe loss of disc height in the\n visualized upper lumbar spine.\nIMPRESSION:  Mild cardiomegaly.\nNo acute cardiopulmonary process.\nAortic\n dissection is not excluded by this radiographic appearance and should be\n considered in clinical context."
+  },
+  "CASE_DEV_016": {
+    "safe_case_id": "CASE_DEV_016",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11632359/s59940756/3cd1f466-97a0146e-bd08304f-0ed8bbc3-35c1dc1f.jpg",
+    "study_uid_hash": "hash_2088d229ce01f889",
+    "image_uid_hash": "hash_e2ad7207ef29bc28",
+    "view_position": "AP",
+    "primary_category": "cardiomegaly",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "enlarged hilum",
+      "lung opacity",
+      "normal",
+      "picc",
+      "tortuous aorta"
+    ],
+    "reference_findings": "COMPARISON:  None.\nFINDINGS:\nSingle portable view of the chest.\nLeft PICC is seen with tip in the mid SVC.\nThere is an opacity projecting over the anterior right 2nd rib, potentially\n related to osseous structures however underlying parenchymal changes are also\n possible.\nThe lungs are otherwise grossly clear.\nThe descending thoracic\n aorta is tortuous and may account for apparent left hilar enlargement.\nThere\n is however possible right hilar enlargement as well.\nCardiac silhouette is\n enlarged even given technique.\nNo acute osseous abnormality detected.",
+    "reference_impression": "IMPRESSION:\nNo definite acute cardiopulmonary process.\nPossible hilar enlargement,\n particularly on the left.\nThis appearance could partially be accounted for by\n a tortuous descending thoracic aorta.\nDedicated chest x-ray with 2 views is\n suggested to further characterize this finding and apparent increased opacity\n projecting over the anterior right 2nd rib as well.",
+    "reference_full_report": "COMPARISON:  None.\nFINDINGS:\nSingle portable view of the chest.\nLeft PICC is seen with tip in the mid SVC.\nThere is an opacity projecting over the anterior right 2nd rib, potentially\n related to osseous structures however underlying parenchymal changes are also\n possible.\nThe lungs are otherwise grossly clear.\nThe descending thoracic\n aorta is tortuous and may account for apparent left hilar enlargement.\nThere\n is however possible right hilar enlargement as well.\nCardiac silhouette is\n enlarged even given technique.\nNo acute osseous abnormality detected.\nIMPRESSION:\nNo definite acute cardiopulmonary process.\nPossible hilar enlargement,\n particularly on the left.\nThis appearance could partially be accounted for by\n a tortuous descending thoracic aorta.\nDedicated chest x-ray with 2 views is\n suggested to further characterize this finding and apparent increased opacity\n projecting over the anterior right 2nd rib as well."
+  },
+  "CASE_DEV_017": {
+    "safe_case_id": "CASE_DEV_017",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p10/p10962781/s54498942/08080c16-40214802-cb8619f6-1e7dda8f-f9ded5e4.jpg",
+    "study_uid_hash": "hash_32d55c1542fe21d8",
+    "image_uid_hash": "hash_f859e2fbcbcf45f5",
+    "view_position": "PA",
+    "primary_category": "cardiomegaly",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "low lung volumes"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  Chest radiograph\nTECHNIQUE:  Chest PA and lateral\nCOMPARISON:  None available.\nFINDINGS:\nLung volumes are low.\nCardiomediastinal silhouette is mild-to-moderately\n enlarged.\nThere is no pleural effusion or pneumothorax.\nThere is no focal\n lung consolidation.\nThere is no pulmonary edema",
+    "reference_impression": "IMPRESSION:\nLow lung volumes without focal consolidation.\nNo evidence of pulmonary edema.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  Chest radiograph\nTECHNIQUE:  Chest PA and lateral\nCOMPARISON:  None available.\nFINDINGS:\nLung volumes are low.\nCardiomediastinal silhouette is mild-to-moderately\n enlarged.\nThere is no pleural effusion or pneumothorax.\nThere is no focal\n lung consolidation.\nThere is no pulmonary edema\nIMPRESSION:\nLow lung volumes without focal consolidation.\nNo evidence of pulmonary edema."
+  },
+  "CASE_DEV_018": {
+    "safe_case_id": "CASE_DEV_018",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p16/p16484980/s56599514/2f35c4eb-67dc68d0-08f7cfa0-06b2ba52-08b6a053.jpg",
+    "study_uid_hash": "hash_ecc41e565ff9bf5f",
+    "image_uid_hash": "hash_124fa1545e0991e8",
+    "view_position": "PA",
+    "primary_category": "pleural_effusion",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "linear/patchy atelectasis",
+      "low lung volumes",
+      "lung opacity",
+      "normal",
+      "pleural effusion"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PA AND LAT)\nCOMPARISON:  Chest radiographs since ___ most recently ___.",
+    "reference_impression": "IMPRESSION:\nAside from mild platelike atelectasis and lower lung volumes compared to ___,\n lungs are clear.\nHeart is top-normal size.\nA very small right pleural\n effusion is appreciated only on the lateral view.\nThere is no pulmonary\n edema.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PA AND LAT)\nCOMPARISON:  Chest radiographs since ___ most recently ___.\nIMPRESSION:\nAside from mild platelike atelectasis and lower lung volumes compared to ___,\n lungs are clear.\nHeart is top-normal size.\nA very small right pleural\n effusion is appreciated only on the lateral view.\nThere is no pulmonary\n edema."
+  },
+  "CASE_DEV_019": {
+    "safe_case_id": "CASE_DEV_019",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12288549/s58588415/75c3de40-56272917-a2a576c4-00c9784a-56a11ef3.jpg",
+    "study_uid_hash": "hash_05c82ad48ceb92fe",
+    "image_uid_hash": "hash_22638316bf68864d",
+    "view_position": "AP",
+    "primary_category": "pleural_effusion",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "linear/patchy atelectasis",
+      "lung opacity",
+      "normal",
+      "pleural effusion"
+    ],
+    "reference_findings": "CHEST AP\nThe cardiac size is at the upper limits of normal.\nThe left lung is clear.\nIncreased opacity is seen at the right base, probably indicating the presence\n of an effusion and some atelectasis.\nElsewhere, the lung fields are clear.",
+    "reference_impression": "IMPRESSION:  Probable right effusion with atelectasis, no pneumonia.",
+    "reference_full_report": "CHEST AP\nThe cardiac size is at the upper limits of normal.\nThe left lung is clear.\nIncreased opacity is seen at the right base, probably indicating the presence\n of an effusion and some atelectasis.\nElsewhere, the lung fields are clear.\nIMPRESSION:  Probable right effusion with atelectasis, no pneumonia."
+  },
+  "CASE_DEV_020": {
+    "safe_case_id": "CASE_DEV_020",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11982468/s57535354/0a2aeafb-8713119d-39dfc44a-2d2a2234-cc25d665.jpg",
+    "study_uid_hash": "hash_7dcc9e617cca7c2e",
+    "image_uid_hash": "hash_659c8220ce185fa6",
+    "view_position": "AP",
+    "primary_category": "pleural_effusion",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "alveolar hemorrhage",
+      "chest tube",
+      "elevated hemidiaphragm",
+      "enlarged cardiac silhouette",
+      "lung opacity",
+      "mediastinal widening",
+      "pleural effusion"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  Supine AP portable views of the chest\nCOMPARISON:  Earlier today, ___ at 15:35\nFINDINGS:\nInterval placement of left-sided chest tube, the initial image shows a the\n tube coursing inferior, out of the field of view.\nSubsequent image shows the\n left chest tube readjusted and terminating at the left lung apex.\nThe mediastinum remains widened.\nThe cardiac silhouette remains moderately to\n markedly enlarged.\nLeft lung appears somewhat re-expanded, likely due to\n interval drainage of some of left pleural effusion.\nThe right hemidiaphragm\n is mildly elevated.\nScattered patchy pulmonary opacities are seen, underlying\n pulmonary contusions not excluded.\nSeveral left-sided rib fractures seen,\n better depicted on CT.\nRepeat chest CT is pending.",
+    "reference_impression": "",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  Supine AP portable views of the chest\nCOMPARISON:  Earlier today, ___ at 15:35\nFINDINGS:\nInterval placement of left-sided chest tube, the initial image shows a the\n tube coursing inferior, out of the field of view.\nSubsequent image shows the\n left chest tube readjusted and terminating at the left lung apex.\nThe mediastinum remains widened.\nThe cardiac silhouette remains moderately to\n markedly enlarged.\nLeft lung appears somewhat re-expanded, likely due to\n interval drainage of some of left pleural effusion.\nThe right hemidiaphragm\n is mildly elevated.\nScattered patchy pulmonary opacities are seen, underlying\n pulmonary contusions not excluded.\nSeveral left-sided rib fractures seen,\n better depicted on CT.\nRepeat chest CT is pending."
+  },
+  "CASE_DEV_021": {
+    "safe_case_id": "CASE_DEV_021",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19627403/s54355615/5f97294b-dc0a4a82-d61a89fd-ded7cb29-d95b4dd7.jpg",
+    "study_uid_hash": "hash_d0ab9d5ae941c0bd",
+    "image_uid_hash": "hash_8e4c32be2b7c635d",
+    "view_position": "AP",
+    "primary_category": "atelectasis",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "airspace opacity",
+      "aspiration",
+      "atelectasis",
+      "endotracheal tube",
+      "enteric tube",
+      "lung opacity",
+      "normal"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  Chest radiograph.\nTECHNIQUE:  Portable AP view of the chest.\nCOMPARISON:  None available.\nFINDINGS:\nEndotracheal tube is noted with the tip terminating approximately 3.4 cm above\n the level of the carina.\nA nasogastric tube courses into the diaphragm with\n the tip projecting over the left upper quadrant.\nStreaky bibasilar airspace\n opacities are noted prominent within left, and may represent atelectasis\n versus aspiration.\nThe upper lobes are clear bilaterally.\nThere is no\n pneumothorax identified.\nThe cardiomediastinal silhouette is grossly within\n normal limits.",
+    "reference_impression": "IMPRESSION:\nBibasilar airspace opacities, left greater than right, which may represent\n atelectasis versus aspiration.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  Chest radiograph.\nTECHNIQUE:  Portable AP view of the chest.\nCOMPARISON:  None available.\nFINDINGS:\nEndotracheal tube is noted with the tip terminating approximately 3.4 cm above\n the level of the carina.\nA nasogastric tube courses into the diaphragm with\n the tip projecting over the left upper quadrant.\nStreaky bibasilar airspace\n opacities are noted prominent within left, and may represent atelectasis\n versus aspiration.\nThe upper lobes are clear bilaterally.\nThere is no\n pneumothorax identified.\nThe cardiomediastinal silhouette is grossly within\n normal limits.\nIMPRESSION:\nBibasilar airspace opacities, left greater than right, which may represent\n atelectasis versus aspiration."
+  },
+  "CASE_DEV_022": {
+    "safe_case_id": "CASE_DEV_022",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p17/p17499017/s55313120/3540fd5a-fecf5b9b-e518e36c-ec867d64-253e2c6b.jpg",
+    "study_uid_hash": "hash_6dc44dfe9bc6c4b0",
+    "image_uid_hash": "hash_55df9a9feb0d32c9",
+    "view_position": "AP",
+    "primary_category": "atelectasis",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "lung opacity",
+      "normal"
+    ],
+    "reference_findings": "COMPARISONS:  Chest radiograph ___.\nFINDINGS:  A single frontal image of the chest shows no consolidation or\n edema.\nThere is no definite pleural effusion.\nThere is no pneumothorax.\nTrace atelectasis is present at the right base.\nThe cardiomediastinal\n silhouette is normal.",
+    "reference_impression": "IMPRESSION: No acute cardiopulmonary process.",
+    "reference_full_report": "COMPARISONS:  Chest radiograph ___.\nFINDINGS:  A single frontal image of the chest shows no consolidation or\n edema.\nThere is no definite pleural effusion.\nThere is no pneumothorax.\nTrace atelectasis is present at the right base.\nThe cardiomediastinal\n silhouette is normal.\nIMPRESSION: No acute cardiopulmonary process."
+  },
+  "CASE_DEV_023": {
+    "safe_case_id": "CASE_DEV_023",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p15/p15353817/s59067647/547c06b8-9a2b7930-70d4fa31-76750bc8-475584cd.jpg",
+    "study_uid_hash": "hash_b2f3abea780351d3",
+    "image_uid_hash": "hash_881b81e92f3f87a7",
+    "view_position": "PA",
+    "primary_category": "atelectasis",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "linear/patchy atelectasis",
+      "lung opacity",
+      "normal"
+    ],
+    "reference_findings": "",
+    "reference_impression": "IMPRESSION:\nHeart size is within normal limits.\nThere are no pneumothoraces or focal\n consolidation or pleural effusions.\nMinimal subsegmental atelectasis at the\n lung bases are present.\nThere are no displaced rib fractures on either side.\nNo focal lytic or sclerotic lesions are seen.",
+    "reference_full_report": "IMPRESSION:\nHeart size is within normal limits.\nThere are no pneumothoraces or focal\n consolidation or pleural effusions.\nMinimal subsegmental atelectasis at the\n lung bases are present.\nThere are no displaced rib fractures on either side.\nNo focal lytic or sclerotic lesions are seen."
+  },
+  "CASE_DEV_024": {
+    "safe_case_id": "CASE_DEV_024",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12405140/s55220622/2e3c8a70-14f90bbe-1b1bde4f-3772f85c-3db4d506.jpg",
+    "study_uid_hash": "hash_40d20759b97ad0e2",
+    "image_uid_hash": "hash_588f9b9c4fbf6464",
+    "view_position": "AP",
+    "primary_category": "support_devices",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "aspiration",
+      "endotracheal tube",
+      "enteric tube",
+      "lung opacity"
+    ],
+    "reference_findings": "COMPARISON:  Outside hospital chest radiograph dated ___ at 12:55 and\n outside hospital CT torso dated ___ at 1:15\nFINDINGS:\nPortable frontal supine radiograph of the chest demonstrates the ET tube\n ending 1.7 cm above the carina and could be pulled back slightly.\nAn NG tube\n extends below the diaphragm and into the stomach.\nCompared to the prior chest\n radiograph, there has been interval increase in widespread bilateral patchy\n opacities greater on the left than the right likely representing aspiration\n given the clinical situation.\nNo pleural effusion or pneumothorax.\nStable\n cardiomediastinal contours.",
+    "reference_impression": "",
+    "reference_full_report": "COMPARISON:  Outside hospital chest radiograph dated ___ at 12:55 and\n outside hospital CT torso dated ___ at 1:15\nFINDINGS:\nPortable frontal supine radiograph of the chest demonstrates the ET tube\n ending 1.7 cm above the carina and could be pulled back slightly.\nAn NG tube\n extends below the diaphragm and into the stomach.\nCompared to the prior chest\n radiograph, there has been interval increase in widespread bilateral patchy\n opacities greater on the left than the right likely representing aspiration\n given the clinical situation.\nNo pleural effusion or pneumothorax.\nStable\n cardiomediastinal contours."
+  },
+  "CASE_DEV_025": {
+    "safe_case_id": "CASE_DEV_025",
+    "split": "dev",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12780512/s54848665/52fc4c71-a3fafeec-386c9ba1-c1433995-ac06b6fd.jpg",
+    "study_uid_hash": "hash_9a1c5c018ae6b13b",
+    "image_uid_hash": "hash_bf40566d46651f9a",
+    "view_position": "AP",
+    "primary_category": "support_devices",
+    "gold_affirmed_labels": [
+      "enteric tube",
+      "normal"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)",
+    "reference_impression": "IMPRESSION:\nNo previous images.\nThe nasogastric tube extends to the upper portion of the\n stomach, where it coils on itself so that the tip points downward near the\n esophagogastric junction.\nNo acute pneumonia, vascular congestion, or pleural\n effusion.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nIMPRESSION:\nNo previous images.\nThe nasogastric tube extends to the upper portion of the\n stomach, where it coils on itself so that the tip points downward near the\n esophagogastric junction.\nNo acute pneumonia, vascular congestion, or pleural\n effusion."
+  },
+  "CASE_TEST_001": {
+    "safe_case_id": "CASE_TEST_001",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p16/p16762654/s58889735/014e584c-703d0e00-ba7b2566-6e31b9fc-e7c89d67.jpg",
+    "study_uid_hash": "hash_7075d979d425bd15",
+    "image_uid_hash": "hash_f68ed73d3ad0ed91",
+    "view_position": "PA",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "cardiac pacer and wires",
+      "normal"
+    ],
+    "reference_findings": "A dual-chamber pacemaker has been placed with the leads in good position.\nThere is no pneumothorax.\nThe lung fields are clear.\nNo failure is present.",
+    "reference_impression": "",
+    "reference_full_report": "A dual-chamber pacemaker has been placed with the leads in good position.\nThere is no pneumothorax.\nThe lung fields are clear.\nNo failure is present."
+  },
+  "CASE_TEST_002": {
+    "safe_case_id": "CASE_TEST_002",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12049820/s54114967/28ab07d2-d79d797d-3d3055b3-a227a9cf-3e844b47.jpg",
+    "study_uid_hash": "hash_46fcc6cfa97e4f81",
+    "image_uid_hash": "hash_5b81ff3d217ea9cc",
+    "view_position": "PA",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "TECHNIQUE:  Frontal and lateral chest radiographs were obtained with the\n patient in the upright position.\nCOMPARISON:  None available.\nFINDINGS:  There is no focal consolidation, pleural effusion, pneumothorax or\n pulmonary edema seen.\nThe heart size and mediastinal contours are normal.\nNo\n free air is underneath the diaphragm.",
+    "reference_impression": "IMPRESSION:  No acute cardiopulmonary process.\nNo free air underneath\n diaphragm.",
+    "reference_full_report": "TECHNIQUE:  Frontal and lateral chest radiographs were obtained with the\n patient in the upright position.\nCOMPARISON:  None available.\nFINDINGS:  There is no focal consolidation, pleural effusion, pneumothorax or\n pulmonary edema seen.\nThe heart size and mediastinal contours are normal.\nNo\n free air is underneath the diaphragm.\nIMPRESSION:  No acute cardiopulmonary process.\nNo free air underneath\n diaphragm."
+  },
+  "CASE_TEST_003": {
+    "safe_case_id": "CASE_TEST_003",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p14/p14258856/s55943678/470c759a-5a6df25a-0d01e258-8090aed7-7aeac1ad.jpg",
+    "study_uid_hash": "hash_4fc1f6093c3e8f79",
+    "image_uid_hash": "hash_bfa2955a6dc47727",
+    "view_position": "PA",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "STUDY:  PA and lateral chest radiograph.\nCOMPARISON:  None.\nFINDINGS:  The heart size is within normal limits.\nThe mediastinal and hilar\n contours are normal.\nThe lungs are clear.\nThere is no pleural effusion or\n pneumothorax.",
+    "reference_impression": "IMPRESSION:  No acute cardiopulmonary process.",
+    "reference_full_report": "STUDY:  PA and lateral chest radiograph.\nCOMPARISON:  None.\nFINDINGS:  The heart size is within normal limits.\nThe mediastinal and hilar\n contours are normal.\nThe lungs are clear.\nThere is no pleural effusion or\n pneumothorax.\nIMPRESSION:  No acute cardiopulmonary process."
+  },
+  "CASE_TEST_004": {
+    "safe_case_id": "CASE_TEST_004",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19921217/s54405682/471308d1-d1902ea2-f5f2effe-cd349213-bd9187ed.jpg",
+    "study_uid_hash": "hash_a9911551e6226a49",
+    "image_uid_hash": "hash_1d5029e1588774b6",
+    "view_position": "AP",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "low lung volumes",
+      "normal"
+    ],
+    "reference_findings": "TECHNIQUE:  PA and lateral radiographs of the chest.\nCOMPARISON:  Chest radiographs from ___.\nFINDINGS:  Lungs are low in volume but appear clear.\nThere is no pleural\n effusion or vascular congestion.\nThe heart is likely top normal in size with\n normal cardiomediastinal silhouette.",
+    "reference_impression": "IMPRESSION:  No acute intrathoracic process with top normal heart size.",
+    "reference_full_report": "TECHNIQUE:  PA and lateral radiographs of the chest.\nCOMPARISON:  Chest radiographs from ___.\nFINDINGS:  Lungs are low in volume but appear clear.\nThere is no pleural\n effusion or vascular congestion.\nThe heart is likely top normal in size with\n normal cardiomediastinal silhouette.\nIMPRESSION:  No acute intrathoracic process with top normal heart size."
+  },
+  "CASE_TEST_005": {
+    "safe_case_id": "CASE_TEST_005",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p17/p17460568/s58832894/02d57fbc-6e58a92c-80aa987d-1100a292-e1434183.jpg",
+    "study_uid_hash": "hash_e801608fe1f0a0d4",
+    "image_uid_hash": "hash_326d38094ba9d7e0",
+    "view_position": "PA",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "chest port",
+      "lung opacity",
+      "normal",
+      "vascular calcification"
+    ],
+    "reference_findings": "TECHNIQUE:  Frontal and lateral views of the chest.\nCOMPARISON:  ___.\nFINDINGS:\nThere is now a right-sided Port-A-Cath with catheter tip projecting over the\n lower SVC.\nIncreased opacity projecting over the right lung apex is felt to\n represent something external to the patient given sharp margins and extension\n to the subcutaneous tissues superior to the clavicle.\nThe lungs are otherwise\n clear.\nThere is no focal consolidation, effusion, or edema.\nCardiomediastinal silhouette is within normal limits.\nAtherosclerotic\n calcifications are noted at the aortic arch.",
+    "reference_impression": "IMPRESSION:\nNo acute cardiopulmonary process.",
+    "reference_full_report": "TECHNIQUE:  Frontal and lateral views of the chest.\nCOMPARISON:  ___.\nFINDINGS:\nThere is now a right-sided Port-A-Cath with catheter tip projecting over the\n lower SVC.\nIncreased opacity projecting over the right lung apex is felt to\n represent something external to the patient given sharp margins and extension\n to the subcutaneous tissues superior to the clavicle.\nThe lungs are otherwise\n clear.\nThere is no focal consolidation, effusion, or edema.\nCardiomediastinal silhouette is within normal limits.\nAtherosclerotic\n calcifications are noted at the aortic arch.\nIMPRESSION:\nNo acute cardiopulmonary process."
+  },
+  "CASE_TEST_006": {
+    "safe_case_id": "CASE_TEST_006",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11083201/s53446681/6988178a-a1c9feef-22198df4-843e3935-60d57ea6.jpg",
+    "study_uid_hash": "hash_e7b6500d18edfd9b",
+    "image_uid_hash": "hash_aa81c46d1f6170a4",
+    "view_position": "AP",
+    "primary_category": "normal",
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "reference_findings": "TECHNIQUE:  Single portable view of the chest.\nCOMPARISON:  None.\nFINDINGS:\nExam is limited by motion.\nThere is no large confluent consolidation.\nCardiomediastinal silhouette is within normal limits for technique.",
+    "reference_impression": "IMPRESSION:\nLimited exam without definite focal consolidation.\nConsider repeat PA and\n lateral if patient is amenable.",
+    "reference_full_report": "TECHNIQUE:  Single portable view of the chest.\nCOMPARISON:  None.\nFINDINGS:\nExam is limited by motion.\nThere is no large confluent consolidation.\nCardiomediastinal silhouette is within normal limits for technique.\nIMPRESSION:\nLimited exam without definite focal consolidation.\nConsider repeat PA and\n lateral if patient is amenable."
+  },
+  "CASE_TEST_007": {
+    "safe_case_id": "CASE_TEST_007",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19966115/s59650514/198be438-16dc1b2c-e4d95d59-25e6b0a8-9e815c12.jpg",
+    "study_uid_hash": "hash_0fcf841a3b254000",
+    "image_uid_hash": "hash_27cf26d0b88c83a9",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "aspiration",
+      "atelectasis",
+      "enlarged cardiac silhouette",
+      "lung opacity",
+      "pneumonia",
+      "tortuous aorta",
+      "vascular calcification"
+    ],
+    "reference_findings": "COMPARISON:  None.\nUPRIGHT AP VIEW OF THE CHEST:  The heart size is mildly enlarged.\nThe aorta\n is tortuous and calcified.\nPatchy ill-defined opacities are noted at the lung\n bases, which are non-specific and could represent infection, aspiration, or\n atelectasis.\nNo pleural effusion or pneumothorax is seen.\nDegenerative\n changes of both acromioclavicular joints are noted.",
+    "reference_impression": "IMPRESSION:  Patchy opacities at the lung bases which are nonspecific, but may\n represent infection, aspiration or atelectasis.",
+    "reference_full_report": "COMPARISON:  None.\nUPRIGHT AP VIEW OF THE CHEST:  The heart size is mildly enlarged.\nThe aorta\n is tortuous and calcified.\nPatchy ill-defined opacities are noted at the lung\n bases, which are non-specific and could represent infection, aspiration, or\n atelectasis.\nNo pleural effusion or pneumothorax is seen.\nDegenerative\n changes of both acromioclavicular joints are noted.\nIMPRESSION:  Patchy opacities at the lung bases which are nonspecific, but may\n represent infection, aspiration or atelectasis."
+  },
+  "CASE_TEST_008": {
+    "safe_case_id": "CASE_TEST_008",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p10/p10762986/s55557490/37ad644d-b91dd3f7-c7a7f117-0993f5ea-9bf0297f.jpg",
+    "study_uid_hash": "hash_2ac8cb171e9e45ee",
+    "image_uid_hash": "hash_d8c018311d300ffa",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "aspiration",
+      "atelectasis",
+      "hernia",
+      "lung opacity",
+      "pleural effusion",
+      "pneumonia"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nCOMPARISON:  Comparison to outside chest radiograph dated ___ at\n 18:04\nFINDINGS:\nPortable semi-erect chest radiograph ___ at 22:27 is submitted.",
+    "reference_impression": "IMPRESSION:\nCardiac and mediastinal contours are stable.\nThere may be a small hiatal\n hernia.\nPatchy opacity at the left base may reflect an area of atelectasis,\n although aspiration or early pneumonia should also be considered.\nPossible\n tiny left effusion.\nNo pulmonary edema.\nNo pneumothorax.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nCOMPARISON:  Comparison to outside chest radiograph dated ___ at\n 18:04\nFINDINGS:\nPortable semi-erect chest radiograph ___ at 22:27 is submitted.\nIMPRESSION:\nCardiac and mediastinal contours are stable.\nThere may be a small hiatal\n hernia.\nPatchy opacity at the left base may reflect an area of atelectasis,\n although aspiration or early pneumonia should also be considered.\nPossible\n tiny left effusion.\nNo pulmonary edema.\nNo pneumothorax."
+  },
+  "CASE_TEST_009": {
+    "safe_case_id": "CASE_TEST_009",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12798053/s55864200/6e15271f-947cb7c8-1509f521-69446f2b-e3e859f1.jpg",
+    "study_uid_hash": "hash_8311b5d6b8b979d3",
+    "image_uid_hash": "hash_3e81e55f423cedd0",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "aspiration",
+      "enteric tube",
+      "lung opacity",
+      "normal",
+      "pneumonia"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  CHEST (PORTABLE AP)",
+    "reference_impression": "IMPRESSION:\nAn enteric tube is seen traversing the expected course of the esophagus,\n terminating within the right upper quadrant in the gastric lumen.\nStomach\n continues to be substantially distended Lungs are clear except for lung bases\n bilaterally where opacity is demonstrated, right more than left.\nThe opacity\n is demonstrated as well on both axial and coronal projections of the CT\n abdomen, concerning for infectious process or aspiration.\nCardiomediastinal\n and hilar contours are within normal limits.\nThere is no pleural effusion or\n pneumothorax.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  CHEST (PORTABLE AP)\nIMPRESSION:\nAn enteric tube is seen traversing the expected course of the esophagus,\n terminating within the right upper quadrant in the gastric lumen.\nStomach\n continues to be substantially distended Lungs are clear except for lung bases\n bilaterally where opacity is demonstrated, right more than left.\nThe opacity\n is demonstrated as well on both axial and coronal projections of the CT\n abdomen, concerning for infectious process or aspiration.\nCardiomediastinal\n and hilar contours are within normal limits.\nThere is no pleural effusion or\n pneumothorax."
+  },
+  "CASE_TEST_010": {
+    "safe_case_id": "CASE_TEST_010",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p10/p10352433/s51572449/2b10103d-80bd23fb-4dbd57c1-39c3c6c2-bf8b6cdc.jpg",
+    "study_uid_hash": "hash_e1be99c5bde43a1a",
+    "image_uid_hash": "hash_fe22efb0461f8574",
+    "view_position": "AP",
+    "primary_category": "pneumonia_consolidation",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "aspiration",
+      "atelectasis",
+      "consolidation",
+      "enlarged cardiac silhouette",
+      "lung opacity",
+      "normal",
+      "pneumonia",
+      "vascular congestion"
+    ],
+    "reference_findings": "TECHNIQUE:  AP upright and lateral chest radiographs\nCOMPARISON:  ___.\nFINDINGS:\nThe lungs are low in volume giving the appearance of bronchovascular crowding\n with streaky left basilar atelectasis.\nPosterior left base opacity may\n represent combination of crowding of markings and atelectasis, but\n consolidation due to infection or aspiration is not excluded.\nRepeat\n radiographs with deeper inspiration may be helpful for further evaluation.\nNo\n pleural effusion or pneumothorax is seen.\nThe heart is top-normal to mildly\n enlarged.\nThe cardiomediastinal contours are unchanged.",
+    "reference_impression": "",
+    "reference_full_report": "TECHNIQUE:  AP upright and lateral chest radiographs\nCOMPARISON:  ___.\nFINDINGS:\nThe lungs are low in volume giving the appearance of bronchovascular crowding\n with streaky left basilar atelectasis.\nPosterior left base opacity may\n represent combination of crowding of markings and atelectasis, but\n consolidation due to infection or aspiration is not excluded.\nRepeat\n radiographs with deeper inspiration may be helpful for further evaluation.\nNo\n pleural effusion or pneumothorax is seen.\nThe heart is top-normal to mildly\n enlarged.\nThe cardiomediastinal contours are unchanged."
+  },
+  "CASE_TEST_011": {
+    "safe_case_id": "CASE_TEST_011",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p11/p11049760/s57777582/09d151e1-32a2ac95-dbfaa8eb-5d3064ef-29f0200b.jpg",
+    "study_uid_hash": "hash_470418ec9dd1cad5",
+    "image_uid_hash": "hash_d40fd3d394cfe8ec",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "costophrenic angle blunting",
+      "enlarged hilum",
+      "lung opacity",
+      "normal",
+      "pleural effusion",
+      "vascular congestion"
+    ],
+    "reference_findings": "FINAL REPORT\n PORTABLE CHEST:  ___.\nFINDINGS:  Single portable view of the chest compared to previous exam from\n ___.\nThere is engorgement of the central pulmonary vasculature\n with indistinctness of the vascular markings.\nThere is no confluent\n consolidation.\nBlunting of the left costophrenic angle could be due to\n technique and overlying soft tissues; however, small effusion is not excluded.\nCardiomediastinal silhouette is not significantly changed given differences in\n positioning and technique.\nOsseous and soft tissue structures are\n unremarkable.",
+    "reference_impression": "IMPRESSION:\n Findings suggestive of pulmonary vascular congestion without frank edema.",
+    "reference_full_report": "FINAL REPORT\n PORTABLE CHEST:  ___.\nFINDINGS:  Single portable view of the chest compared to previous exam from\n ___.\nThere is engorgement of the central pulmonary vasculature\n with indistinctness of the vascular markings.\nThere is no confluent\n consolidation.\nBlunting of the left costophrenic angle could be due to\n technique and overlying soft tissues; however, small effusion is not excluded.\nCardiomediastinal silhouette is not significantly changed given differences in\n positioning and technique.\nOsseous and soft tissue structures are\n unremarkable.\nIMPRESSION:\n Findings suggestive of pulmonary vascular congestion without frank edema."
+  },
+  "CASE_TEST_012": {
+    "safe_case_id": "CASE_TEST_012",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p16/p16776887/s59880487/10ed7c6f-f7b40c80-6f84be5a-45aeee05-dd94d3d8.jpg",
+    "study_uid_hash": "hash_9a729a16c7502e25",
+    "image_uid_hash": "hash_4bd1a12008db16be",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "lung opacity",
+      "pleural effusion",
+      "pulmonary edema/hazy opacity",
+      "vascular congestion"
+    ],
+    "reference_findings": "COMPARISONS:  None.\nFINDINGS:  Portable semi-erect chest radiograph provided.\nThere are prominent\n interstitial markings bilaterally with increased vasculature consistent with\n pulmonary congestion.\nThere are bilateral pleural effusions, right greater\n than left.\nThere is no pneumothorax.\nThe cardiomediastinal silhouette is\n enlarged.",
+    "reference_impression": "IMPRESSION:  Pulmonary vascular congestion with bilateral pleural effusions,\n right greater than left.",
+    "reference_full_report": "COMPARISONS:  None.\nFINDINGS:  Portable semi-erect chest radiograph provided.\nThere are prominent\n interstitial markings bilaterally with increased vasculature consistent with\n pulmonary congestion.\nThere are bilateral pleural effusions, right greater\n than left.\nThere is no pneumothorax.\nThe cardiomediastinal silhouette is\n enlarged.\nIMPRESSION:  Pulmonary vascular congestion with bilateral pleural effusions,\n right greater than left."
+  },
+  "CASE_TEST_013": {
+    "safe_case_id": "CASE_TEST_013",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p10/p10872780/s59144832/661825e9-0b90c7bb-82d366fe-9d04a179-9c8e05ea.jpg",
+    "study_uid_hash": "hash_0dc512404b273b6c",
+    "image_uid_hash": "hash_6cc3a84482255750",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "low lung volumes",
+      "lung opacity",
+      "pulmonary edema/hazy opacity",
+      "tortuous aorta"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  Portable upright AP view of the chest\nCOMPARISON:  None.\nFINDINGS:\nLung volumes are slightly low.\nHeart size is mildly enlarged.\nThe aorta is\n slightly tortuous.\nThere is mild pulmonary edema with perihilar haziness and\n vascular indistinctness.\nNo focal consolidation, large pleural effusion or\n pneumothorax is present.\nAssessment of the right apex is somewhat obscured by\n the patient's chin projecting over this area.\nNo acute osseous abnormality is\n detected.\nThere are degenerative changes noted involving both glenohumeral\n and acromioclavicular joints.",
+    "reference_impression": "IMPRESSION:\nMild pulmonary edema.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nTECHNIQUE:  Portable upright AP view of the chest\nCOMPARISON:  None.\nFINDINGS:\nLung volumes are slightly low.\nHeart size is mildly enlarged.\nThe aorta is\n slightly tortuous.\nThere is mild pulmonary edema with perihilar haziness and\n vascular indistinctness.\nNo focal consolidation, large pleural effusion or\n pneumothorax is present.\nAssessment of the right apex is somewhat obscured by\n the patient's chin projecting over this area.\nNo acute osseous abnormality is\n detected.\nThere are degenerative changes noted involving both glenohumeral\n and acromioclavicular joints.\nIMPRESSION:\nMild pulmonary edema."
+  },
+  "CASE_TEST_014": {
+    "safe_case_id": "CASE_TEST_014",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19631398/s55507373/5b4a157c-14cc2cc4-eae4e042-95f88380-1a6e8509.jpg",
+    "study_uid_hash": "hash_54b6315f4ca64621",
+    "image_uid_hash": "hash_d1f4fcc8e3f18d6d",
+    "view_position": "AP",
+    "primary_category": "pulmonary_edema",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "airspace opacity",
+      "endotracheal tube",
+      "enteric tube",
+      "low lung volumes",
+      "lung opacity",
+      "normal",
+      "pulmonary edema/hazy opacity"
+    ],
+    "reference_findings": "TECHNIQUE:  Single portable view of the chest.\nCOMPARISON:  None.\nFINDINGS:\nEndotracheal tube tip is 3.8 cm from the carina.\nEnteric tube seen passing\n below the field of view, partially coiled in the stomach.\nLow lung volumes\n are seen with increased bilateral parenchymal opacities, potentially due to\n pulmonary edema.\nThere is no pneumothorax on this supine film.\nThe\n cardiomediastinal silhouette is within normal limits.",
+    "reference_impression": "",
+    "reference_full_report": "TECHNIQUE:  Single portable view of the chest.\nCOMPARISON:  None.\nFINDINGS:\nEndotracheal tube tip is 3.8 cm from the carina.\nEnteric tube seen passing\n below the field of view, partially coiled in the stomach.\nLow lung volumes\n are seen with increased bilateral parenchymal opacities, potentially due to\n pulmonary edema.\nThere is no pneumothorax on this supine film.\nThe\n cardiomediastinal silhouette is within normal limits."
+  },
+  "CASE_TEST_015": {
+    "safe_case_id": "CASE_TEST_015",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p15/p15838083/s53290101/5d52eb6f-b0f3d2b1-bf30e6b1-7fb4b751-b03a270e.jpg",
+    "study_uid_hash": "hash_87705b2d4b71beab",
+    "image_uid_hash": "hash_33a304b91307aec7",
+    "view_position": "AP",
+    "primary_category": "cardiomegaly",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "enlarged cardiac silhouette",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "reference_findings": "FINAL REPORT\n AP CHEST, 6:49 P.M.,",
+    "reference_impression": "IMPRESSION:  AP chest compared to ___ at 5:52 a.m.:\nPrevious mild pulmonary edema has resolved.\nHeart is borderline enlarged.\nThe ascending thoracic aorta is dilated or tortuous.\nHeterogeneous\n opacification at the base of the left lung is probably atelectasis.\nNo\n pneumothorax or pleural effusion.",
+    "reference_full_report": "FINAL REPORT\n AP CHEST, 6:49 P.M.,\nIMPRESSION:  AP chest compared to ___ at 5:52 a.m.:\nPrevious mild pulmonary edema has resolved.\nHeart is borderline enlarged.\nThe ascending thoracic aorta is dilated or tortuous.\nHeterogeneous\n opacification at the base of the left lung is probably atelectasis.\nNo\n pneumothorax or pleural effusion."
+  },
+  "CASE_TEST_016": {
+    "safe_case_id": "CASE_TEST_016",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19352467/s58853581/543ea2a3-e2d8fa6d-a466680e-781aa2b3-ac951799.jpg",
+    "study_uid_hash": "hash_6652ecd872ad6916",
+    "image_uid_hash": "hash_4f337d04ba2c56da",
+    "view_position": "AP",
+    "primary_category": "cardiomegaly",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "low lung volumes",
+      "lung opacity",
+      "normal",
+      "vascular redistribution"
+    ],
+    "reference_findings": "AP SEMI-ERECT.\nCOMPARISON:  ___.\nThe heart is enlarged.\nThe size is somewhat exaggerated by the AP projection\n and the semi-erect position.\nSome mild upper zone redistribution is present.\nThe perihilar edema present on the prior chest x-ray of ___ has resolved\n and the lung fields overall are considerably clear.",
+    "reference_impression": "IMPRESSION:\n Clearing failure.\nHeart remains enlarged.",
+    "reference_full_report": "AP SEMI-ERECT.\nCOMPARISON:  ___.\nThe heart is enlarged.\nThe size is somewhat exaggerated by the AP projection\n and the semi-erect position.\nSome mild upper zone redistribution is present.\nThe perihilar edema present on the prior chest x-ray of ___ has resolved\n and the lung fields overall are considerably clear.\nIMPRESSION:\n Clearing failure.\nHeart remains enlarged."
+  },
+  "CASE_TEST_017": {
+    "safe_case_id": "CASE_TEST_017",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p15/p15883826/s58404782/7c7f2fb4-5884c617-78eb0ee3-9a17ad85-514d198b.jpg",
+    "study_uid_hash": "hash_76c9c7796ef77c4d",
+    "image_uid_hash": "hash_0e2bb117e0e9eb41",
+    "view_position": "AP",
+    "primary_category": "cardiomegaly",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "hernia"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)",
+    "reference_impression": "IMPRESSION:\nNo comparison.\nModerate hiatal hernia.\nMild cardiomegaly.\nNo pneumonia, no\n pleural effusions.\nNo pulmonary edema.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nIMPRESSION:\nNo comparison.\nModerate hiatal hernia.\nMild cardiomegaly.\nNo pneumonia, no\n pleural effusions.\nNo pulmonary edema."
+  },
+  "CASE_TEST_018": {
+    "safe_case_id": "CASE_TEST_018",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p17/p17838022/s51616172/4ff13d1d-e032d5ca-4d7cd6af-f0c506d1-7a679c6f.jpg",
+    "study_uid_hash": "hash_bf711eb24ac0add1",
+    "image_uid_hash": "hash_4a77f19d40111410",
+    "view_position": "PA",
+    "primary_category": "pleural_effusion",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "lung opacity",
+      "normal",
+      "pleural effusion"
+    ],
+    "reference_findings": "FINAL REPORT\n PA AND LATERAL CHEST X-RAY.\nCOMPARISON:  No prior chest CT.\nAbdominal CT of ___ and recent\n chest CT of ___.\nFINDINGS:\nRight moderate pleural effusion with subpulmonic component is unchanged since\n ___ and increased since ___.\nThe remaining of the\n lungs are unremarkable in this patient with prior biapical surgery with suture\n line seen.\nThere mediastinal and cardiac contours are normal.\nCONCLUSION:\nRight moderate pleural effusion with a subpulmonic component is unchanged\n since ___.",
+    "reference_impression": "",
+    "reference_full_report": "FINAL REPORT\n PA AND LATERAL CHEST X-RAY.\nCOMPARISON:  No prior chest CT.\nAbdominal CT of ___ and recent\n chest CT of ___.\nFINDINGS:\nRight moderate pleural effusion with subpulmonic component is unchanged since\n ___ and increased since ___.\nThe remaining of the\n lungs are unremarkable in this patient with prior biapical surgery with suture\n line seen.\nThere mediastinal and cardiac contours are normal.\nCONCLUSION:\nRight moderate pleural effusion with a subpulmonic component is unchanged\n since ___."
+  },
+  "CASE_TEST_019": {
+    "safe_case_id": "CASE_TEST_019",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12056668/s59247330/0bf4ce04-1a1975cb-30d2e4c3-72803b59-f383d941.jpg",
+    "study_uid_hash": "hash_25459ea780272e32",
+    "image_uid_hash": "hash_e23232a22d587afb",
+    "view_position": "AP",
+    "primary_category": "pleural_effusion",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "elevated hemidiaphragm",
+      "endotracheal tube",
+      "lung opacity",
+      "picc",
+      "pleural effusion"
+    ],
+    "reference_findings": "FINAL REPORT\n PORTABLE AP CHEST FILM ___ AT\nComparison is made to the patient's previous study dated ___ at 835\nPortable AP supine chest film on ___ at ___ is submitted.",
+    "reference_impression": "IMPRESSION:\n1.  Endotracheal tube has its tip 5 cm above the carina.\nRight subclavian\n PICC line continues to have its tip in the mid SVC.\nThere has been interval\n appearance of extensive subcutaneous emphysema.\nThere continues to be\n elevation of the left hemidiaphragm with lucency beneath it likely\n corresponding to distended bowel.\nNo definite pneumothorax is seen on this\n supine film, although the sensitivity to detect a pneumothorax is diminished\n given supine technique.\nThere are likely small layering effusions and\n bibasilar patchy opacity which may reflect partial lower lobe atelectasis.\nFollowup imaging in the upright or semi-erect position may be helpful to\n exclude an underlying pneumothorax.\nNo pulmonary edema.",
+    "reference_full_report": "FINAL REPORT\n PORTABLE AP CHEST FILM ___ AT\nComparison is made to the patient's previous study dated ___ at 835\nPortable AP supine chest film on ___ at ___ is submitted.\nIMPRESSION:\n1.  Endotracheal tube has its tip 5 cm above the carina.\nRight subclavian\n PICC line continues to have its tip in the mid SVC.\nThere has been interval\n appearance of extensive subcutaneous emphysema.\nThere continues to be\n elevation of the left hemidiaphragm with lucency beneath it likely\n corresponding to distended bowel.\nNo definite pneumothorax is seen on this\n supine film, although the sensitivity to detect a pneumothorax is diminished\n given supine technique.\nThere are likely small layering effusions and\n bibasilar patchy opacity which may reflect partial lower lobe atelectasis.\nFollowup imaging in the upright or semi-erect position may be helpful to\n exclude an underlying pneumothorax.\nNo pulmonary edema."
+  },
+  "CASE_TEST_020": {
+    "safe_case_id": "CASE_TEST_020",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p12/p12904315/s58337668/5c8386ab-c9a7065a-fbe3ad6d-53474c5c-71d191fb.jpg",
+    "study_uid_hash": "hash_2cb9e6a577a9b976",
+    "image_uid_hash": "hash_7b46bf465b241831",
+    "view_position": "AP",
+    "primary_category": "pleural_effusion",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "lung opacity",
+      "pleural effusion",
+      "pneumothorax"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)",
+    "reference_impression": "IMPRESSION:\nSince a recent radiograph of ___, support and monitoring devices\n have been removed with development of a new small right apical pneumothorax.\nCardiomediastinal contours are stable in the postoperative.\nInterval\n improvement in extent of bibasilar atelectasis and decreased bilateral\n effusions which have nearly resolved.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nIMPRESSION:\nSince a recent radiograph of ___, support and monitoring devices\n have been removed with development of a new small right apical pneumothorax.\nCardiomediastinal contours are stable in the postoperative.\nInterval\n improvement in extent of bibasilar atelectasis and decreased bilateral\n effusions which have nearly resolved."
+  },
+  "CASE_TEST_021": {
+    "safe_case_id": "CASE_TEST_021",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19802977/s53488677/4830d6ca-bb666694-f53cdf8d-ea783423-18a330de.jpg",
+    "study_uid_hash": "hash_6e3175894e06a43b",
+    "image_uid_hash": "hash_445e31f806a26971",
+    "view_position": "PA",
+    "primary_category": "atelectasis",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "lung opacity",
+      "normal"
+    ],
+    "reference_findings": "TECHNIQUE:  Chest PA and lateral\nCOMPARISON:  Chest radiograph ___.\nFINDINGS:\nThe cardiomediastinal and hilar contours are normal.\nThere is no pleural\n effusion or pneumothorax.\nLungs are well-expanded and clear without focal\n consolidation concerning for pneumonia.\nMild left basilar atelectasis is\n noted.\nThere is no pneumoperitoneum.\nSurgical clips are noted in the right\n upper abdomen as well as a CBD stent.",
+    "reference_impression": "IMPRESSION:\nMild left basilar atelectasis.No acute cardiopulmonary process.",
+    "reference_full_report": "TECHNIQUE:  Chest PA and lateral\nCOMPARISON:  Chest radiograph ___.\nFINDINGS:\nThe cardiomediastinal and hilar contours are normal.\nThere is no pleural\n effusion or pneumothorax.\nLungs are well-expanded and clear without focal\n consolidation concerning for pneumonia.\nMild left basilar atelectasis is\n noted.\nThere is no pneumoperitoneum.\nSurgical clips are noted in the right\n upper abdomen as well as a CBD stent.\nIMPRESSION:\nMild left basilar atelectasis.No acute cardiopulmonary process."
+  },
+  "CASE_TEST_022": {
+    "safe_case_id": "CASE_TEST_022",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p19/p19855045/s53610419/78fe814d-bb1a6f2c-105ae7a2-bfb5c6ce-5e295f59.jpg",
+    "study_uid_hash": "hash_90a5c2b1000fd5ab",
+    "image_uid_hash": "hash_513781ffb97e27f5",
+    "view_position": "PA",
+    "primary_category": "atelectasis",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "lung opacity",
+      "normal",
+      "pleural/parenchymal scarring"
+    ],
+    "reference_findings": "COMPARISON:  Chest radiograph from ___.\nFINDINGS:  Aside from minimal left basilar atelectasis, the lungs are clear.\nThe cardiac and mediastinal contours are normal.\nThere are no pleural\n effusions.\nMild biapical pleural thickening is unchanged.\nCervical fusion\n hardware is incompletely evaluated.",
+    "reference_impression": "IMPRESSION:  No acute cardiac or pulmonary process.",
+    "reference_full_report": "COMPARISON:  Chest radiograph from ___.\nFINDINGS:  Aside from minimal left basilar atelectasis, the lungs are clear.\nThe cardiac and mediastinal contours are normal.\nThere are no pleural\n effusions.\nMild biapical pleural thickening is unchanged.\nCervical fusion\n hardware is incompletely evaluated.\nIMPRESSION:  No acute cardiac or pulmonary process."
+  },
+  "CASE_TEST_023": {
+    "safe_case_id": "CASE_TEST_023",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p16/p16345504/s58158025/3ee307af-117f8284-201d5fcb-2707e556-e08cd2b3.jpg",
+    "study_uid_hash": "hash_c18a8e9d93d01519",
+    "image_uid_hash": "hash_5a988f0d62d3adb2",
+    "view_position": "AP",
+    "primary_category": "atelectasis",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "atelectasis",
+      "chest tube",
+      "endotracheal tube",
+      "linear/patchy atelectasis",
+      "low lung volumes",
+      "lung opacity",
+      "normal",
+      "tortuous aorta"
+    ],
+    "reference_findings": "FINAL REPORT\n CHEST RADIOGRAPH\nCOMPARISON:  ___.\nFINDINGS:  As compared to the previous radiograph, the patient has been\n intubated.\nTip is located at the level of the carina, the tube must be pulled\n back by approximately 2 to 3 cm.\nThe other monitoring and support devices are\n in correct position.\nAt the time of dictation and observation, 10:46 a.m., on ___, the\n referring physician, ___.\n, was paged for notification.\nThe left chest tube is in correct position.\nLow lung volumes.\nUnchanged\n tortuosity of the thoracic aorta, with unchanged mild borderline diameter of\n the aortic arch.\nAreas of atelectasis at both lung bases persist.\nNo new\n parenchymal opacities.\nNo overt pulmonary edema.",
+    "reference_impression": "",
+    "reference_full_report": "FINAL REPORT\n CHEST RADIOGRAPH\nCOMPARISON:  ___.\nFINDINGS:  As compared to the previous radiograph, the patient has been\n intubated.\nTip is located at the level of the carina, the tube must be pulled\n back by approximately 2 to 3 cm.\nThe other monitoring and support devices are\n in correct position.\nAt the time of dictation and observation, 10:46 a.m., on ___, the\n referring physician, ___.\n, was paged for notification.\nThe left chest tube is in correct position.\nLow lung volumes.\nUnchanged\n tortuosity of the thoracic aorta, with unchanged mild borderline diameter of\n the aortic arch.\nAreas of atelectasis at both lung bases persist.\nNo new\n parenchymal opacities.\nNo overt pulmonary edema."
+  },
+  "CASE_TEST_024": {
+    "safe_case_id": "CASE_TEST_024",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p14/p14112540/s53911099/3678bd41-a5bd83d1-45426fb7-4ac6794f-0d6b0c0c.jpg",
+    "study_uid_hash": "hash_709099e3680c16be",
+    "image_uid_hash": "hash_149742ad6a17ff4b",
+    "view_position": "AP",
+    "primary_category": "support_devices",
+    "gold_affirmed_labels": [
+      "enteric tube",
+      "ij line",
+      "normal"
+    ],
+    "reference_findings": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)",
+    "reference_impression": "IMPRESSION:\nThere are no prior chest radiographs available for review.\nRight IJ line projects over the mid SVC.\nNo pneumothorax, pleural effusion or\n mediastinal widening.\nHeart size normal.\nEsophageal drainage tube ends at\n the pylorus.",
+    "reference_full_report": "FINAL REPORT\n EXAMINATION:  CHEST (PORTABLE AP)\nIMPRESSION:\nThere are no prior chest radiographs available for review.\nRight IJ line projects over the mid SVC.\nNo pneumothorax, pleural effusion or\n mediastinal widening.\nHeart size normal.\nEsophageal drainage tube ends at\n the pylorus."
+  },
+  "CASE_TEST_025": {
+    "safe_case_id": "CASE_TEST_025",
+    "split": "held_out_test",
+    "image_path": "/Users/adityakachhot/Downloads/data/mimic-cxr/files/p14/p14537002/s52415121/73890151-14b96890-296630bb-6fad926f-f6037d7f.jpg",
+    "study_uid_hash": "hash_2f3ee8f37ffb0800",
+    "image_uid_hash": "hash_d78209c177408451",
+    "view_position": "AP",
+    "primary_category": "support_devices",
+    "gold_affirmed_labels": [
+      "abnormal",
+      "copd/emphysema",
+      "enteric tube",
+      "hyperaeration",
+      "normal",
+      "vascular calcification"
+    ],
+    "reference_findings": "FINAL REPORT\n CHEST RADIOGRAPH PERFORMED ON\nComparison with an outside hospital chest radiograph from same date earlier\n today.\nFINDINGS:  Single portable AP view of the chest was provided.\nThe tip of the\n NG tube resides in the left upper quadrant.\nThe lungs are clear.\nCardiomediastinal silhouette is normal with atherosclerotic calcifications\n again noted at the aortic knob.\nBony structures are intact.\nThe lungs are\n hyperinflated with upper lobe lucency and splaying of bronchovasculature\n suggesting underlying emphysema.",
+    "reference_impression": "IMPRESSION:  NG tube positioned appropriately.",
+    "reference_full_report": "FINAL REPORT\n CHEST RADIOGRAPH PERFORMED ON\nComparison with an outside hospital chest radiograph from same date earlier\n today.\nFINDINGS:  Single portable AP view of the chest was provided.\nThe tip of the\n NG tube resides in the left upper quadrant.\nThe lungs are clear.\nCardiomediastinal silhouette is normal with atherosclerotic calcifications\n again noted at the aortic knob.\nBony structures are intact.\nThe lungs are\n hyperinflated with upper lobe lucency and splaying of bronchovasculature\n suggesting underlying emphysema.\nIMPRESSION:  NG tube positioned appropriately."
+  }
+}

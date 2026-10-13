@@ -1,0 +1,247 @@
+# configs/triage_rules.yaml
+# ========================
+# InteractMed-VLM Triage Rule Configuration
+# Version: 1.0.0
+#
+# IMPORTANT SAFETY & GOVERNANCE POLICY:
+# - This rule engine operates strictly on structured radiological findings.
+# - It is independent of report text generation and TransVG-AGPT phrase grounding.
+# - Categories are preliminary research outcomes, NOT validated clinical urgency determinations.
+# - Outputs MUST NOT replace qualified radiologist evaluation.
+# - Absence of priority findings MUST NOT be interpreted as "normal", "healthy", or "safe".
+
+version: "1.0.0"
+policy_name: "InteractMed-VLM Configurable Research Triage Policy"
+last_updated: "2026-10-14"
+
+categories:
+  potentially_urgent:
+    description: "A predefined potentially serious finding has been flagged; urgent human review required."
+    badge_color: "amber-red"
+    requires_human_review: true
+    default_review_priority: "urgent"
+  
+  abnormality_flagged:
+    description: "A possible abnormality or non-critical finding is present and should be reviewed."
+    badge_color: "blue"
+    requires_human_review: true
+    default_review_priority: "routine"
+
+  no_priority_finding_flagged:
+    description: "The system did not flag a predefined priority finding. This DOES NOT mean the scan is normal, safe, or disease-free."
+    badge_color: "slate"
+    requires_human_review: true
+    default_review_priority: "standard_review"
+
+  indeterminate_review_required:
+    description: "Evidence is insufficient, the image is not assessable, findings are contradictory, or inference failed."
+    badge_color: "purple"
+    requires_human_review: true
+    default_review_priority: "urgent"
+
+# Rule Definitions (Evaluated in precedence order)
+rules:
+  # ── Category 1: Indeterminate & Error Safeguards ──────────────────────────
+  - id: "RULE_INDETERMINATE_FAILED_INFERENCE"
+    category: "indeterminate_review_required"
+    precedence: 10
+    reason: "Radiological image processing or model inference failed; assessment could not be completed."
+    human_review_priority: "urgent"
+
+  - id: "RULE_INDETERMINATE_INVALID_IMAGE"
+    category: "indeterminate_review_required"
+    precedence: 20
+    reason: "Uploaded file is not assessable as a diagnostic chest radiograph or image data is corrupted."
+    human_review_priority: "urgent"
+
+  - id: "RULE_INDETERMINATE_CONTRADICTORY_FINDINGS"
+    category: "indeterminate_review_required"
+    precedence: 30
+    reason: "Model outputs contain internal contradictions (e.g., active pathology identified in observations but contradicted by impression)."
+    human_review_priority: "urgent"
+
+  - id: "RULE_INDETERMINATE_UNASSESSABLE_OR_EQUIVOCAL"
+    category: "indeterminate_review_required"
+    precedence: 40
+    patterns:
+      - "not assessable"
+      - "indeterminate"
+      - "inconclusive"
+      - "suboptimal inspiration"
+      - "severe motion artifact"
+      - "obscured by body habitus"
+      - "severely rotated"
+    reason: "Visual features are technically unassessable or confidence is too low to rule findings in or out."
+    human_review_priority: "urgent"
+
+  # ── Category 2: Potentially Serious & Urgent Findings ────────────────────
+  - id: "RULE_POTENTIALLY_URGENT_PNEUMOTHORAX"
+    category: "potentially_urgent"
+    precedence: 100
+    target_domains: ["pleural_spaces", "lungs"]
+    patterns:
+      - "pneumothorax"
+      - "pleural air"
+      - "apical lucency"
+      - "tension"
+      - "collapsed lung"
+      - "deep sulcus"
+    reason: "Possible pneumothorax flagged. Immediate professional review required to rule out tension or acute collapse."
+    human_review_priority: "urgent"
+
+  - id: "RULE_POTENTIALLY_URGENT_SEVERE_PULMONARY_EDEMA"
+    category: "potentially_urgent"
+    precedence: 110
+    target_domains: ["lungs", "cardiac"]
+    patterns:
+      - "pulmonary edema"
+      - "alveolar edema"
+      - "severe edema"
+      - "bat wing"
+      - "butterfly pattern"
+      - "fluid overload"
+      - "severe congestion"
+    reason: "Signs of significant pulmonary edema or alveolar congestion flagged. Requires urgent clinical correlation."
+    human_review_priority: "urgent"
+
+  - id: "RULE_POTENTIALLY_URGENT_CRITICAL_DEVICE_MALPOSITION"
+    category: "potentially_urgent"
+    precedence: 120
+    target_domains: ["support_apparatus"]
+    patterns:
+      - "malpositioned"
+      - "displaced"
+      - "mainstem bronchus"
+      - "right mainstem"
+      - "kinked"
+      - "pneumothorax post"
+      - "perforation"
+    reason: "Potential malposition or complication of critical support apparatus (e.g. endotracheal tube or line) flagged."
+    human_review_priority: "urgent"
+
+  - id: "RULE_POTENTIALLY_URGENT_MASSIVE_EFFUSION"
+    category: "potentially_urgent"
+    precedence: 130
+    target_domains: ["pleural_spaces"]
+    patterns:
+      - "massive effusion"
+      - "large pleural effusion"
+      - "complete opacification of hemithorax"
+      - "mediastinal shift"
+    reason: "Large or massive pleural effusion with potential mass effect flagged; requires urgent review."
+    human_review_priority: "urgent"
+
+  - id: "RULE_POTENTIALLY_URGENT_ACUTE_DENSE_CONSOLIDATION"
+    category: "potentially_urgent"
+    precedence: 140
+    target_domains: ["lungs"]
+    patterns:
+      - "dense consolidation"
+      - "lobar consolidation"
+      - "complete lobar collapse"
+      - "dense opacity with air bronchograms"
+      - "airspace disease with respiratory distress"
+    reason: "Dense or lobar consolidation flagged; human review required for acute respiratory process."
+    human_review_priority: "urgent"
+
+  # ── Category 3: Abnormality Flagged (Review Indicated) ────────────────────
+  - id: "RULE_ABNORMAL_PULMONARY_OPACITY_OR_CONSOLIDATION"
+    category: "abnormality_flagged"
+    precedence: 200
+    target_domains: ["lungs"]
+    patterns:
+      - "consolidation"
+      - "focal opacity"
+      - "patchy opacity"
+      - "infiltrate"
+      - "pneumonia"
+      - "airspace opacity"
+      - "ground glass"
+      - "streaky opacity"
+      - "retrocardiac opacity"
+    reason: "Parenchymal opacity or possible consolidation noted. Requires professional review and clinical correlation."
+    human_review_priority: "routine"
+
+  - id: "RULE_ABNORMAL_PLEURAL_EFFUSION_BLUNTING"
+    category: "abnormality_flagged"
+    precedence: 210
+    target_domains: ["pleural_spaces"]
+    patterns:
+      - "pleural effusion"
+      - "blunted"
+      - "blunting of"
+      - "costophrenic angle blunting"
+      - "fluid"
+      - "effusion"
+    reason: "Pleural space abnormality or blunted costophrenic angle noted. Review indicated."
+    human_review_priority: "routine"
+
+  - id: "RULE_ABNORMAL_ATELECTASIS"
+    category: "abnormality_flagged"
+    precedence: 220
+    target_domains: ["lungs"]
+    patterns:
+      - "atelectasis"
+      - "bibasilar atelectasis"
+      - "linear atelectasis"
+      - "platelike opacity"
+      - "volume loss"
+      - "discoid atelectasis"
+    reason: "Atelectasis or volume loss noted. Review indicated for post-operative, hypoventilatory, or obstructive etiology."
+    human_review_priority: "routine"
+
+  - id: "RULE_ABNORMAL_CARDIOMEGALY"
+    category: "abnormality_flagged"
+    precedence: 230
+    target_domains: ["cardiac"]
+    patterns:
+      - "cardiomegaly"
+      - "enlarged heart"
+      - "enlarged cardiac silhouette"
+      - "cardiac enlargement"
+      - "ctr > 0.5"
+      - "increased cardiothoracic ratio"
+    reason: "Enlarged cardiac silhouette flagged. Review indicated to evaluate cardiomegaly or projectional magnification."
+    human_review_priority: "routine"
+
+  - id: "RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT"
+    category: "abnormality_flagged"
+    precedence: 240
+    target_domains: ["support_apparatus"]
+    patterns:
+      - "endotracheal tube"
+      - "enteric tube"
+      - "nasogastric"
+      - "dobhoff"
+      - "vascular catheter"
+      - "central venous"
+      - "picc"
+      - "chest tube"
+      - "pacemaker"
+      - "sternotomy"
+      - "surgical clips"
+      - "monitoring leads"
+    reason: "Support apparatus or surgical material identified. Verification of positioning recommended."
+    human_review_priority: "routine"
+
+  - id: "RULE_ABNORMAL_MEDIASTINAL_CONTOUR"
+    category: "abnormality_flagged"
+    precedence: 250
+    target_domains: ["mediastinum"]
+    patterns:
+      - "widened"
+      - "mediastinal widening"
+      - "prominent mediastinum"
+      - "hilar fullness"
+      - "tortuous aorta"
+    reason: "Altered mediastinal or hilar contour noted. Review indicated."
+    human_review_priority: "routine"
+
+  # ── Category 4: Default No Priority Findings ──────────────────────────────
+  - id: "RULE_NO_PRIORITY_FINDINGS_FLAGGED"
+    category: "no_priority_finding_flagged"
+    precedence: 999
+    reason: "No predefined priority findings were flagged by the automated feature extractor. IMPORTANT: This does not guarantee normal anatomy or absence of pathology."
+    human_review_priority: "standard_review"
+
+disclaimer: "RESEARCH PROTOTYPE NOTICE: The proposed triage classification is an experimental research output generated by rule-based heuristic mapping on structured findings. It has NOT been evaluated as a clinical diagnostic or triage device, and must never be used to establish urgency, delay human interpretation, or direct patient care."

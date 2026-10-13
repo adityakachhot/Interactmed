@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "total_records_audited": 27437,
+    "strictly_in_unit_square_count": 27437,
+    "strictly_in_unit_square_pct": 100.0,
+    "valid_positive_area_count": 27433,
+    "valid_positive_area_pct": 99.985,
+    "degenerate_zero_area_count": 4,
+    "extreme_aspect_ratio_count": 19,
+    "max_native_width_reconstruction_diff_px": 0.0,
+    "max_native_height_reconstruction_diff_px": 0.0
+  },
+  "area_distribution_pct": {
+    "p10": 0.797,
+    "p25": 1.722,
+    "median": 3.815,
+    "p75": 6.292,
+    "p90": 11.143,
+    "mean": 5.244
+  },
+  "by_dataset": {
+    "chest_imagenome_gold": {
+      "total_records": 25989,
+      "valid_boxes_count": 25985,
+      "invalid_boxes_count": 4,
+      "mean_box_width_pct": 22.23,
+      "mean_box_height_pct": 19.82,
+      "mean_box_area_pct": 5.04,
+      "min_box_area_pct": 0.0,
+      "max_box_area_pct": 62.67,
+      "validation_errors": {
+        "none": 25754,
+        "negative_x1_clamped": 153,
+        "negative_y1_clamped": 59,
+        "flipped_x_corrected": 16,
+        "flipped_y_corrected": 4,
+        "zero_or_negative_area": 2,
+        "flipped_x_corrected_and_y": 1
+      }
+    },
+    "ms_cxr": {
+      "total_records": 1448,
+      "valid_boxes_count": 1448,
+      "invalid_boxes_count": 0,
+      "mean_box_width_pct": 31.16,
+      "mean_box_height_pct": 26.0,
+      "mean_box_area_pct": 8.9,
+      "min_box_area_pct": 0.2816,
+      "max_box_area_pct": 40.66,
+      "validation_errors": {
+        "none": 1448
+      }
+    }
+  }
+}

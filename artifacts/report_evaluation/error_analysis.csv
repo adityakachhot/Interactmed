@@ -1,0 +1,26 @@
+safe_case_id,primary_category,ground_truth_classes,baseline_predictions,revised_predictions,optimized_predictions,missed_reference_findings,unsupported_positive_claims,unsupported_negative_claims,laterality_status,internal_contradiction,boilerplate_normal_phrases_count,baseline_boilerplate_count,excessive_uncertainty_score,correctly_introduced_by_revised
+CASE_DEV_001,normal,normal,normal,normal,normal,,none,none,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_002,normal,normal,normal,normal,normal,,none,none,concordant_or_not_applicable,no,0,6,0,none
+CASE_DEV_003,normal,normal,normal,normal,normal,,none,none,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_004,normal,normal,normal,normal,normal,,none,none,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_005,normal,normal,normal,normal,normal,,none,none,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_006,normal,normal,normal,normal,normal,,none,none,concordant_or_not_applicable,no,0,6,0,none
+CASE_DEV_007,pneumonia_consolidation,atelectasis; pneumonia_consolidation,normal,normal,normal,atelectasis; pneumonia_consolidation,none,unwarranted_normal,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_008,pneumonia_consolidation,pneumonia_consolidation,normal,normal,normal,pneumonia_consolidation,none,unwarranted_normal,laterality_omitted,no,0,5,0,none
+CASE_DEV_009,pneumonia_consolidation,atelectasis; pleural_effusion; pneumonia_consolidation; support_devices,normal,support_devices,support_devices,atelectasis; pleural_effusion; pneumonia_consolidation,none,none,laterality_omitted,yes,0,6,0,support_devices
+CASE_DEV_010,pneumonia_consolidation,atelectasis; pneumonia_consolidation; support_devices,normal,support_devices,support_devices,atelectasis; pneumonia_consolidation,none,none,concordant_or_not_applicable,no,0,2,0,support_devices
+CASE_DEV_011,pulmonary_edema,cardiomegaly; pulmonary_edema,normal,normal,normal,cardiomegaly; pulmonary_edema,none,unwarranted_normal,concordant_or_not_applicable,no,0,2,0,none
+CASE_DEV_012,pulmonary_edema,cardiomegaly; pleural_effusion; pulmonary_edema,normal,normal,normal,cardiomegaly; pleural_effusion; pulmonary_edema,none,unwarranted_normal,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_013,pulmonary_edema,atelectasis; cardiomegaly; pulmonary_edema,normal,normal,normal,atelectasis; cardiomegaly; pulmonary_edema,none,unwarranted_normal,laterality_omitted,no,0,3,0,none
+CASE_DEV_014,pulmonary_edema,atelectasis; pleural_effusion; pulmonary_edema,normal,normal,normal,atelectasis; pleural_effusion; pulmonary_edema,none,unwarranted_normal,laterality_omitted,no,0,2,0,none
+CASE_DEV_015,cardiomegaly,cardiomegaly,normal,normal,normal,cardiomegaly,none,unwarranted_normal,concordant_or_not_applicable,no,0,5,0,none
+CASE_DEV_016,cardiomegaly,cardiomegaly,normal,support_devices,normal,cardiomegaly,support_devices,none,concordant_or_not_applicable,no,0,3,0,none
+CASE_DEV_017,cardiomegaly,cardiomegaly,normal,normal,normal,cardiomegaly,none,unwarranted_normal,concordant_or_not_applicable,no,0,6,0,none
+CASE_DEV_018,pleural_effusion,atelectasis; pleural_effusion,normal,normal,normal,atelectasis; pleural_effusion,none,unwarranted_normal,laterality_omitted,no,0,3,0,none
+CASE_DEV_019,pleural_effusion,atelectasis; pleural_effusion,normal,,normal,atelectasis; pleural_effusion,none,none,laterality_omitted,no,0,5,0,none
+CASE_DEV_020,pleural_effusion,cardiomegaly; pleural_effusion; support_devices,normal,support_devices,support_devices,cardiomegaly; pleural_effusion,none,none,concordant_or_not_applicable,no,0,2,0,support_devices
+CASE_DEV_021,atelectasis,atelectasis; support_devices,normal,support_devices,support_devices,atelectasis,none,none,laterality_omitted,yes,0,2,0,support_devices
+CASE_DEV_022,atelectasis,atelectasis,normal,normal,normal,atelectasis,none,unwarranted_normal,laterality_omitted,no,0,4,0,none
+CASE_DEV_023,atelectasis,atelectasis,normal,normal,normal,atelectasis,none,unwarranted_normal,concordant_or_not_applicable,no,1,3,0,none
+CASE_DEV_024,support_devices,support_devices,normal,support_devices,support_devices,,none,none,laterality_omitted,no,0,4,0,support_devices
+CASE_DEV_025,support_devices,normal; support_devices,normal,support_devices,support_devices,normal,none,none,concordant_or_not_applicable,yes,0,2,0,support_devices

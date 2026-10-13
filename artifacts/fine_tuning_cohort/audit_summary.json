@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "dataset_name": "InteractMed-VLM MedGemma 4B Fine-Tuning Pilot Cohort",
+  "source_cohort": "expanded_dev",
+  "locked_test_cohort": "expanded_test",
+  "total_verified_dev_cases": 250,
+  "train_dev_cases": 200,
+  "val_dev_cases": 50,
+  "locked_test_cases": 117,
+  "unique_train_patients": 199,
+  "unique_val_patients": 49,
+  "unique_test_patients": 117,
+  "patient_overlap_train_val": 0,
+  "patient_overlap_train_test": 0,
+  "patient_overlap_val_test": 0,
+  "mean_target_words_train": 73.835,
+  "mean_target_words_val": 74.6,
+  "train_categories": {
+    "normal": 56,
+    "pneumonia_consolidation": 75,
+    "pulmonary_edema": 46,
+    "support_devices": 9,
+    "atelectasis": 7,
+    "cardiomegaly": 7
+  },
+  "val_categories": {
+    "normal": 15,
+    "pneumonia_consolidation": 19,
+    "atelectasis": 2,
+    "pulmonary_edema": 11,
+    "support_devices": 1,
+    "cardiomegaly": 2
+  }
+}

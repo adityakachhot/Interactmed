@@ -1,0 +1,49 @@
+{
+  "rejection_11_images": "PASSED",
+  "corrupt_mixed_handling": "PASSED",
+  "retry_failed_job": "PASSED",
+  "queue_cancellation": "PASSED",
+  "single_image": {
+    "status": "completed",
+    "latency_sec": 14.13,
+    "tokens_generated": 178,
+    "tokens_per_second": 28.79,
+    "load_duration_ms": 161.19,
+    "prompt_eval_ms": 1992.77,
+    "eval_duration_ms": 6181.99,
+    "words": 140,
+    "peak_mem_mb": 170.9
+  },
+  "batch_3_images": {
+    "status": "completed",
+    "total_batch_time_sec": 25.26,
+    "avg_latency_per_image_sec": 8.39,
+    "avg_tokens_per_sec": 29.04,
+    "items": [
+      {
+        "filename": "0004cfab-14fd-4e49-80ba-63a80b6bddd6.dcm",
+        "latency_sec": 4.68,
+        "words": 70
+      },
+      {
+        "filename": "000924cf-0f8d-42bd-9158-1af53881a557.dcm",
+        "latency_sec": 10.14,
+        "words": 50
+      },
+      {
+        "filename": "000db696-cf54-4385-b10b-6b16fbb3f985.dcm",
+        "latency_sec": 10.35,
+        "words": 53
+      }
+    ]
+  },
+  "batch_10_images": {
+    "status": "completed",
+    "total_batch_time_sec": 224.35,
+    "avg_latency_per_image_sec": 22.35,
+    "avg_tokens_per_sec": 18.42,
+    "success_rate": "10/10",
+    "peak_mem_mb": 187.2
+  },
+  "non_interference": "PASSED"
+}

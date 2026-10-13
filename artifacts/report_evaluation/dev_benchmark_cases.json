@@ -1,0 +1,1512 @@
+{
+  "baseline": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 146.38,
+      "inference_ms": 10677.39,
+      "parse_validate_ms": 0.09,
+      "total_latency_ms": 10823.82,
+      "eval_tokens": 88,
+      "tokens_per_second": 8.24,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 147.69,
+      "inference_ms": 23813.88,
+      "parse_validate_ms": 0.27,
+      "total_latency_ms": 23961.65,
+      "eval_tokens": 83,
+      "tokens_per_second": 3.49,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 102.89,
+      "inference_ms": 16865.17,
+      "parse_validate_ms": 0.18,
+      "total_latency_ms": 16968.11,
+      "eval_tokens": 88,
+      "tokens_per_second": 5.22,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 106.93,
+      "inference_ms": 17071.79,
+      "parse_validate_ms": 0.17,
+      "total_latency_ms": 17178.78,
+      "eval_tokens": 88,
+      "tokens_per_second": 5.15,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 105.58,
+      "inference_ms": 17707.57,
+      "parse_validate_ms": 0.08,
+      "total_latency_ms": 17813.2,
+      "eval_tokens": 92,
+      "tokens_per_second": 5.2,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view. AI"
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 114.72,
+      "inference_ms": 18128.83,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 18243.58,
+      "eval_tokens": 83,
+      "tokens_per_second": 4.58,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 88.76,
+      "inference_ms": 17453.31,
+      "parse_validate_ms": 0.3,
+      "total_latency_ms": 17542.11,
+      "eval_tokens": 89,
+      "tokens_per_second": 5.1,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 111.92,
+      "inference_ms": 18175.81,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 18287.76,
+      "eval_tokens": 88,
+      "tokens_per_second": 4.84,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 99.93,
+      "inference_ms": 22648.96,
+      "parse_validate_ms": 0.09,
+      "total_latency_ms": 22748.97,
+      "eval_tokens": 87,
+      "tokens_per_second": 3.84,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation",
+        "support_devices"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 92.78,
+      "inference_ms": 18203.07,
+      "parse_validate_ms": 0.38,
+      "total_latency_ms": 18295.96,
+      "eval_tokens": 87,
+      "tokens_per_second": 4.78,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation",
+        "support_devices"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. AI"
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 109.21,
+      "inference_ms": 20268.46,
+      "parse_validate_ms": 0.14,
+      "total_latency_ms": 20377.88,
+      "eval_tokens": 90,
+      "tokens_per_second": 4.44,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax is normal.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are observed.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 174.84,
+      "inference_ms": 19214.04,
+      "parse_validate_ms": 0.15,
+      "total_latency_ms": 19388.98,
+      "eval_tokens": 88,
+      "tokens_per_second": 4.58,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 103.68,
+      "inference_ms": 19599.91,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 19703.62,
+      "eval_tokens": 88,
+      "tokens_per_second": 4.49,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 91.5,
+      "inference_ms": 21221.02,
+      "parse_validate_ms": 0.22,
+      "total_latency_ms": 21312.6,
+      "eval_tokens": 89,
+      "tokens_per_second": 4.19,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax is normal.\n\n**POSSIBLE FINDINGS**\nNo acute findings are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 119.82,
+      "inference_ms": 18588.82,
+      "parse_validate_ms": 0.19,
+      "total_latency_ms": 18708.72,
+      "eval_tokens": 84,
+      "tokens_per_second": 4.52,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 110.38,
+      "inference_ms": 19333.82,
+      "parse_validate_ms": 0.17,
+      "total_latency_ms": 19444.25,
+      "eval_tokens": 88,
+      "tokens_per_second": 4.55,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 97.2,
+      "inference_ms": 18878.57,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 18976.38,
+      "eval_tokens": 82,
+      "tokens_per_second": 4.34,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothorax. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 70.67,
+      "inference_ms": 20243.68,
+      "parse_validate_ms": 0.1,
+      "total_latency_ms": 20314.47,
+      "eval_tokens": 88,
+      "tokens_per_second": 4.35,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 136.02,
+      "inference_ms": 18361.03,
+      "parse_validate_ms": 0.32,
+      "total_latency_ms": 18497.1,
+      "eval_tokens": 84,
+      "tokens_per_second": 4.57,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothorax identified. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 125.05,
+      "inference_ms": 17946.01,
+      "parse_validate_ms": 0.07,
+      "total_latency_ms": 18071.15,
+      "eval_tokens": 83,
+      "tokens_per_second": 4.62,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "support_devices"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 82.57,
+      "inference_ms": 18975.57,
+      "parse_validate_ms": 0.07,
+      "total_latency_ms": 19058.34,
+      "eval_tokens": 91,
+      "tokens_per_second": 4.8,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "support_devices"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view. AI"
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 98.71,
+      "inference_ms": 19806.28,
+      "parse_validate_ms": 0.07,
+      "total_latency_ms": 19905.03,
+      "eval_tokens": 90,
+      "tokens_per_second": 4.54,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 150.69,
+      "inference_ms": 18668.28,
+      "parse_validate_ms": 0.39,
+      "total_latency_ms": 18819.15,
+      "eval_tokens": 88,
+      "tokens_per_second": 4.71,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "decode_preprocess_ms": 117.47,
+      "inference_ms": 22240.99,
+      "parse_validate_ms": 0.13,
+      "total_latency_ms": 22358.67,
+      "eval_tokens": 90,
+      "tokens_per_second": 4.05,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "support_devices"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "decode_preprocess_ms": 237.2,
+      "inference_ms": 22145.67,
+      "parse_validate_ms": 0.14,
+      "total_latency_ms": 22383.04,
+      "eval_tokens": 83,
+      "tokens_per_second": 3.75,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "support_devices"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view."
+    }
+  ],
+  "revised": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 146.38,
+      "stage1_vision_ms": 16337.06,
+      "stage2_synthesis_ms": 3852.06,
+      "parse_validate_ms": 0.73,
+      "total_latency_ms": 20335.51,
+      "stage1_tokens": 179,
+      "stage2_tokens": 77,
+      "total_tokens": 256,
+      "tokens_per_second": 12.68,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nThe radiograph is clear.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 147.69,
+      "stage1_vision_ms": 14668.11,
+      "stage2_synthesis_ms": 4590.8,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 19406.6,
+      "stage1_tokens": 162,
+      "stage2_tokens": 56,
+      "total_tokens": 218,
+      "tokens_per_second": 11.32,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nClear lungs. No support apparatus visible.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 102.89,
+      "stage1_vision_ms": 25927.83,
+      "stage2_synthesis_ms": 6304.61,
+      "parse_validate_ms": 0.25,
+      "total_latency_ms": 32335.35,
+      "stage1_tokens": 161,
+      "stage2_tokens": 56,
+      "total_tokens": 217,
+      "tokens_per_second": 6.73,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nClear lungs. No support apparatus visible.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 106.93,
+      "stage1_vision_ms": 22746.09,
+      "stage2_synthesis_ms": 6045.35,
+      "parse_validate_ms": 0.05,
+      "total_latency_ms": 28898.39,
+      "stage1_tokens": 180,
+      "stage2_tokens": 63,
+      "total_tokens": 243,
+      "tokens_per_second": 8.44,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs appear clear.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThe image is a frontal projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 105.58,
+      "stage1_vision_ms": 23535.57,
+      "stage2_synthesis_ms": 5399.33,
+      "parse_validate_ms": 0.15,
+      "total_latency_ms": 29040.51,
+      "stage1_tokens": 175,
+      "stage2_tokens": 51,
+      "total_tokens": 226,
+      "tokens_per_second": 7.81,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 114.72,
+      "stage1_vision_ms": 23142.03,
+      "stage2_synthesis_ms": 5805.64,
+      "parse_validate_ms": 0.21,
+      "total_latency_ms": 29062.41,
+      "stage1_tokens": 160,
+      "stage2_tokens": 51,
+      "total_tokens": 211,
+      "tokens_per_second": 7.29,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 88.76,
+      "stage1_vision_ms": 23304.16,
+      "stage2_synthesis_ms": 8935.09,
+      "parse_validate_ms": 0.08,
+      "total_latency_ms": 32328.02,
+      "stage1_tokens": 180,
+      "stage2_tokens": 107,
+      "total_tokens": 287,
+      "tokens_per_second": 8.9,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear without obvious airspace opacities, consolidation, or atelectasis. There are no signs of pulmonary edema.\n\n**IMPRESSION**\nThe chest radiograph shows no acute findings.\n\n**LIMITATIONS**\nThe chest radiograph is a frontal projection, which limits the assessment of the lateral lung fields and the posterior mediastinum."
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 111.92,
+      "stage1_vision_ms": 24036.49,
+      "stage2_synthesis_ms": 5057.28,
+      "parse_validate_ms": 0.04,
+      "total_latency_ms": 29205.69,
+      "stage1_tokens": 180,
+      "stage2_tokens": 49,
+      "total_tokens": 229,
+      "tokens_per_second": 7.87,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 99.93,
+      "stage1_vision_ms": 25438.77,
+      "stage2_synthesis_ms": 18377.4,
+      "parse_validate_ms": 0.23,
+      "total_latency_ms": 43916.14,
+      "stage1_tokens": 180,
+      "stage2_tokens": 174,
+      "total_tokens": 354,
+      "tokens_per_second": 8.08,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Tip located approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing below the diaphragm, terminating in the stomach. Tip not visualized.\n*   Vascular line: Visible, with the tip located in the superior vena cava.\n*   Chest tube: Not visible.\n*   Surgical clips: Not visible.\n*   Cardiac silhouette: Within normal limits.\n*   Mediastinum: Normal.\n*   Lungs: Clear.\n*   Pleural spaces: Clear.\n\n**IMPRESSION**\nThe patient is intubated. The cardiac silhouette is normal. The lungs are clear.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The image is not a lateral projection. The inspiration depth is not specified."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 92.78,
+      "stage1_vision_ms": 27082.39,
+      "stage2_synthesis_ms": 15327.09,
+      "parse_validate_ms": 0.5,
+      "total_latency_ms": 42502.34,
+      "stage1_tokens": 180,
+      "stage2_tokens": 183,
+      "total_tokens": 363,
+      "tokens_per_second": 8.56,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Tip 4.5 cm above the carina.\n*   Nasogastric tube: Below the diaphragm, terminating in the stomach.\n*   Vascular line: Tip in the superior vena cava.\n*   Chest tube: Tip in the right pleural space.\n*   Surgical clips: Mediastinum.\n*   Cardiac silhouette: Within normal limits.\n*   Cardiothoracic ratio: Less than\n\n**IMPRESSION**\nThe radiograph demonstrates the presence of an endotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips. The cardiac silhouette appears within normal limits. The cardiothoracic ratio is less than\n\n**LIMITATIONS**\nThe radiograph is a frontal projection, which limits the assessment of the left lung and mediastinal structures. A lateral view is needed for a complete evaluation."
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 109.21,
+      "stage1_vision_ms": 24638.77,
+      "stage2_synthesis_ms": 7706.62,
+      "parse_validate_ms": 0.05,
+      "total_latency_ms": 32454.61,
+      "stage1_tokens": 179,
+      "stage2_tokens": 77,
+      "total_tokens": 256,
+      "tokens_per_second": 7.91,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear. The bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nThe radiograph is clear.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 174.84,
+      "stage1_vision_ms": 25370.2,
+      "stage2_synthesis_ms": 8459.56,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 34004.6,
+      "stage1_tokens": 180,
+      "stage2_tokens": 80,
+      "total_tokens": 260,
+      "tokens_per_second": 7.69,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs appear clear. The bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nThe lungs are clear.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 103.68,
+      "stage1_vision_ms": 26997.77,
+      "stage2_synthesis_ms": 8082.83,
+      "parse_validate_ms": 0.08,
+      "total_latency_ms": 35184.29,
+      "stage1_tokens": 180,
+      "stage2_tokens": 73,
+      "total_tokens": 253,
+      "tokens_per_second": 7.21,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette appears within normal limits. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe radiograph is clear.\n\n**LIMITATIONS**\nThe radiograph is a frontal projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 91.5,
+      "stage1_vision_ms": 26493.81,
+      "stage2_synthesis_ms": 8414.65,
+      "parse_validate_ms": 0.23,
+      "total_latency_ms": 34999.98,
+      "stage1_tokens": 180,
+      "stage2_tokens": 65,
+      "total_tokens": 245,
+      "tokens_per_second": 7.02,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThe image is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 119.82,
+      "stage1_vision_ms": 28192.43,
+      "stage2_synthesis_ms": 6834.6,
+      "parse_validate_ms": 0.22,
+      "total_latency_ms": 35146.94,
+      "stage1_tokens": 166,
+      "stage2_tokens": 53,
+      "total_tokens": 219,
+      "tokens_per_second": 6.25,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette appears normal. The lungs are clear. Bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 110.38,
+      "stage1_vision_ms": 25694.35,
+      "stage2_synthesis_ms": 10025.61,
+      "parse_validate_ms": 0.09,
+      "total_latency_ms": 35830.36,
+      "stage1_tokens": 180,
+      "stage2_tokens": 109,
+      "total_tokens": 289,
+      "tokens_per_second": 8.09,
+      "true_positives": [],
+      "false_positives": [
+        "support_devices"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube tip is 4.5 cm above the carina.\n*   Nasogastric tube tip is not visible.\n*   Vascular line tip is in the superior vena cava.\n*   Chest tube tip is in the right pleural space.\n*   Cardiac silhouette is within normal limits.\n\n**IMPRESSION**\nThe patient is intubated. The chest tube is in place. The cardiac silhouette is normal.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 97.2,
+      "stage1_vision_ms": 31304.33,
+      "stage2_synthesis_ms": 13623.71,
+      "parse_validate_ms": 0.24,
+      "total_latency_ms": 45025.29,
+      "stage1_tokens": 179,
+      "stage2_tokens": 139,
+      "total_tokens": 318,
+      "tokens_per_second": 7.08,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus (endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips) are visible. The cardiac silhouette appears within normal limits. The lungs are clear. The bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nThe lungs are clear. The cardiac silhouette appears within normal limits. The cardiothoracic ratio is not readily apparent from this single image, but based on the visible structures, it does not appear significantly enlarged.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The image quality is limited by the portable nature of the study. The cardiothoracic ratio cannot be accurately assessed."
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 70.67,
+      "stage1_vision_ms": 27177.3,
+      "stage2_synthesis_ms": 7612.71,
+      "parse_validate_ms": 0.28,
+      "total_latency_ms": 34860.7,
+      "stage1_tokens": 180,
+      "stage2_tokens": 74,
+      "total_tokens": 254,
+      "tokens_per_second": 7.3,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 136.02,
+      "stage1_vision_ms": 29544.79,
+      "stage2_synthesis_ms": 11264.8,
+      "parse_validate_ms": 0.31,
+      "total_latency_ms": 40945.69,
+      "stage1_tokens": 180,
+      "stage2_tokens": 110,
+      "total_tokens": 290,
+      "tokens_per_second": 7.11,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThoracic structures, lung parenchyma, and cardiac silhouette evaluated on frontal radiograph.\n\n**IMPRESSION**\nThe chest radiograph shows no obvious abnormalities.\n\n**LIMITATIONS**\nThe chest radiograph is a frontal projection, which limits the assessment of the lateral lung fields and the posterior mediastinum."
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 125.05,
+      "stage1_vision_ms": 26053.38,
+      "stage2_synthesis_ms": 10669.03,
+      "parse_validate_ms": 0.48,
+      "total_latency_ms": 36847.49,
+      "stage1_tokens": 180,
+      "stage2_tokens": 111,
+      "total_tokens": 291,
+      "tokens_per_second": 7.92,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nA chest tube is present in the right hemithorax, with the tip in the right mid-lung field. An enteric tube is present, coursing from the stomach into the stomach. A vascular line is present, coursing from the left upper extremity into the superior vena cava. The cardiac silhouette is within normal limits. The lungs appear clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a chest tube in place. The lungs are clear.\n\n**LIMITATIONS**\nThe chest radiograph is a frontal projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 82.57,
+      "stage1_vision_ms": 24537.62,
+      "stage2_synthesis_ms": 14360.17,
+      "parse_validate_ms": 0.39,
+      "total_latency_ms": 38980.38,
+      "stage1_tokens": 180,
+      "stage2_tokens": 162,
+      "total_tokens": 342,
+      "tokens_per_second": 8.79,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing into the stomach. Tip not clearly visualized.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Not visible.\n*   Surgical clips: Not visible.\n*   Cardiac silhouette: Within normal limits.\n*   Mediastinum: Within normal limits.\n*   Lungs: Clear.\n*   Pleural spaces: Clear.\n\n**IMPRESSION**\nThe patient is intubated. The heart size is normal. The lungs are clear.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The patient is intubated."
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 98.71,
+      "stage1_vision_ms": 26465.24,
+      "stage2_synthesis_ms": 8020.76,
+      "parse_validate_ms": 0.35,
+      "total_latency_ms": 34584.77,
+      "stage1_tokens": 179,
+      "stage2_tokens": 74,
+      "total_tokens": 253,
+      "tokens_per_second": 7.34,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo endotracheal tube, enteric/nasogastric tube, vascular line, chest tube, or surgical clips are visible. The cardiac silhouette is within normal limits. The lungs are clear. Bilateral costophrenic angles are sharp.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 150.69,
+      "stage1_vision_ms": 28310.73,
+      "stage2_synthesis_ms": 6647.61,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 35109.05,
+      "stage1_tokens": 163,
+      "stage2_tokens": 53,
+      "total_tokens": 216,
+      "tokens_per_second": 6.18,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nNo support apparatus are visible. The cardiac silhouette is within normal limits. The lungs are clear bilaterally. The pleural spaces are clear.\n\n**IMPRESSION**\nClear lungs.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph."
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "decode_preprocess_ms": 117.47,
+      "stage1_vision_ms": 25450.74,
+      "stage2_synthesis_ms": 15615.09,
+      "parse_validate_ms": 0.44,
+      "total_latency_ms": 41183.34,
+      "stage1_tokens": 180,
+      "stage2_tokens": 192,
+      "total_tokens": 372,
+      "tokens_per_second": 9.06,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Visible, tip approximately 4.5 cm above the carina.\n*   Nasogastric tube: Visible, coursing into the stomach. Tip likely in the stomach.\n*   Vascular line: Visible, tip in the superior vena cava.\n*   Chest tube: Visible, tip in the pleural space.\n*   Surgical clips: Visible.\n*   Cardiac silhouette: Within normal limits.\n*   Mediastinum: Within normal limits.\n*   Lungs: Clear.\n*   Pleural spaces: Clear.\n\n**IMPRESSION**\nEndotracheal tube, nasogastric tube, vascular line, chest tube, and surgical clips are present. The cardiac silhouette is within normal limits.\n\n**LIMITATIONS**\nThis is a frontal chest radiograph. The image quality is limited by the portable nature of the study. A lateral view is not available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "decode_preprocess_ms": 237.2,
+      "stage1_vision_ms": 31590.41,
+      "stage2_synthesis_ms": 9705.83,
+      "parse_validate_ms": 0.1,
+      "total_latency_ms": 41533.45,
+      "stage1_tokens": 180,
+      "stage2_tokens": 83,
+      "total_tokens": 263,
+      "tokens_per_second": 6.37,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nAn enteric tube is visible, coursing below the diaphragm and out of the field of view. The tip is not visible. No endotracheal tube is visible. The cardiac silhouette appears within normal limits. The lungs appear clear. Bilateral costophrenic angles are clear.\n\n**IMPRESSION**\nThe lungs are clear.\n\n**LIMITATIONS**\nThe image is a frontal projection."
+    }
+  ],
+  "optimized": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 146.38,
+      "stage1_vision_ms": 7846.73,
+      "stage2_synthesis_ms": 4852.54,
+      "parse_validate_ms": 0.1,
+      "total_latency_ms": 12845.65,
+      "stage1_tokens": 30,
+      "stage2_tokens": 120,
+      "total_tokens": 150,
+      "tokens_per_second": 11.81,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection would be beneficial for a more comprehensive evaluation."
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 147.69,
+      "stage1_vision_ms": 12583.1,
+      "stage2_synthesis_ms": 8842.64,
+      "parse_validate_ms": 0.07,
+      "total_latency_ms": 21573.44,
+      "stage1_tokens": 30,
+      "stage2_tokens": 76,
+      "total_tokens": 106,
+      "tokens_per_second": 4.95,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a normal chest X-ray.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the lateral chest structures."
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 102.89,
+      "stage1_vision_ms": 12899.54,
+      "stage2_synthesis_ms": 9099.52,
+      "parse_validate_ms": 0.11,
+      "total_latency_ms": 22101.96,
+      "stage1_tokens": 30,
+      "stage2_tokens": 114,
+      "total_tokens": 144,
+      "tokens_per_second": 6.55,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the lateral aspects of the lungs and pleural spaces."
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 106.93,
+      "stage1_vision_ms": 11886.46,
+      "stage2_synthesis_ms": 8847.75,
+      "parse_validate_ms": 0.1,
+      "total_latency_ms": 20841.14,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "tokens_per_second": 6.99,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 105.58,
+      "stage1_vision_ms": 12385.22,
+      "stage2_synthesis_ms": 6403.78,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 18894.58,
+      "stage1_tokens": 30,
+      "stage2_tokens": 76,
+      "total_tokens": 106,
+      "tokens_per_second": 5.64,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a normal chest X-ray.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the lateral chest structures."
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "decode_preprocess_ms": 114.72,
+      "stage1_vision_ms": 13272.83,
+      "stage2_synthesis_ms": 8560.26,
+      "parse_validate_ms": 0.09,
+      "total_latency_ms": 21947.82,
+      "stage1_tokens": 30,
+      "stage2_tokens": 98,
+      "total_tokens": 128,
+      "tokens_per_second": 5.86,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the entire chest. No lateral projection is available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 88.76,
+      "stage1_vision_ms": 12249.12,
+      "stage2_synthesis_ms": 8994.92,
+      "parse_validate_ms": 0.11,
+      "total_latency_ms": 21332.8,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "tokens_per_second": 6.83,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 111.92,
+      "stage1_vision_ms": 12773.45,
+      "stage2_synthesis_ms": 8316.88,
+      "parse_validate_ms": 0.09,
+      "total_latency_ms": 21202.26,
+      "stage1_tokens": 30,
+      "stage2_tokens": 99,
+      "total_tokens": 129,
+      "tokens_per_second": 6.12,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 99.93,
+      "stage1_vision_ms": 19356.03,
+      "stage2_synthesis_ms": 6999.18,
+      "parse_validate_ms": 0.13,
+      "total_latency_ms": 26455.14,
+      "stage1_tokens": 39,
+      "stage2_tokens": 71,
+      "total_tokens": 110,
+      "tokens_per_second": 4.17,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are clear.\n\n**IMPRESSION**\nThe endotracheal tube is present. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "decode_preprocess_ms": 92.78,
+      "stage1_vision_ms": 13633.5,
+      "stage2_synthesis_ms": 6799.03,
+      "parse_validate_ms": 0.08,
+      "total_latency_ms": 20525.33,
+      "stage1_tokens": 39,
+      "stage2_tokens": 71,
+      "total_tokens": 110,
+      "tokens_per_second": 5.38,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are clear.\n\n**IMPRESSION**\nThe endotracheal tube is present. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 109.21,
+      "stage1_vision_ms": 13538.56,
+      "stage2_synthesis_ms": 7985.6,
+      "parse_validate_ms": 0.43,
+      "total_latency_ms": 21633.4,
+      "stage1_tokens": 30,
+      "stage2_tokens": 99,
+      "total_tokens": 129,
+      "tokens_per_second": 5.99,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 174.84,
+      "stage1_vision_ms": 13836.5,
+      "stage2_synthesis_ms": 10606.95,
+      "parse_validate_ms": 0.27,
+      "total_latency_ms": 24618.31,
+      "stage1_tokens": 30,
+      "stage2_tokens": 120,
+      "total_tokens": 150,
+      "tokens_per_second": 6.14,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection would be beneficial for a more comprehensive evaluation."
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 103.68,
+      "stage1_vision_ms": 14592.33,
+      "stage2_synthesis_ms": 10470.53,
+      "parse_validate_ms": 0.1,
+      "total_latency_ms": 25166.55,
+      "stage1_tokens": 30,
+      "stage2_tokens": 106,
+      "total_tokens": 136,
+      "tokens_per_second": 5.43,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "decode_preprocess_ms": 91.5,
+      "stage1_vision_ms": 14839.68,
+      "stage2_synthesis_ms": 10029.4,
+      "parse_validate_ms": 0.12,
+      "total_latency_ms": 24960.59,
+      "stage1_tokens": 30,
+      "stage2_tokens": 106,
+      "total_tokens": 136,
+      "tokens_per_second": 5.47,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 119.82,
+      "stage1_vision_ms": 14640.3,
+      "stage2_synthesis_ms": 10178.95,
+      "parse_validate_ms": 0.23,
+      "total_latency_ms": 24939.08,
+      "stage1_tokens": 30,
+      "stage2_tokens": 106,
+      "total_tokens": 136,
+      "tokens_per_second": 5.48,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 110.38,
+      "stage1_vision_ms": 16202.22,
+      "stage2_synthesis_ms": 5345.54,
+      "parse_validate_ms": 0.05,
+      "total_latency_ms": 21658.14,
+      "stage1_tokens": 58,
+      "stage2_tokens": 60,
+      "total_tokens": 118,
+      "tokens_per_second": 5.48,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThere is a right-sided central venous catheter. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**IMPRESSION**\nThe findings are unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "decode_preprocess_ms": 97.2,
+      "stage1_vision_ms": 14350.71,
+      "stage2_synthesis_ms": 10429.98,
+      "parse_validate_ms": 0.38,
+      "total_latency_ms": 24877.95,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "tokens_per_second": 5.85,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 70.67,
+      "stage1_vision_ms": 14229.92,
+      "stage2_synthesis_ms": 10741.12,
+      "parse_validate_ms": 0.25,
+      "total_latency_ms": 25041.72,
+      "stage1_tokens": 30,
+      "stage2_tokens": 114,
+      "total_tokens": 144,
+      "tokens_per_second": 5.77,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the lateral aspects of the lungs and pleural spaces."
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 136.02,
+      "stage1_vision_ms": 14050.03,
+      "stage2_synthesis_ms": 10767.29,
+      "parse_validate_ms": 0.11,
+      "total_latency_ms": 24953.35,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "tokens_per_second": 5.84,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available."
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "decode_preprocess_ms": 125.05,
+      "stage1_vision_ms": 16057.44,
+      "stage2_synthesis_ms": 6418.89,
+      "parse_validate_ms": 0.15,
+      "total_latency_ms": 22601.4,
+      "stage1_tokens": 56,
+      "stage2_tokens": 82,
+      "total_tokens": 138,
+      "tokens_per_second": 6.14,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThere is a chest tube in place. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**IMPRESSION**\nThe chest tube is in place. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 82.57,
+      "stage1_vision_ms": 14932.16,
+      "stage2_synthesis_ms": 6251.87,
+      "parse_validate_ms": 0.37,
+      "total_latency_ms": 21266.63,
+      "stage1_tokens": 50,
+      "stage2_tokens": 80,
+      "total_tokens": 130,
+      "tokens_per_second": 6.14,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present. Cardiothoracic ratio is normal. Lungs are clear. Costophrenic angles are sharp.\n\n**IMPRESSION**\nThe endotracheal tube is present. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 98.71,
+      "stage1_vision_ms": 14006.97,
+      "stage2_synthesis_ms": 6896.16,
+      "parse_validate_ms": 0.06,
+      "total_latency_ms": 21001.85,
+      "stage1_tokens": 30,
+      "stage2_tokens": 76,
+      "total_tokens": 106,
+      "tokens_per_second": 5.07,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a normal chest X-ray.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the lateral chest structures."
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "decode_preprocess_ms": 150.69,
+      "stage1_vision_ms": 14063.34,
+      "stage2_synthesis_ms": 7034.86,
+      "parse_validate_ms": 0.36,
+      "total_latency_ms": 21248.91,
+      "stage1_tokens": 30,
+      "stage2_tokens": 76,
+      "total_tokens": 106,
+      "tokens_per_second": 5.02,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a normal chest X-ray.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the lateral chest structures."
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "decode_preprocess_ms": 117.47,
+      "stage1_vision_ms": 17275.43,
+      "stage2_synthesis_ms": 7906.71,
+      "parse_validate_ms": 0.22,
+      "total_latency_ms": 25299.63,
+      "stage1_tokens": 58,
+      "stage2_tokens": 89,
+      "total_tokens": 147,
+      "tokens_per_second": 5.84,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present, terminating 4 cm above the carina. Cardiothoracic ratio is normal. Lungs are clear. Costophrenic angles are sharp.\n\n**IMPRESSION**\nThe endotracheal tube is appropriately positioned. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**LIMITATIONS**\nSingle frontal projection. No lateral projection."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "decode_preprocess_ms": 237.2,
+      "stage1_vision_ms": 19865.99,
+      "stage2_synthesis_ms": 6128.03,
+      "parse_validate_ms": 0.12,
+      "total_latency_ms": 26231.24,
+      "stage1_tokens": 43,
+      "stage2_tokens": 58,
+      "total_tokens": 101,
+      "tokens_per_second": 3.89,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are clear.\n\n**IMPRESSION**\nNormal cardiac silhouette, clear lungs, and clear pleural spaces.\n\n**LIMITATIONS**\nSingle frontal projection. No lateral projection."
+    }
+  ]
+}

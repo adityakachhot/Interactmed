@@ -1,0 +1,40 @@
+{
+  "audit_version": "2.0.0",
+  "evaluation_split": "held_out_test",
+  "sample_size": 25,
+  "current_prompt_baseline": {
+    "sample_size": 25,
+    "abnormal_cohort_size": 19,
+    "micro_precision": 0.24,
+    "micro_recall": 0.1395,
+    "micro_f1": 0.1764,
+    "unsupported_positive_rate": 0.0,
+    "unsupported_negative_rate": 1.0,
+    "boilerplate_normal_rate": 1.0,
+    "mean_rouge_l": 0.1698,
+    "mean_bleu_2": 0.0763,
+    "mean_latency_sec": 19.16,
+    "mean_tokens_per_second": 4.98
+  },
+  "revised_prompt": {
+    "sample_size": 25,
+    "abnormal_cohort_size": 19,
+    "micro_precision": 0.48,
+    "micro_recall": 0.2791,
+    "micro_f1": 0.353,
+    "unsupported_positive_rate": 0.0,
+    "unsupported_negative_rate": 0.6842,
+    "boilerplate_normal_rate": 0.0,
+    "mean_rouge_l": 0.1563,
+    "mean_bleu_2": 0.0704,
+    "mean_latency_sec": 31.2,
+    "mean_tokens_per_second": 8.72
+  },
+  "delta_improvements": {
+    "f1_delta": 0.1766,
+    "precision_delta": 0.24,
+    "recall_delta": 0.1396,
+    "unsupported_negative_delta": -0.3158,
+    "boilerplate_normal_delta": -1.0
+  }
+}

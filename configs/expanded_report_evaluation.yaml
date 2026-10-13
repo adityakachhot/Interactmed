@@ -1,0 +1,79 @@
+# ==============================================================================
+# InteractMed-VLM Expanded Report Evaluation Configuration
+# ==============================================================================
+
+evaluation:
+  version: "3.0.0"
+  date: "2026-10-13"
+  task: "whole_chest_xray_research_report_generation"
+  model:
+    provider: "ollama"
+    model_name: "medgemma:4b"
+    endpoint: "http://127.0.0.1:11434"
+    keep_alive: "30m"
+    max_side: 1024
+    temperature: 0.1
+    timeout_sec: 240
+
+splits:
+  manifest_path: "artifacts/report_evaluation/expanded_cohort/expanded_manifest.csv"
+  reference_store_path: "artifacts/report_evaluation/expanded_cohort/expanded_reference_store.json"
+  audit_summary_path: "artifacts/report_evaluation/expanded_cohort/expanded_cohort_audit.json"
+  expanded_dev_size: 250
+  expanded_test_size: 117
+  total_expanded_cohort_size: 367
+  patient_grouped: true
+  zero_patient_leakage: true
+  historical_cohort_preserved: 50
+
+categories:
+  - "normal"
+  - "pneumonia_consolidation"
+  - "pulmonary_edema"
+  - "cardiomegaly"
+  - "pleural_effusion"
+  - "atelectasis"
+  - "support_devices"
+
+pipelines:
+  baseline_single_stage:
+    description: "Original single-stage MedGemma 4B free-form prompt"
+    num_predict: 220
+  production_prompt_v3_structured:
+    description: "Production 2-stage prompt (5 categories, 4-status differentiation, explicit laterality)"
+    stage1_num_predict: 130
+    stage2_num_predict: 180
+
+metrics:
+  clinical:
+    - "clinical_micro_precision"
+    - "clinical_micro_recall"
+    - "clinical_micro_f1"
+    - "category_level_f1"
+  error_taxonomy:
+    - "false_normal_rate_abnormal"
+    - "unsupported_positive_rate"
+    - "unsupported_negative_rate"
+    - "laterality_omissions"
+    - "laterality_swaps"
+    - "internal_contradictions"
+    - "boilerplate_normal_rate"
+  performance:
+    - "mean_latency_ms"
+    - "median_latency_ms"
+    - "tokens_per_second"
+
+artifacts:
+  output_dir: "artifacts/report_evaluation/expanded_cohort"
+  comparison_csv: "artifacts/report_evaluation/expanded_cohort/expanded_comparison.csv"
+  summary_json: "artifacts/report_evaluation/expanded_cohort/expanded_summary.json"
+  case_results_json: "artifacts/report_evaluation/expanded_cohort/expanded_case_results.json"
+  documentation_md: "docs/EXPANDED_REPORT_EVALUATION.md"
+
+full_evaluation_artifacts:
+  output_dir: "artifacts/report_evaluation/expanded_cohort_full"
+  comparison_csv: "artifacts/report_evaluation/expanded_cohort_full/expanded_comparison.csv"
+  summary_json: "artifacts/report_evaluation/expanded_cohort_full/expanded_summary.json"
+  case_results_json: "artifacts/report_evaluation/expanded_cohort_full/expanded_case_results.json"
+  documentation_md: "docs/EXPANDED_REPORT_EVALUATION.md"
+  reconciliation_md: "docs/EXPANDED_EVALUATION_RECONCILIATION.md"

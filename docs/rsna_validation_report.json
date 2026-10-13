@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-09T20:35:15.184900Z",
+  "rsna_root": "/Users/adityakachhot/interactmed/data/raw/rsna",
+  "validation_checks": {
+    "rsna_root_exists": true,
+    "labels_csv_exists": true,
+    "class_info_csv_exists": true,
+    "sample_submission_exists": true,
+    "train_images_dir_exists": true,
+    "test_images_dir_exists": true,
+    "label_columns_valid": true,
+    "label_rows_within_expected": true,
+    "patient_count_within_expected": true,
+    "positive_count_within_expected": true,
+    "negative_count_within_expected": true,
+    "bbox_non_negative": true,
+    "bbox_positive_dimensions": true,
+    "bbox_within_pixel_range": true,
+    "class_info_columns_valid": true,
+    "class_info_classes_valid": true,
+    "train_dicom_count_within_expected": true,
+    "dicom_sample_readable": true,
+    "patient_id_dicom_cross_check": true
+  },
+  "statistics": {
+    "label_rows_total": 30227,
+    "unique_train_patients": 26684,
+    "positive_cases": 6012,
+    "negative_cases": 20672,
+    "multi_box_patients": 3398,
+    "max_boxes_per_patient": 4,
+    "bbox_x_range": [
+      2.0,
+      1024.0
+    ],
+    "bbox_y_range": [
+      2.0,
+      1024.0
+    ],
+    "bbox_width_range": [
+      40.0,
+      528.0
+    ],
+    "bbox_height_range": [
+      45.0,
+      942.0
+    ],
+    "class_distribution": {
+      "No Lung Opacity / Not Normal": 11821,
+      "Lung Opacity": 9555,
+      "Normal": 8851
+    },
+    "train_dicom_count": 26684,
+    "test_dicom_count": 3000,
+    "dicom_sample_n": 10,
+    "dicom_sample_ok_count": 10,
+    "dicom_sample_errors": [],
+    "label_ids_without_dcm": 0,
+    "dcm_files_without_label": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "overall_status": "PASS"
+}

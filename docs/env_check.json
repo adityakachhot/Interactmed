@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-10-09T19:35:48Z",
+  "hardware": {
+    "os": "Darwin",
+    "os_release": "27.0.0",
+    "platform_string": "macOS-27.0.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "processor": "arm",
+    "total_ram_gb": 16.0,
+    "available_ram_gb": 6.34,
+    "cpu_count_logical": 8,
+    "cpu_count_physical": 8
+  },
+  "python": {
+    "executable": "/Users/adityakachhot/miniforge3/envs/dl/bin/python",
+    "version": "3.10.19",
+    "compiler": "Clang 20.1.8 ",
+    "prefix": "/Users/adityakachhot/miniforge3/envs/dl",
+    "is_conda": true
+  },
+  "dependencies": {
+    "torch": {
+      "status": "OK",
+      "version": "2.2.2"
+    },
+    "torchvision": {
+      "status": "OK",
+      "version": "0.17.2"
+    },
+    "numpy": {
+      "status": "OK",
+      "version": "1.26.4"
+    },
+    "cv2": {
+      "status": "OK",
+      "version": "4.8.1"
+    },
+    "albumentations": {
+      "status": "OK",
+      "version": "1.4.4"
+    },
+    "timm": {
+      "status": "OK",
+      "version": "1.0.30"
+    },
+    "transformers": {
+      "status": "OK",
+      "version": "4.40.1"
+    },
+    "pandas": {
+      "status": "OK",
+      "version": "2.3.3"
+    },
+    "matplotlib": {
+      "status": "OK",
+      "version": "3.10.7"
+    },
+    "yaml": {
+      "status": "OK",
+      "version": "6.0.3"
+    },
+    "PIL": {
+      "status": "OK",
+      "version": "12.0.0"
+    }
+  },
+  "pytorch_devices": {
+    "torch_version": "2.2.2",
+    "cuda_available": false,
+    "mps_available": true,
+    "mps_built": true,
+    "default_device": "cpu",
+    "cpu_benchmark_1000x1000_matmul_ms": 10.31,
+    "mps_status": "FUNCTIONAL",
+    "mps_benchmark_1000x1000_matmul_ms": 57.57,
+    "speedup_mps_vs_cpu": 0.18,
+    "recommended_device": "mps"
+  },
+  "all_dependencies_passed": true
+}

@@ -1,0 +1,1060 @@
+{
+  "resolution_1024px": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "prep_ms": 52.41,
+      "stage1_ms": 9984.66,
+      "prompt_eval_ms": 1703.19,
+      "stage2_ms": 4255.16,
+      "total_ms": 14292.4,
+      "total_tokens": 166,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "prep_ms": 45.01,
+      "stage1_ms": 9918.07,
+      "prompt_eval_ms": 1730.88,
+      "stage2_ms": 4298.29,
+      "total_ms": 14261.49,
+      "total_tokens": 166,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "prep_ms": 53.07,
+      "stage1_ms": 10765.65,
+      "prompt_eval_ms": 1965.22,
+      "stage2_ms": 6299.23,
+      "total_ms": 17118.08,
+      "total_tokens": 170,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "prep_ms": 50.67,
+      "stage1_ms": 20176.55,
+      "prompt_eval_ms": 3022.27,
+      "stage2_ms": 7466.44,
+      "total_ms": 27693.8,
+      "total_tokens": 146,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "prep_ms": 44.89,
+      "stage1_ms": 17229.76,
+      "prompt_eval_ms": 2569.69,
+      "stage2_ms": 6341.79,
+      "total_ms": 23616.57,
+      "total_tokens": 154,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "prep_ms": 45.53,
+      "stage1_ms": 16892.41,
+      "prompt_eval_ms": 2699.53,
+      "stage2_ms": 6296.01,
+      "total_ms": 23234.08,
+      "total_tokens": 154,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 61.59,
+      "stage1_ms": 16243.86,
+      "prompt_eval_ms": 2547.11,
+      "stage2_ms": 5652.04,
+      "total_ms": 21957.67,
+      "total_tokens": 145,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: None observed.\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 44.19,
+      "stage1_ms": 15604.18,
+      "prompt_eval_ms": 2568.18,
+      "stage2_ms": 7173.99,
+      "total_ms": 22822.48,
+      "total_tokens": 170,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 60.09,
+      "stage1_ms": 18358.31,
+      "prompt_eval_ms": 2494.07,
+      "stage2_ms": 10589.62,
+      "total_ms": 29008.15,
+      "total_tokens": 244,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus:\n    *   Endotracheal tube: Left\n    *   Enteric tube: Not identified\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities: Clear\n\n4.  Pleural spaces: Sharp\n\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 52.14,
+      "stage1_ms": 17905.4,
+      "prompt_eval_ms": 2553.81,
+      "stage2_ms": 10388.12,
+      "total_ms": 28345.8,
+      "total_tokens": 256,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:**\n    *   Endotracheal tube: Left\n    *   Enteric tube: Not identified\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  **Cardiac silhouette:** Normal\n\n3.  **Lungs & opacities:** Clear\n\n4.  **Pleural spaces:** Sharp\n\n5.  **Mediastinum:** Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 45.54,
+      "stage1_ms": 15930.74,
+      "prompt_eval_ms": 2535.37,
+      "stage2_ms": 6861.38,
+      "total_ms": 22837.81,
+      "total_tokens": 176,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 47.31,
+      "stage1_ms": 18016.11,
+      "prompt_eval_ms": 2645.08,
+      "stage2_ms": 10099.53,
+      "total_ms": 28163.1,
+      "total_tokens": 236,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:** No visible support apparatus.\n2.  **Cardiac silhouette:** Normal\n3.  **Lungs & opacities:** No obvious consolidation, focal opacity, atelectasis, congestion, or edema.\n    *   Unspecified laterality\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n    *   Unspecified laterality\n5.  **Mediastinum:** Normal contour.\n    *   Unspecified laterality\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 46.96,
+      "stage1_ms": 15117.11,
+      "prompt_eval_ms": 2546.29,
+      "stage2_ms": 6996.97,
+      "total_ms": 22161.17,
+      "total_tokens": 170,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles are sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 46.64,
+      "stage1_ms": 16094.21,
+      "prompt_eval_ms": 2509.15,
+      "stage2_ms": 6784.52,
+      "total_ms": 22925.51,
+      "total_tokens": 168,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "prep_ms": 46.43,
+      "stage1_ms": 16143.42,
+      "prompt_eval_ms": 2725.08,
+      "stage2_ms": 9030.12,
+      "total_ms": 25220.15,
+      "total_tokens": 124,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: None observed.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: Clear.\n4.  Pleural spaces: Sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "prep_ms": 51.95,
+      "stage1_ms": 15711.74,
+      "prompt_eval_ms": 2567.75,
+      "stage2_ms": 7333.85,
+      "total_ms": 23097.66,
+      "total_tokens": 155,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:** No support apparatus identified.\n2.  **Cardiac silhouette:** Normal\n3.  **Lungs & opacities:** No acute findings.\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n5.  **Mediastinum:** Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary findings.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "prep_ms": 47.31,
+      "stage1_ms": 16696.21,
+      "prompt_eval_ms": 2597.45,
+      "stage2_ms": 6973.09,
+      "total_ms": 23716.75,
+      "total_tokens": 176,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "prep_ms": 40.63,
+      "stage1_ms": 16466.66,
+      "prompt_eval_ms": 2680.44,
+      "stage2_ms": 6462.11,
+      "total_ms": 22969.53,
+      "total_tokens": 152,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "prep_ms": 51.1,
+      "stage1_ms": 16393.7,
+      "prompt_eval_ms": 3132.94,
+      "stage2_ms": 6139.77,
+      "total_ms": 22584.7,
+      "total_tokens": 146,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "prep_ms": 51.23,
+      "stage1_ms": 19628.39,
+      "prompt_eval_ms": 2660.53,
+      "stage2_ms": 10538.4,
+      "total_ms": 30218.16,
+      "total_tokens": 262,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus:\n    *   Endotracheal tube: Observed (left)\n    *   Enteric tube: Observed (right)\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\n\n4.  Pleural spaces:\n    *   Right costophrenic angle: Sharp\n\n**IMPRESSION**\nAutomated visual reading is indeterminate without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nSingle frontal projection; AI research draft; requires formal radiologist verification."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "prep_ms": 46.6,
+      "stage1_ms": 16035.28,
+      "prompt_eval_ms": 2502.58,
+      "stage2_ms": 10063.3,
+      "total_ms": 26145.32,
+      "total_tokens": 238,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Endotracheal tube: Observed | Left\n2.  Enteric tube: Not identified\n3.  Vascular catheter/line: Not identified\n4.  Chest tube: Not identified\n5.  Pacemaker: Not identified\n6.  Surgical clips: Not identified\n7.  Cardiac silhouette: Normal\n8.  Lungs & opacities: Clear\n9.  Pleural spaces: Sharp\n10. Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present in the left main bronchus. No other abnormalities are identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "prep_ms": 45.04,
+      "stage1_ms": 15036.28,
+      "prompt_eval_ms": 2612.25,
+      "stage2_ms": 6889.79,
+      "total_ms": 21971.23,
+      "total_tokens": 162,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal\n3. Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4. Pleural spaces: Costophrenic angles sharp.\n5. Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "prep_ms": 40.21,
+      "stage1_ms": 15694.33,
+      "prompt_eval_ms": 2555.5,
+      "stage2_ms": 7389.58,
+      "total_ms": 23124.26,
+      "total_tokens": 172,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "prep_ms": 46.01,
+      "stage1_ms": 18064.3,
+      "prompt_eval_ms": 2473.94,
+      "stage2_ms": 9319.08,
+      "total_ms": 27429.65,
+      "total_tokens": 237,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\n*   Enteric tube: Not identified\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "prep_ms": 50.49,
+      "stage1_ms": 18626.59,
+      "prompt_eval_ms": 2553.94,
+      "stage2_ms": 9792.96,
+      "total_ms": 28470.18,
+      "total_tokens": 262,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus:\n    *   Endotracheal tube: Observed (left)\n    *   Enteric tube: Observed (right)\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\n\n4.  Pleural spaces:\n    *   Right costophrenic angle: Sharp\n\n**IMPRESSION**\nAutomated visual reading is indeterminate without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nSingle frontal projection; AI research draft; requires formal radiologist verification."
+    }
+  ],
+  "resolution_1536px": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "prep_ms": 73.87,
+      "stage1_ms": 9980.12,
+      "prompt_eval_ms": 1704.31,
+      "stage2_ms": 4302.14,
+      "total_ms": 14356.18,
+      "total_tokens": 170,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal contour.\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "prep_ms": 71.81,
+      "stage1_ms": 10582.08,
+      "prompt_eval_ms": 1896.09,
+      "stage2_ms": 4746.64,
+      "total_ms": 15400.58,
+      "total_tokens": 170,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "prep_ms": 78.59,
+      "stage1_ms": 32588.48,
+      "prompt_eval_ms": 6494.85,
+      "stage2_ms": 9870.14,
+      "total_ms": 42537.33,
+      "total_tokens": 124,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: None observed.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: Clear.\n4.  Pleural spaces: Sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "prep_ms": 78.46,
+      "stage1_ms": 17956.23,
+      "prompt_eval_ms": 2629.78,
+      "stage2_ms": 7918.09,
+      "total_ms": 25952.91,
+      "total_tokens": 176,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "prep_ms": 69.61,
+      "stage1_ms": 15419.39,
+      "prompt_eval_ms": 2612.11,
+      "stage2_ms": 6815.76,
+      "total_ms": 22304.89,
+      "total_tokens": 146,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "prep_ms": 68.92,
+      "stage1_ms": 17415.31,
+      "prompt_eval_ms": 2750.06,
+      "stage2_ms": 8291.23,
+      "total_ms": 25775.6,
+      "total_tokens": 191,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal\nLungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\nPleural spaces:\n    *   Right costophrenic angle: Sharp\n    *   Left costophrenic angle: Sharp\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 107.66,
+      "stage1_ms": 15578.0,
+      "prompt_eval_ms": 2596.48,
+      "stage2_ms": 5879.62,
+      "total_ms": 21565.4,
+      "total_tokens": 144,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 70.02,
+      "stage1_ms": 15446.23,
+      "prompt_eval_ms": 2551.82,
+      "stage2_ms": 7275.84,
+      "total_ms": 22792.2,
+      "total_tokens": 166,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 111.25,
+      "stage1_ms": 18389.38,
+      "prompt_eval_ms": 2524.75,
+      "stage2_ms": 9678.1,
+      "total_ms": 28178.92,
+      "total_tokens": 237,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\n*   Enteric tube: Not identified\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "prep_ms": 86.73,
+      "stage1_ms": 18151.59,
+      "prompt_eval_ms": 2509.06,
+      "stage2_ms": 10704.54,
+      "total_ms": 28943.01,
+      "total_tokens": 266,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:**\n    *   Endotracheal tube: Left\n    *   Enteric tube: Not identified\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  **Cardiac silhouette:** Normal\n\n3.  **Lungs & opacities:** Clear\n\n4.  **Pleural spaces:** Costophrenic angles sharp\n\n5.  **Mediastinum:** Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 73.42,
+      "stage1_ms": 16182.64,
+      "prompt_eval_ms": 2565.3,
+      "stage2_ms": 6836.59,
+      "total_ms": 23092.82,
+      "total_tokens": 172,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No visible support apparatus.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 70.55,
+      "stage1_ms": 15688.25,
+      "prompt_eval_ms": 2608.5,
+      "stage2_ms": 6082.06,
+      "total_ms": 21840.99,
+      "total_tokens": 149,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No visible support apparatus.\nCardiac silhouette: Normal.\nLungs & opacities: No obvious acute pulmonary process.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 69.82,
+      "stage1_ms": 15584.97,
+      "prompt_eval_ms": 2568.01,
+      "stage2_ms": 7093.23,
+      "total_ms": 22748.11,
+      "total_tokens": 170,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles are sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "prep_ms": 68.88,
+      "stage1_ms": 16177.15,
+      "prompt_eval_ms": 2521.1,
+      "stage2_ms": 6271.02,
+      "total_ms": 22517.11,
+      "total_tokens": 161,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal contour\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "prep_ms": 74.01,
+      "stage1_ms": 16464.02,
+      "prompt_eval_ms": 2704.94,
+      "stage2_ms": 6142.5,
+      "total_ms": 22680.68,
+      "total_tokens": 146,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "prep_ms": 80.16,
+      "stage1_ms": 16387.6,
+      "prompt_eval_ms": 2819.25,
+      "stage2_ms": 6870.89,
+      "total_ms": 23338.72,
+      "total_tokens": 157,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:** No support apparatus identified.\n2.  **Cardiac silhouette:** Normal\n3.  **Lungs & opacities:** No acute pulmonary findings.\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n5.  **Mediastinum:** Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary findings.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "prep_ms": 79.02,
+      "stage1_ms": 16918.76,
+      "prompt_eval_ms": 2611.56,
+      "stage2_ms": 7011.24,
+      "total_ms": 24009.1,
+      "total_tokens": 176,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "prep_ms": 67.06,
+      "stage1_ms": 15244.17,
+      "prompt_eval_ms": 2647.97,
+      "stage2_ms": 5522.36,
+      "total_ms": 20833.68,
+      "total_tokens": 127,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal\nLungs & opacities: Clear\nPleural spaces: Costophrenic angles sharp\nMediastinum: Normal contour\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "prep_ms": 84.3,
+      "stage1_ms": 15678.15,
+      "prompt_eval_ms": 2642.59,
+      "stage2_ms": 6147.86,
+      "total_ms": 21910.45,
+      "total_tokens": 140,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "prep_ms": 83.48,
+      "stage1_ms": 18347.55,
+      "prompt_eval_ms": 2573.02,
+      "stage2_ms": 9707.51,
+      "total_ms": 28138.7,
+      "total_tokens": 244,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\n*   Enteric tube: Right\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal contour\n\n**IMPRESSION**\nEndotracheal tube and enteric tube are present. No acute cardiopulmonary findings.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "prep_ms": 72.73,
+      "stage1_ms": 17077.22,
+      "prompt_eval_ms": 2451.01,
+      "stage2_ms": 10513.98,
+      "total_ms": 27664.08,
+      "total_tokens": 256,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:**\n    *   Endotracheal tube: Left\n    *   Enteric tube: Not identified\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  **Cardiac silhouette:** Normal\n\n3.  **Lungs & opacities:** Clear\n\n4.  **Pleural spaces:** Sharp\n\n5.  **Mediastinum:** Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "prep_ms": 74.95,
+      "stage1_ms": 16578.79,
+      "prompt_eval_ms": 2603.26,
+      "stage2_ms": 6855.21,
+      "total_ms": 23509.08,
+      "total_tokens": 175,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "prep_ms": 62.97,
+      "stage1_ms": 15460.21,
+      "prompt_eval_ms": 2567.38,
+      "stage2_ms": 7122.56,
+      "total_ms": 22645.87,
+      "total_tokens": 166,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "prep_ms": 74.41,
+      "stage1_ms": 17568.57,
+      "prompt_eval_ms": 2525.32,
+      "stage2_ms": 9120.63,
+      "total_ms": 26763.7,
+      "total_tokens": 237,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant",
+      "unsupported_negative": [],
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\n*   Enteric tube: Not identified\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "prep_ms": 84.22,
+      "stage1_ms": 14526.16,
+      "prompt_eval_ms": 2591.14,
+      "stage2_ms": 6401.06,
+      "total_ms": 21011.57,
+      "total_tokens": 146,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "support_devices"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_negative": [
+        "unwarranted_normal"
+      ],
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view."
+    }
+  ]
+}

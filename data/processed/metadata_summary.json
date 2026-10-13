@@ -1,0 +1,60 @@
+{
+  "execution_summary": {
+    "total_master_records": 27437,
+    "total_local_verified_records": 11896,
+    "unmatched_records_lacking_images": 15541,
+    "local_match_percentage": 43.36
+  },
+  "by_dataset": {
+    "ms_cxr": {
+      "total_records": 1448,
+      "matched_local_records": 1056,
+      "unmatched_records": 392,
+      "unique_dicoms_total": 1047,
+      "unique_dicoms_local": 764,
+      "unique_subjects": 851,
+      "valid_bboxes_count": 1448,
+      "splits": {
+        "test": {
+          "total": 216,
+          "local": 163
+        },
+        "train": {
+          "total": 1020,
+          "local": 746
+        },
+        "val": {
+          "total": 212,
+          "local": 147
+        }
+      }
+    },
+    "chest_imagenome_gold": {
+      "total_records": 25989,
+      "matched_local_records": 10840,
+      "unmatched_records": 15149,
+      "unique_dicoms_total": 1000,
+      "unique_dicoms_local": 417,
+      "unique_subjects": 500,
+      "valid_bboxes_count": 25983,
+      "classification": "visual_sanity_check_set"
+    }
+  },
+  "coordinate_validity": {
+    "total_valid_bboxes": 27431,
+    "total_anomalous_bboxes": 6,
+    "validation_errors_distribution": {
+      "none": 27202,
+      "negative_x1_clamped": 153,
+      "negative_y1_clamped": 59,
+      "flipped_x_corrected": 16,
+      "flipped_y_corrected": 4,
+      "zero_or_negative_area": 2,
+      "flipped_x_corrected_and_y": 1
+    }
+  },
+  "patient_demographics_coverage": {
+    "records_with_gender": 25989,
+    "records_with_age_decile": 25989
+  }
+}

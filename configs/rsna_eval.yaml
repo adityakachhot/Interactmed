@@ -1,0 +1,129 @@
+# ==============================================================================
+# InteractMed-VLM — Phase 3B: Zero-Shot RSNA Evaluation Configuration
+# ==============================================================================
+# LOCKED: This file defines the primary query and all evaluation rules.
+# Do NOT modify query or matching rules after val evaluation has been run.
+# Changes here would invalidate the val→test protocol.
+# ==============================================================================
+
+# ── Experiment Identity ────────────────────────────────────────────────────────
+experiment:
+  name: "rsna_evaluation"
+  description: >
+    External grounding evaluation of TransVG-AGPT on the RSNA Pneumonia
+    Detection Challenge 2018 dataset. Evaluates pneumonia localization on positive images.
+    Supports both pretrained baseline and fine-tuned checkpoints.
+  phase: "3B/4B"
+  checkpoint: "/Users/adityakachhot/interactmed/checkpoints/transvg.pth"
+  default_checkpoint: "/Users/adityakachhot/interactmed/checkpoints/transvg.pth"
+  task: "pneumonia_localization"
+
+# ── Primary Query (FROZEN — do not change after val run) ─────────────────────
+query:
+  primary: "pneumonia"
+  # Secondary query evaluated on val split ONLY for reporting purposes.
+  # Secondary results must NOT influence test-set thresholds.
+  secondary: "airspace opacity"
+  # Queries are passed verbatim to ClinicalBERT tokenizer inside AGPT.
+  # max_query_len from transvg_args = 50 tokens — both queries are well within limit.
+
+# ── RSNA Data Paths ───────────────────────────────────────────────────────────
+data:
+  rsna_root: "/Users/adityakachhot/interactmed/data/raw/rsna"
+  labels_csv: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_labels.csv"
+  class_info_csv: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_detailed_class_info.csv"
+  images_dir: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images"
+  processed_splits_dir: "/Users/adityakachhot/interactmed/data/processed/rsna"
+  # Splits are created deterministically by scripts/evaluate_rsna.py --prepare-splits
+  # Seed is recorded in splits metadata; do not change after splits are created.
+  split_seed: 42
+  val_fraction: 0.15   # fraction of positive images in val
+  test_fraction: 0.15  # fraction of positive images in test (held-out)
+  # Negative images are never used as positives.
+  # Evaluation is exclusively on images with class == "Lung Opacity" and Target == 1.
+
+# ── Model / Preprocessing Settings ───────────────────────────────────────────
+model:
+  name: "TransVG-AGPT"
+  imsize: 640                          # fixed by transvg_args (must match checkpoint)
+  bert_model: "medicalai/ClinicalBERT" # fixed by transvg_args
+  max_query_len: 50                    # fixed by transvg_args
+  checkpoint_load_strict: false        # AGPT demo uses strict=False
+  # Device selection: "auto" → mps if available, then cpu. Never cuda (not present).
+  device: "auto"
+  # Output coordinate space: model outputs normalized [cx, cy, w, h] in [0,1],
+  # relative to args.imsize (640×640 padded canvas).
+  # xywh2xyxy converts to [x1, y1, x2, y2] still normalized in [0,1].
+  output_coord_format: "normalized_cx_cy_w_h"
+
+# ── Coordinate Mapping ────────────────────────────────────────────────────────
+# RSNA GT boxes are in native pixel space [x, y, w, h] at ~1024×1024 resolution.
+# Model predictions are normalized [cx, cy, w, h] in [0,1], padded-canvas space.
+#
+# Mapping back to original pixel space requires accounting for letterbox padding:
+#   1. AGPT resizes image with LongestMaxSize(640) → scale = 640 / max(H, W)
+#   2. PadIfNeeded pads to exactly 640×640 with zero-padding (border_mode=CONSTANT)
+#   3. Predicted [cx, cy, w, h] are multiplied by 640 to get canvas coords
+#   4. Subtract letterbox offset, divide by scale → original pixel coords
+coordinates:
+  agpt_canvas_size: 640
+  gt_coord_format: "[x, y, width, height]"  # RSNA native pixel coords
+  gt_typical_resolution: "1024x1024"
+  pred_output_format: "normalized_cx_cy_w_h"  # after sigmoid
+  pred_post_process: "xywh2xyxy"             # applied inside AGPT (from box_utils)
+
+# ── IoU Matching Rules (FROZEN) ───────────────────────────────────────────────
+# Rule: For images with multiple GT boxes (multi-focal pneumonia),
+# the predicted box is matched to the GT box with the HIGHEST IoU (best-match).
+# This is the standard PASCAL VOC / MS-COCO single-prediction matching rule.
+# A single prediction is produced per image per query.
+matching:
+  strategy: "best_overlap"           # match prediction to highest-IoU GT box
+  multi_gt_rule: "max_iou_gt"        # use max(IoU(pred, gt_i)) over all gt_i
+  iou_thresholds: [0.50, 0.75]       # recall computed at both thresholds
+  # Negative images: model will produce a prediction box (grounding models always
+  # output a box). Negative images are reported SEPARATELY and excluded from
+  # recall/IoU metrics. Do not use model output on negatives as pneumonia evidence.
+  negative_handling: "report_separately_excluded_from_recall"
+
+# ── Output Paths ──────────────────────────────────────────────────────────────
+output:
+  artifacts_dir: "/Users/adityakachhot/interactmed/artifacts/rsna"
+  runs_dir: "/Users/adityakachhot/interactmed/artifacts/rsna/runs"
+  # Default run directories:
+  #   Pretrained baseline : artifacts/rsna/runs/original_baseline/
+  #   Fine-tuned checkpoint: artifacts/rsna/runs/<run_name>/
+  val_csv: "/Users/adityakachhot/interactmed/artifacts/rsna/baseline_validation.csv"
+  val_json: "/Users/adityakachhot/interactmed/artifacts/rsna/baseline_validation.json"
+  test_csv: "/Users/adityakachhot/interactmed/artifacts/rsna/baseline_test.csv"
+  test_json: "/Users/adityakachhot/interactmed/artifacts/rsna/baseline_test.json"
+  visualizations_dir: "/Users/adityakachhot/interactmed/artifacts/rsna/visualizations"
+  results_doc: "/Users/adityakachhot/interactmed/docs/BASELINE_RSNA_RESULTS.md"
+
+# ── Smoke Test Settings ───────────────────────────────────────────────────────
+smoke_test:
+  n_images: 5           # number of positive images to process in smoke test
+  save_visualizations: true
+  output_dir: "/Users/adityakachhot/interactmed/artifacts/rsna/smoke_test"
+
+# ── Reporting ────────────────────────────────────────────────────────────────
+report:
+  # Fields recorded per image in per-image CSV
+  per_image_fields:
+    - patient_id
+    - split
+    - dcm_path
+    - image_width_px
+    - image_height_px
+    - query
+    - n_gt_boxes
+    - gt_boxes_pixel          # list of [x,y,w,h] in original pixel space
+    - pred_box_norm           # [cx,cy,w,h] normalized output from model
+    - pred_box_canvas         # [x1,y1,x2,y2] on 640×640 canvas
+    - pred_box_pixel          # [x1,y1,x2,y2] mapped back to original image pixels
+    - best_match_iou
+    - iou_at_0_50
+    - iou_at_0_75
+    - inference_time_ms
+    - inference_success
+    - exclusion_reason        # populated if image was excluded from metrics

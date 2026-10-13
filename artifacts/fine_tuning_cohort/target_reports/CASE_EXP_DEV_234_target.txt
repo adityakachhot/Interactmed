@@ -1,0 +1,8 @@
+OBSERVATIONS
+In comparison with the study of ___, there is no change or evidence of acute cardiopulmonary disease. No pneumonia, vascular congestion, or pleural effusion.
+
+IMPRESSION
+Cardiopulmonary findings as detailed in observations.
+
+LIMITATIONS
+Single frontal AP projection. Evaluation limited by absence of orthogonal lateral view.

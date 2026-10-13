@@ -1,0 +1,71 @@
+{
+  "dataset_entity_counts": {
+    "ms_cxr": {
+      "records": 1448,
+      "unique_patients": 851,
+      "unique_studies": 1047,
+      "unique_images": 1047,
+      "images_present_locally": 764
+    },
+    "chest_imagenome_gold": {
+      "records": 25989,
+      "unique_patients": 500,
+      "unique_studies": 1000,
+      "unique_images": 1000,
+      "images_present_locally": 417
+    }
+  },
+  "cross_dataset_overlap": {
+    "shared_patients_count": 16,
+    "shared_studies_count": 9,
+    "shared_images_count": 9,
+    "union_unique_patients": 1335,
+    "union_unique_images": 2038,
+    "shared_images_present_locally_on_disk": 7
+  },
+  "ms_cxr_split_contamination_audit": {
+    "test": {
+      "total_split_records": 216,
+      "unique_subjects": 128,
+      "unique_studies": 155,
+      "unique_dicoms": 155,
+      "shared_subjects_with_cig_gold": 0,
+      "shared_dicoms_with_cig_gold": 0,
+      "is_strictly_patient_disjoint": true,
+      "is_strictly_image_disjoint": true
+    },
+    "train": {
+      "total_split_records": 1020,
+      "unique_subjects": 595,
+      "unique_studies": 737,
+      "unique_dicoms": 737,
+      "shared_subjects_with_cig_gold": 14,
+      "shared_dicoms_with_cig_gold": 8,
+      "is_strictly_patient_disjoint": false,
+      "is_strictly_image_disjoint": false
+    },
+    "val": {
+      "total_split_records": 212,
+      "unique_subjects": 128,
+      "unique_studies": 155,
+      "unique_dicoms": 155,
+      "shared_subjects_with_cig_gold": 2,
+      "shared_dicoms_with_cig_gold": 1,
+      "is_strictly_patient_disjoint": false,
+      "is_strictly_image_disjoint": false
+    }
+  },
+  "evaluation_split_classification": {
+    "ms_cxr_test_split": {
+      "classification": "INDEPENDENT_BENCHMARK",
+      "patient_leakage_with_cig_gold": false,
+      "image_leakage_with_cig_gold": false,
+      "description": "Clean, zero-leakage held-out test split for phrase grounding evaluation."
+    },
+    "chest_imagenome_gold": {
+      "classification": "VISUAL_SANITY_CHECK_SET",
+      "reason": "AGPT pretrained on Chest ImaGenome without publishing exact excluded patient splits. Cannot guarantee held-out status from pretraining.",
+      "approved_role": "Visual anatomical alignment verification, sanity-check inference, and qualitative error inspection only."
+    }
+  }
+}

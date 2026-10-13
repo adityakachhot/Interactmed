@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-10-11 23:17:05",
+  "batch_id": "batch_ccb1a903",
+  "total_items": 4,
+  "status": "completed",
+  "average_pairwise_similarity": 0.3581,
+  "pairwise_similarities": {
+    "0004cfab-14fd-4e49-80ba-63a80b6bddd6.dcm vs 00436515-870c-4b36-a041-de91049b9ab4.dcm": 0.3613,
+    "0004cfab-14fd-4e49-80ba-63a80b6bddd6.dcm vs 00aecb01-a116-45a2-956c-08d2fa55433f.dcm": 0.5096,
+    "0004cfab-14fd-4e49-80ba-63a80b6bddd6.dcm vs 00c0b293-48e7-4e16-ac76-9269ba535a62.dcm": 0.2835,
+    "00436515-870c-4b36-a041-de91049b9ab4.dcm vs 00aecb01-a116-45a2-956c-08d2fa55433f.dcm": 0.3193,
+    "00436515-870c-4b36-a041-de91049b9ab4.dcm vs 00c0b293-48e7-4e16-ac76-9269ba535a62.dcm": 0.3361,
+    "00aecb01-a116-45a2-956c-08d2fa55433f.dcm vs 00c0b293-48e7-4e16-ac76-9269ba535a62.dcm": 0.339
+  },
+  "items": [
+    {
+      "job_id": "job_3b97d35c",
+      "filename": "0004cfab-14fd-4e49-80ba-63a80b6bddd6.dcm",
+      "sha256": "d223645405c0a1e3",
+      "reference_label": "Normal / Baseline",
+      "reference_features": [
+        "Clear lungs or mild right basilar markings",
+        "No intubation"
+      ],
+      "status": "completed",
+      "latency_ms": 20184.27,
+      "tokens_per_second": 29.12,
+      "model_used": "medgemma:4b",
+      "has_frontal_one_side_error": false,
+      "has_generic_normal_boilerplate": false,
+      "validation_warnings": [
+        "Corrected anatomical error: A frontal view displays both sides of the chest, but lacks a lateral projection."
+      ],
+      "sections": {
+        "Your X-ray in simple words": "The lungs look clear. The heart size is normal. There's a chest tube in your right side.",
+        "What the findings may mean": "The clear lungs suggest no pneumonia or other lung problems. The normal heart size is good. The chest tube is likely there for a previous problem, like fluid buildup or bleeding, and is being monitored.",
+        "What is uncertain": "The X-ray This frontal view displays both the left and right sides of the chest, but as a single 2D projection, it does not provide a side (lateral) view. It's like looking at a picture of a 3D object from only one angle. This makes it hard to see if there are any subtle problems that might be hidden.",
+        "What happens next": "Please talk to your doctor about this X-ray. They can look at it with you and decide what it means for your health."
+      },
+      "report_text": "**Your X-ray in simple words**\nThe lungs look clear. The heart size is normal. There's a chest tube in your right side.\n\n**What the findings may mean**\nThe clear lungs suggest no pneumonia or other lung problems. The normal heart size is good. The chest tube is likely there for a previous problem, like fluid buildup or bleeding, and is being monitored.\n\n**What is uncertain**\nThe X-ray This frontal view displays both the left and right sides of the chest, but as a single 2D projection, it does not provide a side (lateral) view. It's like looking at a picture of a 3D object from only one angle. This makes it hard to see if there are any subtle problems that might be hidden.\n\n**What happens next**\nPlease talk to your doctor about this X-ray. They can look at it with you and decide what it means for your health."
+    },
+    {
+      "job_id": "job_33ac0a1f",
+      "filename": "00436515-870c-4b36-a041-de91049b9ab4.dcm",
+      "sha256": "f841548556d57500",
+      "reference_label": "Severe Bilateral Pneumonia Opacities",
+      "reference_features": [
+        "Bilateral lung opacities/consolidation",
+        "Endotracheal tube",
+        "Enteric/central lines"
+      ],
+      "status": "completed",
+      "latency_ms": 19321.46,
+      "tokens_per_second": 29.09,
+      "model_used": "medgemma:4b",
+      "has_frontal_one_side_error": false,
+      "has_generic_normal_boilerplate": false,
+      "validation_warnings": [],
+      "sections": {
+        "Your X-ray in simple words": "The lungs look hazy, especially in the lower parts. This could mean there's fluid or something else making the lungs appear denser. The heart size looks normal. A nasogastric tube is visible, and a central line is present, likely in the superior vena cava.",
+        "What the findings may mean": "The hazy appearance of the lungs could indicate fluid (like pneumonia) or consolidation (like a lung infection). The central line is likely for medication or nutrition.",
+        "What is uncertain": "The X-ray is a frontal view, which shows both sides of the chest. However, it's a single two-dimensional image, so it's hard to tell the exact depth and subtle details.",
+        "What happens next": "Please talk to your doctor about this X-ray. They can help figure out what it means for your health."
+      },
+      "report_text": "**Your X-ray in simple words**\nThe lungs look hazy, especially in the lower parts. This could mean there's fluid or something else making the lungs appear denser. The heart size looks normal. A nasogastric tube is visible, and a central line is present, likely in the superior vena cava.\n\n**What the findings may mean**\nThe hazy appearance of the lungs could indicate fluid (like pneumonia) or consolidation (like a lung infection). The central line is likely for medication or nutrition.\n\n**What is uncertain**\nThe X-ray is a frontal view, which shows both sides of the chest. However, it's a single two-dimensional image, so it's hard to tell the exact depth and subtle details.\n\n**What happens next**\nPlease talk to your doctor about this X-ray. They can help figure out what it means for your health."
+    },
+    {
+      "job_id": "job_c47f1644",
+      "filename": "00aecb01-a116-45a2-956c-08d2fa55433f.dcm",
+      "sha256": "6d810cc5b22e1f0c",
+      "reference_label": "Mid-lung Opacities with Tracheostomy",
+      "reference_features": [
+        "Tracheostomy tube",
+        "Mid-zone parenchymal shading"
+      ],
+      "status": "completed",
+      "latency_ms": 18024.96,
+      "tokens_per_second": 28.07,
+      "model_used": "medgemma:4b",
+      "has_frontal_one_side_error": false,
+      "has_generic_normal_boilerplate": false,
+      "validation_warnings": [
+        "Corrected anatomical error: A frontal view displays both sides of the chest, but lacks a lateral projection."
+      ],
+      "sections": {
+        "Your X-ray in simple words": "The lungs look clear. There are no obvious problems seen on the X-ray. The heart size appears normal. A tracheostomy tube is visible.",
+        "What the findings may mean": "The clear lungs suggest there is no pneumonia, fluid in the lungs, or other significant lung problems. The normal heart size indicates that the heart is not enlarged. The tracheostomy tube is present for breathing support.",
+        "What is uncertain": "The X-ray This frontal view displays both the left and right sides of the chest, but as a single 2D projection, it does not provide a side (lateral) view. It cannot show the depth of the lungs or subtle problems that might be present on the other side.",
+        "What happens next": "Please discuss this X-ray with your doctor. They will consider the X-ray along with your other symptoms and medical history to make a diagnosis."
+      },
+      "report_text": "**Your X-ray in simple words**\nThe lungs look clear. There are no obvious problems seen on the X-ray. The heart size appears normal. A tracheostomy tube is visible.\n\n**What the findings may mean**\nThe clear lungs suggest there is no pneumonia, fluid in the lungs, or other significant lung problems. The normal heart size indicates that the heart is not enlarged. The tracheostomy tube is present for breathing support.\n\n**What is uncertain**\nThe X-ray This frontal view displays both the left and right sides of the chest, but as a single 2D projection, it does not provide a side (lateral) view. It cannot show the depth of the lungs or subtle problems that might be present on the other side.\n\n**What happens next**\nPlease discuss this X-ray with your doctor. They will consider the X-ray along with your other symptoms and medical history to make a diagnosis."
+    },
+    {
+      "job_id": "job_e4477dc0",
+      "filename": "00c0b293-48e7-4e16-ac76-9269ba535a62.dcm",
+      "sha256": "2d3b8e9953711865",
+      "reference_label": "Bilateral Lower Lobe Infiltrates",
+      "reference_features": [
+        "Bilateral lower lung opacities/infiltrates",
+        "Central line catheter"
+      ],
+      "status": "completed",
+      "latency_ms": 20722.63,
+      "tokens_per_second": 22.96,
+      "model_used": "medgemma:4b",
+      "has_frontal_one_side_error": false,
+      "has_generic_normal_boilerplate": false,
+      "validation_warnings": [],
+      "sections": {
+        "Your X-ray in simple words": "The X-ray shows that the lungs appear cloudy or opaque on both sides of the chest. A central line is visible, likely a catheter, which ends in the large blood vessel at the top of the chest. The heart size and shape appear normal. There is no obvious fluid around the lungs or in the space around the lungs.",
+        "What the findings may mean": "The cloudy appearance of the lungs could be due to various reasons, including fluid, inflammation, or other abnormalities. The central line is likely for administering medications or fluids. The heart size and shape are normal. The lack of obvious fluid around the lungs suggests that there is no significant fluid buildup.",
+        "What is uncertain": "The X-ray is a frontal view, which shows both sides of the chest. However, it is a single two-dimensional projection without a side (lateral) view, so the depth and subtle findings cannot be confirmed.",
+        "What happens next": "Please consult your ordering physician for qualified clinical evaluation and diagnosis."
+      },
+      "report_text": "**Your X-ray in simple words**\nThe X-ray shows that the lungs appear cloudy or opaque on both sides of the chest. A central line is visible, likely a catheter, which ends in the large blood vessel at the top of the chest. The heart size and shape appear normal. There is no obvious fluid around the lungs or in the space around the lungs.\n\n**What the findings may mean**\nThe cloudy appearance of the lungs could be due to various reasons, including fluid, inflammation, or other abnormalities. The central line is likely for administering medications or fluids. The heart size and shape are normal. The lack of obvious fluid around the lungs suggests that there is no significant fluid buildup.\n\n**What is uncertain**\nThe X-ray is a frontal view, which shows both sides of the chest. However, it is a single two-dimensional projection without a side (lateral) view, so the depth and subtle findings cannot be confirmed.\n\n**What happens next**\nPlease consult your ordering physician for qualified clinical evaluation and diagnosis."
+    }
+  ]
+}

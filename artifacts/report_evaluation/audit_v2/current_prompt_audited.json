@@ -1,0 +1,1266 @@
+[
+  {
+    "safe_case_id": "CASE_TEST_001",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "cardiac pacer and wires",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [
+      "normal"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.1519,
+    "bleu_2": 0.0159,
+    "latency_sec": 23.14,
+    "eval_count": 88,
+    "tokens_per_second": 3.8,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_002",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.\n\nPOSSIBLE FINDINGS\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [
+      "normal"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.2364,
+    "bleu_2": 0.1651,
+    "latency_sec": 24.4,
+    "eval_count": 89,
+    "tokens_per_second": 3.65,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_003",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view. AI experimental draft.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view. AI",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. No lateral view. AI"
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [
+      "normal"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.2151,
+    "bleu_2": 0.1723,
+    "latency_sec": 22.42,
+    "eval_count": 92,
+    "tokens_per_second": 4.1,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_004",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "low lung volumes",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [
+      "normal"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.25,
+    "bleu_2": 0.0233,
+    "latency_sec": 23.35,
+    "eval_count": 88,
+    "tokens_per_second": 3.77,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_005",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nThis is a single frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nThis is a single frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "This is a single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "chest port",
+      "vascular calcification",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [
+      "normal"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.2113,
+    "bleu_2": 0.139,
+    "latency_sec": 22.4,
+    "eval_count": 87,
+    "tokens_per_second": 3.88,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_006",
+    "split": "held_out_test",
+    "primary_category": "normal",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "normal"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [
+      "normal"
+    ],
+    "false_positives": [],
+    "false_negatives": [],
+    "unsupported_positives": [],
+    "unsupported_negatives": [],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.2424,
+    "bleu_2": 0.1167,
+    "latency_sec": 21.36,
+    "eval_count": 89,
+    "tokens_per_second": 4.17,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_007",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\nNo acute abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\nThe chest radiograph is normal.\n\nLIMITATIONS\nSingle frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No acute abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "pneumonia",
+      "atelectasis",
+      "aspiration",
+      "vascular calcification",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.1613,
+    "bleu_2": 0.0708,
+    "latency_sec": 47.92,
+    "eval_count": 85,
+    "tokens_per_second": 1.77,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_008",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are observed.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are observed.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are observed.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "pneumonia",
+      "atelectasis",
+      "aspiration",
+      "hernia",
+      "lung opacity"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.096,
+    "bleu_2": 0.044,
+    "latency_sec": 18.83,
+    "eval_count": 89,
+    "tokens_per_second": 4.73,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_009",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pneumonia",
+      "enteric tube",
+      "aspiration",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "pneumonia_consolidation",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "pneumonia_consolidation",
+      "support_devices"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.1655,
+    "bleu_2": 0.0577,
+    "latency_sec": 21.76,
+    "eval_count": 88,
+    "tokens_per_second": 4.04,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_010",
+    "split": "held_out_test",
+    "primary_category": "pneumonia_consolidation",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nThe chest radiograph is a single frontal view. The interpretation is limited by the lack of a lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view. The interpretation is limited by the lack of a lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The visualized bony thorax appears normal.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "The chest radiograph is a single frontal view. The interpretation is limited by the lack of a lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "pneumonia",
+      "vascular congestion",
+      "consolidation",
+      "atelectasis",
+      "aspiration",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "cardiomegaly",
+      "pneumonia_consolidation",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.1892,
+    "bleu_2": 0.1054,
+    "latency_sec": 18.63,
+    "eval_count": 104,
+    "tokens_per_second": 5.58,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_011",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.\n\nPOSSIBLE FINDINGS\n\nNo acute abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.",
+      "POSSIBLE FINDINGS": "No acute abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "enlarged hilum",
+      "vascular congestion",
+      "costophrenic angle blunting",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "pleural_effusion",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "pleural_effusion",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 6,
+    "internal_contradiction": false,
+    "rouge_l": 0.1159,
+    "bleu_2": 0.0511,
+    "latency_sec": 15.93,
+    "eval_count": 87,
+    "tokens_per_second": 5.46,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_012",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs are clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "enlarged cardiac silhouette",
+      "vascular congestion",
+      "pulmonary edema/hazy opacity",
+      "lung opacity"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly",
+      "pleural_effusion",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "cardiomegaly",
+      "pleural_effusion",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.1524,
+    "bleu_2": 0.0852,
+    "latency_sec": 15.44,
+    "eval_count": 88,
+    "tokens_per_second": 5.7,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_013",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\nSingle frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "pulmonary edema/hazy opacity",
+      "low lung volumes",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "cardiomegaly",
+      "pulmonary_edema"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.2411,
+    "bleu_2": 0.0685,
+    "latency_sec": 14.82,
+    "eval_count": 83,
+    "tokens_per_second": 5.6,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_014",
+    "split": "held_out_test",
+    "primary_category": "pulmonary_edema",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view. AI experimental draft.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view. AI",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view. AI"
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "endotracheal tube",
+      "pulmonary edema/hazy opacity",
+      "enteric tube",
+      "low lung volumes",
+      "lung opacity",
+      "airspace opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "pulmonary_edema",
+      "support_devices"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.1695,
+    "bleu_2": 0.1305,
+    "latency_sec": 14.52,
+    "eval_count": 91,
+    "tokens_per_second": 6.27,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_015",
+    "split": "held_out_test",
+    "primary_category": "cardiomegaly",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears intact.\n\nPOSSIBLE FINDINGS\nNo acute abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\nSingle frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears intact.",
+      "POSSIBLE FINDINGS": "No acute abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "atelectasis",
+      "lung opacity",
+      "tortuous aorta"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "cardiomegaly"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "cardiomegaly"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 5,
+    "internal_contradiction": false,
+    "rouge_l": 0.1143,
+    "bleu_2": 0.0204,
+    "latency_sec": 14.56,
+    "eval_count": 86,
+    "tokens_per_second": 5.91,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_016",
+    "split": "held_out_test",
+    "primary_category": "cardiomegaly",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nThe chest radiograph is a single frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "The chest radiograph is a single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "enlarged cardiac silhouette",
+      "vascular redistribution",
+      "low lung volumes",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "cardiomegaly"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.1754,
+    "bleu_2": 0.0191,
+    "latency_sec": 15.39,
+    "eval_count": 93,
+    "tokens_per_second": 6.04,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_017",
+    "split": "held_out_test",
+    "primary_category": "cardiomegaly",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinal contours are unremarkable. The visualized bony thorax appears normal.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "hernia",
+      "enlarged cardiac silhouette"
+    ],
+    "ground_truth_classes": [
+      "cardiomegaly"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "cardiomegaly"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.1039,
+    "bleu_2": 0.013,
+    "latency_sec": 15.82,
+    "eval_count": 90,
+    "tokens_per_second": 5.69,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_018",
+    "split": "held_out_test",
+    "primary_category": "pleural_effusion",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no obvious pleural effusions or pneumothorax. The bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nThe radiograph is a single frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no obvious pleural effusions or pneumothorax. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nThe radiograph is a single frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no obvious pleural effusions or pneumothorax. The bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "The radiograph is a single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "lung opacity",
+      "normal",
+      "pleural effusion"
+    ],
+    "ground_truth_classes": [
+      "pleural_effusion"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "pleural_effusion"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.127,
+    "bleu_2": 0.0465,
+    "latency_sec": 15.53,
+    "eval_count": 88,
+    "tokens_per_second": 5.67,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_019",
+    "split": "held_out_test",
+    "primary_category": "pleural_effusion",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no obvious pleural effusions or pneumothorax. The bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view. AI experimental draft.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no obvious pleural effusions or pneumothorax. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. AI",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no obvious pleural effusions or pneumothorax. The bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. AI"
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "elevated hemidiaphragm",
+      "pleural effusion",
+      "endotracheal tube",
+      "atelectasis",
+      "lung opacity",
+      "picc"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "pleural_effusion",
+      "support_devices"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.127,
+    "bleu_2": 0.0147,
+    "latency_sec": 15.81,
+    "eval_count": 87,
+    "tokens_per_second": 5.5,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_020",
+    "split": "held_out_test",
+    "primary_category": "pleural_effusion",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. No focal consolidation, pleural effusion, or pneumothorax is identified. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural effusion",
+      "atelectasis",
+      "pneumothorax",
+      "lung opacity"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "pleural_effusion"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "pleural_effusion"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 3,
+    "internal_contradiction": false,
+    "rouge_l": 0.0583,
+    "bleu_2": 0.0135,
+    "latency_sec": 16.34,
+    "eval_count": 88,
+    "tokens_per_second": 5.39,
+    "negated_classes": [
+      "pleural_effusion",
+      "pneumonia_consolidation"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_021",
+    "split": "held_out_test",
+    "primary_category": "atelectasis",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "lung opacity",
+      "atelectasis",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 5,
+    "internal_contradiction": false,
+    "rouge_l": 0.2419,
+    "bleu_2": 0.1838,
+    "latency_sec": 16.03,
+    "eval_count": 88,
+    "tokens_per_second": 5.49,
+    "negated_classes": [
+      "pleural_effusion"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_022",
+    "split": "held_out_test",
+    "primary_category": "atelectasis",
+    "view_position": "PA",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is intact.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is intact.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is intact.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "pleural/parenchymal scarring",
+      "atelectasis",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 5,
+    "internal_contradiction": false,
+    "rouge_l": 0.2772,
+    "bleu_2": 0.1513,
+    "latency_sec": 15.96,
+    "eval_count": 88,
+    "tokens_per_second": 5.52,
+    "negated_classes": [
+      "pleural_effusion"
+    ]
+  },
+  {
+    "safe_case_id": "CASE_TEST_023",
+    "split": "held_out_test",
+    "primary_category": "atelectasis",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.\n\nPOSSIBLE FINDINGS\n\nNo acute abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nSingle frontal view. No lateral view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.\n\n**POSSIBLE FINDINGS**\nNo acute abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs are clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There are no pleural effusions or pneumothoraces identified. The bony thorax appears intact.",
+      "POSSIBLE FINDINGS": "No acute abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "Single frontal view. No lateral view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "linear/patchy atelectasis",
+      "endotracheal tube",
+      "atelectasis",
+      "low lung volumes",
+      "tortuous aorta",
+      "chest tube",
+      "lung opacity",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "atelectasis",
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "atelectasis",
+      "support_devices"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 6,
+    "internal_contradiction": false,
+    "rouge_l": 0.1358,
+    "bleu_2": 0.023,
+    "latency_sec": 15.89,
+    "eval_count": 87,
+    "tokens_per_second": 5.47,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_024",
+    "split": "held_out_test",
+    "primary_category": "support_devices",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is unremarkable.\n\nLIMITATIONS\n\nSingle frontal view.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is unremarkable.\n\n**LIMITATIONS**\nSingle frontal view.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The cardiac silhouette is within normal limits. The mediastinum is unremarkable. There are no pleural effusions or pneumothorax identified. The bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is unremarkable.",
+      "LIMITATIONS": "Single frontal view."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "enteric tube",
+      "ij line",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "support_devices"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 2,
+    "internal_contradiction": false,
+    "rouge_l": 0.1538,
+    "bleu_2": 0.0857,
+    "latency_sec": 15.67,
+    "eval_count": 83,
+    "tokens_per_second": 5.3,
+    "negated_classes": []
+  },
+  {
+    "safe_case_id": "CASE_TEST_025",
+    "split": "held_out_test",
+    "primary_category": "support_devices",
+    "view_position": "AP",
+    "prompt_version": "current_baseline",
+    "generated_raw": "OBSERVATIONS\n\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is unremarkable.\n\nPOSSIBLE FINDINGS\n\nNo definitive focal abnormalities are identified.\n\nASSESSMENT AND UNCERTAINTY\n\nThe chest radiograph is normal.\n\nLIMITATIONS\n\nThis is a single frontal view. The image quality is adequate, but a lateral view would be helpful for further evaluation.",
+    "cleaned_report": "**OBSERVATIONS**\nThe lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is unremarkable.\n\n**POSSIBLE FINDINGS**\nNo definitive focal abnormalities are identified.\n\n**ASSESSMENT AND UNCERTAINTY**\nThe chest radiograph is normal.\n\n**LIMITATIONS**\nThis is a single frontal view. The image quality is adequate, but a lateral view would be helpful for further evaluation.",
+    "sections": {
+      "OBSERVATIONS": "The lungs appear clear bilaterally. The heart size is within normal limits. The mediastinal contours are unremarkable. There is no evidence of pleural effusion or pneumothorax. The bony thorax is unremarkable.",
+      "POSSIBLE FINDINGS": "No definitive focal abnormalities are identified.",
+      "ASSESSMENT AND UNCERTAINTY": "The chest radiograph is normal.",
+      "LIMITATIONS": "This is a single frontal view. The image quality is adequate, but a lateral view would be helpful for further evaluation."
+    },
+    "validation_warnings": [],
+    "gold_affirmed_labels": [
+      "abnormal",
+      "hyperaeration",
+      "copd/emphysema",
+      "enteric tube",
+      "vascular calcification",
+      "normal"
+    ],
+    "ground_truth_classes": [
+      "support_devices"
+    ],
+    "predicted_classes": [
+      "normal"
+    ],
+    "true_positives": [],
+    "false_positives": [
+      "normal"
+    ],
+    "false_negatives": [
+      "support_devices"
+    ],
+    "unsupported_positives": [],
+    "unsupported_negatives": [
+      "unwarranted_normal"
+    ],
+    "boilerplate_normal_count": 4,
+    "internal_contradiction": false,
+    "rouge_l": 0.1325,
+    "bleu_2": 0.0904,
+    "latency_sec": 17.04,
+    "eval_count": 104,
+    "tokens_per_second": 6.1,
+    "negated_classes": [
+      "pleural_effusion"
+    ]
+  }
+]

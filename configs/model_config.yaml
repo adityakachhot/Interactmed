@@ -1,0 +1,121 @@
+# ==============================================================================
+# InteractMed-VLM Model & Pipeline Configuration
+# ==============================================================================
+# NOTE: Pretrained models are NOT assumed here. Review the options below and
+# update model names, checkpoint paths, and hyperparameters once decided.
+# ==============================================================================
+
+pipeline:
+  name: "InteractMed-VLM"
+  version: "0.1.0"
+  supported_regions:
+    - "heart"
+    - "lungs"
+    - "pleura"
+  device: "cpu"  # Change to "cuda" or "mps" when GPU acceleration is available
+
+# ------------------------------------------------------------------------------
+# 1. Vision Encoder Backbone
+# ------------------------------------------------------------------------------
+vision_encoder:
+  # TODO: Choose a vision encoder backbone:
+  # Candidate options:
+  #   - "microsoft/BiomedVLP-BioViL-T" (Domain-specific biomedical CXR ViT)
+  #   - "stanford-crfm/CheXzero" (Zero-shot CXR image encoder)
+  #   - "radimagenet-resnet50" (Pretrained on RadImageNet radiology images)
+  #   - "openai/clip-vit-base-patch32" (General vision-language baseline)
+  #   - "facebook/dinov2-base" (Self-supervised vision features)
+  model_name_or_path: "TODO_USER_CONFIRM_VISION_ENCODER"
+  image_size: [224, 224]
+  feature_dim: 512
+  output_spatial_dim: [7, 7]
+  freeze_backbone: true
+
+# ------------------------------------------------------------------------------
+# 2. Region Grounding Module
+# ------------------------------------------------------------------------------
+region_grounding:
+  # TODO: Choose region localization method:
+  # Candidate options:
+  #   - "grounding-dino" / "open-vocabulary-detector"
+  #   - "roi-align-spatial-cross-attention"
+  #   - "chest-imagenome-prior-anchor-boxes" (using pre-aligned anatomical priors)
+  method: "TODO_USER_CONFIRM_GROUNDING_METHOD"  # e.g., "roi_align", "cross_attention", "grounding_dino"
+  confidence_threshold: 0.5
+  iou_threshold: 0.4
+  region_mapping:
+    heart:
+      - "cardiac silhouette"
+      - "aortic arch"
+      - "mediastinum"
+      - "upper mediastinum"
+    lungs:
+      - "left lung"
+      - "right lung"
+      - "left apical zone"
+      - "right apical zone"
+      - "left upper lung zone"
+      - "right upper lung zone"
+      - "left mid lung zone"
+      - "right mid lung zone"
+      - "left lower lung zone"
+      - "right lower lung zone"
+    pleura:
+      - "left costophrenic angle"
+      - "right costophrenic angle"
+      - "left hemidiaphragm"
+      - "right hemidiaphragm"
+
+# ------------------------------------------------------------------------------
+# 3. Report Generator & Patient-Friendly Translator
+# ------------------------------------------------------------------------------
+report_generator:
+  # TODO: Choose report generation & translation architecture:
+  # Candidate options:
+  #   - "microsoft/biogpt" (Biomedical generative language model)
+  #   - "Chaoyi-Wu/LLaVA-Med" (Multimodal biomedical VLM)
+  #   - "mistralai/Mistral-7B-Instruct-v0.2" + PEFT/LoRA adapters
+  #   - "med-flamingo" (Few-shot medical VLM)
+  generator_model_name_or_path: "TODO_USER_CONFIRM_REPORT_GENERATOR"
+  max_new_tokens: 128
+  temperature: 0.2
+  top_p: 0.9
+  use_peft_lora: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  translation:
+    style: "patient_friendly"
+    target_grade_reading_level: 6
+
+# ------------------------------------------------------------------------------
+# 4. Independent Triage Urgency Classifier
+# ------------------------------------------------------------------------------
+triage:
+  # KEPT STRICTLY SEPARATE FROM REPORT GENERATOR FOR CLINICAL SAFETY
+  # TODO: Choose triage classification model:
+  # Candidate options:
+  #   - "emilyalsentzer/Bio_ClinicalBERT"
+  #   - "microsoft/deberta-v3-small" fine-tuned on critical findings
+  #   - "rule_plus_classifier" (hybrid safety layer)
+  classifier_model_name_or_path: "TODO_USER_CONFIRM_TRIAGE_CLASSIFIER"
+  categories:
+    - "Green"   # Normal / Routine findings
+    - "Yellow"  # Non-urgent abnormality / Follow-up recommended
+    - "Red"     # Critical / Emergent findings (e.g. pneumothorax, large effusion)
+  emergency_keywords:
+    - "pneumothorax"
+    - "tension"
+    - "perforation"
+    - "severe edema"
+    - "massive effusion"
+
+# ------------------------------------------------------------------------------
+# 5. Visual Explainability (Grad-CAM & Grounding Overlay)
+# ------------------------------------------------------------------------------
+explainability:
+  target_layer_name: "TODO_SET_TARGET_CONV_OR_ATTENTION_LAYER"
+  colormap: "JET"
+  alpha_overlay: 0.4
+  bbox_color: [255, 69, 0]  # Red-Orange in RGB
+  bbox_thickness: 2

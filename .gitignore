@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Caches and testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Model checkpoints & large binary weights (>100MB blocked by GitHub)
+checkpoints/*.pth
+checkpoints/**/*.pth
+checkpoints/*.pt
+checkpoints/**/*.pt
+checkpoints/*.bin
+checkpoints/**/*.bin
+checkpoints/*.safetensors
+checkpoints/**/*.safetensors
+checkpoints/*.gguf
+checkpoints/**/*.gguf
+!checkpoints/**/.gitkeep
+!checkpoints/**/README.md
+third_party/**/model_weight/*.pth
+third_party/**/model_weight/*.pt
+
+# Large raw dataset binaries (DICOM, PNG, JPEG)
+data/raw/
+data/**/*.dcm
+data/**/*.png
+data/**/*.jpg
+data/**/*.jpeg
+!data/processed/*.csv
+!data/processed/**/*.csv
+!data/processed/**/*.json
+
+# Large runtime run directories & visualization caches
+artifacts/rsna/runs/
+artifacts/rsna/visualizations/
+
+# Node & Frontend dependencies and production builds
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env.local
+frontend/.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables & system files
+.env
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.log

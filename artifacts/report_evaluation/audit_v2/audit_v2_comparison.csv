@@ -1,0 +1,26 @@
+Safe Case ID,Split,Primary Category,Ground Truth Classes,Current Preds (Audited),Revised Preds (Audited),Current TP,Revised TP,Current Boilerplate,Revised Boilerplate
+CASE_TEST_001,held_out_test,normal,normal,normal,normal,normal,normal,3,0
+CASE_TEST_002,held_out_test,normal,normal,normal,normal,normal,normal,2,0
+CASE_TEST_003,held_out_test,normal,normal,normal,normal,normal,normal,3,0
+CASE_TEST_004,held_out_test,normal,normal,normal,normal,normal,normal,3,0
+CASE_TEST_005,held_out_test,normal,normal,normal,normal,normal,normal,3,0
+CASE_TEST_006,held_out_test,normal,normal,normal,normal,normal,normal,3,0
+CASE_TEST_007,held_out_test,pneumonia_consolidation,"atelectasis, cardiomegaly, pneumonia_consolidation",normal,normal,,,3,0
+CASE_TEST_008,held_out_test,pneumonia_consolidation,"atelectasis, pleural_effusion, pneumonia_consolidation",normal,normal,,,3,0
+CASE_TEST_009,held_out_test,pneumonia_consolidation,"pneumonia_consolidation, support_devices",normal,support_devices,,support_devices,3,0
+CASE_TEST_010,held_out_test,pneumonia_consolidation,"atelectasis, cardiomegaly, pneumonia_consolidation, pulmonary_edema",normal,normal,,,2,0
+CASE_TEST_011,held_out_test,pulmonary_edema,"pleural_effusion, pulmonary_edema",normal,normal,,,6,1
+CASE_TEST_012,held_out_test,pulmonary_edema,"cardiomegaly, pleural_effusion, pulmonary_edema",normal,normal,,,3,0
+CASE_TEST_013,held_out_test,pulmonary_edema,"cardiomegaly, pulmonary_edema",normal,normal,,,2,0
+CASE_TEST_014,held_out_test,pulmonary_edema,"pulmonary_edema, support_devices",normal,support_devices,,support_devices,2,0
+CASE_TEST_015,held_out_test,cardiomegaly,"atelectasis, cardiomegaly",normal,normal,,,5,0
+CASE_TEST_016,held_out_test,cardiomegaly,cardiomegaly,normal,normal,,,3,0
+CASE_TEST_017,held_out_test,cardiomegaly,cardiomegaly,normal,normal,,,3,0
+CASE_TEST_018,held_out_test,pleural_effusion,pleural_effusion,normal,normal,,,2,0
+CASE_TEST_019,held_out_test,pleural_effusion,"atelectasis, pleural_effusion, support_devices",normal,support_devices,,support_devices,2,0
+CASE_TEST_020,held_out_test,pleural_effusion,"atelectasis, pleural_effusion",normal,normal,,,3,0
+CASE_TEST_021,held_out_test,atelectasis,atelectasis,normal,normal,,,5,0
+CASE_TEST_022,held_out_test,atelectasis,atelectasis,normal,normal,,,5,0
+CASE_TEST_023,held_out_test,atelectasis,"atelectasis, support_devices",normal,support_devices,,support_devices,6,0
+CASE_TEST_024,held_out_test,support_devices,support_devices,normal,support_devices,,support_devices,2,0
+CASE_TEST_025,held_out_test,support_devices,support_devices,normal,support_devices,,support_devices,4,0

@@ -1,0 +1,1876 @@
+{
+  "pipeline_v2": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "total_ms": 12930.41825000546,
+      "stage1_ms": 8343.643166997936,
+      "stage2_ms": 4447.077916003764,
+      "stage1_tokens": 30,
+      "stage2_tokens": 114,
+      "total_tokens": 144,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the lateral aspects of the lungs and pleural spaces.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "total_ms": 12601.55770900019,
+      "stage1_ms": 7768.968125004903,
+      "stage2_ms": 4716.4743750036,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "total_ms": 21966.498333989875,
+      "stage1_ms": 12238.041042000987,
+      "stage2_ms": 9624.907165998593,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "total_ms": 18437.981957002194,
+      "stage1_ms": 10720.86175000004,
+      "stage2_ms": 7614.682917002938,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "total_ms": 19810.933832995943,
+      "stage1_ms": 10710.31354200386,
+      "stage2_ms": 8990.99262499658,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "total_ms": 17878.769791990635,
+      "stage1_ms": 10789.113584003644,
+      "stage2_ms": 6979.799917011405,
+      "stage1_tokens": 30,
+      "stage2_tokens": 105,
+      "total_tokens": 135,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are sharp.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are sharp.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. A lateral projection would be beneficial for a more comprehensive evaluation.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Sharp"
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 18364.189582993276,
+      "stage1_ms": 10711.290167004336,
+      "stage2_ms": 7544.529416001751,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 18844.367541983956,
+      "stage1_ms": 11354.254584002774,
+      "stage2_ms": 7379.052249991219,
+      "stage1_tokens": 30,
+      "stage2_tokens": 99,
+      "total_tokens": 129,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Sharp"
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 26675.20849900029,
+      "stage1_ms": 16348.970999999437,
+      "stage2_ms": 10214.54050000466,
+      "stage1_tokens": 93,
+      "stage2_tokens": 140,
+      "total_tokens": 233,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present, terminating 4 cm above the carina. An enteric tube is present, terminating in the stomach. A vascular line is present, terminating in the superior vena cava. No other support apparatus are identified.\n\nCardiac silhouette: Cardiothoracic ratio is normal.\n\nLungs: The lungs are clear.\n\nPleural spaces: The costophrenic angles are sharp.\n\n**IMPRESSION**\nThe patient is intubated and has an enteric tube in place. The lungs are clear, and the costophrenic angles are sharp. The cardiothoracic ratio is normal.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: Endotracheal tube is present, terminating 4 cm above the carina. An enteric tube is present, terminating in the stomach. A vascular line is present, terminating in the superior vena cava. No other support apparatus are identified.\n2. Cardiac silhouette: Cardiothoracic ratio is normal.\n3. Lungs: The lungs are clear.\n4. Pleural spaces: The costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 18167.958665988408,
+      "stage1_ms": 13518.13233300345,
+      "stage2_ms": 4550.7452089950675,
+      "stage1_tokens": 50,
+      "stage2_tokens": 57,
+      "total_tokens": 107,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe endotracheal tube is present. The cardiothoracic ratio is normal. The lungs are clear. Costophrenic angles are sharp.\n\n**IMPRESSION**\nThe findings are unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: Endotracheal tube is present.\n2. Cardiac silhouette: Cardiothoracic ratio is normal.\n3. Lungs: Clear.\n4. Pleural spaces: Costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 20544.43862399785,
+      "stage1_ms": 12133.650165997096,
+      "stage2_ms": 8303.503417002503,
+      "stage1_tokens": 30,
+      "stage2_tokens": 106,
+      "total_tokens": 136,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 18884.59591701394,
+      "stage1_ms": 12571.226209009183,
+      "stage2_ms": 6197.080291007296,
+      "stage1_tokens": 30,
+      "stage2_tokens": 75,
+      "total_tokens": 105,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a normal chest radiograph.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the lateral chest structures.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 21624.808791006217,
+      "stage1_ms": 12549.28429100255,
+      "stage2_ms": 8974.06133399636,
+      "stage1_tokens": 30,
+      "stage2_tokens": 114,
+      "total_tokens": 144,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the lateral aspects of the lungs and pleural spaces.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 21532.15666700271,
+      "stage1_ms": 12577.75137500721,
+      "stage2_ms": 8851.2120420055,
+      "stage1_tokens": 30,
+      "stage2_tokens": 114,
+      "total_tokens": 144,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the lateral aspects of the lungs and pleural spaces.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "total_ms": 19640.784375020303,
+      "stage1_ms": 13050.23620800057,
+      "stage2_ms": 6409.075207993737,
+      "stage1_tokens": 30,
+      "stage2_tokens": 75,
+      "total_tokens": 105,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a normal chest radiograph.\n\n**LIMITATIONS**\nThe image is a single frontal view, limiting the assessment of the lateral chest structures.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "total_ms": 20454.3018330005,
+      "stage1_ms": 15167.236791006871,
+      "stage2_ms": 5177.019541995833,
+      "stage1_tokens": 58,
+      "stage2_tokens": 60,
+      "total_tokens": 118,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThere is a right-sided central venous catheter. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**IMPRESSION**\nThe findings are unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: There is a right-sided central venous catheter.\n2. Cardiac silhouette: The cardiothoracic ratio is normal.\n3. Lungs: The lungs are clear.\n4. Pleural spaces: The costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "total_ms": 21637.500708995503,
+      "stage1_ms": 12714.272500001243,
+      "stage2_ms": 8823.239374993136,
+      "stage1_tokens": 30,
+      "stage2_tokens": 106,
+      "total_tokens": 136,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the entire chest. No lateral projection is available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "total_ms": 26431.097332999343,
+      "stage1_ms": 13037.175875011599,
+      "stage2_ms": 13316.520916006994,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "total_ms": 24315.00612599484,
+      "stage1_ms": 13497.072166996077,
+      "stage2_ms": 10712.50449999934,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette appears normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "total_ms": 21764.126000998658,
+      "stage1_ms": 15192.723207990639,
+      "stage2_ms": 6450.014499991084,
+      "stage1_tokens": 56,
+      "stage2_tokens": 82,
+      "total_tokens": 138,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThere is a chest tube in place. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**IMPRESSION**\nThe chest tube is in place. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: There is a chest tube in place.\n2. Cardiac silhouette: The cardiothoracic ratio is normal.\n3. Lungs: The lungs are clear.\n4. Pleural spaces: The costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "total_ms": 18635.678916994948,
+      "stage1_ms": 13739.003332986613,
+      "stage2_ms": 4782.432374995551,
+      "stage1_tokens": 50,
+      "stage2_tokens": 57,
+      "total_tokens": 107,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe endotracheal tube is present. The cardiothoracic ratio is normal. The lungs are clear. Costophrenic angles are sharp.\n\n**IMPRESSION**\nThe findings are unremarkable.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: Endotracheal tube is present.\n2. Cardiac silhouette: Cardiothoracic ratio is normal.\n3. Lungs: Clear.\n4. Pleural spaces: Costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "total_ms": 22098.52741699433,
+      "stage1_ms": 12831.053292000433,
+      "stage2_ms": 9163.472708998597,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "total_ms": 21989.382248997572,
+      "stage1_ms": 12789.024124998832,
+      "stage2_ms": 9124.90933299705,
+      "stage1_tokens": 30,
+      "stage2_tokens": 115,
+      "total_tokens": 145,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**IMPRESSION**\nThe image shows a frontal view of the chest. The support apparatus is not visible. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are clear.\n\n**LIMITATIONS**\nThe image is a single frontal view, which limits the assessment of the support apparatus and the ability to evaluate the entire chest. A lateral projection is not available.",
+      "raw_obs": "1. Support apparatus: None\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Clear"
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "total_ms": 23830.38200100418,
+      "stage1_ms": 17052.075166997383,
+      "stage2_ms": 6672.115583001869,
+      "stage1_tokens": 39,
+      "stage2_tokens": 71,
+      "total_tokens": 110,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are sharp.\n\n**IMPRESSION**\nThe endotracheal tube is present. The cardiac silhouette is normal. The lungs are clear. The pleural spaces are sharp.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: Endotracheal tube is present.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "total_ms": 24762.894333020085,
+      "stage1_ms": 16225.332540998352,
+      "stage2_ms": 8431.053249994875,
+      "stage1_tokens": 57,
+      "stage2_tokens": 99,
+      "total_tokens": 156,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nThere is a nasogastric tube present. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**IMPRESSION**\nThe presence of a nasogastric tube is noted. The cardiothoracic ratio is normal. The lungs are clear. The costophrenic angles are sharp.\n\n**LIMITATIONS**\nThe study is limited to a single frontal projection, which limits the assessment of the lateral chest structures.",
+      "raw_obs": "1. Support apparatus: There is a nasogastric tube present.\n2. Cardiac silhouette: The cardiothoracic ratio is normal.\n3. Lungs: The lungs are clear.\n4. Pleural spaces: The costophrenic angles are sharp."
+    }
+  ],
+  "pipeline_v3": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "total_ms": 13849.914583013742,
+      "stage1_ms": 9516.560166986892,
+      "stage2_ms": 4193.554249999579,
+      "stage1_tokens": 72,
+      "stage2_tokens": 94,
+      "total_tokens": 166,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "total_ms": 17090.298666997114,
+      "stage1_ms": 10839.591750002,
+      "stage2_ms": 6134.462665999308,
+      "stage1_tokens": 72,
+      "stage2_tokens": 94,
+      "total_tokens": 166,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "total_ms": 23753.19312499778,
+      "stage1_ms": 16082.304208001005,
+      "stage2_ms": 7567.205375002231,
+      "stage1_tokens": 69,
+      "stage2_tokens": 93,
+      "total_tokens": 162,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal\n3. Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4. Pleural spaces: Costophrenic angles sharp.\n5. Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal\n3. Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4. Pleural spaces: Costophrenic angles sharp.\n5. Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "total_ms": 19881.231499981368,
+      "stage1_ms": 14164.458624989493,
+      "stage2_ms": 5614.207416001591,
+      "stage1_tokens": 74,
+      "stage2_tokens": 72,
+      "total_tokens": 146,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   No focal opacity identified.\n\n4.  Pleural spaces:\n    *   Costophrenic angles are sharp.\n\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "total_ms": 22071.51400001021,
+      "stage1_ms": 15461.45620799507,
+      "stage2_ms": 6500.229083001614,
+      "stage1_tokens": 61,
+      "stage2_tokens": 85,
+      "total_tokens": 146,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity identified.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "total_ms": 21894.249082994065,
+      "stage1_ms": 14964.750458995695,
+      "stage2_ms": 6819.538208001177,
+      "stage1_tokens": 93,
+      "stage2_tokens": 98,
+      "total_tokens": 191,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal\nLungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\nPleural spaces:\n    *   Right costophrenic angle: Sharp\n    *   Left costophrenic angle: Sharp\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\n\n4.  Pleural spaces:\n    *   Right costophrenic angle: Sharp\n    *   Left costophrenic angle: Sharp\n\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 21265.00204198237,
+      "stage1_ms": 15154.687124988413,
+      "stage2_ms": 6001.820666991989,
+      "stage1_tokens": 85,
+      "stage2_tokens": 76,
+      "total_tokens": 161,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal contour\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: Inspect for endotracheal tube, enteric tube, vascular catheter/line, chest tube, pacemaker, or surgical clips.\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities: Clear\n\n4.  Pleural spaces: Costophrenic angles sharp\n\n5.  Mediastinum: Normal contour"
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 23022.03891699901,
+      "stage1_ms": 15631.270166995819,
+      "stage2_ms": 7279.588666991913,
+      "stage1_tokens": 74,
+      "stage2_tokens": 96,
+      "total_tokens": 170,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4.  Pleural spaces: Costophrenic angles sharp.\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 27262.56570800615,
+      "stage1_ms": 17835.33349999925,
+      "stage2_ms": 9315.411792005762,
+      "stage1_tokens": 109,
+      "stage2_tokens": 122,
+      "total_tokens": 231,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\n*   Enteric tube: Not identified\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No other acute cardiopulmonary findings are identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   Endotracheal tube: Observed (left)\n    *   Enteric tube: Not identified\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities: Clear\n\n4.  Pleural spaces: Sharp\n\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 28617.2041669779,
+      "stage1_ms": 18043.294291986967,
+      "stage2_ms": 10474.75266699621,
+      "stage1_tokens": 101,
+      "stage2_tokens": 136,
+      "total_tokens": 237,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Endotracheal tube: Observed | Left\n2.  Enteric tube: Not identified\n3.  Vascular catheter/line: Not identified\n4.  Chest tube: Not identified\n5.  Pacemaker: Not identified\n6.  Surgical clips: Not identified\n7.  Cardiac silhouette: Normal\n8.  Lungs & opacities: Clear\n9.  Pleural spaces: Sharp\n10. Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present in the left main bronchus. No other significant findings.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Endotracheal tube: Observed | Left\n2.  Enteric tube: Not identified\n3.  Vascular catheter/line: Not identified\n4.  Chest tube: Not identified\n5.  Pacemaker: Not identified\n6.  Surgical clips: Not identified\n7.  Cardiac silhouette: Normal\n8.  Lungs & opacities: Clear\n9.  Pleural spaces: Sharp\n10. Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 24685.688333018334,
+      "stage1_ms": 17403.843499996583,
+      "stage2_ms": 7174.443749987404,
+      "stage1_tokens": 91,
+      "stage2_tokens": 85,
+      "total_tokens": 176,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n\n4.  Pleural spaces:\n    *   Costophrenic angles are sharp.\n\n5.  Mediastinum:\n    *   Normal contour."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 29858.45258300833,
+      "stage1_ms": 19194.044208008563,
+      "stage2_ms": 10548.075375001645,
+      "stage1_tokens": 108,
+      "stage2_tokens": 128,
+      "total_tokens": 236,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:** No visible support apparatus.\n2.  **Cardiac silhouette:** Normal\n3.  **Lungs & opacities:** No obvious consolidation, focal opacity, atelectasis, congestion, or edema.\n    *   Unspecified laterality\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n    *   Unspecified laterality\n5.  **Mediastinum:** Normal contour.\n    *   Unspecified laterality\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  **Support apparatus:**\n    *   No visible support apparatus.\n\n2.  **Cardiac silhouette:** Normal\n\n3.  **Lungs & opacities:** No obvious consolidation, focal opacity, atelectasis, congestion, or edema.\n    *   Unspecified laterality\n\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n    *   Unspecified laterality\n\n5.  **Mediastinum:** Normal contour.\n    *   Unspecified laterality"
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 24044.10545900464,
+      "stage1_ms": 16267.697999996017,
+      "stage2_ms": 7674.834875011584,
+      "stage1_tokens": 73,
+      "stage2_tokens": 95,
+      "total_tokens": 168,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles are sharp.\n5.  Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n4.  Pleural spaces: Costophrenic angles are sharp.\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 24231.25541700574,
+      "stage1_ms": 17249.82524999359,
+      "stage2_ms": 6878.12891700014,
+      "stage1_tokens": 85,
+      "stage2_tokens": 76,
+      "total_tokens": 161,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal contour\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus: Inspect for endotracheal tube, enteric tube, vascular catheter/line, chest tube, pacemaker, or surgical clips.\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities: Clear\n\n4.  Pleural spaces: Costophrenic angles sharp\n\n5.  Mediastinum: Normal contour"
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "total_ms": 26429.405791015597,
+      "stage1_ms": 17949.02433299285,
+      "stage2_ms": 8298.797666997416,
+      "stage1_tokens": 93,
+      "stage2_tokens": 98,
+      "total_tokens": 191,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal\nLungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\nPleural spaces:\n    *   Right costophrenic angle: Sharp\n    *   Left costophrenic angle: Sharp\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\n\n4.  Pleural spaces:\n    *   Right costophrenic angle: Sharp\n    *   Left costophrenic angle: Sharp\n\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "total_ms": 23598.333540998283,
+      "stage1_ms": 16067.826334008714,
+      "stage2_ms": 7420.353708002949,
+      "stage1_tokens": 67,
+      "stage2_tokens": 90,
+      "total_tokens": 157,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:** No support apparatus identified.\n2.  **Cardiac silhouette:** Normal\n3.  **Lungs & opacities:** No acute pulmonary findings.\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n5.  **Mediastinum:** Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary findings.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  **Support apparatus:** No support apparatus identified.\n2.  **Cardiac silhouette:** Normal\n3.  **Lungs & opacities:** No acute pulmonary findings.\n4.  **Pleural spaces:** Costophrenic angles are sharp.\n5.  **Mediastinum:** Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "total_ms": 25206.011832982767,
+      "stage1_ms": 17715.43629199732,
+      "stage2_ms": 7390.477291992283,
+      "stage1_tokens": 86,
+      "stage2_tokens": 84,
+      "total_tokens": 170,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   No focal opacity, consolidation, atelectasis, congestion, or edema identified.\n\n4.  Pleural spaces:\n    *   Costophrenic angles are sharp.\n\n5.  Mediastinum: Normal contour"
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "total_ms": 26290.45745798794,
+      "stage1_ms": 18739.085084002,
+      "stage2_ms": 7473.931166998227,
+      "stage1_tokens": 74,
+      "stage2_tokens": 79,
+      "total_tokens": 153,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: No focal opacity identified.\n*   Pleural spaces: Costophrenic angles are sharp.\n*   Mediastinum: Normal\n\n**IMPRESSION**\nNormal chest radiograph.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities:\n    *   No focal opacity identified.\n4.  Pleural spaces:\n    *   Costophrenic angles are sharp.\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "total_ms": 24547.12283400295,
+      "stage1_ms": 17589.671666995855,
+      "stage2_ms": 6851.9702499907,
+      "stage1_tokens": 74,
+      "stage2_tokens": 72,
+      "total_tokens": 146,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs & opacities: No focal opacity identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No support apparatus identified.\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   No focal opacity identified.\n\n4.  Pleural spaces:\n    *   Costophrenic angles are sharp.\n\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "total_ms": 30170.296457989025,
+      "stage1_ms": 19851.019041001564,
+      "stage2_ms": 10197.754207998514,
+      "stage1_tokens": 130,
+      "stage2_tokens": 132,
+      "total_tokens": 262,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "laterality": "concordant",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  Support apparatus:\n    *   Endotracheal tube: Observed (left)\n    *   Enteric tube: Observed (right)\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\n\n4.  Pleural spaces:\n    *   Right costophrenic angle: Sharp\n\n**IMPRESSION**\nAutomated visual reading is indeterminate without prior comparison studies or lateral projection.\n\n**LIMITATIONS**\nSingle frontal projection; AI research draft; requires formal radiologist verification.",
+      "raw_obs": "1.  Support apparatus:\n    *   Endotracheal tube: Observed (left)\n    *   Enteric tube: Observed (right)\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities:\n    *   Right lung: Clear\n    *   Left lung: Clear\n\n4.  Pleural spaces:\n    *   Right costophrenic angle: Sharp\n    *"
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "total_ms": 26565.201500998228,
+      "stage1_ms": 17773.88870799041,
+      "stage2_ms": 8676.934999995865,
+      "stage1_tokens": 101,
+      "stage2_tokens": 104,
+      "total_tokens": 205,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\nEnteric tube: Not identified\nVascular catheter/line: Not identified\nChest tube: Not identified\nPacemaker: Not identified\nSurgical clips: Not identified\nCardiac silhouette: Normal\nLungs & opacities: Clear\nPleural spaces: Sharp\nMediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present in the left main bronchus. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Endotracheal tube: Observed | Left\n2.  Enteric tube: Not identified\n3.  Vascular catheter/line: Not identified\n4.  Chest tube: Not identified\n5.  Pacemaker: Not identified\n6.  Surgical clips: Not identified\n7.  Cardiac silhouette: Normal\n8.  Lungs & opacities: Clear\n9.  Pleural spaces: Sharp\n10. Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "total_ms": 24439.674333989387,
+      "stage1_ms": 16560.644958008197,
+      "stage2_ms": 7774.920625000959,
+      "stage1_tokens": 69,
+      "stage2_tokens": 93,
+      "total_tokens": 162,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal\n3. Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4. Pleural spaces: Costophrenic angles sharp.\n5. Mediastinum: Normal\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal\n3. Lungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n4. Pleural spaces: Costophrenic angles sharp.\n5. Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "total_ms": 23283.16491600708,
+      "stage1_ms": 16570.917792007094,
+      "stage2_ms": 6636.720167007297,
+      "stage1_tokens": 68,
+      "stage2_tokens": 74,
+      "total_tokens": 142,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No visible support apparatus.\nCardiac silhouette: Normal.\nLungs & opacities: No obvious lung abnormalities.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour.\n\n**IMPRESSION**\nNo acute cardiopulmonary disease identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   No visible support apparatus.\n2.  Cardiac silhouette: Normal\n3.  Lungs & opacities: No obvious lung abnormalities.\n4.  Pleural spaces: Costophrenic angles are sharp.\n5.  Mediastinum: Normal contour."
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "total_ms": 30952.679459005594,
+      "stage1_ms": 20415.42891699646,
+      "stage2_ms": 10430.917833989952,
+      "stage1_tokens": 114,
+      "stage2_tokens": 123,
+      "total_tokens": 237,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Left\n*   Enteric tube: Not identified\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal tube is present. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   Endotracheal tube: Observed (left)\n    *   Enteric tube: Not identified\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities: Clear\n\n4.  Pleural spaces: Costophrenic angles sharp\n\n5.  Mediastinum: Normal"
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "total_ms": 39395.76858301007,
+      "stage1_ms": 25913.01812499296,
+      "stage2_ms": 13376.181708008517,
+      "stage1_tokens": 116,
+      "stage2_tokens": 124,
+      "total_tokens": 240,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube: Right\n*   Enteric tube: Right\n*   Vascular catheter/line: Not identified\n*   Chest tube: Not identified\n*   Pacemaker: Not identified\n*   Surgical clips: Not identified\n*   Cardiac silhouette: Normal\n*   Lungs & opacities: Clear\n*   Pleural spaces: Costophrenic angles sharp\n*   Mediastinum: Normal\n\n**IMPRESSION**\nEndotracheal and enteric tubes are present. No other abnormalities identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  Support apparatus:\n    *   Endotracheal tube: Observed (right)\n    *   Enteric tube: Observed (right)\n    *   Vascular catheter/line: Not identified\n    *   Chest tube: Not identified\n    *   Pacemaker: Not identified\n    *   Surgical clips: Not identified\n\n2.  Cardiac silhouette: Normal\n\n3.  Lungs & opacities: Clear\n\n4.  Pleural spaces: Costophrenic angles sharp\n\n5.  Mediastinum: Normal"
+    }
+  ],
+  "pipeline_v2_1": [
+    {
+      "safe_case_id": "CASE_DEV_001",
+      "primary_category": "normal",
+      "total_ms": 10973.731958016288,
+      "stage1_ms": 8178.622499995981,
+      "stage2_ms": 2655.3124170022784,
+      "stage1_tokens": 38,
+      "stage2_tokens": 52,
+      "total_tokens": 90,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nNo abnormalities are identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_002",
+      "primary_category": "normal",
+      "total_ms": 18180.658042998402,
+      "stage1_ms": 10730.113416997483,
+      "stage2_ms": 7334.333458013134,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_003",
+      "primary_category": "normal",
+      "total_ms": 16816.960376003408,
+      "stage1_ms": 11644.247500007623,
+      "stage2_ms": 5069.0854160056915,
+      "stage1_tokens": 31,
+      "stage2_tokens": 60,
+      "total_tokens": 91,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: Not identified\nCardiac silhouette: Normal\nLungs: Clear\nPleural spaces: Sharp\n\n**IMPRESSION**\nThe chest radiograph shows a normal cardiac silhouette and clear lungs. The support apparatus is not identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: Not identified\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Sharp"
+    },
+    {
+      "safe_case_id": "CASE_DEV_004",
+      "primary_category": "normal",
+      "total_ms": 18126.735957994242,
+      "stage1_ms": 11105.981542001246,
+      "stage2_ms": 6918.273165996652,
+      "stage1_tokens": 38,
+      "stage2_tokens": 89,
+      "total_tokens": 127,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph shows no abnormalities in the support apparatus, cardiac silhouette, lungs, or pleural spaces.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, which limits the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_005",
+      "primary_category": "normal",
+      "total_ms": 18974.13562500151,
+      "stage1_ms": 11857.764500004123,
+      "stage2_ms": 7006.643125001574,
+      "stage1_tokens": 37,
+      "stage2_tokens": 90,
+      "total_tokens": 127,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus is identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_006",
+      "primary_category": "normal",
+      "total_ms": 18156.995833007386,
+      "stage1_ms": 11259.626166996895,
+      "stage2_ms": 6787.424624999403,
+      "stage1_tokens": 38,
+      "stage2_tokens": 89,
+      "total_tokens": 127,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "normal"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph shows no abnormalities in the support apparatus, cardiac silhouette, lungs, or pleural spaces.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, which limits the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_007",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 16549.496041989187,
+      "stage1_ms": 11583.961750002345,
+      "stage2_ms": 4857.076166998013,
+      "stage1_tokens": 31,
+      "stage2_tokens": 60,
+      "total_tokens": 91,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: Not identified\nCardiac silhouette: Normal\nLungs: Clear\nPleural spaces: Sharp\n\n**IMPRESSION**\nThe chest radiograph shows a normal cardiac silhouette and clear lungs. The support apparatus is not identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: Not identified\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Sharp"
+    },
+    {
+      "safe_case_id": "CASE_DEV_008",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 17499.927333003143,
+      "stage1_ms": 12189.199291999103,
+      "stage2_ms": 5199.562875000993,
+      "stage1_tokens": 31,
+      "stage2_tokens": 60,
+      "total_tokens": 91,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: Not identified\nCardiac silhouette: Normal\nLungs: Clear\nPleural spaces: Sharp\n\n**IMPRESSION**\nThe chest radiograph shows a normal cardiac silhouette and clear lungs. The support apparatus is not identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: Not identified\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Sharp"
+    },
+    {
+      "safe_case_id": "CASE_DEV_009",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 20006.759790994693,
+      "stage1_ms": 14862.160083008348,
+      "stage2_ms": 5032.8004579932895,
+      "stage1_tokens": 62,
+      "stage2_tokens": 63,
+      "total_tokens": 125,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present, terminating approximately 4 cm above the carina. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are clear.\n\n**IMPRESSION**\nEndotracheal tube is present. The lungs are clear.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  **Support apparatus:** Endotracheal tube is present, terminating approximately 4 cm above the carina.\n2.  **Cardiac silhouette:** Normal.\n3.  **Lungs:** Clear.\n4.  **Pleural spaces:** Costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_010",
+      "primary_category": "pneumonia_consolidation",
+      "total_ms": 21969.240665988764,
+      "stage1_ms": 14957.267374993535,
+      "stage2_ms": 6912.785124994116,
+      "stage1_tokens": 57,
+      "stage2_tokens": 89,
+      "total_tokens": 146,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pneumonia_consolidation"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present, terminating 4 cm above the carina. Cardiac silhouette is normal. Lungs are clear. Costophrenic angles are sharp.\n\n**IMPRESSION**\nEndotracheal tube is present, terminating 4 cm above the carina. Cardiac silhouette is normal. Lungs are clear. Costophrenic angles are sharp.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1.  Support apparatus: Endotracheal tube is present, terminating 4 cm above the carina.\n2.  Cardiac silhouette: Normal.\n3.  Lungs: Clear.\n4.  Pleural spaces: Costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_011",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 20786.370166009874,
+      "stage1_ms": 12931.896458001575,
+      "stage2_ms": 7747.091750003165,
+      "stage1_tokens": 37,
+      "stage2_tokens": 88,
+      "total_tokens": 125,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph shows no abnormalities in the support apparatus, cardiac silhouette, lungs, or pleural spaces.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, which limits the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_012",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 19946.279250012594,
+      "stage1_ms": 13265.190584002994,
+      "stage2_ms": 6564.666874997783,
+      "stage1_tokens": 35,
+      "stage2_tokens": 70,
+      "total_tokens": 105,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: Not identified\nCardiac silhouette: Normal\nLungs: Clear, bilateral\nPleural spaces: Sharp, bilateral\n\n**IMPRESSION**\nThe chest radiograph shows a normal cardiac silhouette and clear lungs bilaterally. The support apparatus is not visualized.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: Not identified\n2. Cardiac silhouette: Normal\n3. Lungs: Clear, bilateral\n4. Pleural spaces: Sharp, bilateral"
+    },
+    {
+      "safe_case_id": "CASE_DEV_013",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 18218.734750000294,
+      "stage1_ms": 13176.709208011744,
+      "stage2_ms": 4940.466959000332,
+      "stage1_tokens": 38,
+      "stage2_tokens": 52,
+      "total_tokens": 90,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "cardiomegaly",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Sharp.\n\n**IMPRESSION**\nNo abnormalities are identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_014",
+      "primary_category": "pulmonary_edema",
+      "total_ms": 21443.945417006034,
+      "stage1_ms": 13736.442582987365,
+      "stage2_ms": 7604.216916995938,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion",
+        "pulmonary_edema"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_015",
+      "primary_category": "cardiomegaly",
+      "total_ms": 21629.389791021822,
+      "stage1_ms": 13582.172499998705,
+      "stage2_ms": 7865.6465410022065,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_016",
+      "primary_category": "cardiomegaly",
+      "total_ms": 21733.683875005227,
+      "stage1_ms": 13899.19604199531,
+      "stage2_ms": 7724.3344169983175,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_017",
+      "primary_category": "cardiomegaly",
+      "total_ms": 21690.801333999843,
+      "stage1_ms": 13977.956958988216,
+      "stage2_ms": 7612.756750007975,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "cardiomegaly"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_018",
+      "primary_category": "pleural_effusion",
+      "total_ms": 20121.017458994174,
+      "stage1_ms": 14254.79920800717,
+      "stage2_ms": 5788.731791006285,
+      "stage1_tokens": 31,
+      "stage2_tokens": 60,
+      "total_tokens": 91,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: Not identified\nCardiac silhouette: Normal\nLungs: Clear\nPleural spaces: Sharp\n\n**IMPRESSION**\nThe chest radiograph shows a normal cardiac silhouette and clear lungs. The support apparatus is not identified.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: Not identified\n2. Cardiac silhouette: Normal\n3. Lungs: Clear\n4. Pleural spaces: Sharp"
+    },
+    {
+      "safe_case_id": "CASE_DEV_019",
+      "primary_category": "pleural_effusion",
+      "total_ms": 22357.361959002446,
+      "stage1_ms": 15812.904083999456,
+      "stage2_ms": 6438.921249995474,
+      "stage1_tokens": 50,
+      "stage2_tokens": 63,
+      "total_tokens": 113,
+      "true_positives": [],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis",
+        "pleural_effusion"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus identified.\nCardiac silhouette: Normal.\nLungs: No focal consolidation, edema, or effusion identified.\nPleural spaces: Costophrenic angles clear.\n\n**IMPRESSION**\nNo acute findings.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1. Support apparatus: No support apparatus identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: No focal consolidation, edema, or effusion identified.\n4. Pleural spaces: Costophrenic angles clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_020",
+      "primary_category": "pleural_effusion",
+      "total_ms": 20561.38975000067,
+      "stage1_ms": 13378.737167004147,
+      "stage2_ms": 7061.166917002993,
+      "stage1_tokens": 45,
+      "stage2_tokens": 92,
+      "total_tokens": 137,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "cardiomegaly",
+        "pleural_effusion"
+      ],
+      "laterality": "concordant",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\n1.  **Support apparatus:** Chest tube (left).\n2.  **Cardiac silhouette:** Normal.\n3.  **Lungs:** Clear.\n4.  **Pleural spaces:** Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a left-sided chest tube. The cardiac silhouette is normal. The lungs are clear, and the pleural spaces are clear.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  **Support apparatus:** Chest tube (left).\n2.  **Cardiac silhouette:** Normal.\n3.  **Lungs:** Clear.\n4.  **Pleural spaces:** Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_021",
+      "primary_category": "atelectasis",
+      "total_ms": 21675.773083989043,
+      "stage1_ms": 15873.764874995686,
+      "stage2_ms": 5687.656167006935,
+      "stage1_tokens": 62,
+      "stage2_tokens": 63,
+      "total_tokens": 125,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present, terminating approximately 4 cm above the carina. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are clear.\n\n**IMPRESSION**\nEndotracheal tube is present. The lungs are clear.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  **Support apparatus:** Endotracheal tube is present, terminating approximately 4 cm above the carina.\n2.  **Cardiac silhouette:** Normal.\n3.  **Lungs:** Clear.\n4.  **Pleural spaces:** Costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_022",
+      "primary_category": "atelectasis",
+      "total_ms": 21729.87812498468,
+      "stage1_ms": 14058.42445800954,
+      "stage2_ms": 7567.352625002968,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    },
+    {
+      "safe_case_id": "CASE_DEV_023",
+      "primary_category": "atelectasis",
+      "total_ms": 21109.28012400109,
+      "stage1_ms": 14515.994749992387,
+      "stage2_ms": 6517.794291998143,
+      "stage1_tokens": 35,
+      "stage2_tokens": 70,
+      "total_tokens": 105,
+      "true_positives": [],
+      "false_positives": [
+        "normal"
+      ],
+      "false_negatives": [
+        "atelectasis"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: Not identified\nCardiac silhouette: Normal\nLungs: Clear, bilateral\nPleural spaces: Sharp, bilateral\n\n**IMPRESSION**\nThe chest radiograph shows a normal cardiac silhouette and clear lungs bilaterally. The support apparatus is not visualized.\n\n**LIMITATIONS**\nSingle frontal view. No lateral projection.",
+      "raw_obs": "1. Support apparatus: Not identified\n2. Cardiac silhouette: Normal\n3. Lungs: Clear, bilateral\n4. Pleural spaces: Sharp, bilateral"
+    },
+    {
+      "safe_case_id": "CASE_DEV_024",
+      "primary_category": "support_devices",
+      "total_ms": 23498.09662500047,
+      "stage1_ms": 16880.49204199342,
+      "stage2_ms": 6511.365583006409,
+      "stage1_tokens": 62,
+      "stage2_tokens": 63,
+      "total_tokens": 125,
+      "true_positives": [
+        "support_devices"
+      ],
+      "false_positives": [],
+      "false_negatives": [],
+      "laterality": "laterality_omitted",
+      "unsupported_neg": [],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nEndotracheal tube is present, terminating approximately 4 cm above the carina. Cardiac silhouette is normal. Lungs are clear. Pleural spaces are clear.\n\n**IMPRESSION**\nEndotracheal tube is present. The lungs are clear.\n\n**LIMITATIONS**\nSingle frontal view.",
+      "raw_obs": "1.  **Support apparatus:** Endotracheal tube is present, terminating approximately 4 cm above the carina.\n2.  **Cardiac silhouette:** Normal.\n3.  **Lungs:** Clear.\n4.  **Pleural spaces:** Costophrenic angles are sharp."
+    },
+    {
+      "safe_case_id": "CASE_DEV_025",
+      "primary_category": "support_devices",
+      "total_ms": 26609.060875023715,
+      "stage1_ms": 16940.650791992084,
+      "stage2_ms": 9561.854915998993,
+      "stage1_tokens": 38,
+      "stage2_tokens": 91,
+      "total_tokens": 129,
+      "true_positives": [
+        "normal"
+      ],
+      "false_positives": [],
+      "false_negatives": [
+        "support_devices"
+      ],
+      "laterality": "concordant_or_not_applicable",
+      "unsupported_neg": [
+        "unwarranted_normal"
+      ],
+      "unsupported_pos": [],
+      "contradiction": false,
+      "boilerplate": 0,
+      "cleaned_report": "**OBSERVATIONS**\nSupport apparatus: No support apparatus are identified.\nCardiac silhouette: Normal.\nLungs: Clear.\nPleural spaces: Clear.\n\n**IMPRESSION**\nThe chest radiograph demonstrates a normal cardiac silhouette, clear lungs, and clear pleural spaces. No support apparatus are identified.\n\n**LIMITATIONS**\nThe chest radiograph is a single frontal view, limiting the assessment of the lateral aspects of the lungs and mediastinum.",
+      "raw_obs": "1. Support apparatus: No support apparatus are identified.\n2. Cardiac silhouette: Normal.\n3. Lungs: Clear.\n4. Pleural spaces: Clear."
+    }
+  ]
+}

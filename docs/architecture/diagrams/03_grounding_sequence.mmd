@@ -1,0 +1,29 @@
+sequenceDiagram
+    autonumber
+    actor User as Researcher / Clinician
+    participant UI as React Frontend (App.tsx)
+    participant API as FastAPI (backend/main.py)
+    participant GS as GroundingService (src/grounding_service.py)
+    participant Model as TransVG-AGPT (PyTorch MPS)
+    participant Overlay as OverlayService (src/overlay_service.py)
+
+    User->>UI: Selects radiograph image & enters query phrase (e.g. "pneumonia")
+    UI->>API: POST /ground (Multipart: file, query, checkpoint="finetuned")
+    API->>API: _validate_upload() (Format: .dcm/.png/.jpg, size < 50MB)
+    API->>GS: predict(image_bytes, query, image_filename)
+    GS->>GS: _load_image_to_rgb_array() (uint8 RGB, MONOCHROME1 invert)
+    GS->>GS: Apply Albumentations: LongestMaxSize(640) + PadIfNeeded(640,640)
+    GS->>GS: Wrap in NestedTensor(image_tensor, zero_mask)
+    GS->>Model: forward(NestedTensor, [query])
+    Model-->>GS: outputs["pred_boxes"] -> normalized [cx, cy, w, h]
+    GS->>GS: pred_norm_to_canvas_xyxy() (640x640 canvas)
+    GS->>GS: pred_norm_to_pixel() (Original pixels [x1, y1, x2, y2])
+    GS-->>API: Grounding result dictionary
+    
+    API->>Overlay: draw_overlay(image_bytes, pred_box_pixel, query)
+    Overlay-->>API: Base64 JPEG annotated overlay
+    API->>Overlay: extract_crop(image_bytes, pred_box_pixel, margin_px=40)
+    Overlay-->>API: Base64 JPEG region crop
+    
+    API-->>UI: GroundingResponse (JSON with coordinates, latency, overlay_b64, crop_b64)
+    UI->>User: Renders annotated radiograph with bounding box, crop preview, and timing telemetry

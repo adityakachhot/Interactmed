@@ -1,0 +1,8 @@
+subsystem,stage_or_condition,cohort,sample_size,mean_latency_ms,median_latency_ms,p95_latency_ms,unit,notes
+TransVG-AGPT Grounding,Mean Per-Query Inference,MS-CXR Retrospective Test,130,176.49,165.2,210.4,milliseconds,Fast cross-modal transformer localization
+Image Pipeline,DICOM/PNG Decode & Preprocessing,Development Set,25,117.7,109.21,185.3,milliseconds,Letterbox resizing and uint8 normalization
+MedGemma Report Generation,Cold Start Total,Development Set (Uncached),1,20335.51,20335.51,20335.51,milliseconds,Includes 3.0s model load + 16.34s vision + 3.85s synthesis
+MedGemma Report Generation,Baseline Single-Stage Prompt,Development Set Full,250,18756.75,18563.8,23450.0,milliseconds,Unconstrained generation producing verbose boilerplate
+MedGemma Report Generation,Production Structured Prompt v3,Development Set Full,250,13415.54,12528.01,18920.0,milliseconds,28.5% faster warm generation due to structured schema
+End-to-End Live Application,Single-Image Request Mode,Live Integration Cohort,4,17037.21,16664.41,19077.58,milliseconds,"Includes upload, decode, grounding, report, triage"
+End-to-End Live Application,Batch Mode Per-Image Processing,Live Integration Cohort,4,16545.94,16506.46,17232.14,milliseconds,Isolated worker execution with dedicated memory management

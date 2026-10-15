@@ -1,0 +1,9 @@
+metric_category,metric_name,numerator,denominator,observed_value,engineering_target,status,evidence_source
+Software Suite Verification,Pytest Automated Test Pass Rate,165,165,100.0%,100.0%,PASS,Backend & Frontend test suites (pytest src/ backend/)
+Live Batch Processing,Batch Job Execution Completion Rate,4,4,100.0%,100.0%,PASS,scratch/evaluation_results.json (live backend execution)
+Live Batch Processing,API Endpoint Success Rate,8,8,100.0%,100.0%,PASS,4 single-image + 4 batch requests without 5xx errors
+Cryptographic Integrity,Image-to-Report SHA-256 Byte Match Rate,4,4,100.0%,100.0%,PASS,SHA-256 byte fingerprints identical between client and worker
+Cryptographic Integrity,Pixel Array SHA-256 Consistency,4,4,100.0%,100.0%,PASS,Decoded pixel hash matching raw transmission
+Isolation & Contamination,Cross-Image Contamination Rate,0,4,0.0%,0.0%,PASS,Zero tag/finding leakage between batch items
+UI Sanitization,Markdown Syntax Leakage Rate,0,4,0.0%,0.0%,PASS,Zero unparsed bolding/heading artifacts in parsed sections
+Semantic Stability,Single vs Batch Triage Decision Concordance,4,4,100.0%,100.0%,PASS,Identical triage rules assigned in isolated and batch runs

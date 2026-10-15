@@ -1,0 +1,35 @@
+flowchart TD
+    subgraph Track1 ["Track 1: TransVG-AGPT Fine-Tuning (COMPLETED)"]
+        RSNA_Data["RSNA Pneumonia 2018\nTrain: 4,210 Patients (11,897 Boxes)\nVal: 901 Patients (2,485 Boxes)"]
+        BaseCkpt["Baseline Checkpoint\ncheckpoints/transvg.pth\n(2.1 GB, Pretrained)"]
+        
+        TrainLoop["scripts/train_rsna.py\n- Frozen ResNet-50 + DETR + ClinicalBERT\n- Trainable: 4-Layer Fusion + MLP Head\n- Loss: 5.0*L1 + 2.0*GIoU\n- Cosine LR: 5e-5, Batch: 4, Device: MPS"]
+        
+        BestCkpt["Fine-Tuned Checkpoint\ncheckpoints/finetuned_rsna/.../best_model_val_iou.pth\n(768 MB, Val IoU: 0.4493)"]
+        
+        RSNA_Test["Locked RSNA Test Set\n901 Held-Out Patients (2,575 Boxes)"]
+        TestEval["scripts/evaluate_rsna.py\nTest IoU: 0.3130 -> 0.4530 (+44.7%)\nRecall@0.50: 0.2397 -> 0.4972 (+107.5%)"]
+
+        RSNA_Data --> TrainLoop
+        BaseCkpt --> TrainLoop
+        TrainLoop --> BestCkpt
+        BestCkpt --> TestEval
+        RSNA_Test --> TestEval
+    end
+
+    subgraph Track2 ["Track 2: MedGemma 4B QLoRA (PREPARED - STANDBY)"]
+        CIG_Data["Chest-ImaGenome Gold\ntrain_dev: 200 Cases (199 Patients)\nval_dev: 50 Cases (49 Patients)\n1-to-1 Study-to-Image Pairing"]
+        
+        MedGemma_Base["Official Model Weights\ngoogle/medgemma-4b-it\n(Gemma 3 Multimodal, 4.3B Params)"]
+        
+        SafetyGates["scripts/train_medgemma_lora.py\n1. --inspect-only: 15 vision frozen, 4 proj trainable\n2. --dry-run: loss 9.2256, label mask -100, grad flow\n3. --overfit-single-batch: loss 9.25 -> 5.89 (20 steps)"]
+        
+        CloudTrainer["Cloud Training (Google Colab / GCP A100)\n- 4-bit NF4 Quantization (bitsandbytes)\n- LoRA on q,k,v,o,mlp (r=16, alpha=16)\n- Trainable Multimodal Projector\n- SigLIP Vision Tower FROZEN\n- 3 Epochs, Effective Batch=16, LR=1e-4"]
+        
+        LockedCohort["Locked expanded_test Cohort\n117 Images / 117 Patients\n(Held-out, untouched)"]
+
+        CIG_Data --> SafetyGates
+        MedGemma_Base --> SafetyGates
+        SafetyGates -->|Preflight PASSED| CloudTrainer
+        CloudTrainer -.->|Final Evaluation Gate| LockedCohort
+    end

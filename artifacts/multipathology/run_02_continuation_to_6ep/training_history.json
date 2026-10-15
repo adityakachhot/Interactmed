@@ -1,0 +1,266 @@
+{
+  "start_time": "2026-10-16T00:53:42.444350",
+  "experiment_name": "multipathology_finetuning_continuation_to_6ep",
+  "continuation_source": "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth",
+  "baseline_best_val_iou": 0.651,
+  "early_stopping_policy": {
+    "min_improvement": 0.001,
+    "patience": 2,
+    "max_drop_pause": 0.03
+  },
+  "config": {
+    "experiment": {
+      "name": "multipathology_finetuning_continuation_to_6ep",
+      "description": "Controlled continuation of TransVG-AGPT multi-pathology fine-tuning from Epoch 3 best checkpoint (Val mIoU 0.6510) to a maximum of Epoch 6 (up to 3 additional epochs). Conservative starting LR of 1.0e-5 decaying toward 1.0e-6 with mandatory early stopping after two consecutive epochs without >0.001 validation mIoU improvement over the best.\n",
+      "phase": "MultiPathology-Stage2-Continuation",
+      "task": "multi_pathology_grounding_continuation",
+      "starting_epoch": 4,
+      "max_epochs": 6
+    },
+    "data": {
+      "local_verified_csv": "/Users/adityakachhot/interactmed/data/processed/local_grounding_verified.csv",
+      "mimic_base_dir": "/Users/adityakachhot/Downloads/data/mimic-cxr",
+      "rsna_train_csv": "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_train_positive.csv",
+      "rsna_images_dir": "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images",
+      "rsna_train_sample_size": 200,
+      "imsize": 640
+    },
+    "model": {
+      "base_checkpoint": "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth",
+      "freeze_encoders": true,
+      "device": "auto"
+    },
+    "training": {
+      "additional_epochs": 3,
+      "starting_epoch": 4,
+      "batch_size": 4,
+      "num_workers": 0,
+      "lr": 1e-05,
+      "weight_decay": 0.0001,
+      "clip_max_norm": 0.1,
+      "l1_loss_coef": 5.0,
+      "giou_loss_coef": 2.0,
+      "lr_scheduler": "cosine",
+      "min_lr": 1e-06,
+      "eval_every_epoch": true,
+      "save_best_metric": "mean_best_match_iou",
+      "early_stopping": {
+        "min_improvement": 0.001,
+        "patience": 2,
+        "max_drop_pause": 0.03,
+        "baseline_best_val_iou": 0.651
+      }
+    },
+    "output": {
+      "checkpoints_dir": "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_02_continuation_to_6ep",
+      "artifacts_dir": "/Users/adityakachhot/interactmed/artifacts/multipathology/run_02_continuation_to_6ep",
+      "log_file": "/Users/adityakachhot/interactmed/artifacts/multipathology/run_02_continuation_to_6ep/training_history.json"
+    }
+  },
+  "epochs": [
+    {
+      "epoch": 4,
+      "train_loss": 1.6682,
+      "epoch_duration_s": 139.3,
+      "learning_rate": 7.500000000000001e-06,
+      "eval_metrics": {
+        "Pneumonia": {
+          "n_queries": 13,
+          "mean_iou": 0.4964,
+          "recall_50": 46.15,
+          "recall_75": 15.38
+        },
+        "Pneumothorax": {
+          "n_queries": 13,
+          "mean_iou": 0.5701,
+          "recall_50": 69.23,
+          "recall_75": 15.38
+        },
+        "Consolidation": {
+          "n_queries": 12,
+          "mean_iou": 0.5548,
+          "recall_50": 66.67,
+          "recall_75": 25.0
+        },
+        "Atelectasis": {
+          "n_queries": 8,
+          "mean_iou": 0.5401,
+          "recall_50": 50.0,
+          "recall_75": 25.0
+        },
+        "Edema": {
+          "n_queries": 5,
+          "mean_iou": 0.6058,
+          "recall_50": 80.0,
+          "recall_75": 0.0
+        },
+        "Cardiomegaly": {
+          "n_queries": 40,
+          "mean_iou": 0.8327,
+          "recall_50": 100.0,
+          "recall_75": 90.0
+        },
+        "Lung Opacity": {
+          "n_queries": 12,
+          "mean_iou": 0.4332,
+          "recall_50": 25.0,
+          "recall_75": 16.67
+        },
+        "Pleural Effusion": {
+          "n_queries": 11,
+          "mean_iou": 0.599,
+          "recall_50": 81.82,
+          "recall_75": 27.27
+        },
+        "__OVERALL__": {
+          "n_queries": 114,
+          "mean_iou": 0.6401,
+          "recall_50": 72.81,
+          "recall_75": 43.86
+        }
+      },
+      "delta_vs_best": -0.0109,
+      "is_new_best": false,
+      "consecutive_no_improvement": 1
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.6288,
+      "epoch_duration_s": 138.5,
+      "learning_rate": 2.5000000000000015e-06,
+      "eval_metrics": {
+        "Pneumonia": {
+          "n_queries": 13,
+          "mean_iou": 0.5546,
+          "recall_50": 53.85,
+          "recall_75": 23.08
+        },
+        "Pneumothorax": {
+          "n_queries": 13,
+          "mean_iou": 0.5845,
+          "recall_50": 69.23,
+          "recall_75": 23.08
+        },
+        "Consolidation": {
+          "n_queries": 12,
+          "mean_iou": 0.5663,
+          "recall_50": 66.67,
+          "recall_75": 25.0
+        },
+        "Atelectasis": {
+          "n_queries": 8,
+          "mean_iou": 0.5521,
+          "recall_50": 50.0,
+          "recall_75": 25.0
+        },
+        "Edema": {
+          "n_queries": 5,
+          "mean_iou": 0.6426,
+          "recall_50": 80.0,
+          "recall_75": 20.0
+        },
+        "Cardiomegaly": {
+          "n_queries": 40,
+          "mean_iou": 0.8315,
+          "recall_50": 100.0,
+          "recall_75": 90.0
+        },
+        "Lung Opacity": {
+          "n_queries": 12,
+          "mean_iou": 0.4463,
+          "recall_50": 33.33,
+          "recall_75": 16.67
+        },
+        "Pleural Effusion": {
+          "n_queries": 11,
+          "mean_iou": 0.6202,
+          "recall_50": 81.82,
+          "recall_75": 27.27
+        },
+        "__OVERALL__": {
+          "n_queries": 114,
+          "mean_iou": 0.655,
+          "recall_50": 74.56,
+          "recall_75": 46.49
+        }
+      },
+      "delta_vs_best": 0.004,
+      "is_new_best": true,
+      "consecutive_no_improvement": 0
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.6204,
+      "epoch_duration_s": 152.2,
+      "learning_rate": 1e-06,
+      "eval_metrics": {
+        "Pneumonia": {
+          "n_queries": 13,
+          "mean_iou": 0.5538,
+          "recall_50": 53.85,
+          "recall_75": 23.08
+        },
+        "Pneumothorax": {
+          "n_queries": 13,
+          "mean_iou": 0.5896,
+          "recall_50": 69.23,
+          "recall_75": 30.77
+        },
+        "Consolidation": {
+          "n_queries": 12,
+          "mean_iou": 0.5683,
+          "recall_50": 66.67,
+          "recall_75": 33.33
+        },
+        "Atelectasis": {
+          "n_queries": 8,
+          "mean_iou": 0.5336,
+          "recall_50": 50.0,
+          "recall_75": 25.0
+        },
+        "Edema": {
+          "n_queries": 5,
+          "mean_iou": 0.6292,
+          "recall_50": 80.0,
+          "recall_75": 20.0
+        },
+        "Cardiomegaly": {
+          "n_queries": 40,
+          "mean_iou": 0.8301,
+          "recall_50": 100.0,
+          "recall_75": 90.0
+        },
+        "Lung Opacity": {
+          "n_queries": 12,
+          "mean_iou": 0.4428,
+          "recall_50": 25.0,
+          "recall_75": 16.67
+        },
+        "Pleural Effusion": {
+          "n_queries": 11,
+          "mean_iou": 0.6135,
+          "recall_50": 81.82,
+          "recall_75": 27.27
+        },
+        "__OVERALL__": {
+          "n_queries": 114,
+          "mean_iou": 0.6523,
+          "recall_50": 73.68,
+          "recall_75": 48.25
+        }
+      },
+      "delta_vs_best": -0.0027,
+      "is_new_best": false,
+      "consecutive_no_improvement": 1
+    }
+  ],
+  "stopping_summary": {
+    "stopped_early": false,
+    "stop_reason": "Completed all 3 continuation epochs (reached max Epoch 6).",
+    "selected_best_epoch": 5,
+    "selected_best_val_iou": 0.655,
+    "selected_checkpoint_path": "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth",
+    "baseline_val_iou": 0.651,
+    "absolute_gain": 0.004
+  }
+}

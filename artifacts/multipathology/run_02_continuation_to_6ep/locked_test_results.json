@@ -1,0 +1,172 @@
+{
+  "Continuation Epoch 5 Best": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.5856,
+      "recall_50": 75.0,
+      "recall_75": 12.5,
+      "mean_latency_ms": 163.7,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Cardiomegaly": {
+      "n_queries": 42,
+      "mean_iou": 0.839,
+      "recall_50": 100.0,
+      "recall_75": 85.71,
+      "mean_latency_ms": 166.05,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.5505,
+      "recall_50": 75.0,
+      "recall_75": 25.0,
+      "mean_latency_ms": 167.85,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "19ad291e-2093eaaa-b0881d58-f7359e05-6961e3e8",
+          "phrase": "there is patchy consolidation in the left lung and right upper lobe",
+          "pred_box": [
+            638.2,
+            488.8,
+            1131.0,
+            1140.3
+          ],
+          "gt_box": [
+            444.0,
+            1073.0,
+            704.0,
+            1352.0
+          ],
+          "iou": 0.0114
+        },
+        {
+          "dicom_id": "c4aa2f33-b91fbec1-971f13fd-81f94e33-e8312181",
+          "phrase": "Multifocal consolidation, likely a combination of contusion and aspiration",
+          "pred_box": [
+            373.7,
+            755.0,
+            1158.1,
+            1750.0
+          ],
+          "gt_box": [
+            616.0,
+            442.0,
+            1177.0,
+            1063.0
+          ],
+          "iou": 0.1736
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 7,
+      "mean_iou": 0.3974,
+      "recall_50": 14.29,
+      "recall_75": 0.0,
+      "mean_latency_ms": 166.71,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "10904f22-5598cef1-754fba77-81fce124-662f915f",
+          "phrase": "Stable mild to moderate pulmonary edema",
+          "pred_box": [
+            1450.1,
+            860.6,
+            2316.9,
+            1464.8
+          ],
+          "gt_box": [
+            1669.0,
+            1243.0,
+            2493.0,
+            2037.0
+          ],
+          "iou": 0.1389
+        }
+      ]
+    },
+    "Lung Opacity": {
+      "n_queries": 9,
+      "mean_iou": 0.5172,
+      "recall_50": 55.56,
+      "recall_75": 11.11,
+      "mean_latency_ms": 166.39,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "a0cf505c-0d0135ae-4106dd58-a0139675-95d7c6a5",
+          "phrase": "Stable scarring and cavitation in the upper lobes",
+          "pred_box": [
+            484.9,
+            578.6,
+            868.0,
+            969.6
+          ],
+          "gt_box": [
+            339.0,
+            309.0,
+            814.0,
+            680.0
+          ],
+          "iou": 0.114
+        }
+      ]
+    },
+    "Pleural Effusion": {
+      "n_queries": 12,
+      "mean_iou": 0.645,
+      "recall_50": 83.33,
+      "recall_75": 25.0,
+      "mean_latency_ms": 165.92,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pneumonia": {
+      "n_queries": 15,
+      "mean_iou": 0.6502,
+      "recall_50": 66.67,
+      "recall_75": 40.0,
+      "mean_latency_ms": 260.62,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pneumothorax": {
+      "n_queries": 25,
+      "mean_iou": 0.6109,
+      "recall_50": 84.0,
+      "recall_75": 28.0,
+      "mean_latency_ms": 163.25,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "92666ac1-70ccc2f3-66bc3d47-ed08bd0e-d444a359",
+          "phrase": "there is a moderate to large right pneumothorax with possible pleural fluid",
+          "pred_box": [
+            217.4,
+            1439.6,
+            1151.2,
+            2150.2
+          ],
+          "gt_box": [
+            482.0,
+            969.0,
+            831.0,
+            1683.0
+          ],
+          "iou": 0.1026
+        }
+      ]
+    },
+    "__OVERALL__": {
+      "n_queries": 130,
+      "mean_iou": 0.6672,
+      "recall_50": 80.0,
+      "recall_75": 43.85,
+      "mean_latency_ms": 176.49
+    }
+  }
+}

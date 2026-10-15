@@ -295,12 +295,14 @@ class TriageService:
         report_text: Optional[str],
         sections: Optional[Dict[str, str]] = None,
         error: Optional[str] = None,
+        cross_report_conflict: bool = False,
+        internal_contradiction: bool = False,
     ) -> TriageEvaluationResult:
         """
         Convenience evaluator from report draft text or section dictionary.
         Extracts observations and impression, checks contradictions, and evaluates triage.
         """
-        if error or not report_text:
+        if error or (not report_text and not sections):
             return self.evaluate_from_structured_findings(
                 structured_findings={},
                 model_error=error or "Report generation produced empty output",
@@ -309,31 +311,50 @@ class TriageService:
 
         # Parse sections if not already provided
         sec_dict = sections or {}
-        obs_text = sec_dict.get("OBSERVATIONS") or sec_dict.get("1. Your X-ray in simple words") or ""
-        imp_text = sec_dict.get("IMPRESSION") or sec_dict.get("2. What the findings may mean") or ""
+        obs_text = (
+            sec_dict.get("OBSERVATIONS")
+            or sec_dict.get("Your X-ray in simple words")
+            or sec_dict.get("1. Your X-ray in simple words")
+            or ""
+        )
+        imp_text = (
+            sec_dict.get("IMPRESSION")
+            or sec_dict.get("What the findings may mean")
+            or sec_dict.get("2. What the findings may mean")
+            or ""
+        )
 
         # If sections not split, extract via regex
         if not obs_text and report_text:
-            obs_m = re.search(r'OBSERVATIONS\s*[:\n](.*?)(?=\bIMPRESSION|$)', report_text, re.DOTALL | re.IGNORECASE)
+            obs_m = re.search(
+                r'(?:OBSERVATIONS|Your X-ray in simple words|1\.\s*Your X-ray in simple words)\s*[:\n](.*?)(?=\b(?:IMPRESSION|What the findings may mean|2\.\s*What the findings may mean)|$)',
+                report_text,
+                re.DOTALL | re.IGNORECASE,
+            )
             if obs_m:
                 obs_text = obs_m.group(1).strip()
             else:
                 obs_text = report_text
 
         if not imp_text and report_text:
-            imp_m = re.search(r'IMPRESSION\s*[:\n](.*?)(?=\bLIMITATIONS|$)', report_text, re.DOTALL | re.IGNORECASE)
+            imp_m = re.search(
+                r'(?:IMPRESSION|What the findings may mean|2\.\s*What the findings may mean)\s*[:\n](.*?)(?=\b(?:LIMITATIONS|What is uncertain|3\.\s*What is uncertain)|$)',
+                report_text,
+                re.DOTALL | re.IGNORECASE,
+            )
             if imp_m:
                 imp_text = imp_m.group(1).strip()
 
         # Check for contradictions: active pathology in observations but "normal" in impression
-        contradiction = False
+        contradiction = bool(internal_contradiction or cross_report_conflict)
         if obs_text and imp_text:
             has_pneumothorax = bool(re.search(r'\bpneumothorax\b', obs_text, re.IGNORECASE)) and not bool(re.search(PRE_NEG_CUES, obs_text, re.IGNORECASE))
             has_edema = bool(re.search(r'\bedema\b', obs_text, re.IGNORECASE)) and not bool(re.search(PRE_NEG_CUES, obs_text, re.IGNORECASE))
             has_consolidation = bool(re.search(r'\bconsolidation\b', obs_text, re.IGNORECASE)) and not bool(re.search(PRE_NEG_CUES, obs_text, re.IGNORECASE))
+            has_cardiomegaly = bool(re.search(r'\b(?:cardiomegaly|enlarged\s+heart|enlarged\s+cardiac)\b', obs_text, re.IGNORECASE)) and not bool(re.search(PRE_NEG_CUES, obs_text, re.IGNORECASE))
 
             imp_claims_normal = bool(re.search(r'\b(?:normal|unremarkable|no acute|clear)\b', imp_text, re.IGNORECASE))
-            if (has_pneumothorax or has_edema or has_consolidation) and imp_claims_normal:
+            if (has_pneumothorax or has_edema or has_consolidation or has_cardiomegaly) and imp_claims_normal:
                 contradiction = True
 
         findings_map = {

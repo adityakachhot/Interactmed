@@ -1,0 +1,39 @@
+sequenceDiagram
+    autonumber
+    actor User as Patient / Clinician
+    participant UI as React Frontend (App.tsx)
+    participant API as FastAPI (backend/main.py)
+    participant RS as ReportService (src/report_service.py)
+    participant Ollama as Ollama Runtime (medgemma:4b)
+    participant Triage as TriageService (src/triage_service.py)
+
+    User->>UI: Uploads full radiograph and enters reason for X-ray
+    UI->>API: POST /report/patient-friendly (Multipart: file, reason, history)
+    API->>API: _validate_upload() (< 50MB, DICOM/PNG/JPG)
+    API->>RS: patient_friendly_report(image_bytes, reason, history)
+    RS->>RS: _load_to_rgb_array() & resize to max_side=1024 (LANCZOS)
+    RS->>RS: _array_to_base64_jpeg() (Quality=85)
+    
+    rect rgb(240, 248, 255)
+        note over RS,Ollama: Stage 1: Objective Visual Feature Extraction
+        RS->>Ollama: POST /api/generate (Images: [full_b64], Prompt: "Describe visible abnormalities/densities", num_predict=130)
+        Ollama-->>RS: raw_obs: "Bilateral lower lung opacities, heart size normal..."
+    end
+
+    rect rgb(255, 248, 240)
+        note over RS,Ollama: Stage 2: Patient-Friendly Structuring & Translation
+        RS->>Ollama: POST /api/generate (Prompt: "Translate observed findings into 4 sections", num_predict=180)
+        Ollama-->>RS: raw_text (draft headings)
+    end
+
+    RS->>RS: clean_and_structure_patient_report():
+    RS->>RS: Intercepts & replaces "only shows one side" fallacy
+    RS->>RS: Strips leaked disclaimers & validates numerical units
+    
+    RS->>Triage: evaluate_from_report_text(full_text, sections)
+    Triage->>Triage: Evaluates YAML rules with negation cues and contradiction checks
+    Triage-->>RS: TriageEvaluationResult (category, matched rule, review priority)
+    
+    RS-->>API: Result dict with report_text, sections, triage_result, timing
+    API-->>UI: PatientFriendlyReportResponse (JSON)
+    UI->>User: Renders 4 structured cards, research triage banner, and disclaimers

@@ -1,0 +1,19 @@
+flowchart TD
+    Input["Structured Observations Input\n(From Report Service / VLM)"] --> Rule1{"Check Technical Safeguards\n(Precedence 10-40)\n- Inference Failed?\n- Image Invalid / Corrupted?\n- Contradiction Detected?\n- Severe Motion Blur?"}
+
+    Rule1 -->|Triggered| Indeterminate["indeterminate_review_required\nHuman Review Priority: URGENT\nRule: RULE_INDETERMINATE_*"]
+    
+    Rule1 -->|Passed| Rule2{"Check Potentially Urgent Findings\n(Precedence 100-140)\n- Pneumothorax / Tension Cues?\n- Severe Pulmonary Edema / Bat-wing?\n- Critical Line Malposition?\n- Massive Pleural Effusion?\n- Dense Lobar Consolidation?"}
+
+    Rule2 -->|Affirmed & Unnegated| Urgent["potentially_urgent\nHuman Review Priority: URGENT\nBadge: Amber-Red Alert\nRule: RULE_POTENTIALLY_URGENT_*"]
+    
+    Rule2 -->|Negative / Absent| Rule3{"Check Non-Critical Abnormalities\n(Precedence 200-250)\n- Focal Opacity / Patchy Density?\n- Cardiomegaly / Enlarged Heart?\n- Atelectasis / Plate-like Opacity?\n- Stable Pleural Effusion / Blunting?\n- Routine Support Apparatus?"}
+
+    Rule3 -->|Affirmed & Unnegated| Abnormal["abnormality_flagged\nHuman Review Priority: ROUTINE\nBadge: Blue Warning\nRule: RULE_ABNORMAL_*"]
+    
+    Rule3 -->|No Patterns Matched| DefaultRule["no_priority_finding_flagged\nHuman Review Priority: STANDARD_REVIEW\nBadge: Slate Info\nRule: RULE_NO_PRIORITY_FINDINGS_FLAGGED\n\nCRITICAL CONTRACT:\nDOES NOT MEAN NORMAL OR DISEASE-FREE"]
+
+    Indeterminate --> Banner["Attach Mandatory Research Notice:\n'RESEARCH PROTOTYPE NOTICE: Experimental heuristic classification.\nNot clinically validated. Human medical review is required.'\nrequires_human_review = true"]
+    Urgent --> Banner
+    Abnormal --> Banner
+    DefaultRule --> Banner

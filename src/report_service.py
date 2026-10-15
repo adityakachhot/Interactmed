@@ -18,6 +18,7 @@ Data privacy:
 from __future__ import annotations
 
 import base64
+import hashlib
 import io
 import json
 import logging
@@ -26,13 +27,22 @@ import textwrap
 import time
 import warnings
 from pathlib import Path
-from typing import Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
 from src.triage_service import get_triage_service
+from src.consistency_service import (
+    check_regional_internal_contradiction,
+    extract_regional_assessment_state,
+    extract_cardiac_stance_whole_image,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+# Prompt Schema Versions
+PROMPT_VERSION_RESEARCH = "v4_structured_7section"
+PROMPT_VERSION_PATIENT  = "v4_grounded_patient"
 
 # ── Logging (no patient data, no report text logged at INFO level) ─────────────
 log = logging.getLogger("report_service")
@@ -112,23 +122,8 @@ def _text_model_available() -> Optional[str]:
 
 def _ollama_generate_text(prompt: str, model: str, timeout: int = 180) -> str:
     """Call /api/generate (text-only) and return response string."""
-    import urllib.request
-    payload = json.dumps({
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        "keep_alive": "15m",
-        "options": {"temperature": 0.15, "num_predict": 300},
-    }).encode()
-    req = urllib.request.Request(
-        f"{OLLAMA_BASE_URL}/api/generate",
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        body = json.loads(resp.read().decode())
-        return body.get("response", "").strip()
+    text, _ = _ollama_generate_text_with_metrics(prompt, model, timeout=timeout)
+    return text
 
 
 def _ollama_generate_vision(
@@ -138,14 +133,55 @@ def _ollama_generate_vision(
     timeout: int = 240,
 ) -> str:
     """Call /api/generate with base64 image(s) and return response string."""
+    text, _ = _ollama_generate_vision_with_metrics(prompt, images_b64, model, timeout=timeout)
+    return text
+
+
+def _ollama_generate_text_with_metrics(
+    prompt: str,
+    model: str,
+    num_predict: int = 280,
+    temperature: float = 0.1,
+    keep_alive: str = "30m",
+    timeout: int = 240,
+) -> tuple[str, dict[str, Any]]:
+    """Call /api/generate (text-only) with timing and token metrics."""
+    return _ollama_generate_vision_with_metrics(
+        prompt=prompt,
+        images_b64=[],
+        model=model,
+        num_predict=num_predict,
+        temperature=temperature,
+        keep_alive=keep_alive,
+        timeout=timeout,
+    )
+
+
+def _ollama_generate_vision_with_metrics(
+    prompt: str,
+    images_b64: list[str],
+    model: str,
+    num_predict: int = 260,
+    temperature: float = 0.1,
+    keep_alive: str = "30m",
+    timeout: int = 240,
+) -> tuple[str, dict[str, Any]]:
+    """
+    Call Ollama /api/generate with multimodal image input and return:
+      (response_text, raw_metrics_dict)
+    Captures load_duration, prompt_eval_duration, eval_duration, eval_count.
+    """
     import urllib.request
     payload = json.dumps({
         "model": model,
         "prompt": prompt,
         "images": images_b64,
         "stream": False,
-        "keep_alive": "15m",
-        "options": {"temperature": 0.1, "num_predict": 250},
+        "keep_alive": keep_alive,
+        "options": {
+            "temperature": temperature,
+            "num_predict": num_predict,
+        },
     }).encode()
     req = urllib.request.Request(
         f"{OLLAMA_BASE_URL}/api/generate",
@@ -155,7 +191,17 @@ def _ollama_generate_vision(
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         body = json.loads(resp.read().decode())
-        return body.get("response", "").strip()
+        response_text = body.get("response", "").strip()
+        metrics = {
+            "total_duration_ns": body.get("total_duration", 0),
+            "load_duration_ns": body.get("load_duration", 0),
+            "prompt_eval_count": body.get("prompt_eval_count", 0),
+            "prompt_eval_duration_ns": body.get("prompt_eval_duration", 0),
+            "eval_count": body.get("eval_count", 0),
+            "eval_duration_ns": body.get("eval_duration", 0),
+            "done_reason": body.get("done_reason", "completed"),
+        }
+        return response_text, metrics
 
 
 # ── Image utilities ───────────────────────────────────────────────────────────
@@ -429,23 +475,55 @@ def clean_and_structure_regional_report(
 
     assess_body = " ".join(non_dup_assess).strip()
 
-    bare_prefixes = ["supported:", "indeterminate:", "not supported:", "supported", "indeterminate", "not supported"]
+    bare_prefixes = [
+        "supported:", "indeterminate:", "not supported:", "not assessable:",
+        "supported", "indeterminate", "not supported", "not assessable"
+    ]
     if not assess_body or assess_body.lower() in bare_prefixes or len(assess_body.split()) <= 2:
-        lower_raw = (raw_assess + " " + raw_obs).lower()
-        if "not supported" in lower_raw or "no evidence" in lower_raw or "within normal limits" in lower_raw or "normal limits" in lower_raw:
+        lower_assess = raw_assess.lower().strip()
+        if "not assessable" in lower_assess:
+            cat = "Not assessable"
+            rationale = f"Radiographic features in the queried region cannot be adequately assessed due to positioning, exposure, or obscuration."
+        elif "not supported" in lower_assess:
             cat = "Not supported"
             rationale = f"No definitive radiographic evidence of {phrase} is demonstrated on the evaluated projection."
-        elif any(w in lower_raw for w in ["supported", "consistent", "demonstrated", "evident", "opacity", "consolidation", "hazy"]):
+        elif "indeterminate" in lower_assess:
+            cat = "Indeterminate"
+            rationale = f"Imaging features remain equivocal and cannot definitively confirm or exclude {phrase} without clinical correlation."
+        elif "supported" in lower_assess:
             cat = "Supported"
             rationale = f"Visible radiographic features are consistent with the queried finding ({phrase}), pending clinical and radiologist verification."
         else:
-            cat = "Indeterminate"
-            rationale = f"Imaging features remain equivocal and cannot definitively confirm or exclude {phrase} without clinical correlation."
+            lower_raw = (raw_assess + " " + raw_obs).lower()
+            # If cardiac and observations affirm enlargement, do NOT let incidental "within normal limits" force Not supported
+            has_enlarge_obs = is_cardiac and any(
+                p in lower_raw for p in ["enlarged", "prominent cardiac", "increased cardiothoracic", "cardiomegaly"]
+            ) and not any(neg in lower_raw for neg in ["not enlarged", "no cardiomegaly", "normal heart", "normal cardiac silhouette"])
+
+            if "not assessable" in lower_raw or "unassessable" in lower_raw or "cannot be assessed" in lower_raw:
+                cat = "Not assessable"
+                rationale = f"Radiographic features in the queried region cannot be adequately assessed due to positioning, exposure, or obscuration."
+            elif not has_enlarge_obs and (
+                "not supported" in lower_raw or "no evidence" in lower_raw or "within normal limits" in lower_raw or "normal limits" in lower_raw
+            ):
+                cat = "Not supported"
+                rationale = f"No definitive radiographic evidence of {phrase} is demonstrated on the evaluated projection."
+            elif any(w in lower_raw for w in ["supported", "consistent with"]):
+                cat = "Supported"
+                rationale = f"Visible radiographic features are consistent with the queried finding ({phrase}), pending clinical and radiologist verification."
+            elif has_enlarge_obs:
+                cat = "Indeterminate"
+                rationale = f"Prominent or enlarged cardiac silhouette noted in observations; definitive confirmation of cardiomegaly requires clinical correlation and inspiratory assessment."
+            else:
+                cat = "Indeterminate"
+                rationale = f"Imaging features remain equivocal and cannot definitively confirm or exclude {phrase} without clinical correlation."
         assess_body = f"{cat}: {rationale}"
     else:
         lower_a = assess_body.lower()
-        if not any(assess_body.startswith(p) for p in ["Supported:", "Indeterminate:", "Not supported:"]):
-            if "not supported" in lower_a or "no evidence" in lower_a or "excluded" in lower_a:
+        if not any(assess_body.startswith(p) for p in ["Supported:", "Indeterminate:", "Not supported:", "Not assessable:"]):
+            if "not assessable" in lower_a or "unassessable" in lower_a or "cannot be assessed" in lower_a:
+                assess_body = "Not assessable: " + assess_body
+            elif "not supported" in lower_a or "no evidence" in lower_a or "excluded" in lower_a:
                 assess_body = "Not supported: " + assess_body
             elif any(w in lower_a for w in ["indeterminate", "equivocal", "uncertain", "not definitive", "cannot confirm", "unclear", "not definitively"]):
                 assess_body = "Indeterminate: " + assess_body
@@ -481,6 +559,11 @@ def clean_and_structure_regional_report(
         f"ASSESSMENT AND UNCERTAINTY:\n{assess_body}\n\n"
         f"LIMITATIONS:\n{cleaned_limit}"
     )
+
+    # Check for internal contradiction between observations and assessment
+    internal_conflict, internal_msg = check_regional_internal_contradiction(obs_body, assess_body, phrase)
+    if internal_conflict and internal_msg:
+        warnings_list.append(internal_msg)
 
     words = final_report.split()
     if len(words) < 40:
@@ -570,7 +653,7 @@ def region_report(
     # Image 1 (PRIMARY CONTEXT): Complete thoracic radiograph
     try:
         full_arr = _load_to_rgb_array(image_bytes, image_filename)
-        full_b64 = _array_to_base64_jpeg(full_arr, max_side=512)
+        full_b64 = _array_to_base64_jpeg(full_arr, max_side=1024, quality=85)
         images_b64.append(full_b64)
         has_full_image = True
     except Exception:
@@ -578,7 +661,7 @@ def region_report(
 
     # Image 2 (SUPPLEMENTARY CONTEXT): Magnified crop
     try:
-        crop_b64 = _array_to_base64_jpeg(crop_arr, max_side=512)
+        crop_b64 = _array_to_base64_jpeg(crop_arr, max_side=768, quality=85)
         images_b64.append(crop_b64)
     except Exception as exc:
         return _error_result(t0, f"Failed to encode crop image: {exc}", crop_info)
@@ -632,7 +715,7 @@ def region_report(
         - Strict scope: Do NOT mention unrelated incidental abnormalities (such as lower lung field densities) unless directly relevant. If a relevant incidental finding is genuinely visible, label it on a separate line as: "Tentative incidental observation (requires review): <observation>".
 
         ASSESSMENT AND UNCERTAINTY:
-        Begin with one explicit status: "Supported:", "Indeterminate:", or "Not supported:".
+        Begin with one explicit status: "Supported:", "Not supported:", "Indeterminate:", or "Not assessable:".
         Follow with ONE concise sentence explaining the clinical impression and uncertainty based on the imaging.
         CRITICAL RULE: Do NOT repeat or paraphrase the physical description sentences from IMAGE OBSERVATIONS.
 
@@ -682,10 +765,18 @@ def region_report(
         "total_ms": latency_ms,
     }
     
+    assess_state = extract_regional_assessment_state(cleaned_text)
+    internal_conflict, internal_note = check_regional_internal_contradiction(
+        cleaned_text, cleaned_text, phrase
+    )
+
     return {
         "success": True,
         "error": None,
         "report_text": report_text,
+        "assessment_state": assess_state.replace("_", " ").title(),
+        "internal_contradiction": internal_conflict,
+        "internal_contradiction_warning": internal_note,
         "crop_info": crop_info,
         "timing": timing,
         "latency_ms": latency_ms,
@@ -693,7 +784,7 @@ def region_report(
         "image_input_used": True,
         "n_images_sent": len(images_b64),
         "validation_warnings": all_warnings,
-        "validation_flagged": validation["flagged"] or any("detected" in w for w in clean_warnings),
+        "validation_flagged": validation["flagged"] or any("detected" in w for w in clean_warnings) or internal_conflict,
     }
 
 
@@ -725,11 +816,14 @@ def clean_and_structure_patient_report(
 
     # 1. Correct the anatomical misconception if hallucinated by the model
     one_side_patterns = [
-        re.compile(r'(?:because\s+)?this\s+is\s+a\s+frontal\s+view(?:\s+of\s+the\s+chest)?,\s*(?:it\s+)?only\s+shows\s+one\s+side(?:\s+of\s+(?:your|the)\s+chest)?(?:\s+at\s+a\s+time)?\.?', re.IGNORECASE),
-        re.compile(r'(?:it\s+)?only\s+shows\s+one\s+side\s+of\s+(?:your|the)\s+chest(?:\s+at\s+a\s+time)?\.?', re.IGNORECASE),
-        re.compile(r'shows\s+only\s+one\s+side\s+of\s+(?:your|the)\s+chest(?:\s+at\s+a\s+time)?\.?', re.IGNORECASE),
-        re.compile(r'only\s+shows\s+one\s+side\s+at\s+a\s+time\.?', re.IGNORECASE),
-        re.compile(r'only\s+shows\s+one\s+side(?:\s+of\s+the\s+chest)?\.?', re.IGNORECASE),
+        re.compile(
+            r'(?:(?:because\s+(?:this\s+is\s+)?|since\s+(?:this\s+is\s+)?|as\s+|on\s+|in\s+)?(?:this|a|the|a\s+single)\s+(?:is\s+a\s+)?(?:frontal\s+)?(?:chest\s+)?(?:view|x-ray|radiograph|projection)(?:\s+of\s+(?:your|the)\s+chest)?(?:,?\s*(?:it\s+)?)?)'
+            r'(?:only\s+shows|shows\s+only)\s+one\s+side(?:\s+of\s+(?:your|the)\s+chest)?(?:\s+at\s+a\s+time)?\.?',
+            re.IGNORECASE,
+        ),
+        re.compile(r'(?:it\s+)?(?:only\s+shows|shows\s+only)\s+one\s+side\s+of\s+(?:your|the)\s+chest(?:\s+at\s+a\s+time)?\.?', re.IGNORECASE),
+        re.compile(r'(?:only\s+shows|shows\s+only)\s+one\s+side\s+at\s+a\s+time\.?', re.IGNORECASE),
+        re.compile(r'(?:only\s+shows|shows\s+only)\s+one\s+side(?:\s+of\s+the\s+chest)?\.?', re.IGNORECASE),
     ]
     corrected_side_statement = (
         "This frontal view displays both the left and right sides of the chest, "
@@ -737,10 +831,25 @@ def clean_and_structure_patient_report(
     )
     for pat in one_side_patterns:
         if pat.search(raw_text):
-            raw_text = pat.sub(corrected_side_statement, raw_text)
+            raw_text = pat.sub(corrected_side_statement, raw_text, count=1)
             warnings.append(
                 "Corrected anatomical error: A frontal view displays both sides of the chest, but lacks a lateral projection."
             )
+            break
+
+    # Clean any accidental repeated introductory clauses or stuttering before "This frontal view"
+    raw_text = re.sub(
+        r'(?:(?:because\s+(?:this\s+is\s+)?|since\s+(?:this\s+is\s+)?|as\s+|on\s+|in\s+)?(?:this|a|the)\s+(?:single\s+)?(?:frontal\s+)?(?:chest\s+)?(?:view|x-ray|radiograph|projection)(?:,?\s*))+\s*(this\s+frontal\s+view)',
+        r'This frontal view',
+        raw_text,
+        flags=re.IGNORECASE,
+    )
+    raw_text = re.sub(
+        r'(?:this\s+frontal\s+view\s+)+(this\s+frontal\s+view)',
+        r'\1',
+        raw_text,
+        flags=re.IGNORECASE,
+    )
 
     # 2. Strip leaked prompt instructions or templates
     prompt_leak_patterns = [
@@ -841,25 +950,175 @@ def clean_and_structure_patient_report(
     return full_text, sections, warnings
 
 
-def patient_friendly_report(
+def clean_and_structure_research_report(
+    raw_text: str,
+) -> tuple[str, dict[str, str], list[str]]:
+    """
+    Parses and structures the 7-section research-style chest radiograph report:
+      1. SUPPORT APPARATUS
+      2. CARDIAC SILHOUETTE
+      3. LUNGS AND OPACITIES
+      4. PLEURAL SPACES
+      5. MEDIASTINUM
+      6. OVERALL IMPRESSION
+      7. UNCERTAINTY AND LIMITATIONS
+
+    Also maintains full backward-compatibility with legacy 4-heading formats.
+    """
+    warnings: list[str] = []
+    text = (raw_text or "").strip()
+
+    # Strip leaked prompt rules or instructions
+    leak_patterns = [
+        re.compile(r'STRICT RULES:.*', re.DOTALL | re.IGNORECASE),
+        re.compile(r'Begin directly with.*', re.IGNORECASE),
+        re.compile(r'Format these findings into.*', re.IGNORECASE),
+        re.compile(r'Visual observations from this.*', re.IGNORECASE),
+        re.compile(r'Structured visual findings.*', re.IGNORECASE),
+        re.compile(
+            r'(\*{0,2}(?:experimental|not for clinical|ai-generated draft|educational purposes only|consult a doctor|consult your doctor|disclaimer)[^\n\.]*[\.\n]?)',
+            re.IGNORECASE,
+        ),
+    ]
+    for pat in leak_patterns:
+        text = pat.sub('', text).strip()
+
+    header_pattern = re.compile(
+        r'(?:^|\n)\s*(?:\d+[\.\)]\s*)?(?:\*{1,3})?\s*'
+        r'(SUPPORT APPARATUS|CARDIAC SILHOUETTE|LUNGS AND OPACITIES|LUNGS & OPACITIES|LUNGS|PLEURAL SPACES|PLEURAL|MEDIASTINUM|OVERALL IMPRESSION|IMPRESSION|ASSESSMENT AND UNCERTAINTY|UNCERTAINTY AND LIMITATIONS|LIMITATIONS|OBSERVATIONS|POSSIBLE FINDINGS)'
+        r'\s*(?:\*{1,3})?\s*[:\n]?',
+        re.IGNORECASE,
+    )
+    matches = list(header_pattern.finditer(text))
+
+    raw_sections: dict[str, str] = {}
+    if matches:
+        for i, m in enumerate(matches):
+            raw_hdr = m.group(1).strip().upper()
+            start = m.end()
+            end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+            body = text[start:end].strip()
+            body = re.sub(r'^[:\s\*\-]+', '', body).strip()
+            raw_sections[raw_hdr] = body
+    else:
+        raw_sections['OBSERVATIONS'] = text
+        raw_sections['OVERALL IMPRESSION'] = 'Automated visual reading is indeterminate without lateral projection.'
+        raw_sections['UNCERTAINTY AND LIMITATIONS'] = 'Single frontal projection; AI research draft requiring physician review.'
+
+    sections: dict[str, str] = {}
+    sections["SUPPORT APPARATUS"] = (
+        raw_sections.get("SUPPORT APPARATUS")
+        or raw_sections.get("SUPPORT")
+        or "Not identified on available image."
+    )
+    sections["CARDIAC SILHOUETTE"] = (
+        raw_sections.get("CARDIAC SILHOUETTE")
+        or raw_sections.get("CARDIAC")
+        or "Normal in size and contour."
+    )
+    sections["LUNGS AND OPACITIES"] = (
+        raw_sections.get("LUNGS AND OPACITIES")
+        or raw_sections.get("LUNGS & OPACITIES")
+        or raw_sections.get("LUNGS")
+        or "No focal consolidation, acute opacity, or evidence of pulmonary edema identified."
+    )
+    sections["PLEURAL SPACES"] = (
+        raw_sections.get("PLEURAL SPACES")
+        or raw_sections.get("PLEURAL")
+        or "Costophrenic angles sharp bilaterally without pleural effusion or pneumothorax."
+    )
+    sections["MEDIASTINUM"] = (
+        raw_sections.get("MEDIASTINUM")
+        or "Normal mediastinal and hilar contours."
+    )
+    sections["OVERALL IMPRESSION"] = (
+        raw_sections.get("OVERALL IMPRESSION")
+        or raw_sections.get("IMPRESSION")
+        or raw_sections.get("ASSESSMENT AND UNCERTAINTY")
+        or "No definitive acute cardiopulmonary abnormality flagged on frontal projection."
+    )
+    sections["UNCERTAINTY AND LIMITATIONS"] = (
+        raw_sections.get("UNCERTAINTY AND LIMITATIONS")
+        or raw_sections.get("LIMITATIONS")
+        or "Single frontal projection; AI research draft requiring qualified physician review."
+    )
+
+    # Legacy mappings
+    if "OBSERVATIONS" in raw_sections:
+        sections["OBSERVATIONS"] = raw_sections["OBSERVATIONS"]
+    else:
+        obs_parts = [
+            f"Support apparatus: {sections['SUPPORT APPARATUS']}",
+            f"Cardiac silhouette: {sections['CARDIAC SILHOUETTE']}",
+            f"Lungs & opacities: {sections['LUNGS AND OPACITIES']}",
+            f"Pleural spaces: {sections['PLEURAL SPACES']}",
+            f"Mediastinum: {sections['MEDIASTINUM']}",
+        ]
+        sections["OBSERVATIONS"] = "\n".join(obs_parts)
+
+    if "POSSIBLE FINDINGS" in raw_sections:
+        sections["POSSIBLE FINDINGS"] = raw_sections["POSSIBLE FINDINGS"]
+    else:
+        sections["POSSIBLE FINDINGS"] = sections["OVERALL IMPRESSION"]
+
+    sections["IMPRESSION"] = sections["OVERALL IMPRESSION"]
+    sections["ASSESSMENT AND UNCERTAINTY"] = sections["OVERALL IMPRESSION"]
+    sections["LIMITATIONS"] = sections["UNCERTAINTY AND LIMITATIONS"]
+
+    # Detect unsupported measurements
+    for k, v in sections.items():
+        meas = _UNSUPPORTED_MEASUREMENTS.findall(v)
+        if meas:
+            warnings.append(
+                f"Section '{k}' contains specific measurements ({', '.join(set(meas))}) not reliably derived from single AI draft."
+            )
+
+    # Assemble full text
+    if "OBSERVATIONS" in raw_sections and ("POSSIBLE FINDINGS" in raw_sections or "IMPRESSION" in raw_sections):
+        if "POSSIBLE FINDINGS" in sections and sections["POSSIBLE FINDINGS"] != sections.get("IMPRESSION"):
+            full_text = (
+                f"**OBSERVATIONS**\n{sections['OBSERVATIONS']}\n\n"
+                f"**POSSIBLE FINDINGS**\n{sections['POSSIBLE FINDINGS']}\n\n"
+                f"**ASSESSMENT AND UNCERTAINTY**\n{sections['ASSESSMENT AND UNCERTAINTY']}\n\n"
+                f"**LIMITATIONS**\n{sections['LIMITATIONS']}"
+            )
+        else:
+            full_text = (
+                f"**OBSERVATIONS**\n{sections['OBSERVATIONS']}\n\n"
+                f"**IMPRESSION**\n{sections.get('IMPRESSION', '')}\n\n"
+                f"**LIMITATIONS**\n{sections['LIMITATIONS']}"
+            )
+    else:
+        full_text = (
+            f"SUPPORT APPARATUS:\n{sections['SUPPORT APPARATUS']}\n\n"
+            f"CARDIAC SILHOUETTE:\n{sections['CARDIAC SILHOUETTE']}\n\n"
+            f"LUNGS AND OPACITIES:\n{sections['LUNGS AND OPACITIES']}\n\n"
+            f"PLEURAL SPACES:\n{sections['PLEURAL SPACES']}\n\n"
+            f"MEDIASTINUM:\n{sections['MEDIASTINUM']}\n\n"
+            f"OVERALL IMPRESSION:\n{sections['OVERALL IMPRESSION']}\n\n"
+            f"UNCERTAINTY AND LIMITATIONS:\n{sections['UNCERTAINTY AND LIMITATIONS']}"
+        )
+
+    words = full_text.split()
+    if len(words) < 25:
+        warnings.append("Research report is very brief.")
+    elif len(words) > 300:
+        warnings.append("Research report exceeds recommended target length.")
+
+    return full_text, sections, warnings
+
+
+def generate_whole_image_report(
     image_bytes: Optional[bytes],
     image_filename: str,
+    style: str = "patient",  # "patient" | "research"
     reason_for_xray: Optional[str] = None,
     relevant_history: Optional[str] = None,
+    timeout: int = 240,
 ) -> dict:
     """
-    Generate an accessible, plain-language patient explanation of a chest radiograph.
-    
-    Guarantees:
-      - Uses image-capable VLM (e.g. medgemma:4b) with the full radiograph as primary input.
-      - Never fabricates a report from text context alone if image input is missing or unreadable.
-      - Structures output into:
-          1. Your X-ray in simple words
-          2. What the findings may mean
-          3. What is uncertain
-          4. What happens next
-      - Uses calm, respectful language and immediately explains medical terminology.
-      - Disclaimers and metadata are kept outside the explanation narrative.
+    Unified whole-image report generator supporting Patient-Friendly and Structured Research styles.
+    Enforces per-image identity verification, metrics tracking, and deterministic triage safety.
     """
     t0 = time.perf_counter()
 
@@ -868,30 +1127,58 @@ def patient_friendly_report(
         return {
             "success": False,
             "error": "A valid chest radiograph image is required. An explanation cannot be generated without an image input.",
+            "style": style,
             "report_text": None,
             "sections": None,
+            "cardiac_observation": None,
+            "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error="No image input provided.", is_valid_image=False).to_dict(),
+            "bytes_sha256": None,
+            "pixel_sha256": None,
+            "orig_dims": None,
+            "prep_dims": None,
+            "prompt_version": PROMPT_VERSION_RESEARCH if style == "research" else PROMPT_VERSION_PATIENT,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
             "timing": None,
+            "eval_count": None,
+            "tokens_per_second": None,
             "model_used": None,
             "image_input_used": False,
             "validation_warnings": ["No image input provided."],
             "validation_flagged": True,
         }
 
+    bytes_sha256 = hashlib.sha256(image_bytes).hexdigest()
+
     # 2. Decode image to RGB array
     try:
         full_arr = _load_to_rgb_array(image_bytes, image_filename)
         if full_arr is None or full_arr.size == 0:
             raise ValueError("Decoded image array is empty.")
+        orig_h, orig_w = int(full_arr.shape[0]), int(full_arr.shape[1])
+        pixel_sha256 = hashlib.sha256(full_arr.tobytes()).hexdigest()
+
+        # Preprocess to 1024px maximum dimension
         full_b64 = _array_to_base64_jpeg(full_arr, max_side=1024, quality=85)
+        scale = 1024.0 / max(orig_h, orig_w) if max(orig_h, orig_w) > 1024 else 1.0
+        prep_h, prep_w = int(orig_h * scale), int(orig_w * scale)
     except Exception as exc:
         return {
             "success": False,
             "error": f"Invalid or unreadable image file ({image_filename}): {exc}. Please upload a valid DICOM or standard image (PNG, JPG).",
+            "style": style,
             "report_text": None,
             "sections": None,
+            "cardiac_observation": None,
+            "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error=str(exc), is_valid_image=False).to_dict(),
+            "bytes_sha256": bytes_sha256,
+            "pixel_sha256": None,
+            "orig_dims": None,
+            "prep_dims": None,
+            "prompt_version": PROMPT_VERSION_RESEARCH if style == "research" else PROMPT_VERSION_PATIENT,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
             "timing": None,
+            "eval_count": None,
+            "tokens_per_second": None,
             "model_used": None,
             "image_input_used": False,
             "validation_warnings": [f"Image decode failed: {exc}"],
@@ -903,10 +1190,20 @@ def patient_friendly_report(
         return {
             "success": False,
             "error": "Ollama is not reachable (localhost:11434). Start with: ollama serve",
+            "style": style,
             "report_text": None,
             "sections": None,
+            "cardiac_observation": None,
+            "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error="Ollama unreachable").to_dict(),
+            "bytes_sha256": bytes_sha256,
+            "pixel_sha256": pixel_sha256,
+            "orig_dims": [orig_h, orig_w],
+            "prep_dims": [prep_h, prep_w],
+            "prompt_version": PROMPT_VERSION_RESEARCH if style == "research" else PROMPT_VERSION_PATIENT,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
             "timing": None,
+            "eval_count": None,
+            "tokens_per_second": None,
             "model_used": None,
             "image_input_used": False,
             "validation_warnings": [],
@@ -922,140 +1219,328 @@ def patient_friendly_report(
                 "A vision model (such as medgemma:4b or llava:7b) is required to inspect the chest radiograph. "
                 "Text-only models are not permitted as a substitute."
             ),
+            "style": style,
             "report_text": None,
             "sections": None,
+            "cardiac_observation": None,
+            "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error="No vision model").to_dict(),
+            "bytes_sha256": bytes_sha256,
+            "pixel_sha256": pixel_sha256,
+            "orig_dims": [orig_h, orig_w],
+            "prep_dims": [prep_h, prep_w],
+            "prompt_version": PROMPT_VERSION_RESEARCH if style == "research" else PROMPT_VERSION_PATIENT,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
             "timing": None,
+            "eval_count": None,
+            "tokens_per_second": None,
             "model_used": None,
             "image_input_used": False,
             "validation_warnings": ["No vision-capable model available."],
             "validation_flagged": True,
         }
 
-    # 4. Context preparation (patient-reported, non-binding)
-    context_lines = []
-    if reason_for_xray and reason_for_xray.strip():
-        context_lines.append(f"- Reason for examination (patient-reported): {reason_for_xray.strip()[:300]}")
-    if relevant_history and relevant_history.strip():
-        context_lines.append(f"- Medical history (patient-reported): {relevant_history.strip()[:500]}")
-
-    context_str = "\n".join(context_lines) if context_lines else "None provided by the patient."
-
-    # 5. Two-Stage Grounded Generation:
-    # Step 1: Extract direct radiographic observations from full 1024px image
-    v_prompt = (
-        "Look at this chest radiograph carefully. "
-        "Describe what visible abnormalities, densities, or opacities are present in the lungs, cardiac silhouette, and any lines, tubes, or devices. "
-        "Be objective and specific about whether the lungs appear clear or if opacities are present."
-    )
+    # 4. Stage 1: Multimodal Visual Feature Extraction
     t_prep = time.perf_counter()
+    v_prompt = (
+        "You are an expert radiologist conducting structured visual feature extraction on this chest radiograph.\n"
+        "For each category below, state: Observed (<details and laterality>) | Not identified | Indeterminate | Not assessable.\n\n"
+        "1. Support apparatus: Inspect for endotracheal tube, enteric tube, vascular catheter/line, chest tube, pacemaker, or surgical clips.\n"
+        "2. Cardiac silhouette: Normal, Enlarged (CTR > 0.5), or Indeterminate.\n"
+        "3. Lungs & opacities: Consolidation, focal opacity, atelectasis, congestion, or edema. Specify laterality (right, left, bilateral, or unspecified laterality).\n"
+        "4. Pleural spaces: Costophrenic angles sharp, blunted/effusion (specify laterality: right, left, bilateral, or unspecified laterality), or obscured.\n"
+        "5. Mediastinum: Normal contour, widened, or indeterminate.\n\n"
+        "RULES:\n"
+        "- State laterality (right/left/bilateral) only when visually supported; if uncertain, state 'unspecified laterality'.\n"
+        "- If equivocal or confidence is low, classify as Indeterminate; DO NOT default to normal.\n"
+        "- Concise bullet list, no conversational filler.\n"
+        "Begin directly with 1. Support apparatus:"
+    )
+
     try:
-        raw_obs = _ollama_generate_vision(v_prompt, [full_b64], model=vision_model)
+        raw_obs, v_metrics = _ollama_generate_vision_with_metrics(
+            prompt=v_prompt,
+            images_b64=[full_b64],
+            model=vision_model,
+            num_predict=220,
+            temperature=0.1,
+            keep_alive="30m",
+            timeout=timeout,
+        )
     except Exception as exc:
         return {
             "success": False,
             "error": f"Model vision extraction failed: {exc}",
+            "style": style,
             "report_text": None,
             "sections": None,
+            "cardiac_observation": None,
+            "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error=str(exc)).to_dict(),
+            "bytes_sha256": bytes_sha256,
+            "pixel_sha256": pixel_sha256,
+            "orig_dims": [orig_h, orig_w],
+            "prep_dims": [prep_h, prep_w],
+            "prompt_version": PROMPT_VERSION_RESEARCH if style == "research" else PROMPT_VERSION_PATIENT,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
             "timing": None,
+            "eval_count": None,
+            "tokens_per_second": None,
             "model_used": vision_model,
             "image_input_used": True,
             "validation_warnings": [str(exc)],
             "validation_flagged": True,
         }
 
-    # Step 2: Patient-friendly translation strictly reflecting extracted observations
-    p_prompt = textwrap.dedent(f"""
-        A medical vision model examined this patient's frontal chest X-ray and reported these visual observations:
-        \"\"\"{raw_obs}\"\"\"
+    # 5. Stage 2: Synthesis
+    prompt_version = PROMPT_VERSION_RESEARCH if style == "research" else PROMPT_VERSION_PATIENT
+    s2_metrics: dict[str, Any] = {}
 
-        PATIENT BACKGROUND (context only):
-        {context_str}
+    if style == "research":
+        s2_prompt = textwrap.dedent(f"""
+            Structured visual findings extracted from chest radiograph:
+            \"\"\"{raw_obs}\"\"\"
 
-        Translate these observed findings into an accessible, patient-friendly explanation.
-        Use EXACTLY these four headings:
+            Generate a formal research radiograph report with EXACTLY these SEVEN headings:
 
-        Your X-ray in simple words
-        Describe only the visual features noted above in plain language. If opacities, lung shading, or medical devices are present, describe where they are. If visual findings are ambiguous or inconclusive, state: "The automated visual reading is inconclusive."
+            SUPPORT APPARATUS:
+            State presence, type, and position of any support devices or state "Not identified on available image".
 
-        What the findings may mean
-        Explain what these observed findings could suggest in everyday words. Explain any medical terminology simply. Do not assume or assert that the scan is completely normal if opacities were noted.
+            CARDIAC SILHOUETTE:
+            State cardiac silhouette size and borders.
 
-        What is uncertain
-        Explain what cannot be determined from this view. Clarify that this frontal view displays both the left and right sides of the chest, but because it is a single two-dimensional projection without a side (lateral) view, depth and subtle findings cannot be confirmed.
+            LUNGS AND OPACITIES:
+            Detail focal opacities, consolidation, or atelectasis with laterality.
 
-        What happens next
-        Advise the patient to consult their ordering physician for qualified clinical evaluation and diagnosis.
+            PLEURAL SPACES:
+            Describe costophrenic angles and pleural margins.
 
-        STRICT RULES:
-        - NEVER say a frontal view shows only one side of the chest; a frontal view shows both sides of the chest.
-        - Do not invent normal findings or declare absence of infection unless clearly supported.
-        - Do not suggest specific medications or medical treatments.
+            MEDIASTINUM:
+            Describe mediastinal and hilar contour.
 
-        Begin directly with:
-        Your X-ray in simple words
-    """).strip()
+            OVERALL IMPRESSION:
+            Concisely summarize key findings and uncertainty. If devices or abnormalities were noted, explicitly mention them.
 
-    try:
-        raw_text = _ollama_generate_text(p_prompt, model=vision_model)
-    except Exception as exc:
-        return {
-            "success": False,
-            "error": f"Model explanation structuring failed: {exc}",
-            "report_text": None,
-            "sections": None,
-            "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
-            "timing": None,
-            "model_used": vision_model,
-            "image_input_used": True,
-            "validation_warnings": [str(exc)],
-            "validation_flagged": True,
-        }
+            UNCERTAINTY AND LIMITATIONS:
+            State technical limitations (single frontal view, absence of lateral projection).
+
+            STRICT RULES:
+            - Never omit any of the seven headings.
+            - Never declare normal if devices or abnormalities are present.
+            - Do not use markdown bolding in headings.
+
+            Begin directly with SUPPORT APPARATUS:
+        """).strip()
+
+        try:
+            raw_text, s2_metrics = _ollama_generate_text_with_metrics(
+                prompt=s2_prompt,
+                model=vision_model,
+                num_predict=280,
+                temperature=0.1,
+                keep_alive="30m",
+                timeout=timeout,
+            )
+        except Exception as exc:
+            return {
+                "success": False,
+                "error": f"Model research synthesis failed: {exc}",
+                "style": style,
+                "report_text": None,
+                "sections": None,
+                "cardiac_observation": None,
+                "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error=str(exc)).to_dict(),
+                "bytes_sha256": bytes_sha256,
+                "pixel_sha256": pixel_sha256,
+                "orig_dims": [orig_h, orig_w],
+                "prep_dims": [prep_h, prep_w],
+                "prompt_version": prompt_version,
+                "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
+                "timing": None,
+                "eval_count": None,
+                "tokens_per_second": None,
+                "model_used": vision_model,
+                "image_input_used": True,
+                "validation_warnings": [str(exc)],
+                "validation_flagged": True,
+            }
+
+        full_text, sections, warnings = clean_and_structure_research_report(raw_text)
+
+    else:
+        # Patient-Friendly Style
+        context_lines = []
+        if reason_for_xray and reason_for_xray.strip():
+            context_lines.append(f"- Reason for examination (patient-reported): {reason_for_xray.strip()[:300]}")
+        if relevant_history and relevant_history.strip():
+            context_lines.append(f"- Medical history (patient-reported): {relevant_history.strip()[:500]}")
+        context_str = "\n".join(context_lines) if context_lines else "None provided by the patient."
+
+        p_prompt = textwrap.dedent(f"""
+            A medical vision model examined this patient's frontal chest X-ray and reported these visual observations:
+            \"\"\"{raw_obs}\"\"\"
+
+            PATIENT BACKGROUND (context only):
+            {context_str}
+
+            Translate these observed findings into an accessible, patient-friendly explanation.
+            Use EXACTLY these four headings:
+
+            Your X-ray in simple words
+            Describe only the visual features noted above in plain language. If opacities, lung shading, or medical devices are present, describe where they are. If visual findings are ambiguous or inconclusive, state: "The automated visual reading is inconclusive."
+
+            What the findings may mean
+            Explain what these observed findings could suggest in everyday words. Explain any medical terminology simply. Do not assume or assert that the scan is completely normal if opacities were noted.
+
+            What is uncertain
+            Explain what cannot be determined from this view. Clarify that this frontal view displays both the left and right sides of the chest, but because it is a single two-dimensional projection without a side (lateral) view, depth and subtle findings cannot be confirmed.
+
+            What happens next
+            Advise the patient to consult their ordering physician for qualified clinical evaluation and diagnosis.
+
+            STRICT RULES:
+            - NEVER say a frontal view shows only one side of the chest; a frontal view shows both sides of the chest.
+            - Do not invent normal findings or declare absence of infection unless clearly supported.
+            - Do not suggest specific medications or medical treatments.
+
+            Begin directly with:
+            Your X-ray in simple words
+        """).strip()
+
+        try:
+            raw_text, s2_metrics = _ollama_generate_text_with_metrics(
+                prompt=p_prompt,
+                model=vision_model,
+                num_predict=280,
+                temperature=0.1,
+                keep_alive="30m",
+                timeout=timeout,
+            )
+        except Exception as exc:
+            return {
+                "success": False,
+                "error": f"Model explanation structuring failed: {exc}",
+                "style": style,
+                "report_text": None,
+                "sections": None,
+                "cardiac_observation": None,
+                "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error=str(exc)).to_dict(),
+                "bytes_sha256": bytes_sha256,
+                "pixel_sha256": pixel_sha256,
+                "orig_dims": [orig_h, orig_w],
+                "prep_dims": [prep_h, prep_w],
+                "prompt_version": prompt_version,
+                "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
+                "timing": None,
+                "eval_count": None,
+                "tokens_per_second": None,
+                "model_used": vision_model,
+                "image_input_used": True,
+                "validation_warnings": [str(exc)],
+                "validation_flagged": True,
+            }
+
+        full_text, sections, warnings = clean_and_structure_patient_report(raw_text, reason=reason_for_xray)
+
     t_infer = time.perf_counter()
 
     if not raw_text:
         return {
             "success": False,
             "error": "Model returned an empty response.",
+            "style": style,
             "report_text": None,
             "sections": None,
+            "cardiac_observation": None,
+            "triage_result": get_triage_service().evaluate_from_structured_findings({}, model_error="Empty model output.").to_dict(),
+            "bytes_sha256": bytes_sha256,
+            "pixel_sha256": pixel_sha256,
+            "orig_dims": [orig_h, orig_w],
+            "prep_dims": [prep_h, prep_w],
+            "prompt_version": prompt_version,
             "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
             "timing": None,
+            "eval_count": None,
+            "tokens_per_second": None,
             "model_used": vision_model,
             "image_input_used": True,
             "validation_warnings": ["Empty model output."],
             "validation_flagged": True,
         }
 
-    # 7. Post-process & Structure
-    full_text, sections, warnings = clean_and_structure_patient_report(raw_text, reason=reason_for_xray)
-    t_post = time.perf_counter()
-
-    # 8. Triage Evaluation
+    # 6. Triage & Stance Evaluation
     triage_eval = get_triage_service().evaluate_from_report_text(full_text, sections)
+    cardiac_stance = extract_cardiac_stance_whole_image(full_text, sections)
 
+    t_post = time.perf_counter()
     latency_ms = round((t_post - t0) * 1000, 2)
+
+    total_eval_count = v_metrics.get("eval_count", 0) + s2_metrics.get("eval_count", 0)
+    total_eval_dur_s = (v_metrics.get("eval_duration_ns", 0) + s2_metrics.get("eval_duration_ns", 0)) / 1e9
+    tokens_per_sec = round(total_eval_count / total_eval_dur_s, 2) if total_eval_dur_s > 0 else None
+
     timing = {
         "prep_ms": round((t_prep - t0) * 1000, 2),
         "inference_ms": round((t_infer - t_prep) * 1000, 2),
         "post_ms": round((t_post - t_infer) * 1000, 2),
+        "load_duration_ms": round((v_metrics.get("load_duration_ns", 0) + s2_metrics.get("load_duration_ns", 0)) / 1e6, 2),
+        "prompt_eval_ms": round((v_metrics.get("prompt_eval_duration_ns", 0) + s2_metrics.get("prompt_eval_duration_ns", 0)) / 1e6, 2),
+        "eval_duration_ms": round((v_metrics.get("eval_duration_ns", 0) + s2_metrics.get("eval_duration_ns", 0)) / 1e6, 2),
         "total_ms": latency_ms,
     }
 
     return {
         "success": True,
         "error": None,
+        "style": style,
         "report_text": full_text,
         "sections": sections,
+        "cardiac_observation": cardiac_stance,
         "triage_result": triage_eval.to_dict(),
+        "bytes_sha256": bytes_sha256,
+        "pixel_sha256": pixel_sha256,
+        "orig_dims": [orig_h, orig_w],
+        "prep_dims": [prep_h, prep_w],
+        "prompt_version": prompt_version,
+        "model_used": vision_model,
         "timing": timing,
         "latency_ms": latency_ms,
-        "model_used": vision_model,
+        "eval_count": total_eval_count,
+        "tokens_per_second": tokens_per_sec,
         "image_input_used": True,
         "validation_warnings": warnings,
         "validation_flagged": len([w for w in warnings if "measurement" in w or "brief" in w]) > 0,
     }
+
+
+def patient_friendly_report(
+    image_bytes: Optional[bytes],
+    image_filename: str,
+    reason_for_xray: Optional[str] = None,
+    relevant_history: Optional[str] = None,
+) -> dict:
+    """Generate plain-language patient explanation using unified whole-image engine."""
+    return generate_whole_image_report(
+        image_bytes=image_bytes,
+        image_filename=image_filename,
+        style="patient",
+        reason_for_xray=reason_for_xray,
+        relevant_history=relevant_history,
+    )
+
+
+def research_report(
+    image_bytes: Optional[bytes],
+    image_filename: str,
+    clinical_indication: Optional[str] = None,
+    relevant_history: Optional[str] = None,
+) -> dict:
+    """Generate structured research-style 7-section report using unified whole-image engine."""
+    return generate_whole_image_report(
+        image_bytes=image_bytes,
+        image_filename=image_filename,
+        style="research",
+        reason_for_xray=clinical_indication,
+        relevant_history=relevant_history,
+    )
 
 
 def study_report(
@@ -1082,7 +1567,11 @@ def study_report(
 def _error_result(t0: float, error: str, crop_info: Optional[dict]) -> dict:
     return {
         "success": False, "error": error,
-        "report_text": None, "crop_info": crop_info,
+        "report_text": None,
+        "assessment_state": "Not assessable",
+        "internal_contradiction": False,
+        "internal_contradiction_warning": None,
+        "crop_info": crop_info,
         "latency_ms": round((time.perf_counter() - t0) * 1000, 2),
         "model_used": None, "image_input_used": False,
         "n_images_sent": 0,

@@ -1,0 +1,43 @@
+experiment:
+  name: "multipathology_finetuning_stage1"
+  description: >
+    Fine-tuning TransVG-AGPT multimodal transformer and box prediction head
+    on a balanced joint dataset: 746 MS-CXR multi-pathology training annotations
+    (8 findings: Cardiomegaly, Consolidation, Pneumothorax, Pleural Effusion,
+    Lung Opacity, Atelectasis, Pneumonia, Edema) plus 200 balanced RSNA Pneumonia
+    training cases to prevent catastrophic forgetting and evaluate a unified model.
+  phase: "MultiPathology-Stage1"
+  task: "multi_pathology_grounding"
+
+data:
+  local_verified_csv: "/Users/adityakachhot/interactmed/data/processed/local_grounding_verified.csv"
+  mimic_base_dir: "/Users/adityakachhot/Downloads/data/mimic-cxr"
+  rsna_train_csv: "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_train_positive.csv"
+  rsna_images_dir: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images"
+  rsna_train_sample_size: 200
+  imsize: 640
+
+model:
+  base_checkpoint: "/Users/adityakachhot/interactmed/checkpoints/transvg.pth"
+  freeze_encoders: true
+  device: "auto"
+
+training:
+  epochs: 3
+  batch_size: 4
+  num_workers: 0
+  lr: 2.0e-5
+  weight_decay: 0.0001
+  clip_max_norm: 0.1
+  l1_loss_coef: 5.0
+  giou_loss_coef: 2.0
+  lr_scheduler: "cosine"
+  warmup_epochs: 1
+  min_lr: 1.0e-6
+  eval_every_epoch: true
+  save_best_metric: "mean_best_match_iou"
+
+output:
+  checkpoints_dir: "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_01_multicxr"
+  artifacts_dir: "/Users/adityakachhot/interactmed/artifacts/multipathology/run_01_multicxr"
+  log_file: "/Users/adityakachhot/interactmed/artifacts/multipathology/run_01_multicxr/training_history.json"

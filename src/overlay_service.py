@@ -22,6 +22,8 @@ def _load_image(image_bytes: bytes, image_filename: str) -> PILImage.Image:
         import pydicom
         ds = pydicom.dcmread(io.BytesIO(image_bytes))
         pixels = ds.pixel_array
+        if getattr(ds, "PhotometricInterpretation", "") == "MONOCHROME1":
+            pixels = pixels.max() - pixels
         if pixels.dtype != np.uint8:
             pmin, pmax = pixels.min(), pixels.max()
             pixels = ((pixels - pmin) / (pmax - pmin) * 255).astype(np.uint8) if pmax > pmin \

@@ -41,19 +41,42 @@ ollama serve   # in a separate terminal
 
 ---
 
-## Architecture
+## Complete Technical Architecture Documentation
+
+The complete, authoritative technical architecture documentation package is available in the [`docs/`](docs/) directory:
+
+- 🏛️ **[System Architecture Specification](docs/ARCHITECTURE.md)** (`docs/ARCHITECTURE.md`) — Primary system overview, Mermaid architecture diagrams, component responsibility table, runtime deployment, and security.
+- 🔬 **[Models and Methodologies Reference](docs/architecture/MODELS_AND_METHODS.md)** (`docs/architecture/MODELS_AND_METHODS.md`) — Model inventory (TransVG-AGPT, MedGemma 4B), mathematical formulations, two-stage grounded reasoning, and evaluation equations.
+- ⚙️ **[Fine-Tuning and Training Runbook](docs/architecture/FINE_TUNING_AND_TRAINING.md)** (`docs/architecture/FINE_TUNING_AND_TRAINING.md`) — RSNA fine-tuning epoch logs, MedGemma 4-bit QLoRA preflight checks, gradient routing, and master experiment tables.
+- 📊 **[Evaluation and Improvements Report](docs/architecture/EVALUATION_AND_IMPROVEMENTS.md)** (`docs/architecture/EVALUATION_AND_IMPROVEMENTS.md`) — RSNA held-out test IoU results, 250-case development report benchmarks, Wilson intervals, and improvements matrix.
+- 📁 **[Datasets and Research Governance](docs/architecture/DATASETS_AND_RESEARCH_GOVERNANCE.md)** (`docs/architecture/DATASETS_AND_RESEARCH_GOVERNANCE.md`) — Audit of RSNA, Chest-ImaGenome Gold, MS-CXR, and MIMIC-CXR; patient-disjoint split governance; multi-view vs single-view integrity.
+- 🔌 **[API, UI, and Runtime Workflows](docs/architecture/API_UI_AND_WORKFLOWS.md)** (`docs/architecture/API_UI_AND_WORKFLOWS.md`) — Execution traces for grounding, reporting, batch processing, and research triage; double-blind annotation protocol; master REST API table.
+- 🛠️ **[Operations and Reproducibility Guide](docs/architecture/OPERATIONS_AND_REPRODUCIBILITY.md)** (`docs/architecture/OPERATIONS_AND_REPRODUCIBILITY.md`) — Installation, environment requirements, Ollama setup, test suites, smoke tests, and troubleshooting runbook.
+- 🗺️ **[Limitations and Technical Roadmap](docs/architecture/ROADMAP_AND_LIMITATIONS.md)** (`docs/architecture/ROADMAP_AND_LIMITATIONS.md`) — Honest assessment of limitations (opacity ceiling, strict IoU) and 8 prioritized research milestones.
+- 📖 **[Master Documentation Index](docs/INDEX.md)** (`docs/INDEX.md`) — Full sitemap and diagram links.
+
+---
+
+## Architecture Overview
 
 ```
-frontend/          React + TypeScript (Vite)  →  http://localhost:5173
-backend/main.py    FastAPI                     →  http://localhost:8000
+frontend/          React 18 + TypeScript (Vite)  →  http://localhost:5173
+backend/main.py    FastAPI (Uvicorn)              →  http://localhost:8000
 src/
-  grounding_service.py   TransVG-AGPT singleton (loads once at startup)
-  report_service.py      Ollama llama3/mistral for report generation
-  overlay_service.py     Bounding-box overlay rendering
+  grounding_service.py   TransVG-AGPT singleton (loads once at startup via lifespan)
+  report_service.py      MedGemma 4B / Ollama 2-stage grounded report generator
+  batch_service.py       Sequential batch orchestration (up to 10 images, max_workers=1)
+  triage_service.py      Deterministic rule-based clinical research triage engine
+  overlay_service.py     Bounding-box overlay rendering and high-resolution crop extraction
+configs/
+  triage_rules.yaml      Configurable triage precedence rules and regex negation patterns
+  rsna_eval.yaml         RSNA grounding evaluation parameters and frozen query settings
+  medgemma_finetune.yaml 4-bit QLoRA fine-tuning hyperparameters (Tier 2 adaptation)
 scripts/
-  evaluate_rsna.py       Full evaluation pipeline (coordinate math reused by backend)
-  train_rsna.py          Fine-tuning training loop
-  summarize_test_results.py  Chart + report generation
+  evaluate_rsna.py       Full grounding evaluation pipeline on RSNA test split
+  evaluate_expanded_reports.py Full report evaluation across 250 development cases
+  train_rsna.py          TransVG-AGPT fine-tuning training loop
+  train_medgemma_lora.py MedGemma 4B QLoRA trainer with 3 preflight safety gates
 ```
 
 ---
@@ -62,10 +85,17 @@ scripts/
 
 | Method | Path | Description |
 |--------|------|-------------|
-| GET | `/health` | Model status, Ollama availability |
-| POST | `/ground` | Phrase grounding → bounding box + annotated image |
-| POST | `/report/region` | Region-specific report draft from grounded box |
-| POST | `/report/study` | Study-level report draft from clinical context |
+| GET | `/health` | Service health, model status, Ollama availability |
+| GET | `/vision-model-status` | Vision-capable model detection in Ollama |
+| POST | `/ground` | Phrase grounding → bounding box + annotated overlay + region crop |
+| POST | `/report/region` | Region finding draft from crop + full radiograph (requires vision model) |
+| POST | `/report/patient-friendly` | Plain-language 4-section patient explanation + research triage card |
+| POST | `/report/study` | Study-level report synthesis (alias for patient-friendly) |
+| POST | `/batch/create` | Submit sequential batch job for up to 10 radiographs |
+| GET | `/batch/{batch_id}` | Poll batch progress, item statuses, and live streaming reports |
+| POST | `/batch/{batch_id}/cancel` | Immediately cancel remaining queued batch jobs |
+| POST | `/batch/{batch_id}/retry` | Retry failed or cancelled jobs without re-running finished items |
+| GET | `/batch/{batch_id}/download` | Export batch summary as CSV or JSON file attachment |
 
 ### Example: Ground a phrase
 
@@ -91,7 +121,7 @@ curl -X POST http://localhost:8000/ground \
 | Inference Success | 100% | 100% | — |
 | Mean Latency | 145.9 ms | 140.4 ms | — |
 
-See [`docs/FINAL_RSNA_EVALUATION.md`](docs/FINAL_RSNA_EVALUATION.md) for full methodology.
+See [`docs/FINAL_RSNA_EVALUATION.md`](docs/FINAL_RSNA_EVALUATION.md) and [`docs/architecture/EVALUATION_AND_IMPROVEMENTS.md`](docs/architecture/EVALUATION_AND_IMPROVEMENTS.md) for full methodology.
 
 ---
 
@@ -99,7 +129,7 @@ See [`docs/FINAL_RSNA_EVALUATION.md`](docs/FINAL_RSNA_EVALUATION.md) for full me
 
 ```bash
 /Users/adityakachhot/miniforge3/envs/dl/bin/python -m pytest tests/ -v
-# 31 tests passing
+# 132 tests passing in ~15s
 ```
 
 ---
@@ -108,27 +138,30 @@ See [`docs/FINAL_RSNA_EVALUATION.md`](docs/FINAL_RSNA_EVALUATION.md) for full me
 
 ```
 checkpoints/
-  transvg.pth                          Pretrained baseline (2.1 GB, unchanged)
+  transvg.pth                          Pretrained baseline (2.1 GB, MS-CXR AGPT master weights)
+  multipathology/run_01_multicxr/
+    best_model_val_iou.pth             Multi-Pathology Unified checkpoint (768 MB, Val IoU 0.651, Test IoU 0.660)
   finetuned_rsna/run_01_3ep/
-    best_model_val_iou.pth             Fine-tuned checkpoint (768 MB, epoch 3)
+    best_model_val_iou.pth             RSNA pneumonia fine-tuned checkpoint (768 MB, epoch 3)
 
-data/processed/rsna/
-  rsna_train_positive.csv              4,210 patients, 11,897 boxes
-  rsna_val_positive.csv                901 patients, 2,485 boxes
-  rsna_test_positive.csv               901 patients, 2,575 boxes (held-out)
+configs/
+  grounding_capabilities.yaml          Transparent capability catalog, alias mappings, and benchmark evidence
+  multipathology_train.yaml            Multi-Pathology balanced training configuration
 
-artifacts/rsna/runs/
-  original_baseline/                   Val evaluation — baseline
-  run_01_3ep/                          Val evaluation — fine-tuned
-  test_baseline/                       Test evaluation — baseline
-  test_finetuned_run01/                Test evaluation — fine-tuned (with viz)
-  test_metrics_comparison.png          4-panel comparison chart
-  test_qualitative_comparisons/        Side-by-side overlay images
+data/processed/
+  local_grounding_verified.csv         1,056 MS-CXR annotations (train 746, val 147, test 163)
+  rsna/                                26,684 RSNA DICOM manifests (train 4,210, val 901, test 901)
+
+artifacts/
+  multi_pathology_eval/                Validation and locked test evaluation JSON summaries
+  multipathology/                      Multi-Pathology training logs and history
+  rsna/runs/                           Val & Test evaluation outputs & comparison plots
 
 docs/
-  FINAL_RSNA_EVALUATION.md             Complete evaluation report with real numbers
-  FINETUNING_AUDIT.md                  Architecture + training decisions
-  DATA_INVENTORY.md                    Dataset inventory
+  ARCHITECTURE.md                      Comprehensive System Architecture
+  INDEX.md                             Documentation Index & Sitemap
+  architecture/                        Modular Architecture Reference Package (8 documents)
+  architecture/diagrams/               Standalone Mermaid Architecture Diagrams (8 diagrams)
 ```
 
 ---

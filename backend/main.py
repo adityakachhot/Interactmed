@@ -38,12 +38,17 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.grounding_service import get_grounding_service, GroundingService
 from src.report_service import (
-    region_report, patient_friendly_report, study_report,
+    region_report, patient_friendly_report, research_report, study_report,
     _ollama_available, _vision_model_available, _text_model_available,
     extract_crop, _array_to_base64_jpeg, _load_to_rgb_array,
 )
 from src.overlay_service import draw_overlay, image_to_base64_jpeg
 from src.batch_service import get_batch_service
+from src.consistency_service import (
+    evaluate_cross_report_consistency,
+    CrossReportConsistencyResult,
+)
+from src.triage_service import get_triage_service
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 MAX_UPLOAD_BYTES = 50 * 1024 * 1024  # 50 MB
@@ -53,13 +58,13 @@ ALLOWED_SUFFIXES = {".dcm", ".png", ".jpg", ".jpeg", ".tiff", ".tif"}
 # ── Lifespan ──────────────────────────────────────────────────────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("[Startup] Pre-loading fine-tuned grounding model …")
-    svc = get_grounding_service("finetuned")
+    print("[Startup] Pre-loading default multi-pathology grounding model (Task 3 Epoch 5) …")
+    svc = get_grounding_service("auto")
     try:
         svc.ensure_loaded()
-        print("[Startup] Fine-tuned model ready.")
+        print(f"[Startup] Default grounding model ready: {svc.model_version}")
     except Exception as exc:
-        print(f"[Startup WARNING] Fine-tuned model failed to load: {exc}")
+        print(f"[Startup WARNING] Default grounding model failed to load: {exc}")
         try:
             get_grounding_service("baseline").ensure_loaded()
             print("[Startup] Baseline model loaded as fallback.")
@@ -93,6 +98,7 @@ class HealthResponse(BaseModel):
     grounding_model_loaded: bool
     grounding_model_device: Optional[str]
     grounding_model_error: Optional[str]
+    grounding_model_version: Optional[str] = None
     ollama_available: bool
     vision_model: Optional[str]        # name of vision model if installed
     text_model: Optional[str]          # name of best text model if installed
@@ -111,6 +117,12 @@ class GroundingResponse(BaseModel):
     success: bool
     query: str
     checkpoint: str
+    model_version: Optional[str] = Field(None, description="Clear model identity and fine-tuning version")
+    canonical_query: Optional[str] = None
+    category: Optional[str] = None
+    capability_status: Optional[str] = None
+    validation_evidence: Optional[dict] = None
+    warning: Optional[str] = None
     pred_box_norm: Optional[List[float]]   = Field(None, description="[cx,cy,w,h] in [0,1]")
     pred_box_pixel: Optional[List[float]]  = Field(None, description="[x1,y1,x2,y2] original pixels")
     pred_box_canvas: Optional[List[float]] = Field(None, description="[x1,y1,x2,y2] 640×640 canvas")
@@ -119,12 +131,16 @@ class GroundingResponse(BaseModel):
     latency_ms: float
     overlay_image_b64: Optional[str]       = Field(None, description="Base64 JPEG annotated image")
     crop_image_b64: Optional[str]          = Field(None, description="Base64 JPEG of predicted region crop")
+    checkpoint_advisory: Optional[str]     = Field(None, description="Advisory on checkpoint domain specialization")
     error: Optional[str]
 
 
 class RegionReportResponse(BaseModel):
     success: bool
     report_text: Optional[str]
+    assessment_state: Optional[str] = None
+    internal_contradiction: bool = False
+    internal_contradiction_warning: Optional[str] = None
     crop_info: Optional[dict]
     latency_ms: float
     timing: Optional[dict] = None
@@ -140,7 +156,13 @@ class PatientFriendlyReportResponse(BaseModel):
     success: bool
     report_text: Optional[str]
     sections: Optional[dict] = None
+    cardiac_observation: Optional[str] = None
     triage_result: Optional[dict] = None
+    bytes_sha256: Optional[str] = None
+    pixel_sha256: Optional[str] = None
+    orig_dims: Optional[List[int]] = None
+    prep_dims: Optional[List[int]] = None
+    prompt_version: Optional[str] = None
     latency_ms: float
     timing: Optional[dict] = None
     model_used: Optional[str] = None
@@ -153,10 +175,43 @@ class PatientFriendlyReportResponse(BaseModel):
 StudyReportResponse = PatientFriendlyReportResponse
 
 
+class ConsistencyCheckRequest(BaseModel):
+    query: str
+    regional_report_text: Optional[str] = None
+    whole_image_report_text: Optional[str] = None
+    whole_image_sections: Optional[dict] = None
+
+
+class FindingConsistencyItem(BaseModel):
+    finding_name: str
+    status: str
+    regional_stance: Optional[str] = None
+    whole_image_stance: Optional[str] = None
+    conflict_message: Optional[str] = None
+    details: Optional[dict] = None
+
+
+class ConsistencyCheckResponse(BaseModel):
+    has_conflict: bool
+    warning_banner: Optional[str] = None
+    summary: str
+    findings: List[FindingConsistencyItem] = []
+    internal_regional_conflict: bool = False
+    internal_regional_note: Optional[str] = None
+    evaluated_at: str
+
+
 class BatchItemResponse(BaseModel):
     job_id: str
     batch_id: str
     filename: str
+    image_sha256: Optional[str] = None
+    bytes_sha256: Optional[str] = None
+    pixel_sha256: Optional[str] = None
+    orig_dims: Optional[List[int]] = None
+    prep_dims: Optional[List[int]] = None
+    prompt_version: Optional[str] = None
+    cardiac_observation: Optional[str] = None
     style: str
     status: str
     preview_b64: Optional[str] = None
@@ -250,14 +305,16 @@ def _get_image_dims(image_bytes: bytes, filename: str) -> tuple[int, int]:
 @app.get("/health", response_model=HealthResponse)
 async def health():
     """Return service health and model status."""
-    svc = get_grounding_service("finetuned")
+    svc = get_grounding_service("auto")
     vm = _vision_model_available() if _ollama_available() else None
     tm = _text_model_available()   if _ollama_available() else None
+    mv = getattr(svc, "model_version", None)
     return HealthResponse(
         status="ok",
         grounding_model_loaded=svc._loaded,
         grounding_model_device=svc.status.get("device"),
         grounding_model_error=svc.status.get("error"),
+        grounding_model_version=str(mv) if (svc._loaded and isinstance(mv, str)) else None,
         ollama_available=_ollama_available(),
         vision_model=vm,
         text_model=tm,
@@ -280,11 +337,18 @@ async def vision_model_status():
     )
 
 
+@app.get("/grounding/capabilities")
+async def grounding_capabilities():
+    """Return transparent grounding capability mappings and benchmark evidence."""
+    from src.grounding_service import load_grounding_capabilities
+    return load_grounding_capabilities()
+
+
 @app.post("/ground", response_model=GroundingResponse)
 async def ground(
     file: Annotated[UploadFile, File(description="Chest radiograph (DICOM, PNG, JPEG, TIFF)")],
     query: Annotated[str, Form(description="Clinical phrase to ground")] = "pneumonia",
-    checkpoint: Annotated[str, Form(description="'finetuned' or 'baseline'")] = "finetuned",
+    checkpoint: Annotated[str, Form(description="'auto', 'multipathology', 'finetuned', 'baseline', or 'task2'")] = "auto",
     return_overlay: Annotated[bool, Form(description="Include base64 annotated image")] = True,
     return_crop: Annotated[bool, Form(description="Include base64 region crop")] = True,
 ):
@@ -295,8 +359,9 @@ async def ground(
     query = query.strip()
     if not query:
         raise HTTPException(status_code=400, detail="query must not be empty.")
-    if checkpoint not in ("finetuned", "baseline"):
-        raise HTTPException(status_code=400, detail="checkpoint must be 'finetuned' or 'baseline'.")
+    valid_ckpts = ("auto", "multipathology", "finetuned", "baseline", "task2")
+    if checkpoint not in valid_ckpts:
+        raise HTTPException(status_code=400, detail=f"checkpoint must be one of {valid_ckpts}.")
 
     image_bytes = await _read_upload(file)
     svc = _check_grounding_service(checkpoint)
@@ -317,7 +382,7 @@ async def ground(
                     image_filename=file.filename or "upload.png",
                     pred_box_pixel_xyxy=box,
                     query=query,
-                    model_label=f"TransVG-AGPT ({checkpoint})",
+                    model_label=result.get("model_version", f"TransVG-AGPT ({result.get('checkpoint', checkpoint)})"),
                 )
                 overlay_b64 = image_to_base64_jpeg(img_annotated)
             except Exception:
@@ -332,14 +397,28 @@ async def ground(
                     margin_px=40,
                 )
                 if crop_arr is not None:
-                    crop_b64 = _array_to_base64_jpeg(crop_arr, max_side=512)
+                    crop_b64 = _array_to_base64_jpeg(crop_arr, max_side=768, quality=85)
             except Exception:
                 crop_b64 = None
+
+    advisory = result.get("warning")
+    pneumonia_keywords = ["pneumonia", "opacity", "infiltrate", "consolidation", "airspace", "infiltrates"]
+    if not advisory and checkpoint == "finetuned" and not any(k in query.lower() for k in pneumonia_keywords):
+        advisory = (
+            f"The fine-tuned checkpoint was specialized exclusively on RSNA pneumonia opacities. "
+            f"For multi-pathology phrases like '{query}', the Multi-Pathology Unified model (or Baseline) is recommended."
+        )
 
     return GroundingResponse(
         success=result["success"],
         query=query,
         checkpoint=result["checkpoint"],
+        model_version=result.get("model_version"),
+        canonical_query=result.get("canonical_query", query),
+        category=result.get("category"),
+        capability_status=result.get("capability_status"),
+        validation_evidence=result.get("validation_evidence"),
+        warning=result.get("warning"),
         pred_box_norm=result["pred_box_norm"],
         pred_box_pixel=result["pred_box_pixel"],
         pred_box_canvas=result["pred_box_canvas"],
@@ -348,6 +427,7 @@ async def ground(
         latency_ms=result["latency_ms"],
         overlay_image_b64=overlay_b64,
         crop_image_b64=crop_b64,
+        checkpoint_advisory=advisory,
         error=result["error"],
     )
 
@@ -421,8 +501,50 @@ async def report_patient_friendly_endpoint(
         reason_for_xray=reason.strip() if reason else None,
         relevant_history=relevant_history.strip() if relevant_history else None,
     )
+
     filtered = {k: v for k, v in result.items() if k in PatientFriendlyReportResponse.model_fields}
     return PatientFriendlyReportResponse(**filtered)
+
+
+@app.post("/report/research", response_model=PatientFriendlyReportResponse)
+async def report_research_endpoint(
+    file: Annotated[UploadFile, File(description="Chest radiograph")],
+    clinical_indication: Annotated[Optional[str], Form(description="Clinical indication / query (optional)")] = None,
+    relevant_history: Annotated[Optional[str], Form(description="Relevant medical history (optional)")] = None,
+):
+    """
+    Generate a structured research-style 7-section report for full radiograph.
+    Passes full image to MedGemma 4B via unified whole-image engine with Prompt v4 7-Section schema.
+    """
+    image_bytes = await _read_upload(file)
+    filename = file.filename or "upload.png"
+
+    result = research_report(
+        image_bytes=image_bytes,
+        image_filename=filename,
+        clinical_indication=clinical_indication.strip() if clinical_indication else None,
+        relevant_history=relevant_history.strip() if relevant_history else None,
+    )
+
+    filtered = {k: v for k, v in result.items() if k in PatientFriendlyReportResponse.model_fields}
+    return PatientFriendlyReportResponse(**filtered)
+
+
+@app.post("/report/consistency", response_model=ConsistencyCheckResponse)
+async def report_consistency_endpoint(req: ConsistencyCheckRequest):
+    """
+    Evaluate cross-report consistency between regional phrase grounding report
+    and whole-image patient-friendly report.
+    Detects explicitly conflicting assessments, internal contradictions,
+    and returns prominent, neutral warnings.
+    """
+    res = evaluate_cross_report_consistency(
+        query=req.query,
+        regional_report_text=req.regional_report_text,
+        whole_image_report_text=req.whole_image_report_text,
+        whole_image_sections=req.whole_image_sections,
+    )
+    return ConsistencyCheckResponse(**res.to_dict())
 
 
 # ── Batch Report Endpoints ───────────────────────────────────────────────────

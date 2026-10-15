@@ -4,12 +4,24 @@ import {
   fetchHealth, fetchVisionModelStatus, groundPhrase, generateRegionReport,
   generatePatientFriendlyReport, generateStudyReport,
   createBatch, fetchBatchStatus, cancelBatch, retryBatch, getBatchDownloadUrl,
+  fetchGroundingCapabilities, checkReportConsistency, type CheckpointOption, type GroundingCapability,
   type HealthResponse, type VisionModelStatus, type GroundingResponse,
   type RegionReportResponse, type PatientFriendlyReportResponse, type StudyReportResponse,
   type BatchItemResponse, type BatchStatusResponse, type TriageResult,
+  type ConsistencyCheckResponse,
 } from './api';
 
-const EXAMPLE_QUERIES = ['pneumonia', 'airspace opacity', 'pleural effusion', 'consolidation', 'cardiomegaly'];
+const EXAMPLE_QUERIES = [
+  'pneumonia',
+  'cardiomegaly',
+  'pleural effusion',
+  'pneumothorax',
+  'consolidation',
+  'atelectasis',
+  'pulmonary edema',
+  'lung opacity',
+  'rib fracture (unsupported)',
+];
 
 // ── Sub-components ─────────────────────────────────────────────────────────────
 
@@ -100,7 +112,7 @@ function StatusPillBadge({ status }: { status: string }) {
   );
 }
 
-function TriageCard({ triage }: { triage?: TriageResult | null }) {
+function TriageCard({ triage, crossConflict = false }: { triage?: TriageResult | null; crossConflict?: boolean }) {
   if (!triage) return null;
 
   const categoryLabelMap: Record<string, string> = {
@@ -131,9 +143,21 @@ function TriageCard({ triage }: { triage?: TriageResult | null }) {
         </div>
       </div>
 
+      {crossConflict && (
+        <div style={{ marginTop: 8, padding: '8px 12px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.35)', borderRadius: 6, color: '#f87171', fontSize: '0.8rem' }}>
+          ⚖️ <strong>Cross-Report Discrepancy:</strong> Conflicting AI assessments detected between regional and whole-image reports. Independent professional review is required.
+        </div>
+      )}
+
       <div className="triage-reason">
         <strong>Reason:</strong> {triage.rule_reason}
       </div>
+
+      {triage.triage_category === 'no_priority_finding_flagged' && (
+        <div style={{ marginTop: 6, fontSize: '0.74rem', color: 'var(--text-muted)', fontStyle: 'italic', background: 'rgba(255,255,255,0.03)', padding: '6px 10px', borderRadius: 4 }}>
+          Important: 'No priority finding flagged' reflects that automated rules did not flag a predefined urgent finding; it does NOT confirm that the chest radiograph is normal or disease-free.
+        </div>
+      )}
 
       {triage.supporting_findings && triage.supporting_findings.length > 0 && (
         <div className="triage-findings-box">
@@ -157,6 +181,44 @@ function TriageCard({ triage }: { triage?: TriageResult | null }) {
       </div>
     </div>
   );
+}
+
+function ConsistencyBanner({ consistency }: { consistency: ConsistencyCheckResponse | null }) {
+  if (!consistency) return null;
+
+  if (consistency.has_conflict) {
+    return (
+      <div className="consistency-box consistency-conflict" id="consistency-conflict-banner">
+        <div className="consistency-header">
+          <span>⚖️</span>
+          <span>{consistency.warning_banner ?? 'Conflicting AI assessments — review required'}</span>
+        </div>
+        <p className="consistency-summary">{consistency.summary}</p>
+        {consistency.internal_regional_note && (
+          <div className="consistency-note">
+            <strong>Internal finding note:</strong> {consistency.internal_regional_note}
+          </div>
+        )}
+        <div className="consistency-disclaimer">
+          Note: Both whole-image and regional analyses are experimental AI drafts. Neither report is presumed correct. Professional radiologist evaluation is required.
+        </div>
+      </div>
+    );
+  }
+
+  if (consistency.findings.some(f => f.status === 'insufficient_information')) {
+    return (
+      <div className="consistency-box consistency-insufficient">
+        <div className="consistency-header">
+          <span>ℹ️</span>
+          <span>AI Assessment Comparison: Insufficient Information</span>
+        </div>
+        <p className="consistency-summary">{consistency.summary}</p>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 function TriageCompactBadge({ triage }: { triage?: TriageResult | null }) {
@@ -220,6 +282,32 @@ function BatchDetailModal({
               <div style={{ marginTop: 12 }}>
                 <StatusPillBadge status={item.status} />
               </div>
+
+              {/* Provenance and Identity Audit Card */}
+              <div style={{ marginTop: 16, padding: 12, borderRadius: 6, background: 'var(--bg-card)', border: '1px solid var(--border-color)', fontSize: '0.72rem' }}>
+                <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  🔒 Inference Identity Audit
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '4px 8px', wordBreak: 'break-all' }}>
+                  <span style={{ color: 'var(--text-muted)' }}>Bytes SHA-256:</span>
+                  <span style={{ fontFamily: 'monospace' }}>{item.bytes_sha256 ? item.bytes_sha256.slice(0, 16) + '…' : (item.image_sha256 || '—')}</span>
+                  
+                  <span style={{ color: 'var(--text-muted)' }}>Pixel SHA-256:</span>
+                  <span style={{ fontFamily: 'monospace' }}>{item.pixel_sha256 ? item.pixel_sha256.slice(0, 16) + '…' : '—'}</span>
+
+                  <span style={{ color: 'var(--text-muted)' }}>Original Dims:</span>
+                  <span>{item.orig_dims ? `${item.orig_dims[1]} × ${item.orig_dims[0]} px` : '—'}</span>
+
+                  <span style={{ color: 'var(--text-muted)' }}>Model Prep Dims:</span>
+                  <span>{item.prep_dims ? `${item.prep_dims[1]} × ${item.prep_dims[0]} px` : '—'}</span>
+
+                  <span style={{ color: 'var(--text-muted)' }}>Prompt Schema:</span>
+                  <span style={{ fontFamily: 'monospace', color: 'var(--accent)' }}>{item.prompt_version || '—'}</span>
+
+                  <span style={{ color: 'var(--text-muted)' }}>Model:</span>
+                  <span>{item.model_used || '—'}</span>
+                </div>
+              </div>
             </div>
 
             <div>
@@ -230,12 +318,14 @@ function BatchDetailModal({
                       {Object.entries(item.sections).map(([title, content]) => (
                         <div key={title} className="patient-section-block">
                           <div className="patient-section-title">{title}</div>
-                          <div className="patient-section-body">{content}</div>
+                          <div className="patient-section-body">{content.replace(/\*\*/g, '')}</div>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="report-text-content">{item.report_text}</div>
+                    <div className="report-text-content" style={{ whiteSpace: 'pre-line' }}>
+                      {item.report_text.replace(/\*\*/g, '')}
+                    </div>
                   )}
 
                   {/* Research-only Triage Priority Suggestion */}
@@ -384,11 +474,40 @@ function ReportCard({ report, loading, error, visionStatus }: {
     ? `${report.model_used}${report.image_input_used ? ` · ${report.n_images_sent} image(s) sent` : ' · text-only (no image)'}`
     : 'unknown model';
 
+  let assessBadge: { text: string; bg: string; color: string; border: string } | null = null;
+  if (report?.report_text) {
+    const textLower = report.report_text.toLowerCase();
+    if (textLower.includes('not assessable:') || textLower.includes('not assessable')) {
+      assessBadge = { text: 'Hypothesis: Not Assessable', bg: 'rgba(239, 68, 68, 0.15)', color: '#f87171', border: 'rgba(239, 68, 68, 0.4)' };
+    } else if (textLower.includes('not supported:') || textLower.includes('not supported')) {
+      assessBadge = { text: 'Hypothesis: Not Supported', bg: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', border: 'rgba(59, 130, 246, 0.4)' };
+    } else if (textLower.includes('indeterminate:') || textLower.includes('indeterminate')) {
+      assessBadge = { text: 'Hypothesis: Indeterminate', bg: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24', border: 'rgba(245, 158, 11, 0.4)' };
+    } else if (textLower.includes('supported:') || textLower.includes('supported')) {
+      assessBadge = { text: 'Hypothesis: Supported', bg: 'rgba(16, 185, 129, 0.15)', color: '#34d399', border: 'rgba(16, 185, 129, 0.4)' };
+    }
+  }
+
   return (
     <div className="region-report-card">
       <div className="region-report-header">
         <span className="region-report-title">📋 Region Report</span>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+          {assessBadge && (
+            <span
+              style={{
+                padding: '3px 9px',
+                borderRadius: 4,
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                background: assessBadge.bg,
+                color: assessBadge.color,
+                border: `1px solid ${assessBadge.border}`,
+              }}
+            >
+              {assessBadge.text}
+            </span>
+          )}
           <LatencyBadge ms={report.latency_ms} timing={report.timing} />
           <span className="latency-badge">model: {modelBadge}</span>
           {report.image_input_used
@@ -399,6 +518,11 @@ function ReportCard({ report, loading, error, visionStatus }: {
 
       {report.success ? (
         <>
+          {report.internal_contradiction_warning && (
+            <div style={{ marginBottom: 12, padding: '10px 14px', background: 'rgba(245, 158, 11, 0.1)', border: '1px solid rgba(245, 158, 11, 0.4)', borderRadius: 6, color: '#fbbf24', fontSize: '0.8rem' }}>
+              ⚠️ <strong>Internal Report Discrepancy:</strong> {report.internal_contradiction_warning}
+            </div>
+          )}
           <div className="report-text-content">{report.report_text}</div>
           <ValidationWarnings warnings={report.validation_warnings ?? []} flagged={report.validation_flagged ?? false} />
           <Disclaimer />
@@ -460,7 +584,8 @@ export default function App() {
 
   // Grounding state
   const [query, setQuery]               = useState('pneumonia');
-  const [checkpoint, setCheckpoint]     = useState<'finetuned' | 'baseline'>('finetuned');
+  const [checkpoint, setCheckpoint]     = useState<CheckpointOption>('auto');
+  const [capabilities, setCapabilities] = useState<Record<string, GroundingCapability>>({});
   const [groundingResult, setGroundingResult] = useState<GroundingResponse | null>(null);
   const [groundingLoading, setGroundingLoading] = useState(false);
   const [groundingError, setGroundingError]     = useState<string | null>(null);
@@ -479,6 +604,41 @@ export default function App() {
   const [copied, setCopied]                 = useState(false);
   const patientFileInputRef                 = useRef<HTMLInputElement>(null);
 
+  // Cross-report consistency state
+  const [consistencyResult, setConsistencyResult] = useState<ConsistencyCheckResponse | null>(null);
+
+  const runConsistencyCheck = useCallback(async (
+    regRep: RegionReportResponse | null,
+    patRep: PatientFriendlyReportResponse | null,
+    currentQuery: string,
+  ) => {
+    if (!regRep?.report_text || !patRep?.report_text) {
+      if (regRep?.report_text && regRep.internal_contradiction) {
+        try {
+          const res = await checkReportConsistency(currentQuery, regRep.report_text, null, null);
+          setConsistencyResult(res);
+        } catch (e) {
+          console.error("Consistency check error:", e);
+        }
+      } else {
+        setConsistencyResult(null);
+      }
+      return;
+    }
+
+    try {
+      const res = await checkReportConsistency(
+        currentQuery,
+        regRep.report_text,
+        patRep.report_text,
+        patRep.sections || undefined,
+      );
+      setConsistencyResult(res);
+    } catch (e) {
+      console.error("Cross-report consistency evaluation error:", e);
+    }
+  }, []);
+
   // Batch Reports state
   const [batchFiles, setBatchFiles]         = useState<File[]>([]);
   const [batchPreviews, setBatchPreviews]   = useState<{ file: File; url: string }[]>([]);
@@ -490,13 +650,14 @@ export default function App() {
   const [copiedJobId, setCopiedJobId]       = useState<string | null>(null);
   const batchFileInputRef                   = useRef<HTMLInputElement>(null);
 
-  // Poll health + vision status
+  // Poll health + vision status + load capabilities
   useEffect(() => {
     const poll = () => {
       fetchHealth().then(setHealth).catch(() => setHealth(null));
       fetchVisionModelStatus().then(setVisionStatus).catch(() => setVisionStatus(null));
     };
     poll();
+    fetchGroundingCapabilities().then(res => setCapabilities(res.capabilities || {})).catch(() => {});
     const t = setInterval(poll, 15000);
     return () => clearInterval(t);
   }, []);
@@ -507,6 +668,7 @@ export default function App() {
     setGroundingResult(null);
     setRegionReport(null);
     setPatientReport(null);
+    setConsistencyResult(null);
     setGroundingError(null);
     setRegionError(null);
     setPatientError(null);
@@ -528,6 +690,7 @@ export default function App() {
     setGroundingResult(null);
     setRegionReport(null);
     setRegionError(null);
+    setConsistencyResult(null);
     try {
       const result = await groundPhrase(file, query.trim(), checkpoint, true, true);
       setGroundingResult(result);
@@ -552,7 +715,11 @@ export default function App() {
         groundingResult.orig_w ?? 0,
       );
       setRegionReport(result);
-      if (!result.success) setRegionError(result.error ?? 'Region report failed');
+      if (!result.success) {
+        setRegionError(result.error ?? 'Region report failed');
+      } else {
+        runConsistencyCheck(result, patientReport, query);
+      }
     } catch (err) {
       setRegionError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
@@ -572,7 +739,11 @@ export default function App() {
         medicalHistory || undefined,
       );
       setPatientReport(result);
-      if (!result.success) setPatientError(result.error ?? 'Report generation failed');
+      if (!result.success) {
+        setPatientError(result.error ?? 'Report generation failed');
+      } else {
+        runConsistencyCheck(regionReport, result, query);
+      }
     } catch (err) {
       setPatientError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
@@ -780,22 +951,41 @@ export default function App() {
                 placeholder="e.g. pneumonia"
               />
               <div className="example-pills">
-                {EXAMPLE_QUERIES.map(q => (
-                  <button key={q} className="example-pill" onClick={() => setQuery(q)}>{q}</button>
-                ))}
+                {EXAMPLE_QUERIES.map(q => {
+                  const isUnsupported = q.includes('unsupported');
+                  const cleanQ = q.replace(' (unsupported)', '');
+                  return (
+                    <button
+                      key={q}
+                      className="example-pill"
+                      style={isUnsupported ? { borderColor: 'rgba(239, 68, 68, 0.4)', color: '#f87171' } : undefined}
+                      onClick={() => setQuery(cleanQ)}
+                    >
+                      {q}
+                    </button>
+                  );
+                })}
               </div>
             </div>
             <div className="form-group">
-              <label className="form-label">Checkpoint</label>
+              <label className="form-label">Grounding Checkpoint & Routing</label>
               <select
                 id="checkpoint-select"
                 className="form-select"
                 value={checkpoint}
-                onChange={e => setCheckpoint(e.target.value as 'finetuned' | 'baseline')}
+                onChange={e => setCheckpoint(e.target.value as CheckpointOption)}
               >
-                <option value="finetuned">Fine-Tuned (Run 01, 3 ep) — recommended</option>
-                <option value="baseline">Pretrained Baseline — research comparison</option>
+                <option value="auto">Auto (Task 3 Epoch 5 Multi-Pathology, Val IoU 0.6550) — Recommended Default</option>
+                <option value="multipathology">Multi-Pathology Unified (Task 3 Epoch 5, Val IoU 0.6550)</option>
+                <option value="task2">Historical Task 2 Unified (Epoch 3, Val IoU 0.6510)</option>
+                <option value="baseline">Pretrained Baseline (MS-CXR, Val IoU 0.6385)</option>
+                <option value="finetuned">Fine-Tuned RSNA (Pneumonia Specialized, Val IoU 0.371 on multi-finding)</option>
               </select>
+              {checkpoint === 'finetuned' && (query.toLowerCase().includes('cardio') || query.toLowerCase().includes('heart') || query.toLowerCase().includes('effusion') || query.toLowerCase().includes('pneumothorax')) && (
+                <div style={{ marginTop: 6, fontSize: '0.76rem', color: '#eab308', lineHeight: 1.4 }}>
+                  ⚠️ The RSNA fine-tuned checkpoint was specialized exclusively on pneumonia opacities and has reduced accuracy on other findings. The Unified or Baseline model is strongly recommended for this finding.
+                </div>
+              )}
             </div>
             <button
               id="ground-btn"
@@ -819,7 +1009,7 @@ export default function App() {
                     <span className="image-label">Predicted box (cyan)</span>
                   </div>
                   {cropImage && (
-                    <div className="image-preview">
+                    <div className="image-preview crop-preview">
                       <img src={cropImage} alt="Region crop" />
                       <span className="image-label">Region crop (+40 px margin)</span>
                     </div>
@@ -829,8 +1019,54 @@ export default function App() {
                 <div style={{ marginTop: 10, display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
                   <LatencyBadge ms={groundingResult!.latency_ms} />
                   <span className="latency-badge">ckpt: {groundingResult!.checkpoint}</span>
+                  {groundingResult?.model_version && (
+                    <span className="latency-badge" style={{ borderColor: 'rgba(56, 189, 248, 0.4)', color: '#38bdf8' }}>
+                      {groundingResult.model_version}
+                    </span>
+                  )}
                   <span className="latency-badge">phrase: "{groundingResult!.query}"</span>
+                  {groundingResult?.capability_status && (
+                    <span
+                      style={{
+                        padding: '2px 8px',
+                        borderRadius: 4,
+                        fontSize: '0.74rem',
+                        fontWeight: 600,
+                        background: groundingResult.capability_status === 'validated' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                        color: groundingResult.capability_status === 'validated' ? '#10b981' : '#f87171',
+                        border: `1px solid ${groundingResult.capability_status === 'validated' ? 'rgba(16, 185, 129, 0.4)' : 'rgba(239, 68, 68, 0.4)'}`
+                      }}
+                    >
+                      {groundingResult.capability_status === 'validated' ? '✓ Supported category — benchmark evaluated' : '⚠️ Unsupported category — unvalidated finding'}
+                    </span>
+                  )}
                 </div>
+
+                {groundingResult?.capability_status === 'validated' && groundingResult.validation_evidence && (
+                  <div style={{ marginTop: 8, padding: '8px 12px', background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.25)', borderRadius: 6, fontSize: '0.78rem' }}>
+                    <div style={{ fontWeight: 600, color: '#10b981' }}>
+                      Category Benchmark Coverage: <span style={{ textTransform: 'capitalize' }}>{groundingResult.canonical_query}</span> ({groundingResult.category})
+                    </div>
+                    <div style={{ marginTop: 2, color: '#94a3b8', fontSize: '0.74rem' }}>
+                      Aggregate Benchmark Performance: Mean IoU <strong>{(groundingResult.validation_evidence.mean_iou * 100).toFixed(1)}%</strong> | Recall@50 <strong>{groundingResult.validation_evidence.recall_50.toFixed(1)}%</strong> | Recall@75 <strong>{groundingResult.validation_evidence.recall_75.toFixed(1)}%</strong> (N={groundingResult.validation_evidence.n_validation_queries} dev queries)
+                    </div>
+                    <div style={{ marginTop: 4, color: 'var(--text-muted)', fontSize: '0.71rem', fontStyle: 'italic' }}>
+                      Note: These metrics reflect aggregate benchmark evaluation on the development cohort and do NOT represent confidence or disease presence for this specific patient image.
+                    </div>
+                  </div>
+                )}
+
+                {groundingResult?.warning && (
+                  <div style={{ marginTop: 8 }}>
+                    <Alert type="warn" message={groundingResult.warning} />
+                  </div>
+                )}
+
+                {groundingResult?.checkpoint_advisory && !groundingResult?.warning && (
+                  <div style={{ marginTop: 8 }}>
+                    <Alert type="warn" message={groundingResult.checkpoint_advisory} />
+                  </div>
+                )}
 
                 <div className="divider" />
                 <CoordinatePanel result={groundingResult!} />
@@ -868,6 +1104,7 @@ export default function App() {
                   error={regionError}
                   visionStatus={visionStatus}
                 />
+                <ConsistencyBanner consistency={consistencyResult} />
               </>
             ) : (
               <div className="empty-state">
@@ -1015,6 +1252,8 @@ export default function App() {
 
                 {patientReport.success ? (
                   <>
+                    <ConsistencyBanner consistency={consistencyResult} />
+
                     {patientReport.sections ? (
                       <div className="patient-sections-container">
                         {Object.entries(patientReport.sections).map(([title, content]) => (
@@ -1030,7 +1269,7 @@ export default function App() {
 
                     {/* Research-only Triage Priority Suggestion */}
                     {patientReport.triage_result && (
-                      <TriageCard triage={patientReport.triage_result} />
+                      <TriageCard triage={patientReport.triage_result} crossConflict={consistencyResult?.has_conflict} />
                     )}
 
                     <div className="report-actions">
@@ -1136,6 +1375,7 @@ export default function App() {
               style={{ display: 'none' }}
               onChange={e => {
                 if (e.target.files) handleAddBatchFiles(e.target.files);
+                e.target.value = '';
               }}
             />
 
@@ -1290,7 +1530,7 @@ export default function App() {
               {currentBatch.items.map((item, idx) => {
                 const previewSrc = item.preview_b64
                   ? `data:image/jpeg;base64,${item.preview_b64}`
-                  : batchPreviews[idx]?.url;
+                  : (batchPreviews[idx]?.url || batchPreviews.find(p => p.file.name === item.filename)?.url);
 
                 return (
                   <div key={item.job_id} className="batch-item-card" id={`batch-card-${item.job_id}`}>
@@ -1337,11 +1577,22 @@ export default function App() {
                         {item.status === 'completed' && item.report_text ? (
                           <div
                             className="report-text-content"
-                            style={{ maxHeight: 180, cursor: 'pointer' }}
+                            style={{ maxHeight: 180, cursor: 'pointer', overflowY: 'auto' }}
                             onClick={() => setSelectedDetailItem(item)}
                             title="Click to view full report"
                           >
-                            {item.report_text}
+                            {item.sections ? (
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                                {Object.entries(item.sections).map(([title, content]) => (
+                                  <div key={title} style={{ fontSize: '0.82rem', lineHeight: 1.4 }}>
+                                    <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{title}: </span>
+                                    <span style={{ color: 'var(--text-secondary)' }}>{content.replace(/\*\*/g, '')}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              <div style={{ whiteSpace: 'pre-line' }}>{item.report_text.replace(/\*\*/g, '')}</div>
+                            )}
                           </div>
                         ) : item.status === 'processing' ? (
                           <div className="report-loading" style={{ padding: 20 }}>

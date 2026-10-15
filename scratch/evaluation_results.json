@@ -1,0 +1,274 @@
+[
+  {
+    "test_case": "Reference Normal",
+    "filename": "003d8fa0-6bf1-40ed-b54c-ac657f8495c5.dcm",
+    "ref_label": "Normal",
+    "expected": "Unremarkable lungs, normal cardiac silhouette, no apparatus",
+    "bytes_sha256": "06e588404e3279e207eadbad3297531022d9a480cad8938b1e6473462cff8189",
+    "pixel_sha256": "3de57111f49adac41aff86b837175e3ad137f14ad1c0835e04ad87ee9bb5f4bc",
+    "orig_dims": [
+      1024,
+      1024
+    ],
+    "prep_dims": [
+      1024,
+      1024
+    ],
+    "identity_match": {
+      "bytes": true,
+      "pixel": true,
+      "orig_dims": true,
+      "prep_dims": true
+    },
+    "single_image": {
+      "triage_rule": "RULE_NO_PRIORITY_FINDINGS_FLAGGED",
+      "latency_ms": 19448.2,
+      "tokens_per_sec": 29.53,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Not identified on available image",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "No focal opacity, no consolidation, no atelectasis, no congestion, no edema.",
+        "PLEURAL SPACES": "Costophrenic angles sharp.",
+        "MEDIASTINUM": "Normal",
+        "OVERALL IMPRESSION": "Normal chest radiograph.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view.",
+        "OBSERVATIONS": "Support apparatus: Not identified on available image\nCardiac silhouette: Normal\nLungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal",
+        "POSSIBLE FINDINGS": "Normal chest radiograph.",
+        "IMPRESSION": "Normal chest radiograph.",
+        "ASSESSMENT AND UNCERTAINTY": "Normal chest radiograph.",
+        "LIMITATIONS": "Single frontal view."
+      },
+      "report_text": "SUPPORT APPARATUS:\nNot identified on available image\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nNo focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n\nPLEURAL SPACES:\nCostophrenic angles sharp.\n\nMEDIASTINUM:\nNormal\n\nOVERALL IMPRESSION:\nNormal chest radiograph.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view."
+    },
+    "batch_item": {
+      "job_id": "job_0126c9e7",
+      "status": "completed",
+      "triage_rule": "RULE_NO_PRIORITY_FINDINGS_FLAGGED",
+      "latency_ms": 15912.48,
+      "tokens_per_sec": 29.04,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Not identified on available image",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "No focal opacity, no consolidation, no atelectasis, no congestion, no edema.",
+        "PLEURAL SPACES": "Costophrenic angles sharp.",
+        "MEDIASTINUM": "Normal",
+        "OVERALL IMPRESSION": "Normal chest radiograph.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view.",
+        "OBSERVATIONS": "Support apparatus: Not identified on available image\nCardiac silhouette: Normal\nLungs & opacities: No focal opacity, no consolidation, no atelectasis, no congestion, no edema.\nPleural spaces: Costophrenic angles sharp.\nMediastinum: Normal",
+        "POSSIBLE FINDINGS": "Normal chest radiograph.",
+        "IMPRESSION": "Normal chest radiograph.",
+        "ASSESSMENT AND UNCERTAINTY": "Normal chest radiograph.",
+        "LIMITATIONS": "Single frontal view."
+      },
+      "report_text": "SUPPORT APPARATUS:\nNot identified on available image\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nNo focal opacity, no consolidation, no atelectasis, no congestion, no edema.\n\nPLEURAL SPACES:\nCostophrenic angles sharp.\n\nMEDIASTINUM:\nNormal\n\nOVERALL IMPRESSION:\nNormal chest radiograph.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view."
+    },
+    "triage_match": true,
+    "section_keys_match": true
+  },
+  {
+    "test_case": "Annotated Lung Opacity",
+    "filename": "00436515-870c-4b36-a041-de91049b9ab4.dcm",
+    "ref_label": "Lung Opacity",
+    "expected": "Focal opacity or consolidation in lung parenchyma",
+    "bytes_sha256": "f841548556d57500ecd22e61f4d622368e05b9af44b1c8c2e594d2cf6eceb438",
+    "pixel_sha256": "23e77a7204c6c19dc5ad759bdd6d9fe62a919d4f92180a9f0813a28a14b12ffb",
+    "orig_dims": [
+      1024,
+      1024
+    ],
+    "prep_dims": [
+      1024,
+      1024
+    ],
+    "identity_match": {
+      "bytes": true,
+      "pixel": true,
+      "orig_dims": true,
+      "prep_dims": true
+    },
+    "single_image": {
+      "triage_rule": "RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT",
+      "latency_ms": 17067.89,
+      "tokens_per_sec": 29.37,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Endotracheal tube: Observed | Left",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "Unspecified laterality",
+        "PLEURAL SPACES": "Unspecified laterality",
+        "MEDIASTINUM": "Normal",
+        "OVERALL IMPRESSION": "Endotracheal tube is present. No other significant findings.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view. Absence of lateral projection.",
+        "OBSERVATIONS": "Support apparatus: Endotracheal tube: Observed | Left\nCardiac silhouette: Normal\nLungs & opacities: Unspecified laterality\nPleural spaces: Unspecified laterality\nMediastinum: Normal",
+        "POSSIBLE FINDINGS": "Endotracheal tube is present. No other significant findings.",
+        "IMPRESSION": "Endotracheal tube is present. No other significant findings.",
+        "ASSESSMENT AND UNCERTAINTY": "Endotracheal tube is present. No other significant findings.",
+        "LIMITATIONS": "Single frontal view. Absence of lateral projection."
+      },
+      "report_text": "SUPPORT APPARATUS:\nEndotracheal tube: Observed | Left\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nUnspecified laterality\n\nPLEURAL SPACES:\nUnspecified laterality\n\nMEDIASTINUM:\nNormal\n\nOVERALL IMPRESSION:\nEndotracheal tube is present. No other significant findings.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view. Absence of lateral projection."
+    },
+    "batch_item": {
+      "job_id": "job_47e9694f",
+      "status": "completed",
+      "triage_rule": "RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT",
+      "latency_ms": 17090.44,
+      "tokens_per_sec": 29.15,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Endotracheal tube: Observed | Left",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "Unspecified laterality",
+        "PLEURAL SPACES": "Unspecified laterality",
+        "MEDIASTINUM": "Normal",
+        "OVERALL IMPRESSION": "Endotracheal tube is present.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view. Absence of lateral projection.",
+        "OBSERVATIONS": "Support apparatus: Endotracheal tube: Observed | Left\nCardiac silhouette: Normal\nLungs & opacities: Unspecified laterality\nPleural spaces: Unspecified laterality\nMediastinum: Normal",
+        "POSSIBLE FINDINGS": "Endotracheal tube is present.",
+        "IMPRESSION": "Endotracheal tube is present.",
+        "ASSESSMENT AND UNCERTAINTY": "Endotracheal tube is present.",
+        "LIMITATIONS": "Single frontal view. Absence of lateral projection."
+      },
+      "report_text": "SUPPORT APPARATUS:\nEndotracheal tube: Observed | Left\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nUnspecified laterality\n\nPLEURAL SPACES:\nUnspecified laterality\n\nMEDIASTINUM:\nNormal\n\nOVERALL IMPRESSION:\nEndotracheal tube is present.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view. Absence of lateral projection."
+    },
+    "triage_match": true,
+    "section_keys_match": true
+  },
+  {
+    "test_case": "Visible Support Apparatus",
+    "filename": "010ccb9f-6d46-4380-af11-84f87397a1b8_iou058.png",
+    "ref_label": "Support Apparatus + Lung Opacity",
+    "expected": "Endotracheal tube / invasive line observed",
+    "bytes_sha256": "7153844bf703728329448d41430c2d21e9f82d2bb756dc95c665be57656a9109",
+    "pixel_sha256": "15cd826d213bc2681f64fdcac8bde823b4d5aaceb6ad7d5b3b847dfacfeea0d6",
+    "orig_dims": [
+      817,
+      763
+    ],
+    "prep_dims": [
+      817,
+      763
+    ],
+    "identity_match": {
+      "bytes": true,
+      "pixel": true,
+      "orig_dims": true,
+      "prep_dims": true
+    },
+    "single_image": {
+      "triage_rule": "RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT",
+      "latency_ms": 15371.8,
+      "tokens_per_sec": 29.39,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Endotracheal tube (left mainstem)",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "Clear",
+        "PLEURAL SPACES": "Costophrenic angles sharp",
+        "MEDIASTINUM": "Normal",
+        "OVERALL IMPRESSION": "No acute findings.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view.",
+        "OBSERVATIONS": "Support apparatus: Endotracheal tube (left mainstem)\nCardiac silhouette: Normal\nLungs & opacities: Clear\nPleural spaces: Costophrenic angles sharp\nMediastinum: Normal",
+        "POSSIBLE FINDINGS": "No acute findings.",
+        "IMPRESSION": "No acute findings.",
+        "ASSESSMENT AND UNCERTAINTY": "No acute findings.",
+        "LIMITATIONS": "Single frontal view."
+      },
+      "report_text": "SUPPORT APPARATUS:\nEndotracheal tube (left mainstem)\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nClear\n\nPLEURAL SPACES:\nCostophrenic angles sharp\n\nMEDIASTINUM:\nNormal\n\nOVERALL IMPRESSION:\nNo acute findings.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view."
+    },
+    "batch_item": {
+      "job_id": "job_8c0355bc",
+      "status": "completed",
+      "triage_rule": "RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT",
+      "latency_ms": 15923.69,
+      "tokens_per_sec": 29.24,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Endotracheal tube (left mainstem)",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "Clear",
+        "PLEURAL SPACES": "Costophrenic angles sharp",
+        "MEDIASTINUM": "Normal",
+        "OVERALL IMPRESSION": "The patient is intubated. The lungs are clear.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view. Absence of lateral projection.",
+        "OBSERVATIONS": "Support apparatus: Endotracheal tube (left mainstem)\nCardiac silhouette: Normal\nLungs & opacities: Clear\nPleural spaces: Costophrenic angles sharp\nMediastinum: Normal",
+        "POSSIBLE FINDINGS": "The patient is intubated. The lungs are clear.",
+        "IMPRESSION": "The patient is intubated. The lungs are clear.",
+        "ASSESSMENT AND UNCERTAINTY": "The patient is intubated. The lungs are clear.",
+        "LIMITATIONS": "Single frontal view. Absence of lateral projection."
+      },
+      "report_text": "SUPPORT APPARATUS:\nEndotracheal tube (left mainstem)\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nClear\n\nPLEURAL SPACES:\nCostophrenic angles sharp\n\nMEDIASTINUM:\nNormal\n\nOVERALL IMPRESSION:\nThe patient is intubated. The lungs are clear.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view. Absence of lateral projection."
+    },
+    "triage_match": true,
+    "section_keys_match": true
+  },
+  {
+    "test_case": "Non-Opacity Thoracic Variation",
+    "filename": "0004cfab-14fd-4e49-80ba-63a80b6bddd6.dcm",
+    "ref_label": "No Lung Opacity / Not Normal",
+    "expected": "Cardiomegaly, pleural change, or technical variation",
+    "bytes_sha256": "d223645405c0a1e34134f78f508a624bdb6f03af5e4cf9d62998caa2841e4cee",
+    "pixel_sha256": "1d3a460e6caa16eb7704eb512111642082fbd9a3d9369758b2c442682821fa46",
+    "orig_dims": [
+      1024,
+      1024
+    ],
+    "prep_dims": [
+      1024,
+      1024
+    ],
+    "identity_match": {
+      "bytes": true,
+      "pixel": true,
+      "orig_dims": true,
+      "prep_dims": true
+    },
+    "single_image": {
+      "triage_rule": "RULE_NO_PRIORITY_FINDINGS_FLAGGED",
+      "latency_ms": 16260.93,
+      "tokens_per_sec": 29.38,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Not identified on available image",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "No focal opacity, consolidation, atelectasis, congestion, or edema identified.",
+        "PLEURAL SPACES": "Costophrenic angles are sharp.",
+        "MEDIASTINUM": "Normal contour",
+        "OVERALL IMPRESSION": "No significant findings.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view.",
+        "OBSERVATIONS": "Support apparatus: Not identified on available image\nCardiac silhouette: Normal\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour",
+        "POSSIBLE FINDINGS": "No significant findings.",
+        "IMPRESSION": "No significant findings.",
+        "ASSESSMENT AND UNCERTAINTY": "No significant findings.",
+        "LIMITATIONS": "Single frontal view."
+      },
+      "report_text": "SUPPORT APPARATUS:\nNot identified on available image\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nNo focal opacity, consolidation, atelectasis, congestion, or edema identified.\n\nPLEURAL SPACES:\nCostophrenic angles are sharp.\n\nMEDIASTINUM:\nNormal contour\n\nOVERALL IMPRESSION:\nNo significant findings.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view."
+    },
+    "batch_item": {
+      "job_id": "job_3e22b71d",
+      "status": "completed",
+      "triage_rule": "RULE_NO_PRIORITY_FINDINGS_FLAGGED",
+      "latency_ms": 17257.13,
+      "tokens_per_sec": 27.96,
+      "has_markdown_artifacts": false,
+      "sections": {
+        "SUPPORT APPARATUS": "Not identified on available image",
+        "CARDIAC SILHOUETTE": "Normal",
+        "LUNGS AND OPACITIES": "No focal opacity, consolidation, atelectasis, congestion, or edema identified.",
+        "PLEURAL SPACES": "Costophrenic angles are sharp.",
+        "MEDIASTINUM": "Normal contour",
+        "OVERALL IMPRESSION": "Normal chest radiograph.",
+        "UNCERTAINTY AND LIMITATIONS": "Single frontal view. Absence of lateral projection.",
+        "OBSERVATIONS": "Support apparatus: Not identified on available image\nCardiac silhouette: Normal\nLungs & opacities: No focal opacity, consolidation, atelectasis, congestion, or edema identified.\nPleural spaces: Costophrenic angles are sharp.\nMediastinum: Normal contour",
+        "POSSIBLE FINDINGS": "Normal chest radiograph.",
+        "IMPRESSION": "Normal chest radiograph.",
+        "ASSESSMENT AND UNCERTAINTY": "Normal chest radiograph.",
+        "LIMITATIONS": "Single frontal view. Absence of lateral projection."
+      },
+      "report_text": "SUPPORT APPARATUS:\nNot identified on available image\n\nCARDIAC SILHOUETTE:\nNormal\n\nLUNGS AND OPACITIES:\nNo focal opacity, consolidation, atelectasis, congestion, or edema identified.\n\nPLEURAL SPACES:\nCostophrenic angles are sharp.\n\nMEDIASTINUM:\nNormal contour\n\nOVERALL IMPRESSION:\nNormal chest radiograph.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal view. Absence of lateral projection."
+    },
+    "triage_match": true,
+    "section_keys_match": true
+  }
+]

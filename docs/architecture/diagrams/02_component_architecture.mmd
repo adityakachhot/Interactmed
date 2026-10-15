@@ -1,0 +1,89 @@
+classDiagram
+    direction TB
+
+    class FastAPIApp {
+        +lifespan(app)
+        +health() HealthResponse
+        +vision_model_status() VisionModelStatusResponse
+        +ground(file, query, checkpoint) GroundingResponse
+        +report_region(file, query, box) RegionReportResponse
+        +report_patient_friendly(file, reason) PatientFriendlyReportResponse
+        +create_batch(files, style) BatchStatusResponse
+        +get_batch(batch_id) BatchStatusResponse
+        +cancel_batch(batch_id) BatchStatusResponse
+        +retry_batch(batch_id) BatchStatusResponse
+        +download_batch(batch_id, format)
+    }
+
+    class GroundingService {
+        -ckpt_path: Path
+        -device: torch.device
+        -_model: TransVG
+        -_loaded: bool
+        +ensure_loaded()
+        +predict(image_bytes, query) dict
+        +_load_image_to_rgb_array(bytes, filename) ndarray
+    }
+
+    class ReportService {
+        +region_report(image_bytes, phrase, box) dict
+        +patient_friendly_report(image_bytes, reason) dict
+        +extract_crop(image_bytes, box, margin) ndarray
+        +validate_report(text, phrase) dict
+        +clean_and_structure_patient_report(raw_text) tuple
+    }
+
+    class BatchService {
+        -_batches: Dict[str, BatchJob]
+        -_executor: ThreadPoolExecutor
+        +create_batch(files_data, style) BatchJob
+        +get_batch(batch_id) BatchJob
+        +cancel_batch(batch_id) bool
+        +retry_jobs(batch_id, job_ids) int
+        +export_summary(batch_id, format) str
+        -_process_single_item(item)
+    }
+
+    class TriageService {
+        -config_path: Path
+        -rules: List[dict]
+        +evaluate_from_structured_findings(findings) TriageEvaluationResult
+        +evaluate_from_report_text(full_text, sections) TriageEvaluationResult
+        +extract_affirmed_patterns(text, patterns) List[str]
+        -_is_negated(sentence, start, end) bool
+    }
+
+    class OverlayService {
+        +draw_overlay(image_bytes, box, query, model_label) Image
+        +image_to_base64_jpeg(pil_img) str
+    }
+
+    class BatchJob {
+        +batch_id: str
+        +style: str
+        +status: str
+        +items: List[BatchItem]
+        +total_items: int
+        +completed_count: int
+    }
+
+    class TriageEvaluationResult {
+        +triage_category: str
+        +matched_rule_id: str
+        +rule_reason: str
+        +supporting_findings: List[str]
+        +uncertainty_level: str
+        +requires_human_review: bool
+    }
+
+    FastAPIApp --> GroundingService : invokes
+    FastAPIApp --> ReportService : invokes
+    FastAPIApp --> BatchService : invokes
+    FastAPIApp --> OverlayService : invokes
+
+    GroundingService --> OverlayService : uses
+    ReportService --> TriageService : invokes
+    BatchService --> ReportService : uses helpers
+    BatchService --> TriageService : invokes
+    BatchService --> BatchJob : manages
+    TriageService --> TriageEvaluationResult : returns

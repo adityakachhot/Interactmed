@@ -1,0 +1,43 @@
+sequenceDiagram
+    autonumber
+    actor User as Researcher
+    participant UI as React Frontend (App.tsx)
+    participant API as FastAPI (backend/main.py)
+    participant BS as BatchService (src/batch_service.py)
+    participant Worker as ThreadPool Worker (max_workers=1)
+    participant Ollama as Ollama Daemon (medgemma:4b)
+    participant Triage as TriageService (src/triage_service.py)
+
+    User->>UI: Selects up to 10 radiographs and chooses style ('patient' or 'research')
+    UI->>API: POST /batch/create (files: List[UploadFile], style="patient")
+    API->>API: Validates batch size (len <= 10; >10 rejected)
+    API->>BS: create_batch(files_data, style)
+    BS->>BS: Creates BatchJob("batch_<id>") and BatchItems with preview thumbnails (256px)
+    BS->>Worker: Enqueues jobs sequentially in ThreadPoolExecutor
+    BS-->>API: BatchJob initial state
+    API-->>UI: BatchStatusResponse (batch_id, status="processing", item previews)
+
+    loop Every 1.5 seconds until batch completes
+        UI->>API: GET /batch/{batch_id}
+        API->>BS: get_batch(batch_id)
+        BS-->>API: Current batch status and completed items
+        API-->>UI: BatchStatusResponse (counters, live streaming results)
+    end
+
+    par Sequential Worker Execution Loop
+        Worker->>Worker: Dequeues next item (status="processing")
+        Worker->>Ollama: POST /api/generate with keep_alive="30m"
+        Ollama-->>Worker: Generated report text + execution timing metrics
+        Worker->>Worker: Parses structured headings (4 sections)
+        Worker->>Triage: evaluate_from_report_text()
+        Triage-->>Worker: TriageEvaluationResult
+        Worker->>Worker: Updates item: status="completed", latency_ms, tokens_per_sec
+    end
+
+    opt User exports results
+        User->>UI: Clicks "Download CSV Summary"
+        UI->>API: GET /batch/{batch_id}/download?format=csv
+        API->>BS: export_summary(batch_id, "csv")
+        BS-->>API: CSV text buffer with triage & timing columns
+        API-->>UI: Sends file attachment ("batch_<id>_summary.csv")
+    end

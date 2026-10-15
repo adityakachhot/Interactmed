@@ -1,0 +1,7 @@
+error_metric,numerator_baseline,denominator_baseline,baseline_rate_pct,numerator_v3,denominator_v3,v3_rate_pct,delta_rate_pct,interpretation
+False Normal Rate (Abnormal Cohort),68,179,37.99,71,179,39.66,1.67,Similar false-normal tendency under conservative structured prompting
+Normal Boilerplate Rate,140,250,56.0,0,250,0.0,-56.0,Complete elimination of generic non-informative template text
+Internal Contradiction Rate,18,250,7.2,4,250,1.6,-5.6,77.8% relative reduction in conflicting clinical statements
+Unsupported Positive Assertion Rate,70,250,28.0,73,250,29.2,1.2,Marginal change; driven primarily by non-annotated device mentions
+Laterality Omission Rate,105,250,42.0,94,250,37.6,-4.4,10.5% relative reduction in ambiguous un-lateralized finding statements
+Laterality Concordance Rate,43,250,17.2,54,250,21.6,4.4,25.6% relative improvement in anatomically concordant lateralization

@@ -1,0 +1,756 @@
+{
+  "Pretrained Baseline (MS-CXR)": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.6447,
+      "recall_50": 62.5,
+      "recall_75": 37.5,
+      "mean_latency_ms": 154.76,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Cardiomegaly": {
+      "n_queries": 40,
+      "mean_iou": 0.8321,
+      "recall_50": 100.0,
+      "recall_75": 90.0,
+      "mean_latency_ms": 156.52,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.5683,
+      "recall_50": 58.33,
+      "recall_75": 25.0,
+      "mean_latency_ms": 155.14,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "335179fd-39a2ec5e-c854b903-797c0f99-55054c02",
+          "phrase": "Consolidations of the bases of lungs bilaterally, may be secondary to aspiration",
+          "pred_box": [
+            1807.5,
+            965.7,
+            2548.9,
+            1711.6
+          ],
+          "gt_box": [
+            1937.0,
+            1321.0,
+            2289.0,
+            1544.0
+          ],
+          "iou": 0.142
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 5,
+      "mean_iou": 0.4906,
+      "recall_50": 60.0,
+      "recall_75": 0.0,
+      "mean_latency_ms": 156.0,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "f5fde381-031c99d4-babe45f8-3a2aa046-889aa799",
+          "phrase": "The radiograph continues to show signs of mild predominantly interstitial pulmonary edema",
+          "pred_box": [
+            1208.2,
+            826.1,
+            2161.9,
+            1993.6
+          ],
+          "gt_box": [
+            1852.0,
+            1028.0,
+            2868.0,
+            2335.0
+          ],
+          "iou": 0.1397
+        }
+      ]
+    },
+    "Lung Opacity": {
+      "n_queries": 12,
+      "mean_iou": 0.3915,
+      "recall_50": 16.67,
+      "recall_75": 8.33,
+      "mean_latency_ms": 164.35,
+      "n_failures": 3,
+      "representative_failures": [
+        {
+          "dicom_id": "6d4b2436-1413b0ff-f9d646f0-e4f8c4cb-a333afcb",
+          "phrase": "patchy bilateral pulmonary opacities",
+          "pred_box": [
+            1220.9,
+            535.0,
+            1749.4,
+            1603.9
+          ],
+          "gt_box": [
+            1521.0,
+            764.0,
+            1872.0,
+            1077.0
+          ],
+          "iou": 0.1185
+        },
+        {
+          "dicom_id": "1149d736-3432232f-c6a99add-229a8aa5-d7e6b4f2",
+          "phrase": "right hazy infrahilar ground-glass opacity versus airway wall thickening",
+          "pred_box": [
+            238.4,
+            704.5,
+            688.2,
+            1183.1
+          ],
+          "gt_box": [
+            496.0,
+            974.0,
+            716.0,
+            1180.0
+          ],
+          "iou": 0.1792
+        },
+        {
+          "dicom_id": "42c44543-7136acd1-83b0901d-7e5d08b3-24327533",
+          "phrase": "The clip in the left upper lobe parenchymal opacity, both solid an associated with some surrounding scarring, is unchanged",
+          "pred_box": [
+            1568.4,
+            770.8,
+            1950.9,
+            1237.3
+          ],
+          "gt_box": [
+            1695.0,
+            630.0,
+            1987.0,
+            883.0
+          ],
+          "iou": 0.1285
+        }
+      ]
+    },
+    "Pleural Effusion": {
+      "n_queries": 11,
+      "mean_iou": 0.6257,
+      "recall_50": 72.73,
+      "recall_75": 45.45,
+      "mean_latency_ms": 151.96,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "e8752fea-a518ba9f-bfce012f-fa070e37-11f34da8",
+          "phrase": "Pleural effusions, small, probably chronic",
+          "pred_box": [
+            1146.0,
+            1773.8,
+            1949.2,
+            2200.3
+          ],
+          "gt_box": [
+            1676.0,
+            1871.0,
+            2329.0,
+            2231.0
+          ],
+          "iou": 0.1845
+        }
+      ]
+    },
+    "Pneumonia": {
+      "n_queries": 13,
+      "mean_iou": 0.5353,
+      "recall_50": 69.23,
+      "recall_75": 7.69,
+      "mean_latency_ms": 305.65,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "303611e2-4cf1ca7a-b13c7427-6b74d766-e31234bf",
+          "phrase": "ill-defined opacities largely in the upper lobe",
+          "pred_box": [
+            627.6,
+            652.3,
+            1017.4,
+            940.4
+          ],
+          "gt_box": [
+            347.0,
+            605.0,
+            947.0,
+            1657.0
+          ],
+          "iou": 0.1413
+        }
+      ]
+    },
+    "Pneumothorax": {
+      "n_queries": 13,
+      "mean_iou": 0.5943,
+      "recall_50": 76.92,
+      "recall_75": 23.08,
+      "mean_latency_ms": 152.78,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "__OVERALL__": {
+      "n_queries": 114,
+      "mean_iou": 0.6489,
+      "recall_50": 73.68,
+      "recall_75": 45.61,
+      "mean_latency_ms": 173.19
+    }
+  },
+  "Fine-Tuned RSNA (Pneumonia)": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.4302,
+      "recall_50": 50.0,
+      "recall_75": 0.0,
+      "mean_latency_ms": 156.85,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "f717a475-b500ef37-d179a27e-ad501557-08129dc5",
+          "phrase": "band-like atelectasis in the mid left lung",
+          "pred_box": [
+            1999.6,
+            1281.1,
+            2530.4,
+            1706.4
+          ],
+          "gt_box": [
+            2155.0,
+            1153.0,
+            2539.0,
+            1411.0
+          ],
+          "iou": 0.1767
+        }
+      ]
+    },
+    "Cardiomegaly": {
+      "n_queries": 40,
+      "mean_iou": 0.392,
+      "recall_50": 7.5,
+      "recall_75": 0.0,
+      "mean_latency_ms": 163.4,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "7a7e83ac-f689ed0f-303307ec-aa62af5c-3ba2b299",
+          "phrase": "mildly enlarged cardiac silhouette",
+          "pred_box": [
+            379.9,
+            1675.3,
+            1141.6,
+            2383.6
+          ],
+          "gt_box": [
+            721.0,
+            1791.0,
+            2091.0,
+            2572.0
+          ],
+          "iou": 0.1832
+        }
+      ]
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.4988,
+      "recall_50": 50.0,
+      "recall_75": 16.67,
+      "mean_latency_ms": 164.03,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "f717a475-b500ef37-d179a27e-ad501557-08129dc5",
+          "phrase": "patchy consolidation at the medial right lung base",
+          "pred_box": [
+            1908.5,
+            1321.4,
+            2441.0,
+            1807.6
+          ],
+          "gt_box": [
+            1029.0,
+            1383.0,
+            1387.0,
+            1722.0
+          ],
+          "iou": 0.0
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 5,
+      "mean_iou": 0.2631,
+      "recall_50": 0.0,
+      "recall_75": 0.0,
+      "mean_latency_ms": 160.94,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "d4da0066-e4ad4dc0-9a9b0e12-62a275de-2aa1bde8",
+          "phrase": "peribronchial cuffing consistent pulmonary edema",
+          "pred_box": [
+            1683.1,
+            1246.6,
+            2229.4,
+            1802.5
+          ],
+          "gt_box": [
+            658.0,
+            1089.0,
+            1146.0,
+            1540.0
+          ],
+          "iou": 0.0
+        }
+      ]
+    },
+    "Lung Opacity": {
+      "n_queries": 12,
+      "mean_iou": 0.3419,
+      "recall_50": 25.0,
+      "recall_75": 0.0,
+      "mean_latency_ms": 169.37,
+      "n_failures": 4,
+      "representative_failures": [
+        {
+          "dicom_id": "6d4b2436-1413b0ff-f9d646f0-e4f8c4cb-a333afcb",
+          "phrase": "patchy bilateral pulmonary opacities",
+          "pred_box": [
+            1433.0,
+            1076.0,
+            1961.7,
+            1734.5
+          ],
+          "gt_box": [
+            1521.0,
+            764.0,
+            1872.0,
+            1077.0
+          ],
+          "iou": 0.0008
+        },
+        {
+          "dicom_id": "1149d736-3432232f-c6a99add-229a8aa5-d7e6b4f2",
+          "phrase": "right hazy infrahilar ground-glass opacity versus airway wall thickening",
+          "pred_box": [
+            1133.6,
+            985.0,
+            1481.0,
+            1277.0
+          ],
+          "gt_box": [
+            496.0,
+            974.0,
+            716.0,
+            1180.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "9ed39c33-886e9fb0-03544d77-e20557a9-ca545c0b",
+          "phrase": "Right basilar opacity, potentially due to infiltrate in the proper clinical setting",
+          "pred_box": [
+            441.5,
+            1795.3,
+            984.6,
+            2159.9
+          ],
+          "gt_box": [
+            213.0,
+            1888.0,
+            580.0,
+            2151.0
+          ],
+          "iou": 0.1411
+        }
+      ]
+    },
+    "Pleural Effusion": {
+      "n_queries": 11,
+      "mean_iou": 0.3011,
+      "recall_50": 9.09,
+      "recall_75": 0.0,
+      "mean_latency_ms": 161.3,
+      "n_failures": 3,
+      "representative_failures": [
+        {
+          "dicom_id": "19ea3cc2-45049cf4-8f04b5c8-34262d5d-c9d5eb2d",
+          "phrase": "Trace right pleural effusion",
+          "pred_box": [
+            217.0,
+            1121.8,
+            612.1,
+            1374.4
+          ],
+          "gt_box": [
+            92.0,
+            1310.0,
+            661.0,
+            1526.0
+          ],
+          "iou": 0.129
+        },
+        {
+          "dicom_id": "72f8465e-e6efdc49-76ff5266-11d2f8e7-692d9234",
+          "phrase": "Small bilateral pleural effusions persist",
+          "pred_box": [
+            1548.3,
+            1437.3,
+            2037.8,
+            1826.7
+          ],
+          "gt_box": [
+            804.0,
+            1540.0,
+            1569.0,
+            1917.0
+          ],
+          "iou": 0.0125
+        },
+        {
+          "dicom_id": "a8c08cbf-15ac0dac-b76a40a0-dab826c7-18015767",
+          "phrase": "loculated pleural fluid in the right hemithorax, at the apex",
+          "pred_box": [
+            243.3,
+            1110.4,
+            628.2,
+            1565.5
+          ],
+          "gt_box": [
+            156.0,
+            362.0,
+            396.0,
+            1150.0
+          ],
+          "iou": 0.0169
+        }
+      ]
+    },
+    "Pneumonia": {
+      "n_queries": 13,
+      "mean_iou": 0.4437,
+      "recall_50": 30.77,
+      "recall_75": 7.69,
+      "mean_latency_ms": 164.93,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "63bf26b3-1ee8df77-08eef46f-d7514a82-905448a8",
+          "phrase": "asymmetric opacity involving the left lung apex and suprahilar region",
+          "pred_box": [
+            1356.3,
+            892.6,
+            1796.2,
+            1309.5
+          ],
+          "gt_box": [
+            1378.0,
+            601.0,
+            1756.0,
+            986.0
+          ],
+          "iou": 0.1203
+        }
+      ]
+    },
+    "Pneumothorax": {
+      "n_queries": 13,
+      "mean_iou": 0.2104,
+      "recall_50": 7.69,
+      "recall_75": 0.0,
+      "mean_latency_ms": 160.92,
+      "n_failures": 6,
+      "representative_failures": [
+        {
+          "dicom_id": "559a4998-c29c68df-ec6db2d8-07219b06-55cceff2",
+          "phrase": "tiny right apical pneumothorax",
+          "pred_box": [
+            1533.2,
+            874.0,
+            2123.9,
+            1392.7
+          ],
+          "gt_box": [
+            652.0,
+            515.0,
+            1196.0,
+            735.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "5a705387-059dda71-371bf595-040ce15b-e7c01088",
+          "phrase": "right apical pneumothorax",
+          "pred_box": [
+            1201.9,
+            714.6,
+            1617.2,
+            982.5
+          ],
+          "gt_box": [
+            287.0,
+            501.0,
+            900.0,
+            794.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "2c730827-44d342a9-c97365c1-441b894a-a6038f9e",
+          "phrase": "Left apical pneumothorax",
+          "pred_box": [
+            1565.5,
+            744.1,
+            2042.9,
+            1061.0
+          ],
+          "gt_box": [
+            1590.0,
+            454.0,
+            2082.0,
+            747.0
+          ],
+          "iou": 0.0045
+        }
+      ]
+    },
+    "__OVERALL__": {
+      "n_queries": 114,
+      "mean_iou": 0.3714,
+      "recall_50": 19.3,
+      "recall_75": 2.63,
+      "mean_latency_ms": 163.22
+    }
+  },
+  "Multi-Pathology Unified": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.575,
+      "recall_50": 62.5,
+      "recall_75": 25.0,
+      "mean_latency_ms": 165.08,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Cardiomegaly": {
+      "n_queries": 40,
+      "mean_iou": 0.8291,
+      "recall_50": 100.0,
+      "recall_75": 87.5,
+      "mean_latency_ms": 164.6,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.5513,
+      "recall_50": 66.67,
+      "recall_75": 33.33,
+      "mean_latency_ms": 159.72,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "f8a82b97-4fed7408-de542e58-e97a181d-f2da93ce",
+          "phrase": "Left perihilar and right lower lobe consolidations are unchanged.",
+          "pred_box": [
+            1188.6,
+            996.2,
+            2108.0,
+            1746.0
+          ],
+          "gt_box": [
+            1818.0,
+            844.0,
+            2369.0,
+            1480.0
+          ],
+          "iou": 0.156
+        },
+        {
+          "dicom_id": "335179fd-39a2ec5e-c854b903-797c0f99-55054c02",
+          "phrase": "Consolidations of the bases of lungs bilaterally, may be secondary to aspiration",
+          "pred_box": [
+            1932.0,
+            1043.6,
+            2640.8,
+            1785.4
+          ],
+          "gt_box": [
+            1937.0,
+            1321.0,
+            2289.0,
+            1544.0
+          ],
+          "iou": 0.1493
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 5,
+      "mean_iou": 0.6116,
+      "recall_50": 80.0,
+      "recall_75": 20.0,
+      "mean_latency_ms": 162.96,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Lung Opacity": {
+      "n_queries": 12,
+      "mean_iou": 0.4427,
+      "recall_50": 33.33,
+      "recall_75": 16.67,
+      "mean_latency_ms": 160.06,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "6d4b2436-1413b0ff-f9d646f0-e4f8c4cb-a333afcb",
+          "phrase": "patchy bilateral pulmonary opacities",
+          "pred_box": [
+            1472.4,
+            675.5,
+            2024.9,
+            1769.0
+          ],
+          "gt_box": [
+            1521.0,
+            764.0,
+            1872.0,
+            1077.0
+          ],
+          "iou": 0.1818
+        },
+        {
+          "dicom_id": "42c44543-7136acd1-83b0901d-7e5d08b3-24327533",
+          "phrase": "The clip in the left upper lobe parenchymal opacity, both solid an associated with some surrounding scarring, is unchanged",
+          "pred_box": [
+            1643.9,
+            883.0,
+            2051.8,
+            1415.4
+          ],
+          "gt_box": [
+            1695.0,
+            630.0,
+            1987.0,
+            883.0
+          ],
+          "iou": 0.0
+        }
+      ]
+    },
+    "Pleural Effusion": {
+      "n_queries": 11,
+      "mean_iou": 0.6192,
+      "recall_50": 81.82,
+      "recall_75": 27.27,
+      "mean_latency_ms": 155.44,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "a8c08cbf-15ac0dac-b76a40a0-dab826c7-18015767",
+          "phrase": "loculated pleural fluid in the right hemithorax, at the apex",
+          "pred_box": [
+            161.1,
+            1036.4,
+            597.3,
+            1598.1
+          ],
+          "gt_box": [
+            156.0,
+            362.0,
+            396.0,
+            1150.0
+          ],
+          "iou": 0.0655
+        }
+      ]
+    },
+    "Pneumonia": {
+      "n_queries": 13,
+      "mean_iou": 0.5394,
+      "recall_50": 53.85,
+      "recall_75": 23.08,
+      "mean_latency_ms": 162.92,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "303611e2-4cf1ca7a-b13c7427-6b74d766-e31234bf",
+          "phrase": "ill-defined opacities largely in the upper lobe",
+          "pred_box": [
+            907.6,
+            770.9,
+            1277.6,
+            1132.8
+          ],
+          "gt_box": [
+            347.0,
+            605.0,
+            947.0,
+            1657.0
+          ],
+          "iou": 0.019
+        }
+      ]
+    },
+    "Pneumothorax": {
+      "n_queries": 13,
+      "mean_iou": 0.5876,
+      "recall_50": 69.23,
+      "recall_75": 23.08,
+      "mean_latency_ms": 161.28,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "25767946-75a7af8b-4d87ff61-b3b5d790-0d6afd5f",
+          "phrase": "fluid level posteriorly, which represents a loculated hydropneumothorax",
+          "pred_box": [
+            1278.0,
+            799.2,
+            1539.3,
+            1016.1
+          ],
+          "gt_box": [
+            1107.0,
+            736.0,
+            1398.0,
+            967.0
+          ],
+          "iou": 0.1941
+        },
+        {
+          "dicom_id": "c436cddb-4126f15e-59c0733c-34b5a4b5-bbda7ffd",
+          "phrase": "there is a small-sized right pneumothorax",
+          "pred_box": [
+            270.2,
+            348.3,
+            1128.0,
+            1155.0
+          ],
+          "gt_box": [
+            628.0,
+            385.0,
+            1275.0,
+            641.0
+          ],
+          "iou": 0.1754
+        }
+      ]
+    },
+    "__OVERALL__": {
+      "n_queries": 114,
+      "mean_iou": 0.651,
+      "recall_50": 75.44,
+      "recall_75": 46.49,
+      "mean_latency_ms": 162.12
+    }
+  }
+}

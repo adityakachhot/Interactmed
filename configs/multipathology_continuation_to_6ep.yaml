@@ -1,0 +1,49 @@
+experiment:
+  name: "multipathology_finetuning_continuation_to_6ep"
+  description: >
+    Controlled continuation of TransVG-AGPT multi-pathology fine-tuning
+    from Epoch 3 best checkpoint (Val mIoU 0.6510) to a maximum of Epoch 6 (up to 3 additional epochs).
+    Conservative starting LR of 1.0e-5 decaying toward 1.0e-6 with mandatory early stopping
+    after two consecutive epochs without >0.001 validation mIoU improvement over the best.
+  phase: "MultiPathology-Stage2-Continuation"
+  task: "multi_pathology_grounding_continuation"
+  starting_epoch: 4
+  max_epochs: 6
+
+data:
+  local_verified_csv: "/Users/adityakachhot/interactmed/data/processed/local_grounding_verified.csv"
+  mimic_base_dir: "/Users/adityakachhot/Downloads/data/mimic-cxr"
+  rsna_train_csv: "/Users/adityakachhot/interactmed/data/processed/rsna/rsna_train_positive.csv"
+  rsna_images_dir: "/Users/adityakachhot/interactmed/data/raw/rsna/stage_2_train_images"
+  rsna_train_sample_size: 200
+  imsize: 640
+
+model:
+  base_checkpoint: "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+  freeze_encoders: true
+  device: "auto"
+
+training:
+  additional_epochs: 3
+  starting_epoch: 4
+  batch_size: 4
+  num_workers: 0
+  lr: 1.0e-5
+  weight_decay: 0.0001
+  clip_max_norm: 0.1
+  l1_loss_coef: 5.0
+  giou_loss_coef: 2.0
+  lr_scheduler: "cosine"
+  min_lr: 1.0e-6
+  eval_every_epoch: true
+  save_best_metric: "mean_best_match_iou"
+  early_stopping:
+    min_improvement: 0.001
+    patience: 2
+    max_drop_pause: 0.03
+    baseline_best_val_iou: 0.6510
+
+output:
+  checkpoints_dir: "/Users/adityakachhot/interactmed/checkpoints/multipathology/run_02_continuation_to_6ep"
+  artifacts_dir: "/Users/adityakachhot/interactmed/artifacts/multipathology/run_02_continuation_to_6ep"
+  log_file: "/Users/adityakachhot/interactmed/artifacts/multipathology/run_02_continuation_to_6ep/training_history.json"

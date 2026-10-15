@@ -1,0 +1,62 @@
+flowchart TB
+    subgraph Users ["Actors & User Interfaces"]
+        Clinician["Medical Researcher / Clinician"]
+        Patient["Patient / Research Participant"]
+        Browser["React 18 + TypeScript Web Browser SPA\n(Vite Dev Server: Port 5173)"]
+    end
+
+    subgraph BackendGateway ["Application Backend (Local Machine)"]
+        FastAPI["FastAPI Application Server\n(Uvicorn: Port 8000)\nbackend/main.py"]
+        CORS["CORS Middleware\n(Allow Origins: *)"]
+        Lifespan["Async Lifespan Context Manager\n(Singleton Model Preloading)"]
+    end
+
+    subgraph CoreServices ["Core Application Services (src/)"]
+        GroundingSvc["GroundingService (Singleton)\nsrc/grounding_service.py\n(MPS/CPU Device Routing)"]
+        ReportSvc["ReportService\nsrc/report_service.py\n(2-Stage Grounded Prompts)"]
+        BatchSvc["BatchService\nsrc/batch_service.py\n(ThreadPool Queue: max_workers=1)"]
+        TriageSvc["TriageService\nsrc/triage_service.py\n(Precedence-Sorted Rules Engine)"]
+        OverlaySvc["OverlayService\nsrc/overlay_service.py\n(Pillow Canvas Math & Base64)"]
+    end
+
+    subgraph ModelRuntimes ["Model Inference Engines"]
+        subgraph PyTorchMPS ["PyTorch 2.2.2 Runtime (MPS Accelerated)"]
+            TransVG["TransVG-AGPT PyTorch Model\n(ResNet-50 + DETR + ClinicalBERT + Fusion)\ncheckpoints/finetuned_rsna/.../best_model_val_iou.pth"]
+        end
+
+        subgraph OllamaRuntime ["Ollama Local Server (Port 11434)"]
+            MedGemma["Google MedGemma 4B\n(Q4_K_M GGUF, Gemma 3 Multimodal Architecture)\nkeep_alive='30m'"]
+            LLaVA["llava:7b (Fallback Vision Candidate)"]
+            Llama3["llama3 / mistral (Text Fallback Candidates)"]
+        end
+    end
+
+    subgraph ConfigurationAndData ["Configuration, Manifests & Checkpoints"]
+        TriageYAML["configs/triage_rules.yaml"]
+        RSNAConfig["configs/rsna_eval.yaml & rsna_train.yaml"]
+        Checkpoints["checkpoints/\ntransvg.pth (Baseline: 2.1 GB)\nbest_model_val_iou.pth (Fine-tuned: 768 MB)"]
+        Artifacts["artifacts/\nrsna/runs/ (Grounding Results)\nreport_evaluation/ (Report Cohort Full)\nfine_tuning_cohort/ (200/50/117 Jsonl & Manifests)"]
+    end
+
+    Clinician -->|Uploads CXR, Enters Phrase, Views Grounding| Browser
+    Patient -->|Views Plain-Language Report & Triage Suggestions| Browser
+    Browser <-->|HTTP REST Requests & Base64 JSON Payloads| FastAPI
+
+    FastAPI --> CORS --> Lifespan
+    FastAPI --> GroundingSvc
+    FastAPI --> ReportSvc
+    FastAPI --> BatchSvc
+
+    GroundingSvc --> TransVG
+    GroundingSvc --> OverlaySvc
+    GroundingSvc -.-> Checkpoints
+
+    ReportSvc --> OllamaRuntime
+    ReportSvc --> TriageSvc
+    ReportSvc --> OverlaySvc
+
+    BatchSvc --> OllamaRuntime
+    BatchSvc --> TriageSvc
+
+    TriageSvc -.-> TriageYAML
+    TransVG -.-> RSNAConfig

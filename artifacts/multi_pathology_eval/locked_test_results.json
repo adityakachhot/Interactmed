@@ -1,0 +1,632 @@
+{
+  "Pretrained Baseline (MS-CXR)": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.522,
+      "recall_50": 50.0,
+      "recall_75": 12.5,
+      "mean_latency_ms": 162.0,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Cardiomegaly": {
+      "n_queries": 42,
+      "mean_iou": 0.8247,
+      "recall_50": 100.0,
+      "recall_75": 76.19,
+      "mean_latency_ms": 162.41,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.5064,
+      "recall_50": 50.0,
+      "recall_75": 16.67,
+      "mean_latency_ms": 164.09,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "19ad291e-2093eaaa-b0881d58-f7359e05-6961e3e8",
+          "phrase": "there is patchy consolidation in the left lung and right upper lobe",
+          "pred_box": [
+            634.5,
+            434.9,
+            1167.2,
+            966.7
+          ],
+          "gt_box": [
+            1839.0,
+            1107.0,
+            2520.0,
+            2385.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "43d3d7e5-51d7b668-0c5f9716-d11df728-ffaee25f",
+          "phrase": "Severe symmetric widespread pulmonary consolidation unchanged",
+          "pred_box": [
+            0.0,
+            1500.9,
+            1533.0,
+            2800.5
+          ],
+          "gt_box": [
+            0.0,
+            1066.0,
+            555.0,
+            2226.0
+          ],
+          "iou": 0.1802
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 7,
+      "mean_iou": 0.2886,
+      "recall_50": 14.29,
+      "recall_75": 0.0,
+      "mean_latency_ms": 166.52,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "10904f22-5598cef1-754fba77-81fce124-662f915f",
+          "phrase": "Stable mild to moderate pulmonary edema",
+          "pred_box": [
+            1324.2,
+            611.8,
+            2184.2,
+            1153.6
+          ],
+          "gt_box": [
+            454.0,
+            1206.0,
+            995.0,
+            1982.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "6fbda08e-4d03e6a1-8bedd982-5b1121df-24b51ee4",
+          "phrase": "peribronchial cuffing consistent with mild pulmonary edema",
+          "pred_box": [
+            1188.4,
+            848.4,
+            1489.5,
+            1165.5
+          ],
+          "gt_box": [
+            1279.0,
+            1032.0,
+            1629.0,
+            1438.0
+          ],
+          "iou": 0.1341
+        }
+      ]
+    },
+    "Lung Opacity": {
+      "n_queries": 9,
+      "mean_iou": 0.5186,
+      "recall_50": 55.56,
+      "recall_75": 0.0,
+      "mean_latency_ms": 157.7,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pleural Effusion": {
+      "n_queries": 12,
+      "mean_iou": 0.6205,
+      "recall_50": 66.67,
+      "recall_75": 33.33,
+      "mean_latency_ms": 156.36,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pneumonia": {
+      "n_queries": 15,
+      "mean_iou": 0.58,
+      "recall_50": 66.67,
+      "recall_75": 26.67,
+      "mean_latency_ms": 265.98,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pneumothorax": {
+      "n_queries": 25,
+      "mean_iou": 0.5708,
+      "recall_50": 68.0,
+      "recall_75": 20.0,
+      "mean_latency_ms": 162.53,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "92666ac1-70ccc2f3-66bc3d47-ed08bd0e-d444a359",
+          "phrase": "there is a moderate to large right pneumothorax with possible pleural fluid",
+          "pred_box": [
+            198.2,
+            1309.1,
+            1157.1,
+            2141.2
+          ],
+          "gt_box": [
+            482.0,
+            969.0,
+            831.0,
+            1683.0
+          ],
+          "iou": 0.1424
+        }
+      ]
+    },
+    "__OVERALL__": {
+      "n_queries": 130,
+      "mean_iou": 0.6307,
+      "recall_50": 71.54,
+      "recall_75": 36.92,
+      "mean_latency_ms": 173.85
+    }
+  },
+  "Fine-Tuned RSNA (Pneumonia)": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.3846,
+      "recall_50": 37.5,
+      "recall_75": 0.0,
+      "mean_latency_ms": 158.13,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "ae00ad94-bc780297-f273a669-1fff3fa9-9875f668",
+          "phrase": "Lungs are unchanged in appearance including bibasal atelectasis",
+          "pred_box": [
+            139.6,
+            1082.9,
+            726.0,
+            1711.2
+          ],
+          "gt_box": [
+            496.0,
+            1259.0,
+            1009.0,
+            1860.0
+          ],
+          "iou": 0.1816
+        },
+        {
+          "dicom_id": "838d96da-8d9d8d8d-2aacafdf-9f280c96-573b74db",
+          "phrase": "there is right basilar subsegmental atelectasis",
+          "pred_box": [
+            1898.7,
+            1185.3,
+            2461.6,
+            1683.6
+          ],
+          "gt_box": [
+            736.0,
+            1210.0,
+            1503.0,
+            1632.0
+          ],
+          "iou": 0.0
+        }
+      ]
+    },
+    "Cardiomegaly": {
+      "n_queries": 42,
+      "mean_iou": 0.4092,
+      "recall_50": 11.9,
+      "recall_75": 0.0,
+      "mean_latency_ms": 162.97,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.475,
+      "recall_50": 41.67,
+      "recall_75": 8.33,
+      "mean_latency_ms": 162.47,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "c4aa2f33-b91fbec1-971f13fd-81f94e33-e8312181",
+          "phrase": "Multifocal consolidation, likely a combination of contusion and aspiration",
+          "pred_box": [
+            488.4,
+            922.4,
+            1134.2,
+            1691.7
+          ],
+          "gt_box": [
+            780.0,
+            1227.0,
+            1023.0,
+            1579.0
+          ],
+          "iou": 0.1722
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 7,
+      "mean_iou": 0.365,
+      "recall_50": 14.29,
+      "recall_75": 0.0,
+      "mean_latency_ms": 159.98,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Lung Opacity": {
+      "n_queries": 9,
+      "mean_iou": 0.2877,
+      "recall_50": 22.22,
+      "recall_75": 0.0,
+      "mean_latency_ms": 164.25,
+      "n_failures": 3,
+      "representative_failures": [
+        {
+          "dicom_id": "7c17f8c6-00e14ab0-5ec77692-208b5095-0f6e09f3",
+          "phrase": "subtle patchy right mid lung zone opacity",
+          "pred_box": [
+            952.0,
+            1124.7,
+            1386.6,
+            1540.5
+          ],
+          "gt_box": [
+            619.0,
+            712.0,
+            1020.0,
+            1209.0
+          ],
+          "iou": 0.0153
+        },
+        {
+          "dicom_id": "d1935e38-bf72f688-646772e8-395c6a5f-1cdfc7a6",
+          "phrase": "right basilar pulmonary opacity",
+          "pred_box": [
+            1792.0,
+            1323.5,
+            2357.1,
+            1792.4
+          ],
+          "gt_box": [
+            952.0,
+            1342.0,
+            1267.0,
+            1885.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "a0cf505c-0d0135ae-4106dd58-a0139675-95d7c6a5",
+          "phrase": "Stable scarring and cavitation in the upper lobes",
+          "pred_box": [
+            1099.4,
+            660.7,
+            1506.5,
+            1185.2
+          ],
+          "gt_box": [
+            1071.0,
+            354.0,
+            1442.0,
+            593.0
+          ],
+          "iou": 0.0
+        }
+      ]
+    },
+    "Pleural Effusion": {
+      "n_queries": 12,
+      "mean_iou": 0.3855,
+      "recall_50": 25.0,
+      "recall_75": 0.0,
+      "mean_latency_ms": 160.97,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "16d4240e-453c3fab-75913781-14422f9b-5cff0c73",
+          "phrase": "Small bilateral pleural effusion is presumed",
+          "pred_box": [
+            574.2,
+            1011.8,
+            1064.3,
+            1341.6
+          ],
+          "gt_box": [
+            298.0,
+            1221.0,
+            955.0,
+            1446.0
+          ],
+          "iou": 0.1743
+        }
+      ]
+    },
+    "Pneumonia": {
+      "n_queries": 15,
+      "mean_iou": 0.5418,
+      "recall_50": 73.33,
+      "recall_75": 13.33,
+      "mean_latency_ms": 160.11,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "6252974f-932d03bd-2bf0b9d3-df44540c-5d3f49d0",
+          "phrase": "Right mid lung opacity",
+          "pred_box": [
+            659.4,
+            866.5,
+            1149.3,
+            1556.5
+          ],
+          "gt_box": [
+            402.0,
+            837.0,
+            829.0,
+            1259.0
+          ],
+          "iou": 0.1474
+        },
+        {
+          "dicom_id": "2f22b153-f24ed6db-360ecabd-dcae4df5-7abbaeb9",
+          "phrase": "Consolidation remaining at the base of the right lung",
+          "pred_box": [
+            1423.8,
+            1326.6,
+            2023.3,
+            1840.9
+          ],
+          "gt_box": [
+            432.0,
+            1402.0,
+            943.0,
+            1946.0
+          ],
+          "iou": 0.0
+        }
+      ]
+    },
+    "Pneumothorax": {
+      "n_queries": 25,
+      "mean_iou": 0.2216,
+      "recall_50": 16.0,
+      "recall_75": 0.0,
+      "mean_latency_ms": 158.24,
+      "n_failures": 12,
+      "representative_failures": [
+        {
+          "dicom_id": "24e489d8-affaee96-e41cd0c2-f1099291-3a0c4737",
+          "phrase": "minimal lateral pneumothorax",
+          "pred_box": [
+            474.4,
+            823.5,
+            820.5,
+            1118.3
+          ],
+          "gt_box": [
+            410.0,
+            257.0,
+            725.0,
+            599.0
+          ],
+          "iou": 0.0
+        },
+        {
+          "dicom_id": "0b4c1a22-3e135e03-be0016c2-90436561-ec493812",
+          "phrase": "right apical pneumothorax seen",
+          "pred_box": [
+            524.5,
+            487.3,
+            1049.4,
+            793.2
+          ],
+          "gt_box": [
+            578.0,
+            340.0,
+            1151.0,
+            556.0
+          ],
+          "iou": 0.1286
+        },
+        {
+          "dicom_id": "06d8f348-7e843f0c-febb4048-c33861ee-a55a5153",
+          "phrase": "left apical pneumothorax",
+          "pred_box": [
+            1513.1,
+            801.1,
+            2050.7,
+            1144.4
+          ],
+          "gt_box": [
+            1385.0,
+            500.0,
+            2006.0,
+            811.0
+          ],
+          "iou": 0.0131
+        }
+      ]
+    },
+    "__OVERALL__": {
+      "n_queries": 130,
+      "mean_iou": 0.38,
+      "recall_50": 26.15,
+      "recall_75": 2.31,
+      "mean_latency_ms": 161.13
+    }
+  },
+  "Multi-Pathology Unified": {
+    "Atelectasis": {
+      "n_queries": 8,
+      "mean_iou": 0.5852,
+      "recall_50": 75.0,
+      "recall_75": 12.5,
+      "mean_latency_ms": 158.93,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Cardiomegaly": {
+      "n_queries": 42,
+      "mean_iou": 0.8338,
+      "recall_50": 100.0,
+      "recall_75": 85.71,
+      "mean_latency_ms": 161.09,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Consolidation": {
+      "n_queries": 12,
+      "mean_iou": 0.5118,
+      "recall_50": 58.33,
+      "recall_75": 25.0,
+      "mean_latency_ms": 161.72,
+      "n_failures": 2,
+      "representative_failures": [
+        {
+          "dicom_id": "19ad291e-2093eaaa-b0881d58-f7359e05-6961e3e8",
+          "phrase": "there is patchy consolidation in the left lung and right upper lobe",
+          "pred_box": [
+            644.7,
+            490.0,
+            1146.4,
+            1124.0
+          ],
+          "gt_box": [
+            444.0,
+            1073.0,
+            704.0,
+            1352.0
+          ],
+          "iou": 0.0078
+        },
+        {
+          "dicom_id": "c4aa2f33-b91fbec1-971f13fd-81f94e33-e8312181",
+          "phrase": "Multifocal consolidation, likely a combination of contusion and aspiration",
+          "pred_box": [
+            384.3,
+            796.8,
+            1158.8,
+            1765.0
+          ],
+          "gt_box": [
+            616.0,
+            442.0,
+            1177.0,
+            1063.0
+          ],
+          "iou": 0.1515
+        }
+      ]
+    },
+    "Edema": {
+      "n_queries": 7,
+      "mean_iou": 0.3798,
+      "recall_50": 14.29,
+      "recall_75": 0.0,
+      "mean_latency_ms": 159.69,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "10904f22-5598cef1-754fba77-81fce124-662f915f",
+          "phrase": "Stable mild to moderate pulmonary edema",
+          "pred_box": [
+            1390.2,
+            834.8,
+            2294.1,
+            1441.6
+          ],
+          "gt_box": [
+            1669.0,
+            1243.0,
+            2493.0,
+            2037.0
+          ],
+          "iou": 0.1151
+        }
+      ]
+    },
+    "Lung Opacity": {
+      "n_queries": 9,
+      "mean_iou": 0.5361,
+      "recall_50": 55.56,
+      "recall_75": 11.11,
+      "mean_latency_ms": 158.3,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "a0cf505c-0d0135ae-4106dd58-a0139675-95d7c6a5",
+          "phrase": "Stable scarring and cavitation in the upper lobes",
+          "pred_box": [
+            458.0,
+            578.9,
+            850.1,
+            954.1
+          ],
+          "gt_box": [
+            339.0,
+            309.0,
+            814.0,
+            680.0
+          ],
+          "iou": 0.1253
+        }
+      ]
+    },
+    "Pleural Effusion": {
+      "n_queries": 12,
+      "mean_iou": 0.6412,
+      "recall_50": 83.33,
+      "recall_75": 25.0,
+      "mean_latency_ms": 158.51,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pneumonia": {
+      "n_queries": 15,
+      "mean_iou": 0.6561,
+      "recall_50": 66.67,
+      "recall_75": 46.67,
+      "mean_latency_ms": 158.98,
+      "n_failures": 0,
+      "representative_failures": []
+    },
+    "Pneumothorax": {
+      "n_queries": 25,
+      "mean_iou": 0.5968,
+      "recall_50": 76.0,
+      "recall_75": 24.0,
+      "mean_latency_ms": 158.47,
+      "n_failures": 1,
+      "representative_failures": [
+        {
+          "dicom_id": "92666ac1-70ccc2f3-66bc3d47-ed08bd0e-d444a359",
+          "phrase": "there is a moderate to large right pneumothorax with possible pleural fluid",
+          "pred_box": [
+            227.9,
+            1431.9,
+            1154.3,
+            2140.8
+          ],
+          "gt_box": [
+            482.0,
+            969.0,
+            831.0,
+            1683.0
+          ],
+          "iou": 0.1071
+        }
+      ]
+    },
+    "__OVERALL__": {
+      "n_queries": 130,
+      "mean_iou": 0.6599,
+      "recall_50": 76.92,
+      "recall_75": 43.85,
+      "mean_latency_ms": 159.76
+    }
+  }
+}

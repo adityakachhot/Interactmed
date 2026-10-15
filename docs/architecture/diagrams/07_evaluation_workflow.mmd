@@ -1,0 +1,35 @@
+flowchart TD
+    subgraph DataPartitioning ["Local Cohort Partitioning (367 Images across 365 Patients)"]
+        Eligible["417 Verified Frontal MIMIC-CXR Images\nMatched with Chest-ImaGenome Gold Sentences"]
+        Quarantine["Quarantine Historical Cohort (50 Patients)\nZero Patient Leakage Permitted"]
+        
+        DevSet["expanded_dev (Development Cohort)\n250 Frontal Images / 248 Patients\n94 Pneumonia, 71 Normal, 57 Edema, 10 Devices"]
+        
+        TestSet["expanded_test (Locked Test Cohort)\n117 Frontal Images / 117 Patients\n44 Pneumonia, 33 Normal, 26 Edema, 6 Cardiomegaly\nPERMANENTLY LOCKED & UNTOUCHED"]
+
+        Eligible --> Quarantine
+        Quarantine --> DevSet
+        Quarantine --> TestSet
+    end
+
+    subgraph DevEvaluation ["Phase 1: Active Development & Comparative Benchmarks"]
+        BaselineEval["Single-Stage Baseline Prompt\n- Boilerplate Normal: 56.0%\n- Contradictions: 7.2%\n- Mean Latency: 18.76s\n- Micro-F1: 0.4379"]
+        
+        PromptV3Eval["Prompt v3 Structured Pipeline\n- Boilerplate Normal: 0.0%\n- Contradictions: 1.6% (-77.8%)\n- Mean Latency: 13.42s (-28.5%)\n- Micro-F1: 0.3220"]
+        
+        ResolutionAblation["Resolution Ablation (1024px vs 1536px)\n- Clinical F1: 0.3478 vs 0.3478 (Identical)\n- 96% Label Agreement\n- 1024px selected for production"]
+
+        DevSet --> BaselineEval
+        DevSet --> PromptV3Eval
+        DevSet --> ResolutionAblation
+    end
+
+    subgraph FinalGate ["Phase 2: Milestone Gate Evaluation"]
+        GateCondition{"Platform Development\n& Cloud Pilot Complete?"}
+        UnsealTest["One-Shot Unsealing of expanded_test (N=117)\nFinal Independent Generalization Test"]
+        
+        PromptV3Eval --> GateCondition
+        ResolutionAblation --> GateCondition
+        GateCondition -->|Yes| UnsealTest
+        TestSet -.->|Protected Gate| UnsealTest
+    end

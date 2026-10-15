@@ -1,0 +1,183 @@
+# configs/grounding_capabilities.yaml
+# ==============================================================================
+# InteractMed-VLM Grounding Capability and Query Routing Configuration
+# Maps canonical queries and aliases to empirical validation evidence,
+# dataset provenance, optimal checkpoints, and clinical validation status.
+# ==============================================================================
+
+capabilities:
+  cardiomegaly:
+    canonical_query: "cardiomegaly"
+    category: "Heart"
+    aliases:
+      - "cardiomegaly"
+      - "enlarged heart"
+      - "cardiac enlargement"
+      - "enlarged cardiac silhouette"
+      - "heart enlargement"
+    available_annotations: "MS-CXR (285 total: 203 train, 40 val, 42 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.8315
+      recall_50: 100.0
+      recall_75: 90.00
+      n_validation_queries: 40
+    description: "Enlargement of the cardiac silhouette exceeding 50% of the thoracic diameter on PA views."
+
+  pneumothorax:
+    canonical_query: "pneumothorax"
+    category: "Pleura"
+    aliases:
+      - "pneumothorax"
+      - "apical pneumothorax"
+      - "collapsed lung"
+      - "pleural air"
+      - "tension pneumothorax"
+    available_annotations: "MS-CXR (138 total: 94 train, 16 val, 28 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.5845
+      recall_50: 69.23
+      recall_75: 23.08
+      n_validation_queries: 13
+    description: "Abnormal presence of air between the visceral and parietal pleura, causing lung retraction."
+
+  pleural effusion:
+    canonical_query: "pleural effusion"
+    category: "Pleura"
+    aliases:
+      - "pleural effusion"
+      - "effusion"
+      - "pleural fluid"
+      - "fluid in pleura"
+      - "blunted costophrenic angle"
+      - "costophrenic blunting"
+    available_annotations: "MS-CXR (119 total: 84 train, 17 val, 18 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.6202
+      recall_50: 81.82
+      recall_75: 27.27
+      n_validation_queries: 11
+    description: "Pathological accumulation of fluid in the pleural space, often blunting the costophrenic sulcus."
+
+  pneumonia:
+    canonical_query: "pneumonia"
+    category: "Lungs"
+    aliases:
+      - "pneumonia"
+      - "bacterial pneumonia"
+      - "viral pneumonia"
+      - "infectious infiltrate"
+      - "consolidation consistent with pneumonia"
+      - "bronchopneumonia"
+    available_annotations: "RSNA Pneumonia (26,684 images, 16,957 boxes) + MS-CXR (95 total: 58 train, 19 val, 18 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.5546
+      recall_50: 53.85
+      recall_75: 23.08
+      n_validation_queries: 13
+    description: "Acute infection of pulmonary parenchyma presenting as patchy, confluent, or lobar airspace opacity."
+
+  consolidation:
+    canonical_query: "consolidation"
+    category: "Lungs"
+    aliases:
+      - "consolidation"
+      - "airspace consolidation"
+      - "lobar consolidation"
+      - "dense airspace opacity"
+      - "parenchymal consolidation"
+    available_annotations: "MS-CXR (163 total: 125 train, 17 val, 21 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.5663
+      recall_50: 66.67
+      recall_75: 25.00
+      n_validation_queries: 12
+    description: "Alveolar air replaced by fluid, pus, or cellular debris, frequently showing air bronchograms."
+
+  atelectasis:
+    canonical_query: "atelectasis"
+    category: "Lungs"
+    aliases:
+      - "atelectasis"
+      - "lung collapse"
+      - "discoid atelectasis"
+      - "subsegmental atelectasis"
+      - "band-like atelectasis"
+      - "platelike atelectasis"
+      - "linear atelectasis"
+    available_annotations: "MS-CXR (85 total: 60 train, 12 val, 13 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.5521
+      recall_50: 50.00
+      recall_75: 25.00
+      n_validation_queries: 8
+    description: "Volume loss in all or part of the lung parenchyma, marked by displacement of fissures or diaphragm."
+
+  pulmonary edema:
+    canonical_query: "pulmonary edema"
+    category: "Lungs"
+    aliases:
+      - "edema"
+      - "pulmonary edema"
+      - "interstitial edema"
+      - "alveolar edema"
+      - "vascular congestion"
+      - "fluid overload"
+      - "peribronchial cuffing"
+      - "kerley b lines"
+    available_annotations: "MS-CXR (76 total: 54 train, 9 val, 13 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.6426
+      recall_50: 80.00
+      recall_75: 20.00
+      n_validation_queries: 5
+    description: "Fluid accumulation within alveolar and interstitial spaces, typically from cardiac or capillary causes."
+
+  lung opacity:
+    canonical_query: "lung opacity"
+    category: "Lungs"
+    aliases:
+      - "lung opacity"
+      - "pulmonary opacity"
+      - "opacity"
+      - "opacities"
+      - "infiltrate"
+      - "infiltrates"
+      - "airspace opacity"
+      - "ground glass opacity"
+      - "hazy opacity"
+    available_annotations: "MS-CXR (95 total: 68 train, 17 val, 10 test)"
+    selected_checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    fallback_checkpoint: "checkpoints/multipathology/run_01_multicxr/best_model_val_iou.pth"
+    status: "validated"
+    validation_evidence:
+      mean_iou: 0.4463
+      recall_50: 33.33
+      recall_75: 16.67
+      n_validation_queries: 12
+    description: "Nonspecific area of increased lung attenuation that obscures underlying bronchial and vascular structures."
+
+unsupported_defaults:
+  status: "unsupported"
+  warning: "This clinical query is unsupported by phrase-to-box ground-truth annotations in local benchmark datasets. Localization is experimental and unvalidated."
+  checkpoint: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"

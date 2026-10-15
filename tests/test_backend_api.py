@@ -39,6 +39,7 @@ def mock_grounding_service():
     mock_svc = MagicMock()
     mock_svc._loaded = True
     mock_svc._load_error = None
+    mock_svc.model_version = "TransVG-AGPT Multi-Pathology Unified (Task 3 Epoch 5, Val mIoU 0.6550)"
     mock_svc.status = {
         "loaded": True,
         "error": None,

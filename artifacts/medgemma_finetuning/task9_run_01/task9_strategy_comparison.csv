@@ -1,0 +1,6 @@
+strategy,micro_f1,macro_f1,bootstrap_ci,recall,false_normal_rate,omission_rate,device_f1,schema_validity,median_latency_s
+Baseline (Prompt v3),0.2162,0.1813,[0.1348 - 0.2995],0.1389,0.0517,0.8611,0.7647,1.0,15.33
+Whole-Image Only (Prompt v4),0.2059,0.0741,[0.1354 - 0.2727],0.1458,1.0,0.8542,0.5185,1.0,17.34
+Specialized Device (Prompt v5),0.2169,0.1196,[0.1370 - 0.2953],0.125,0.6207,0.875,0.8372,1.0,31.59
+Targeted Grounding (Prompt v6),0.2233,0.0961,[0.1532 - 0.2956],0.1597,0.0,0.8403,0.5185,1.0,44.07
+Integrated Hybrid Pipeline,0.2381,0.1416,[0.1557 - 0.3147],0.1389,0.6207,0.8611,0.8372,1.0,73.92

@@ -1,0 +1,9 @@
+cohort_a,cohort_b,comparison_description,cohort_a_patients,cohort_b_patients,shared_patient_count,shared_patient_ids,audit_classification,audit_notes
+mscxr_held_out_test,quarantined_task14_test,Test vs Task 14 quarantined test,99,117,0,NONE,Verified (Zero leakage),Zero patient overlap. Clean isolation.
+mscxr_held_out_test,mscxr_train_clean,Test vs Clean Train,99,444,0,NONE,Verified (Zero leakage),Zero patient overlap. Clean isolation.
+mscxr_held_out_test,mscxr_validation,Test vs Validation,99,89,0,NONE,Verified (Zero leakage),Zero patient overlap. Clean isolation.
+ms_cxr_raw_test,quarantined_task14_test,Official MS-CXR Test vs Task 14 test,128,117,0,NONE,Verified (Zero leakage),Zero patient overlap. Clean isolation.
+ms_cxr_raw_train,quarantined_task14_test,Official MS-CXR Train vs Task 14 test,595,117,0,NONE,Partially verified (Misidentified patient),Patient 15486932 overlapped. Task 19A report misidentified patient as p10625523.
+mscxr_train_clean,quarantined_task14_test,Cleaned MS-CXR Train vs Task 14 test,444,117,0,NONE,Verified (Zero leakage),Zero patient overlap. Clean isolation.
+mscxr_held_out_test,chest_imagenome_avoid_500,MS-CXR Held-Out Test vs Images to Avoid,99,500,0,NONE,Verified (Zero leakage),Zero patient overlap. Clean isolation.
+quarantined_task14_test,chest_imagenome_avoid_500,Task 14 Test vs Images to Avoid,117,500,0,NONE,Verified relationship,All 117 Task 14 patients are in images_to_avoid (gold patients).

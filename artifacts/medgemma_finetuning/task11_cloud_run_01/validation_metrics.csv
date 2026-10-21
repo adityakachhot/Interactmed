@@ -1,0 +1,16 @@
+metric,baseline_value,candidate_target,unit
+sample_size,50,50,cases
+abnormal_cases,36,36,cases
+normal_controls,14,14,cases
+micro_f1,0.3418,> 0.2500 (Delta > 0.05),score
+macro_f1,0.3115,> 0.2000,score
+precision,0.6136,> 0.3000,score
+recall,0.2368,> 0.3500,score
+false_normal_rate,0.3889,< 0.2500 (Gate: <25%),rate
+false_normal_ci_95,"[0.2478, 0.5514]",tightened,interval
+finding_omission_rate,0.68,< 0.4000 (Gate: <40%),rate
+unsupported_assertion_rate,0.32,< 0.1500 (Gate: <0.15),rate
+device_f1,0.3158,>= 0.8000,score
+schema_validity,1.0,1.0000 (Gate: 100%),rate
+median_latency_s,14.42,< 15.0s,seconds
+p95_latency_s,16.77,< 25.0s,seconds

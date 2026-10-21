@@ -89,6 +89,10 @@ class CrossReportConsistencyResult:
     findings: List[FindingConsistency]
     internal_regional_conflict: bool = False
     internal_regional_note: Optional[str] = None
+    review_required: bool = False
+    review_reasons: List[str] = field(default_factory=list)
+    classifier_discordance: bool = False
+    classifier_alerts: List[str] = field(default_factory=list)
     evaluated_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
     def to_dict(self) -> Dict[str, Any]:
@@ -99,6 +103,10 @@ class CrossReportConsistencyResult:
             "findings": [f.to_dict() for f in self.findings],
             "internal_regional_conflict": self.internal_regional_conflict,
             "internal_regional_note": self.internal_regional_note,
+            "review_required": self.review_required,
+            "review_reasons": self.review_reasons,
+            "classifier_discordance": self.classifier_discordance,
+            "classifier_alerts": self.classifier_alerts,
             "evaluated_at": self.evaluated_at,
         }
 
@@ -292,10 +300,13 @@ def evaluate_cross_report_consistency(
     regional_report_text: Optional[str] = None,
     whole_image_report_text: Optional[str] = None,
     whole_image_sections: Optional[Dict[str, str]] = None,
+    classifier_result: Optional[Union[Dict[str, Any], Any]] = None,
+    classifier_threshold: float = 0.62,
 ) -> CrossReportConsistencyResult:
     """
-    Evaluates consistency between regional phrase grounding report and
-    whole-image report outputs on the same radiograph.
+    Evaluates consistency between regional phrase grounding report,
+    whole-image report outputs, and optional auxiliary pretrained classifier outputs
+    on the same radiograph.
 
     Follows the 4 strict cases:
       - compatible
@@ -355,7 +366,7 @@ def evaluate_cross_report_consistency(
             internal_regional_note=internal_note,
         )
 
-    if has_whole and not has_regional:
+    if has_whole and not has_regional and not classifier_result:
         findings_list.append(
             FindingConsistency(
                 finding_name=query or "general_assessment",
@@ -467,7 +478,17 @@ def evaluate_cross_report_consistency(
         whole_lower = whole_text.lower()
 
         finding_key = query.lower().strip()
-        mentioned_in_whole = finding_key in whole_lower
+        synonyms = [finding_key]
+        if any(w in finding_key for w in ["pneumonia", "consolidation", "opacity", "infiltrate"]):
+            synonyms.extend(["pneumonia", "consolidation", "opacity", "infiltrat", "lung", "lungs"])
+        elif any(w in finding_key for w in ["effusion", "fluid"]):
+            synonyms.extend(["effusion", "pleural", "costophrenic"])
+        elif any(w in finding_key for w in ["pneumothorax", "ptx"]):
+            synonyms.extend(["pneumothorax", "ptx", "pleural"])
+        elif any(w in finding_key for w in ["catheter", "tube", "line", "device", "apparatus"]):
+            synonyms.extend(["catheter", "tube", "line", "device", "apparatus", "hardware", "support"])
+
+        mentioned_in_whole = any(s in whole_lower for s in synonyms)
 
         if not mentioned_in_whole:
             finding_eval = FindingConsistency(
@@ -490,9 +511,21 @@ def evaluate_cross_report_consistency(
             findings_list.append(finding_eval)
             summary_parts.append("Results could not be compared reliably due to limited assessability.")
         else:
-            # Check if whole report claimed "normal/clear" while regional claimed "supported"
-            whole_claims_clear = bool(re.search(r'\b(?:lungs\s+are\s+clear|no\s+acute|clear\s+lungs|normal)\b', whole_lower))
-            if reg_stance == "supported" and whole_claims_clear:
+            # Check if whole-image report affirmatively describes the finding
+            finding_terms = [s for s in synonyms if s not in ['lung', 'lungs']]
+            finding_pattern = r'\b(?:' + '|'.join(re.escape(s) for s in finding_terms) + r')\b' if finding_terms else None
+            affirmatively_reported = False
+            if finding_pattern:
+                for m in re.finditer(finding_pattern, whole_lower):
+                    prefix = whole_lower[max(0, m.start() - 40):m.start()]
+                    if not re.search(r'\b(?:no|without|negative\s+for|free\s+of|clear\s+of|denies|ruled\s+out|unremarkable\s+for|no\s+evidence\s+of|no\s+sign\s+of|fails\s+to\s+show)\b', prefix):
+                        affirmatively_reported = True
+                        break
+
+            # Check if whole report claimed clear lungs or absent finding
+            whole_claims_clear = bool(re.search(r'\b(?:lungs\s+(?:are\s+|appear\s+)?clear|clear\s+lungs|clear\s+bilaterally|no\s+(?:focal\s+)?(?:consolidation|opacity|infiltrate|pneumonia)|normal\s+chest\s+radiograph)\b', whole_lower))
+
+            if reg_stance == "supported" and not affirmatively_reported and whole_claims_clear:
                 has_conflict = True
                 msg = f"The regional report supports the presence of {query}, while the whole-image report describes clear lungs."
                 findings_list.append(
@@ -510,18 +543,117 @@ def evaluate_cross_report_consistency(
                     finding_name=query,
                     status="compatible",
                     regional_stance=reg_stance,
-                    whole_image_stance="compatible",
+                    whole_image_stance="compatible" if affirmatively_reported else "unmentioned_or_compatible",
                     conflict_message=f"Assessments for '{query}' are compatible without material contradiction.",
                 )
                 findings_list.append(finding_eval)
                 summary_parts.append(f"Assessments for '{query}' are compatible.")
+
+    # Check whole-image internal contradictions if sections or text available
+    whole_internal_conflict, whole_conflict_reasons = check_whole_image_internal_contradiction(
+        sections=whole_image_sections,
+        report_text=whole_image_report_text,
+    )
 
     # Check if internal contradiction was detected on any query
     if internal_conflict and not has_conflict:
         has_conflict = True
         summary_parts.insert(0, internal_note or "Internal contradiction detected within regional report.")
 
-    if has_conflict:
+    if whole_internal_conflict and not has_conflict:
+        has_conflict = True
+        summary_parts.extend(whole_conflict_reasons)
+
+    # ── 5. Auxiliary Pretrained Classifier Evidence Integration ───────────────
+    classifier_discordance = False
+    classifier_alerts: List[str] = []
+
+    if classifier_result:
+        mapped_findings = getattr(classifier_result, "mapped_findings", None)
+        if mapped_findings is None and isinstance(classifier_result, dict):
+            mapped_findings = classifier_result.get("mapped_findings", {})
+        if not mapped_findings:
+            mapped_findings = {}
+
+        unmapped_findings = getattr(classifier_result, "unmapped_findings", None)
+        if unmapped_findings is None and isinstance(classifier_result, dict):
+            unmapped_findings = classifier_result.get("unmapped_findings", {})
+        if not unmapped_findings:
+            unmapped_findings = {}
+
+        q_lower = query.lower().strip()
+        query_cat = None
+        if any(w in q_lower for w in ["heart", "cardio", "enlarge"]):
+            query_cat = "cardiomegaly"
+        elif any(w in q_lower for w in ["effusion", "fluid", "blunting"]):
+            query_cat = "pleural_effusion"
+        elif any(w in q_lower for w in ["pneumothorax", "ptx"]):
+            query_cat = "pneumothorax"
+        elif any(w in q_lower for w in ["pneumonia", "consolidation", "infiltrat"]):
+            query_cat = "pneumonia_consolidation"
+        elif any(w in q_lower for w in ["edema", "congestion"]):
+            query_cat = "pulmonary_edema"
+        elif any(w in q_lower for w in ["atelectasis", "collapse"]):
+            query_cat = "atelectasis"
+        elif any(w in q_lower for w in ["opacity", "opacities"]):
+            query_cat = "lung_opacity"
+
+        whole_lower = ((whole_image_report_text or "") + " " + " ".join((whole_image_sections or {}).values())).lower()
+        whole_claims_normal = bool(re.search(r'\b(?:normal|clear|unremarkable|no\s+acute)\b', whole_lower))
+
+        if query_cat and query_cat in mapped_findings:
+            cls_score = float(mapped_findings[query_cat])
+            reg_stance = extract_regional_assessment_state(regional_report_text) if has_regional else "unmentioned"
+
+            if cls_score >= classifier_threshold:
+                if reg_stance == "supported" and whole_claims_normal:
+                    conf_msg = (
+                        f"Multi-source confirmation conflict: Both regional review and auxiliary classifier indicate {query} "
+                        f"(classifier score: {cls_score:.2f} >= {classifier_threshold:.2f}), directly contradicting whole-image normal/clear declaration."
+                    )
+                    has_conflict = True
+                    classifier_discordance = True
+                    classifier_alerts.append(conf_msg)
+                    summary_parts.append(conf_msg)
+                elif reg_stance in ["unknown", "not_supported", "unmentioned"] and whole_claims_normal:
+                    advisory_msg = (
+                        f"Evidence discordance advisory: Auxiliary pretrained classifier detected elevated evidence for {query} "
+                        f"(score: {cls_score:.2f} >= {classifier_threshold:.2f}), while generative reports omitted or ruled out this finding."
+                    )
+                    classifier_discordance = True
+                    classifier_alerts.append(advisory_msg)
+                    summary_parts.append(advisory_msg)
+
+        # Check unmapped secondary findings with high confidence (>= 0.70)
+        for u_cat, u_score in unmapped_findings.items():
+            if float(u_score) >= 0.70:
+                u_alert = f"Secondary incidental finding alert: Auxiliary classifier detected high confidence for {u_cat} ({float(u_score):.2f} >= 0.70)."
+                classifier_alerts.append(u_alert)
+
+    all_review_reasons: List[str] = []
+    if internal_conflict and internal_note:
+        all_review_reasons.append(internal_note)
+    if whole_internal_conflict:
+        all_review_reasons.extend(whole_conflict_reasons)
+    for f in findings_list:
+        if f.status == "conflicting" and f.conflict_message:
+            all_review_reasons.append(f.conflict_message)
+    if classifier_alerts:
+        all_review_reasons.extend(classifier_alerts)
+
+    # Check for diagnostic uncertainty / indeterminate evidence
+    indeterminate_evidence = False
+    for f in findings_list:
+        if f.regional_stance == "indeterminate" or f.whole_image_stance == "indeterminate":
+            indeterminate_evidence = True
+            indet_msg = f"Diagnostic uncertainty: Assessment for '{f.finding_name}' is indeterminate; clinical review required to resolve equivocal evidence."
+            all_review_reasons.append(indet_msg)
+            summary_parts.append(indet_msg)
+            break
+
+    review_required = has_conflict or internal_conflict or whole_internal_conflict or classifier_discordance or (len(classifier_alerts) > 0) or indeterminate_evidence
+
+    if has_conflict or review_required:
         warning_banner = "Conflicting AI assessments — review required"
         summary = " ".join(summary_parts) if summary_parts else "Conflicting AI assessments detected between report pathways."
     else:
@@ -534,4 +666,143 @@ def evaluate_cross_report_consistency(
         findings=findings_list,
         internal_regional_conflict=internal_conflict,
         internal_regional_note=internal_note,
+        review_required=review_required,
+        review_reasons=all_review_reasons,
+        classifier_discordance=classifier_discordance,
+        classifier_alerts=classifier_alerts,
     )
+
+
+def check_whole_image_internal_contradiction(
+    sections: Optional[Dict[str, str]] = None,
+    report_text: Optional[str] = None,
+) -> Tuple[bool, List[str]]:
+    """
+    Detects internal contradictions within a whole-image structured or narrative report:
+    1. Positive observations vs. overall impression declaring normal/unremarkable.
+    2. Support apparatus/hardware explicitly observed but declared absent in impression.
+    3. Conflicting laterality across report sections for the same pathology.
+    Does NOT rewrite the report text; returns (has_contradiction, list_of_reasons).
+    """
+    reasons: List[str] = []
+    if not sections and not report_text:
+        return False, reasons
+
+    sec = dict(sections) if sections else {}
+    if not sec and report_text:
+        # Simple extraction of key sections if not pre-parsed
+        for line in report_text.split("\n\n"):
+            if ":" in line:
+                k, v = line.split(":", 1)
+                sec[k.strip().upper()] = v.strip()
+
+    imp = sec.get("OVERALL IMPRESSION") or sec.get("IMPRESSION") or ""
+    if not imp and report_text:
+        imp_m = re.search(r'(?:overall\s+(?:clinical\s+)?impression|impression)\s*:\s*(.*?)(?:\n\s*[A-Z0-9_\s]{3,}\s*:|$)', report_text, re.IGNORECASE | re.DOTALL)
+        if imp_m:
+            imp = imp_m.group(1).strip()
+    imp_lower = imp.lower()
+
+    is_normal_imp = bool(
+        re.search(
+            r'\b(?:normal\s+chest\s+radiograph|no\s+acute\s+(?:cardiopulmonary\s+)?abnormality|'
+            r'no\s+acute\s+findings|clear\s+lung\s+fields|unremarkable\s+chest|no\s+significant\s+findings)\b',
+            imp_lower,
+        )
+    )
+
+    # 1. Support apparatus observation vs. impression
+    supp_text = (sec.get("SUPPORT APPARATUS") or "").lower()
+    has_device_obs = False
+    if "observed" in supp_text or "finding_observed" in supp_text:
+        if not re.search(r'\b(?:not identified|not seen|none|absent)\b', supp_text):
+            has_device_obs = True
+    elif any(d in supp_text for d in ["chest tube", "pigtail", "catheter", "endotracheal tube", "picc", "port-a-cath", "sternotomy", "wire", "pacemaker"]):
+        if not re.search(r'\b(?:not identified|no|without|none)\b', supp_text):
+            has_device_obs = True
+
+    if has_device_obs:
+        if re.search(r'\b(?:no\s+support\s+apparatus|no\s+tubes\s+or\s+lines|no\s+devices)\b', imp_lower):
+            reasons.append("Support apparatus was observed in visual findings but explicitly declared absent in overall impression.")
+        elif is_normal_imp and "tube" not in imp_lower and "catheter" not in imp_lower and "line" not in imp_lower and "wire" not in imp_lower:
+            reasons.append("Support apparatus was identified in visual observations, but overall impression describes examination as normal/unremarkable.")
+
+    # 2. Cardiac silhouette observation vs. impression
+    card_text = (sec.get("CARDIAC SILHOUETTE") or "").lower()
+    has_cardiac_obs = ("finding_observed" in card_text or "enlarged" in card_text or "cardiomegaly" in card_text) and not ("not identified" in card_text or "normal" in card_text)
+    if has_cardiac_obs and is_normal_imp and "cardiomegaly" not in imp_lower and "enlarged" not in imp_lower:
+        reasons.append("Cardiac enlargement was observed in cardiac section, but overall impression declares examination normal/unremarkable.")
+
+    # 3. Lungs & opacities observation vs. impression
+    lung_text = (sec.get("LUNGS AND OPACITIES") or "").lower()
+    has_lung_obs = any(p in lung_text for p in ["consolidation", "pneumonia", "opacity", "infiltrat", "atelectasis", "edema"]) and not any(neg in lung_text for neg in ["not identified", "clear", "no focal", "no acute"])
+    if has_lung_obs and is_normal_imp:
+        reasons.append("Parenchymal opacity/consolidation was noted in lung observations, but overall impression declares examination normal/unremarkable.")
+
+    # 4. Pleural space observation vs. impression
+    pleural_text = (sec.get("PLEURAL SPACES") or "").lower()
+    has_pleural_obs = any(p in pleural_text for p in ["effusion", "pneumothorax", "blunt"]) and not any(
+        neg in pleural_text for neg in [
+            "not identified", "sharp", "no effusion", "no pneumothorax", "no pleural effusion",
+            "no pleural", "without effusion", "without pneumothorax", "clear", "unremarkable", "normal",
+        ]
+    )
+    if has_pleural_obs and is_normal_imp:
+        reasons.append("Pleural abnormality (effusion or pneumothorax) was described in pleural section, but overall impression declares examination normal/unremarkable.")
+
+    # 5. Laterality conflict check between observations and impression
+    for finding in ["pneumothorax", "effusion", "consolidation", "atelectasis", "opacity"]:
+        if finding in lung_text or finding in pleural_text:
+            obs_context = lung_text if finding in lung_text else pleural_text
+            obs_left = "left" in obs_context and "right" not in obs_context
+            obs_right = "right" in obs_context and "left" not in obs_context
+            imp_left = "left" in imp_lower and "right" not in imp_lower
+            imp_right = "right" in imp_lower and "left" not in imp_lower
+
+            if (obs_left and imp_right) or (obs_right and imp_left):
+                reasons.append(f"Laterality contradiction detected for {finding}: observations describe one side while impression describes the opposite side.")
+
+    has_conflict = len(reasons) > 0
+    return has_conflict, reasons
+
+
+def check_two_stage_synthesis_loss(
+    stage1_json: Dict[str, Any],
+    stage2_text: str,
+) -> Tuple[bool, List[str]]:
+    """
+    Checks if positive findings validated in Stage 1 structured visual extraction
+    were dropped or contradicted during Stage 2 report synthesis.
+    """
+    dropped: List[str] = []
+    text_lower = stage2_text.lower()
+
+    # Check support devices
+    devs = stage1_json.get("support_devices", [])
+    if isinstance(devs, list):
+        for d in devs:
+            if isinstance(d, dict) and d.get("status") == "finding_observed":
+                dev_type = d.get("device_type", "support device").lower()
+                if dev_type != "not_applicable" and dev_type not in text_lower and "tube" not in text_lower and "line" not in text_lower and "catheter" not in text_lower:
+                    dropped.append(f"support_device ({dev_type})")
+
+    # Check key pathologies
+    pathology_keys = [
+        ("cardiac_silhouette", ["cardiomegaly", "enlarged", "heart"]),
+        ("lung_opacities", ["consolidation", "pneumonia", "opacity", "infiltrat"]),
+        ("atelectatic_changes", ["atelectasis", "volume loss"]),
+        ("pulmonary_edema", ["edema", "congestion"]),
+        ("pleural_effusion", ["effusion", "fluid"]),
+        ("pneumothorax", ["pneumothorax", "ptx"]),
+    ]
+
+    for key, search_terms in pathology_keys:
+        item = stage1_json.get(key, {})
+        if isinstance(item, dict) and item.get("status") == "finding_observed":
+            # Finding was observed in Stage 1
+            if not any(t in text_lower for t in search_terms):
+                dropped.append(key)
+
+    has_loss = len(dropped) > 0
+    reasons = [f"Stage 1 extraction observed '{d}' but it was omitted from Stage 2 synthesized report." for d in dropped]
+    return has_loss, reasons

@@ -81,6 +81,13 @@ class BatchItem:
     validation_warnings: List[str] = field(default_factory=list)
     validation_flagged: bool = False
     triage_result: Optional[Dict[str, Any]] = None
+    report_validity: str = "completed_valid"
+    review_required: bool = False
+    classifier_alerts: List[str] = field(default_factory=list)
+    classifier_scores: Dict[str, float] = field(default_factory=dict)
+    consistency_result: Optional[Dict[str, Any]] = None
+    structured_findings: List[Dict[str, Any]] = field(default_factory=list)
+    completeness_flags: Dict[str, Any] = field(default_factory=dict)
 
     # Stored image bytes for potential retry and boundary verification
     _image_bytes: bytes = field(default=b"", repr=False)
@@ -288,14 +295,20 @@ class BatchService:
                 "Job ID", "Filename", "Style", "Status", "Image SHA256", "Bytes SHA256", "Pixel SHA256",
                 "Orig Dims", "Prep Dims", "Prompt Version", "Model",
                 "Triage Category", "Matched Rule ID", "Review Priority",
-                "Latency (ms)", "Tokens/sec", "Error", "Report Text"
+                "Latency (ms)", "Tokens/sec", "Error", "Report Text",
+                "Report Validity", "Review Required", "Classifier Alerts", "Triage State",
+                "Canonical Status", "Canonical Status Label"
             ])
             for it in batch.items:
                 t_cat = (it.triage_result or {}).get("triage_category", "")
                 t_rule = (it.triage_result or {}).get("matched_rule_id", "")
                 t_prio = (it.triage_result or {}).get("human_review_priority", "")
+                t_state = (it.triage_result or {}).get("triage_state", "")
+                c_status = (it.triage_result or {}).get("status", "")
+                c_label = (it.triage_result or {}).get("status_label", "")
                 orig_d = f"{it.orig_dims[0]}x{it.orig_dims[1]}" if it.orig_dims else ""
                 prep_d = f"{it.prep_dims[0]}x{it.prep_dims[1]}" if it.prep_dims else ""
+                cls_str = "; ".join(it.classifier_alerts) if it.classifier_alerts else "none"
                 writer.writerow([
                     it.job_id,
                     it.filename,
@@ -315,10 +328,18 @@ class BatchService:
                     f"{it.tokens_per_second:.1f}" if it.tokens_per_second else "",
                     it.error or "",
                     it.report_text or "",
+                    it.report_validity,
+                    str(it.review_required),
+                    cls_str,
+                    t_state,
+                    c_status,
+                    c_label,
                 ])
             return output.getvalue()
         else:
             return json.dumps(batch.to_dict(), indent=2)
+
+    export_batch = export_summary
 
     # ── Worker Processing ────────────────────────────────────────────────────
 
@@ -349,7 +370,11 @@ class BatchService:
                 item.error = err
                 item.completed_at = time.time()
                 item.latency_ms = round((time.perf_counter() - t0) * 1000, 2)
-                item.triage_result = get_triage_service().evaluate_from_structured_findings({}, model_error=item.error, is_valid_image=False).to_dict()
+                item.report_validity = "report_generation_failed"
+                item.review_required = True
+                item.triage_result = get_triage_service().evaluate_multi_evidence(
+                    model_error=item.error, is_valid_image=False, report_validity="report_generation_failed"
+                ).to_dict()
                 self._update_batch_status(batch)
             return
 
@@ -361,7 +386,11 @@ class BatchService:
                 item.error = err
                 item.completed_at = time.time()
                 item.latency_ms = round((time.perf_counter() - t0) * 1000, 2)
-                item.triage_result = get_triage_service().evaluate_from_structured_findings({}, model_error=item.error, is_valid_image=False).to_dict()
+                item.report_validity = "report_generation_failed"
+                item.review_required = True
+                item.triage_result = get_triage_service().evaluate_multi_evidence(
+                    model_error=item.error, is_valid_image=False, report_validity="report_generation_failed"
+                ).to_dict()
                 self._update_batch_status(batch)
             return
 
@@ -379,37 +408,110 @@ class BatchService:
                 item.error = err
                 item.completed_at = time.time()
                 item.latency_ms = round((time.perf_counter() - t0) * 1000, 2)
-                item.triage_result = get_triage_service().evaluate_from_structured_findings({}, model_error=item.error).to_dict()
+                item.report_validity = "report_generation_failed"
+                item.review_required = True
+                item.triage_result = get_triage_service().evaluate_multi_evidence(
+                    model_error=item.error, is_valid_image=True, report_validity="report_generation_failed"
+                ).to_dict()
                 self._update_batch_status(batch)
             return
 
-        # 3. Handle generator output
-        with self._lock:
-            if not rep.get("success", False):
+        # 3. Handle generator failure
+        if not rep.get("success", False):
+            with self._lock:
                 item.status = "failed"
                 item.error = rep.get("error", "Unknown report generation failure")
                 item.completed_at = time.time()
                 item.latency_ms = rep.get("latency_ms", round((time.perf_counter() - t0) * 1000, 2))
-                item.triage_result = rep.get("triage_result") or get_triage_service().evaluate_from_structured_findings({}, model_error=item.error).to_dict()
-            else:
-                item.status = "completed"
-                item.report_text = rep.get("report_text")
-                item.sections = rep.get("sections")
-                item.cardiac_observation = rep.get("cardiac_observation")
-                item.triage_result = rep.get("triage_result")
-                item.completed_at = time.time()
-                item.latency_ms = rep.get("latency_ms")
-                item.timing = rep.get("timing")
-                item.eval_count = rep.get("eval_count")
-                item.tokens_per_second = rep.get("tokens_per_second")
-                item.model_used = rep.get("model_used")
-                item.validation_warnings = rep.get("validation_warnings", [])
-                item.validation_flagged = rep.get("validation_flagged", False)
-                item.bytes_sha256 = rep.get("bytes_sha256", item.bytes_sha256)
-                item.pixel_sha256 = rep.get("pixel_sha256", item.pixel_sha256)
-                item.orig_dims = rep.get("orig_dims", item.orig_dims)
-                item.prep_dims = rep.get("prep_dims", item.prep_dims)
-                item.prompt_version = rep.get("prompt_version", item.prompt_version)
+                item.report_validity = "report_generation_failed"
+                item.review_required = True
+                item.triage_result = rep.get("triage_result") or get_triage_service().evaluate_multi_evidence(
+                    model_error=item.error, is_valid_image=True, report_validity="report_generation_failed"
+                ).to_dict()
+                self._update_batch_status(batch)
+            return
+
+        # 4. Auxiliary Pretrained Classifier & Cross-Report Consistency Evaluation
+        cls_res = None
+        cls_scores: Dict[str, float] = {}
+        cls_alerts: List[str] = []
+        try:
+            from src.classifier_service import get_classifier_service
+            cls_svc = get_classifier_service()
+            if cls_svc.ensure_loaded():
+                cls_res = cls_svc.predict(item._image_bytes, threshold=0.50)
+                cls_scores = cls_res.mapped_findings
+                cls_alerts = [
+                    f"{k} (score: {round(v, 2)} >= 0.62)"
+                    for k, v in cls_scores.items() if v >= 0.62
+                ]
+        except Exception:
+            # Fallback gracefully if classifier fails, treating as unavailable evidence
+            pass
+
+        cons_res = None
+        cons_alerts: List[str] = []
+        cons_review_required = False
+        try:
+            from src.consistency_service import evaluate_cross_report_consistency
+            target_queries = ["pneumothorax", "pleural_effusion", "pneumonia_consolidation", "pulmonary_edema", "cardiomegaly"]
+            for q in target_queries:
+                c_eval = evaluate_cross_report_consistency(
+                    query=q,
+                    whole_image_report_text=rep.get("report_text"),
+                    whole_image_sections=rep.get("sections"),
+                    classifier_result=cls_res,
+                    classifier_threshold=0.62,
+                )
+                if c_eval.has_conflict or c_eval.classifier_discordance:
+                    cons_review_required = True
+                    cons_alerts.extend(c_eval.classifier_alerts)
+                    cons_res = c_eval
+                    break
+        except Exception:
+            pass
+
+        # 5. Multi-evidence triage evaluation
+        multi_triage = get_triage_service().evaluate_multi_evidence(
+            report_text=rep.get("report_text"),
+            sections=rep.get("sections"),
+            classifier_result=cls_res,
+            consistency_result=cons_res,
+            report_validity=rep.get("report_validity", "completed_valid"),
+            is_valid_image=True,
+        )
+
+        with self._lock:
+            item.status = "completed"
+            item.report_text = rep.get("report_text")
+            item.sections = rep.get("sections")
+            item.cardiac_observation = rep.get("cardiac_observation")
+            item.triage_result = multi_triage.to_dict()
+            item.report_validity = rep.get("report_validity", "completed_valid")
+            item.review_required = bool(
+                rep.get("review_required", False)
+                or cons_review_required
+                or multi_triage.requires_human_review
+                or (multi_triage.human_review_priority in ("urgent", "priority_review"))
+            )
+            item.classifier_scores = cls_scores
+            item.classifier_alerts = cls_alerts
+            item.consistency_result = cons_res.to_dict() if cons_res else None
+            item.completed_at = time.time()
+            item.latency_ms = rep.get("latency_ms")
+            item.timing = rep.get("timing")
+            item.eval_count = rep.get("eval_count")
+            item.tokens_per_second = rep.get("tokens_per_second")
+            item.model_used = rep.get("model_used")
+            all_warns = list(rep.get("validation_warnings", [])) + cons_alerts
+            item.validation_warnings = list(dict.fromkeys(all_warns))
+            item.structured_findings = rep.get("structured_findings") or []
+            item.completeness_flags = rep.get("completeness_flags") or {}
+            item.bytes_sha256 = rep.get("bytes_sha256", item.bytes_sha256)
+            item.pixel_sha256 = rep.get("pixel_sha256", item.pixel_sha256)
+            item.orig_dims = rep.get("orig_dims", item.orig_dims)
+            item.prep_dims = rep.get("prep_dims", item.prep_dims)
+            item.prompt_version = rep.get("prompt_version", item.prompt_version)
             self._update_batch_status(batch)
 
     def _update_batch_status(self, batch: BatchJob) -> None:

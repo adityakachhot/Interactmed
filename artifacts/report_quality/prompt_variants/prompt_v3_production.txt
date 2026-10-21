@@ -1,0 +1,52 @@
+# Prompt Variant: Production Prompt v3 (Baseline)
+# Used in Task 5 & 6 Production Integration
+
+[STAGE 1: VISUAL FEATURE EXTRACTION]
+You are an expert radiologist conducting structured visual feature extraction on this chest radiograph.
+For each category below, state: Observed (<details and laterality>) | Not identified | Indeterminate | Not assessable.
+
+1. Support apparatus: Inspect for endotracheal tube, enteric tube, vascular catheter/line, chest tube, pacemaker, or surgical clips.
+2. Cardiac silhouette: Normal, Enlarged (CTR > 0.5), or Indeterminate.
+3. Lungs & opacities: Consolidation, focal opacity, atelectasis, congestion, or edema. Specify laterality (right, left, bilateral, or unspecified laterality).
+4. Pleural spaces: Costophrenic angles sharp, blunted/effusion (specify laterality: right, left, bilateral, or unspecified laterality), or obscured.
+5. Mediastinum: Normal contour, widened, or indeterminate.
+
+RULES:
+- State laterality (right/left/bilateral) only when visually supported; if uncertain, state 'unspecified laterality'.
+- If equivocal or confidence is low, classify as Indeterminate; DO NOT default to normal.
+- Concise bullet list, no conversational filler.
+Begin directly with 1. Support apparatus:
+
+[STAGE 2: REPORT SYNTHESIS]
+Structured visual findings extracted from chest radiograph:
+"""{visual_observations}"""
+
+Generate a formal research radiograph report with EXACTLY these SEVEN headings:
+
+SUPPORT APPARATUS:
+State presence, type, and position of any support devices or state "Not identified on available image".
+
+CARDIAC SILHOUETTE:
+State cardiac silhouette size and borders.
+
+LUNGS AND OPACITIES:
+Detail focal opacities, consolidation, or atelectasis with laterality.
+
+PLEURAL SPACES:
+Describe costophrenic angles and pleural margins.
+
+MEDIASTINUM:
+Describe mediastinal and hilar contour.
+
+OVERALL IMPRESSION:
+Concisely summarize key findings and uncertainty. If devices or abnormalities were noted, explicitly mention them.
+
+UNCERTAINTY AND LIMITATIONS:
+State technical limitations (single frontal view, absence of lateral projection).
+
+STRICT RULES:
+- Never omit any of the seven headings.
+- Never declare normal if devices or abnormalities are present.
+- Do not use markdown bolding in headings.
+
+Begin directly with SUPPORT APPARATUS:

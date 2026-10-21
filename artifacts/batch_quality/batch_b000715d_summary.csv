@@ -1,0 +1,154 @@
+Job ID,Filename,Style,Status,Image SHA256,Bytes SHA256,Pixel SHA256,Orig Dims,Prep Dims,Prompt Version,Model,Triage Category,Matched Rule ID,Review Priority,Latency (ms),Tokens/sec,Error,Report Text
+job_087959d2,f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47.jpg,patient,completed,91f56bbad922af75,91f56bbad922af758b2d56717c213dffa268536a61da2c11c3b10be2e46ee58b,df721ed535261d06b8a16ba6258c3ca73d28bfab244bf99f6a0d79ab4f3809f9,3056x2544,1024x852,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,22811.2,25.9,,"**Your X-ray in simple words**
+**Support apparatus:** No support apparatus was seen.
+*   **Cardiac silhouette:** The heart size appears normal.
+*   **Lungs & opacities:** There are no obvious areas of cloudiness or other abnormalities in the lungs.
+*   **Pleural spaces:** The areas around the lungs (pleural spaces) look clear.
+*   **Mediastinum:** The structures in the middle of the chest (mediastinum) appear normal.
+
+**What the findings may mean**
+The X-ray shows a normal heart size, clear lungs, and normal pleural spaces. This suggests that there are no obvious signs of heart problems, lung infections, or fluid buildup around the lungs. However, this is a single frontal view, so it's not possible to see the full picture.
+
+**What is uncertain**
+Because this is a frontal view, it's difficult to see the depth of the structures in the chest. It's also hard to see subtle abnormalities that might be present.
+
+**What happens next**
+Please discuss these findings with your doctor. They will consider this X-ray along with your other symptoms and medical history to make a diagnosis."
+job_cb41073a,dcdc4bd9-4301b111-2a65a814-ee8e7bc5-7f0b9a5a.jpg,patient,completed,e992392be3fc909b,e992392be3fc909b5fb04e69f65460ed4743b2c3037574fba3ddca0f9af89d7a,1413e853e309e7e025ac02a6bbe7d3fb2604bc61e9342577a70a839e4ecf97b9,3056x2544,1024x852,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,22593.9,26.1,,"**Your X-ray in simple words**
+Support apparatus: No support apparatus identified.
+*   Cardiac silhouette: Normal
+*   Lungs & opacities: No acute findings.
+*   Pleural spaces: Costophrenic angles sharp.
+*   Mediastinum: Normal contour
+
+**What the findings may mean**
+Support apparatus: The support apparatus is the bony structure of the chest, including the ribs, sternum, and spine. The automated reading did not identify any abnormalities in this structure.
+*   Cardiac silhouette: The heart appears to be of normal size and shape.
+*   Lungs & opacities: The lungs appear clear, with no obvious signs of infection or other problems.
+*   Pleural spaces: The spaces around the lungs (pleural spaces) are clear and sharp, which is a good sign.
+*   Mediastinum: The mediastinum is the area in the chest between the lungs, containing the heart, major blood vessels, trachea, and esophagus. The automated reading did not identify any abnormalities in this area.
+
+**What is uncertain**
+The automated visual reading is inconclusive.
+
+**What happens next**
+Consult your ordering physician for qualified clinical evaluation and diagnosis."
+job_deaa247c,350a19d2-7329f60d-17416b9a-d6eca016-187e6876.jpg,patient,completed,ce9f8b99a12d81bc,ce9f8b99a12d81bcdb365fc6098432c81b708d24d47bc4f96ec9a7739ee2bf9f,d3a6d97bc95825a981fa096c6627262a8acd245a82f10082ff7a972de12593ad,2544x3056,852x1024,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,19281.2,26.8,,"**Your X-ray in simple words**
+Support apparatus: No support apparatus identified.
+*   Cardiac silhouette: Normal
+*   Lungs & opacities: Clear
+*   Pleural spaces: Costophrenic angles sharp
+*   Mediastinum: Normal contour
+
+**What the findings may mean**
+The heart size and shape appear normal.
+*   The lungs are clear, meaning there are no visible signs of infection, fluid, or other abnormalities.
+*   The spaces around the lungs (pleural spaces) are clear, and the edges of the lungs are sharp.
+*   The mediastinum (the space in the chest between the lungs containing the heart, major blood vessels, trachea, and esophagus) appears normal.
+
+**What is uncertain**
+The automated visual reading is inconclusive.
+
+**What happens next**
+Consult your ordering physician for qualified clinical evaluation and diagnosis."
+job_553f7091,238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1 copy.jpg,patient,completed,a0cd1c1f5491a945,a0cd1c1f5491a9459dd2a16c539388328b3a7972ecbcbaf248a89e0f5000060c,d41569168d4d34d9a14af9ab96ade400ce4f23ad983f20067dcc9036329e590b,2539x2755,943x1023,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,20684.2,27.5,,"**Your X-ray in simple words**
+The X-ray shows a normal heart size. The lungs appear clear, with no signs of infection or fluid buildup. The costophrenic angles (where the lungs meet the rib cage) are sharp. The mediastinum (the space in the chest between the lungs) is normal.
+
+**What the findings may mean**
+The normal heart size suggests that the heart is functioning properly. Clear lungs indicate that there is no infection, fluid, or other abnormalities in the lungs. Sharp costophrenic angles suggest that there is no fluid accumulating in the pleural space (the space between the lung and the chest wall). The normal mediastinum indicates that the major blood vessels and structures in the chest are in their expected positions.
+
+What is uncertaThis frontal view displays both the left and right sides of the chest, but as a single 2D projection, it does not provide a side (lateral) view. It doesn't show the other side. Because it's a single two-dimensional image, it's difficult to determine the depth of structures and subtle findings.
+
+**What is uncertain**
+This frontal view displays both the left and right sides of the chest, but because it is a single two-dimensional projection without a side (lateral) view, subtle findings or depth cannot be confirmed by AI alone.
+
+**What happens next**
+Please discuss these findings with your doctor. They will consider these results along with your symptoms and medical history to make a diagnosis."
+job_b194ec8b,138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe.jpg,patient,completed,8294d8437d22e6bf,8294d8437d22e6bff71c490b3d8ccf527aa3ef2c847f78b89e05bddbaa6273eb,f607af0603ef8cc8050ca1c0213ce12d3a0edefe80a7b28be0efeff1dcec1a43,2544x3056,852x1024,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,19636.9,29.0,,"**Your X-ray in simple words**
+The X-ray shows a normal heart size. The lungs appear clear, with no signs of infection, fluid, or other abnormalities. The costophrenic angles (where the lungs meet the ribs) are sharp. The mediastinum (the space in the chest between the lungs) is normal.
+
+**What the findings may mean**
+The normal heart size suggests that the heart is functioning properly. Clear lungs indicate that there is no infection, fluid, or other problems in the lungs. Sharp costophrenic angles suggest that there is no fluid accumulation in the pleural space (the space around the lungs). The normal mediastinum indicates that the major structures in the chest are in their expected positions.
+
+What is uncertaThis frontal view displays both the left and right sides of the chest, but as a single 2D projection, it does not provide a side (lateral) view. It doesn't show the other side. Because it's a single two-dimensional image, it's difficult to determine the depth of structures and subtle findings.
+
+**What is uncertain**
+This frontal view displays both the left and right sides of the chest, but because it is a single two-dimensional projection without a side (lateral) view, subtle findings or depth cannot be confirmed by AI alone.
+
+**What happens next**
+Please discuss these findings with your doctor. They will consider these results along with your other medical information to make a diagnosis."
+job_2b47aad8,19b74f79-7ad317b1-887496c3-2645db29-48245a51 copy.jpg,patient,completed,ee8681da296057d4,ee8681da296057d468b657a96bb7ecdf46b74e2475041e5dc1acb9317ebb2cb2,17ed46d700787dbcfb624073be7d6c1233bce1588124179d44172fc5270d9491,2539x2683,969x1024,v4_grounded_patient,medgemma:4b,abnormality_flagged,RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT,routine,24193.8,27.8,,"**Your X-ray in simple words**
+**Support apparatus:** An endotracheal tube is visible in the left main airway. An enteric tube is visible in the right main airway. A vascular catheter/line is visible in the right main airway. No chest tube is visible. No pacemaker is visible. No surgical clips are visible.
+*   **Cardiac silhouette:** The heart size appears normal.
+*   **Lungs & opacities:** The lungs appear clear.
+*   **Pleural spaces:** The areas around the lungs (pleural spaces) look clear.
+*   **Mediastinum:** The space in the middle of the chest (mediastinum) appears normal.
+
+**What the findings may mean**
+The X-ray shows that the patient has an endotracheal tube and an enteric tube in place. These are tubes that help with breathing and feeding. The lungs appear clear, which means there are no obvious signs of infection or fluid buildup. The heart size appears normal. The mediastinum appears normal.
+
+**What is uncertain**
+This X-ray is a frontal view of the chest, which means it shows both the left and right sides. However, because it is a single two-dimensional projection without a side (lateral) view, depth and subtle findings cannot be confirmed.
+
+**What happens next**
+Please consult your ordering physician for qualified clinical evaluation"
+job_c5a80c42,5f090a4b-dc8a796d-726db5a0-62f19c9f-58cccd6f.jpg,patient,completed,a9730e31e09fb847,a9730e31e09fb847edba3f41e3e0bd8bcb3860b284d7494423d8b24a701097ee,6ac9a1dd4bcd278a87176db12b43a4363e200cb8b6f238000552fb159b466950,2021x1761,1024x892,v4_grounded_patient,medgemma:4b,abnormality_flagged,RULE_ABNORMAL_SUPPORT_APPARATUS_PRESENT,routine,24284.2,26.6,,"**Your X-ray in simple words**
+**Support apparatus:** An endotracheal tube is in place, and a feeding tube and a vascular catheter are also present. A chest tube is also present on the right side.
+*   **Cardiac silhouette:** The heart size appears normal.
+*   **Lungs & opacities:** The lungs appear clear.
+*   **Pleural spaces:** The areas around the lungs (pleural spaces) look clear.
+*   **Mediastinum:** The space in the middle of the chest (mediastinum) appears normal.
+
+**What the findings may mean**
+The presence of an endotracheal tube indicates that the patient is receiving medical support. The feeding tube suggests the patient may be unable to eat or drink. The vascular catheter is likely used for medication or fluid administration. The chest tube is used to drain fluid or air from the chest cavity. The clear lungs suggest no active infection or fluid buildup. The normal heart size is a good sign.
+
+**What is uncertain**
+This frontal view shows both sides of the chest, but because it is a single two-dimensional projection without a side (lateral) view, depth and subtle findings cannot be confirmed.
+
+**What happens next**
+Consult your ordering physician for qualified clinical evaluation and diagnosis."
+job_a004741c,3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61.jpg,patient,completed,79285887c0f60233,79285887c0f60233aae99fe4f2f97c441cfc898d202528fca4231225a77235a5,2b9c16ea870f14be40b3c27fb1a2966696a902e0d3eb01a808833ff5916d132e,2022x1736,1024x879,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,21655.0,26.2,,"**Your X-ray in simple words**
+**Support apparatus:** No support apparatus was seen.
+*   **Cardiac silhouette:** The heart size appears normal.
+*   **Lungs & opacities:** There are no obvious areas of cloudiness or other abnormalities in the lungs.
+*   **Pleural spaces:** The areas around the lungs (pleural spaces) appear clear.
+*   **Mediastinum:** The structures in the middle of the chest (mediastinum) appear normal.
+
+**What the findings may mean**
+The X-ray shows a normal heart size and clear lungs. The costophrenic angles (the sharp angles where the lungs meet the rib cage) are clear, which is a good sign. The mediastinum appears normal. These findings are generally reassuring, but a definitive diagnosis requires a clinical evaluation by your doctor.
+
+**What is uncertain**
+This is a frontal chest X-ray, which shows both sides of the chest. However, because it is a single two-dimensional projection without a side (lateral) view, depth and subtle findings cannot be confirmed.
+
+**What happens next**
+Please consult your ordering physician for qualified clinical evaluation and diagnosis."
+job_6df25184,3bea0373-0d10dd77-1cac5b90-651be924-d343b184.jpg,patient,completed,7017b42e9fbd1a79,7017b42e9fbd1a79d6a9017f9144360ab3eb5e7ae02e6da5efb53525525b5345,ea03eb6601cd38b9719a19417051a83ae30b401ee1d114c10b557d99bcb6e0a5,3056x2544,1024x852,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,23613.0,25.7,,"**Your X-ray in simple words**
+**Support apparatus:** No support apparatus identified.
+*   **Cardiac silhouette:** Normal
+*   **Lungs & opacities:** No focal consolidation, atelectasis, congestion, or edema identified.
+*   **Pleural spaces:** Costophrenic angles are sharp.
+*   **Mediastinum:** Normal contour
+
+**What the findings may mean**
+**Support apparatus:** This refers to any medical devices or tubes that might be in place, such as a breathing tube or chest tube. The absence of these suggests they are not needed at this time.
+*   **Cardiac silhouette:** The size and shape of the heart appear normal.
+*   **Lungs & opacities:** The lungs appear clear, with no areas of consolidation (like pneumonia), atelectasis (collapsed lung), congestion (fluid in the lungs), or edema (fluid buildup in the lungs).
+*   **Pleural spaces:** The areas around the lungs (pleural spaces) are clear, with sharp angles.
+*   **Mediastinum:** The space in the middle of the chest containing the heart, major blood vessels, trachea, and esophagus appears normal.
+
+**What is uncertain**
+The X-ray is a frontal view, which shows both sides of the chest. However, it is a single two
+
+**What happens next**
+Please discuss these results with the healthcare professional who ordered your X-ray. They will combine this image with your symptoms and medical background to guide your care."
+job_f7f6cf85,2f5e274a-749f1c06-1c8be147-4fabf575-e333e808.jpg,patient,completed,e5107f5f7b81c0bd,e5107f5f7b81c0bd73b7e96e7eaa4856aba23111e393bc28357f3ab099badfec,621e224369c09d85b98df3e969b9316a7cf2eab390e5576e3073c359b1fdef89,3050x2539,1024x852,v4_grounded_patient,medgemma:4b,no_priority_finding_flagged,RULE_NO_PRIORITY_FINDINGS_FLAGGED,standard_review,25346.3,19.8,,"**Your X-ray in simple words**
+The X-ray shows a normal heart size. The lungs appear clear, with no visible problems. The costophrenic angles (the corners where the lungs meet the ribs) are sharp. The mediastinum (the space in the chest between the lungs containing the heart, major blood vessels, and other structures) appears normal.
+
+**What the findings may mean**
+The normal heart size suggests that the heart is functioning properly. Clear lungs indicate that there are no obvious signs of infection or fluid buildup. Sharp costophrenic angles suggest that there are no fluid collections in the pleural spaces (the areas around the lungs). The normal mediastinum indicates that the major structures in the chest are in their expected positions.
+
+**What is uncertain**
+This frontal view shows both sides of the chest, but because it is a single two-dimensional projection without a side (lateral) view, depth and subtle findings cannot be confirmed.
+
+**What happens next**
+Consult your ordering physician for qualified clinical evaluation and diagnosis."

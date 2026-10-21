@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StreamlinedMedGemmaStage1Schema",
+  "description": "Audited, reliable JSON schema for MedGemma 4B Stage 1 extraction in Task 8.",
+  "type": "object",
+  "properties": {
+    "cardiomegaly": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "pleural_effusion": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "pneumothorax": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "lung_opacity": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "atelectasis": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "pulmonary_edema": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "support_devices": {
+      "type": "string",
+      "enum": ["present", "absent", "indeterminate"]
+    },
+    "device_details": {
+      "type": "string"
+    },
+    "primary_observation": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "cardiomegaly",
+    "pleural_effusion",
+    "pneumothorax",
+    "lung_opacity",
+    "atelectasis",
+    "pulmonary_edema",
+    "support_devices",
+    "device_details",
+    "primary_observation"
+  ]
+}

@@ -33,20 +33,20 @@
     "mean_tokens": 80.0,
     "throughput_tok_s": 5333.33,
     "per_category": {
-      "normal": {
-        "tp": 3,
-        "fp": 47,
-        "fn": 0
+      "pneumonia_consolidation": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
       },
       "pulmonary_edema": {
         "tp": 0,
         "fp": 0,
         "fn": 18
       },
-      "pneumonia_consolidation": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 21
+      "normal": {
+        "tp": 3,
+        "fp": 47,
+        "fn": 0
       },
       "pneumothorax": {
         "tp": 0,
@@ -109,20 +109,20 @@
     "mean_tokens": 80.0,
     "throughput_tok_s": 5333.33,
     "per_category": {
-      "normal": {
-        "tp": 3,
-        "fp": 47,
-        "fn": 0
+      "pneumonia_consolidation": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
       },
       "pulmonary_edema": {
         "tp": 0,
         "fp": 0,
         "fn": 18
       },
-      "pneumonia_consolidation": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 21
+      "normal": {
+        "tp": 3,
+        "fp": 47,
+        "fn": 0
       },
       "pneumothorax": {
         "tp": 0,
@@ -185,20 +185,20 @@
     "mean_tokens": 80.0,
     "throughput_tok_s": 5333.33,
     "per_category": {
-      "normal": {
-        "tp": 3,
-        "fp": 47,
-        "fn": 0
+      "pneumonia_consolidation": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 21
       },
       "pulmonary_edema": {
         "tp": 0,
         "fp": 0,
         "fn": 18
       },
-      "pneumonia_consolidation": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 21
+      "normal": {
+        "tp": 3,
+        "fp": 47,
+        "fn": 0
       },
       "pneumothorax": {
         "tp": 0,

@@ -1,0 +1,10 @@
+setting,fold,threshold_policy,threshold_value,tp,fp,fn,precision,recall,f1,false_normal_cases,evaluation_nature
+Full Cohort Sweep (In-Sample),All 50 cases,Advisory Review Sensitivity Target,0.62,79,122,0,0.393,1.0,0.5643,0/36 (0.0%),Development threshold selection on complete val_dev cohort (in-sample)
+Full Cohort Sweep (In-Sample),All 50 cases,Balanced Micro-F1 Optimization,0.64,56,42,23,0.5714,0.7089,0.6328,6/36 (16.7%),In-sample operating point maximizing balanced F1 (5 misses occur between 0.621-0.639)
+5-Fold CV (F1-Optimized),Fold 1 Held-Out,Train Selected (Best F1: 0.6129),0.64,18,14,3,0.5625,0.8571,0.6792,1/9,Out-of-fold held-out validation
+5-Fold CV (F1-Optimized),Fold 2 Held-Out,Train Selected (Best F1: 0.6447),0.64,7,7,4,0.5,0.6364,0.56,3/8,Out-of-fold held-out validation
+5-Fold CV (F1-Optimized),Fold 3 Held-Out,Train Selected (Best F1: 0.6429),0.64,11,10,5,0.5238,0.6875,0.5946,1/8,Out-of-fold held-out validation
+5-Fold CV (F1-Optimized),Fold 4 Held-Out,Train Selected (Best F1: 0.6438),0.64,9,6,7,0.6,0.5625,0.5806,1/6,Out-of-fold held-out validation
+5-Fold CV (F1-Optimized),Fold 5 Held-Out,Train Selected (Best F1: 0.6164),0.64,11,5,4,0.6875,0.7333,0.7097,0/5,Out-of-fold held-out validation
+5-Fold CV (F1-Optimized),Overall Out-Of-Fold (OOF),Cross-Fold Selected (All folds chose 0.64),0.64,56,42,23,0.5714,0.7089,0.6328,6/36 (16.7%),Unbiased out-of-fold generalization estimate under F1-maximization policy
+5-Fold CV (Advisory Policy),Overall Out-Of-Fold (OOF),Frozen Advisory Review Policy,0.62,79,122,0,0.393,1.0,0.5643,0/36 (0.0%),Out-of-fold evaluation with pre-declared high-sensitivity review threshold

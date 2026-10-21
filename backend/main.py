@@ -23,7 +23,7 @@ import sys
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
-from typing import Annotated, List, Optional
+from typing import Annotated, Any, Dict, List, Literal, Optional
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -39,6 +39,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from src.grounding_service import get_grounding_service, GroundingService
 from src.report_service import (
     region_report, patient_friendly_report, research_report, study_report,
+    translate_regional_report_to_patient_friendly,
     _ollama_available, _vision_model_available, _text_model_available,
     extract_crop, _array_to_base64_jpeg, _load_to_rgb_array,
 )
@@ -48,6 +49,7 @@ from src.consistency_service import (
     evaluate_cross_report_consistency,
     CrossReportConsistencyResult,
 )
+from src.classifier_service import get_classifier_service, ClassifierResult
 from src.triage_service import get_triage_service
 
 # ── Constants ─────────────────────────────────────────────────────────────────
@@ -135,21 +137,74 @@ class GroundingResponse(BaseModel):
     error: Optional[str]
 
 
+class TriageReasonItem(BaseModel):
+    code: str
+    description: str
+
+
+class UnifiedTriageResponse(BaseModel):
+    status: Literal["red", "yellow", "green"]
+    status_label: str
+    review_required: bool
+    reasons: List[TriageReasonItem] = []
+    evidence_sources: Dict[str, Any] = {}
+    triage_category: str
+    review_priority: str
+    uncertainty: str
+    research_only: bool = True
+    policy_version: str = "1.1.0"
+    disclaimer: str = (
+        "Research-only AI review status. This is not a clinical diagnosis or a substitute for professional interpretation."
+    )
+    analysis_id: Optional[str] = None
+    source_report_id: Optional[str] = None
+
+
+class RegionalTranslationResponse(BaseModel):
+    success: bool
+    translation_text: Optional[str] = None
+    sections: Optional[Dict[str, str]] = None
+    source_report_id: Optional[str] = None
+    analysis_id: Optional[str] = None
+    source_query: Optional[str] = None
+    source_assessment_state: Optional[str] = None
+    is_grounding_linked: bool = True
+    canonical_triage: Optional[UnifiedTriageResponse] = None
+    disclaimer: Optional[str] = None
+    error: Optional[str] = None
+
+
+class TranslateRegionalRequest(BaseModel):
+    regional_report_text: str
+    query: str
+    assessment_state: Optional[str] = None
+    crop_info: Optional[dict] = None
+    report_id: Optional[str] = None
+    analysis_id: Optional[str] = None
+    model_version: Optional[str] = None
+
+
 class RegionReportResponse(BaseModel):
     success: bool
     report_text: Optional[str]
     assessment_state: Optional[str] = None
     internal_contradiction: bool = False
     internal_contradiction_warning: Optional[str] = None
-    crop_info: Optional[dict]
+    crop_info: Optional[dict] = None
     latency_ms: float
     timing: Optional[dict] = None
-    model_used: Optional[str]
+    model_used: Optional[str] = None
     image_input_used: bool = False
     n_images_sent: int = 0
     validation_warnings: List[str] = []
     validation_flagged: bool = False
-    error: Optional[str]
+    error: Optional[str] = None
+    # Task 17 Synchronized Identity, Translation & Canonical Triage
+    report_id: Optional[str] = None
+    analysis_id: Optional[str] = None
+    patient_translation: Optional[dict] = None
+    canonical_triage: Optional[dict] = None
+    triage_result: Optional[dict] = None
 
 
 class PatientFriendlyReportResponse(BaseModel):
@@ -158,6 +213,9 @@ class PatientFriendlyReportResponse(BaseModel):
     sections: Optional[dict] = None
     cardiac_observation: Optional[str] = None
     triage_result: Optional[dict] = None
+    canonical_triage: Optional[dict] = None
+    review_required: bool = False
+    consistency_warnings: List[str] = []
     bytes_sha256: Optional[str] = None
     pixel_sha256: Optional[str] = None
     orig_dims: Optional[List[int]] = None
@@ -166,10 +224,18 @@ class PatientFriendlyReportResponse(BaseModel):
     latency_ms: float
     timing: Optional[dict] = None
     model_used: Optional[str] = None
-    image_input_used: bool = False
     validation_warnings: List[str] = []
     validation_flagged: bool = False
     error: Optional[str] = None
+    # Task 19A Structured Findings & Completeness
+    structured_findings: Optional[List[Dict[str, Any]]] = None
+    completeness_flags: Optional[Dict[str, Any]] = None
+    # Task 17 Synchronized Identity
+    source_report_id: Optional[str] = None
+    analysis_id: Optional[str] = None
+    source_query: Optional[str] = None
+    source_assessment_state: Optional[str] = None
+    is_grounding_linked: bool = False
 
 
 StudyReportResponse = PatientFriendlyReportResponse
@@ -180,6 +246,8 @@ class ConsistencyCheckRequest(BaseModel):
     regional_report_text: Optional[str] = None
     whole_image_report_text: Optional[str] = None
     whole_image_sections: Optional[dict] = None
+    classifier_result: Optional[dict] = None
+    classifier_threshold: Optional[float] = 0.62
 
 
 class FindingConsistencyItem(BaseModel):
@@ -198,7 +266,34 @@ class ConsistencyCheckResponse(BaseModel):
     findings: List[FindingConsistencyItem] = []
     internal_regional_conflict: bool = False
     internal_regional_note: Optional[str] = None
+    review_required: bool = False
+    review_reasons: List[str] = []
+    classifier_discordance: bool = False
+    classifier_alerts: List[str] = []
     evaluated_at: str
+    canonical_triage: Optional[dict] = None
+
+
+class ClassifierFindingItem(BaseModel):
+    category: str
+    confidence: float
+    contributing_pathologies: dict = {}
+    exceeds_threshold: bool
+
+
+class ClassifierResponse(BaseModel):
+    success: bool
+    model_name: str
+    device: str
+    latency_ms: float
+    mapped_findings: dict
+    findings_detail: List[ClassifierFindingItem] = []
+    unmapped_findings: dict = {}
+    raw_probabilities: dict = {}
+    review_alerts: List[str] = []
+    threshold_applied: float
+    error: Optional[str] = None
+    provenance: dict = {}
 
 
 class BatchItemResponse(BaseModel):
@@ -218,6 +313,12 @@ class BatchItemResponse(BaseModel):
     report_text: Optional[str] = None
     sections: Optional[dict] = None
     triage_result: Optional[dict] = None
+    report_validity: str = "completed_valid"
+    review_required: bool = False
+    consistency_warnings: List[str] = []
+    classifier_alerts: List[str] = []
+    classifier_scores: Optional[dict] = None
+    consistency_result: Optional[dict] = None
     error: Optional[str] = None
     created_at: float
     started_at: Optional[float] = None
@@ -229,6 +330,9 @@ class BatchItemResponse(BaseModel):
     model_used: Optional[str] = None
     validation_warnings: List[str] = []
     validation_flagged: bool = False
+    structured_findings: Optional[List[Dict[str, Any]]] = None
+    completeness_flags: Optional[Dict[str, Any]] = None
+    canonical_triage: Optional[Dict[str, Any]] = None
 
 
 class BatchStatusResponse(BaseModel):
@@ -476,6 +580,24 @@ async def report_region(
     return RegionReportResponse(**filtered)
 
 
+@app.post("/report/translate-regional", response_model=RegionalTranslationResponse)
+async def translate_regional_endpoint(req: TranslateRegionalRequest):
+    """
+    Deterministic plain-language translation of a grounding-linked regional report.
+    Faithfully translates the regional report without a second independent VLM interpretation.
+    """
+    res = translate_regional_report_to_patient_friendly(
+        regional_report_text=req.regional_report_text,
+        phrase=req.query,
+        assessment_state=req.assessment_state,
+        crop_info=req.crop_info,
+        report_id=req.report_id,
+        analysis_id=req.analysis_id,
+        model_version=req.model_version,
+    )
+    return RegionalTranslationResponse(**res)
+
+
 @app.post("/report/patient-friendly", response_model=PatientFriendlyReportResponse)
 @app.post("/report/study", response_model=PatientFriendlyReportResponse)
 async def report_patient_friendly_endpoint(
@@ -488,8 +610,42 @@ async def report_patient_friendly_endpoint(
 ):
     """
     Generate an accessible, patient-friendly explanation of a chest radiograph.
-    Passes the full image to MedGemma 4B or best available vision model.
+    If prior_report (regional report) is provided, deterministically translates it to maintain
+    100% fidelity to the grounding results without calling MedGemma for an independent second interpretation.
+    Otherwise, generates a whole-image plain-language overview using MedGemma 4B.
     """
+    if prior_report and prior_report.strip():
+        query_val = "finding"
+        crop_val = None
+        if grounding_json:
+            try:
+                g_data = json.loads(grounding_json)
+                query_val = g_data.get("query", "finding")
+                crop_val = g_data.get("crop_info")
+            except Exception:
+                pass
+
+        trans_res = translate_regional_report_to_patient_friendly(
+            regional_report_text=prior_report,
+            phrase=query_val,
+            crop_info=crop_val,
+        )
+        return PatientFriendlyReportResponse(
+            success=trans_res["success"],
+            report_text=trans_res.get("translation_text"),
+            sections=trans_res.get("sections"),
+            triage_result=trans_res.get("canonical_triage"),
+            canonical_triage=trans_res.get("canonical_triage"),
+            review_required=trans_res.get("canonical_triage", {}).get("review_required", True),
+            source_report_id=trans_res.get("source_report_id"),
+            analysis_id=trans_res.get("analysis_id"),
+            source_query=trans_res.get("source_query"),
+            source_assessment_state=trans_res.get("source_assessment_state"),
+            is_grounding_linked=True,
+            latency_ms=0.5,
+            error=trans_res.get("error"),
+        )
+
     image_bytes = await _read_upload(file)
     filename = file.filename or "upload.png"
 
@@ -533,18 +689,66 @@ async def report_research_endpoint(
 @app.post("/report/consistency", response_model=ConsistencyCheckResponse)
 async def report_consistency_endpoint(req: ConsistencyCheckRequest):
     """
-    Evaluate cross-report consistency between regional phrase grounding report
-    and whole-image patient-friendly report.
+    Evaluate cross-report consistency between regional phrase grounding report,
+    whole-image patient-friendly report, and optional auxiliary pretrained classifier.
     Detects explicitly conflicting assessments, internal contradictions,
-    and returns prominent, neutral warnings.
+    and returns prominent, neutral warnings with unified canonical triage.
     """
     res = evaluate_cross_report_consistency(
         query=req.query,
         regional_report_text=req.regional_report_text,
         whole_image_report_text=req.whole_image_report_text,
         whole_image_sections=req.whole_image_sections,
+        classifier_result=req.classifier_result,
+        classifier_threshold=req.classifier_threshold or 0.62,
     )
-    return ConsistencyCheckResponse(**res.to_dict())
+    res_dict = res.to_dict()
+
+    # Compute updated canonical triage reflecting cross-report consistency
+    triage_obj = get_triage_service().evaluate_multi_evidence(
+        report_text=req.whole_image_report_text,
+        sections=req.whole_image_sections,
+        regional_result={"report_text": req.regional_report_text} if req.regional_report_text else None,
+        query=req.query,
+        classifier_result=req.classifier_result,
+        consistency_result=res_dict,
+    )
+    res_dict["canonical_triage"] = triage_obj.to_dict()
+    return ConsistencyCheckResponse(**res_dict)
+
+
+@app.post("/classify", response_model=ClassifierResponse)
+async def classify_image_endpoint(
+    image: Annotated[UploadFile, File(description="Chest X-ray image (PNG, JPEG, DICOM)")],
+    threshold: Annotated[float, Form(description="Confidence threshold for findings")] = 0.62,
+):
+    """
+    Auxiliary Chest X-Ray Pretrained Classification Endpoint using TorchXRayVision DenseNet-121.
+    Operates as an evidence-aware review signal; not a primary diagnostic tool.
+    """
+    filename = image.filename or "unknown.png"
+    suffix = Path(filename).suffix.lower()
+    if suffix not in ALLOWED_SUFFIXES:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unsupported file type '{suffix}'. Allowed: {sorted(ALLOWED_SUFFIXES)}",
+        )
+
+    image_bytes = await image.read()
+    if len(image_bytes) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Uploaded file is empty (0 bytes).",
+        )
+    if len(image_bytes) > MAX_UPLOAD_BYTES:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"File exceeds maximum allowed size of {MAX_UPLOAD_BYTES // (1024*1024)} MB.",
+        )
+
+    svc = get_classifier_service()
+    res = svc.predict(image_bytes, threshold=threshold)
+    return ClassifierResponse(**res.to_dict())
 
 
 # ── Batch Report Endpoints ───────────────────────────────────────────────────

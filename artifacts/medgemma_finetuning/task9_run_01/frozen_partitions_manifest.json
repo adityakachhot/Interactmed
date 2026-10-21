@@ -1,0 +1,2607 @@
+{
+  "metadata": {
+    "dataset_name": "InteractMed-VLM Task 9 Frozen Partitions Manifest",
+    "timestamp": "2026-10-17T00:11:00Z",
+    "governance": "Strict patient-disjoint stratification across development and test cohorts",
+    "counts": {
+      "train_dev": {
+        "cases": 200,
+        "unique_patients": 199,
+        "unique_studies": 200,
+        "unique_images": 200
+      },
+      "val_dev": {
+        "cases": 50,
+        "unique_patients": 49,
+        "unique_studies": 50,
+        "unique_images": 50
+      },
+      "expanded_test_locked": {
+        "cases": 117,
+        "unique_patients": 117,
+        "unique_studies": 117,
+        "unique_images": 117
+      }
+    },
+    "exposure_history": {
+      "train_dev": "Used for supervised fine-tuning preparation (200 cases). 51 patients overlapped with Task 8 benchmark.",
+      "val_dev": "Used for validation loss monitoring and hyperparameter selection (50 cases). 9 patients overlapped with Task 8 benchmark.",
+      "expanded_test_locked": "PERMANENTLY LOCKED & UNTOUCHED (117 cases across 117 unique patients). Zero overlap with train, val, Task 7, or Task 8. Reserved exclusively for final milestone evaluation."
+    }
+  },
+  "train_dev_cases": [
+    {
+      "case_id": "CASE_EXP_DEV_001",
+      "patient_id": "p15184836",
+      "study_id": "s59382057",
+      "dicom_id": "00046130-fd952ef0-57f2948d-491a16b4-5db3a18c",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_002",
+      "patient_id": "p12930467",
+      "study_id": "s57384894",
+      "dicom_id": "005043e2-a4e25d1d-aae26631-732a2db0-38412248",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_003",
+      "patient_id": "p17992323",
+      "study_id": "s50689561",
+      "dicom_id": "00aaebdb-f951cb37-939b01d4-b8a6d151-a541e722",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_004",
+      "patient_id": "p15599510",
+      "study_id": "s53550812",
+      "dicom_id": "00c42227-85095f27-933ba966-9ddbb51c-e9b1d057",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_005",
+      "patient_id": "p10527186",
+      "study_id": "s52248666",
+      "dicom_id": "0171bd40-96d78e1a-cf987a4f-36784e08-52170a07",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_006",
+      "patient_id": "p12868507",
+      "study_id": "s50002970",
+      "dicom_id": "01b1eecf-7b2ef75f-62a420ba-50abbf6c-31f68583",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_007",
+      "patient_id": "p14358686",
+      "study_id": "s51220408",
+      "dicom_id": "01bcad7b-6c454567-24503e81-55252098-b5ef3476",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_008",
+      "patient_id": "p11234565",
+      "study_id": "s58213165",
+      "dicom_id": "03405cbc-20e136a0-7d18e87a-7f29a8d1-4ced9098",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_009",
+      "patient_id": "p12815514",
+      "study_id": "s55390640",
+      "dicom_id": "037f84e5-65df8100-f42131e5-6aac2027-b9016db3",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_010",
+      "patient_id": "p12429112",
+      "study_id": "s54904043",
+      "dicom_id": "0491b20c-e69b0593-a3667493-9d0d282b-c6a379bc",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_012",
+      "patient_id": "p12591968",
+      "study_id": "s54385304",
+      "dicom_id": "0611d16f-4d8cb20e-2e6d8504-7e6cbba1-29e00479",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_013",
+      "patient_id": "p15649581",
+      "study_id": "s59609933",
+      "dicom_id": "06d387f6-84425b03-0799c15f-c3949c22-d5afec19",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_014",
+      "patient_id": "p12262788",
+      "study_id": "s52574159",
+      "dicom_id": "06f44d57-4d4b11f2-9337ae3a-6f37e2d7-636b63d8",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_015",
+      "patient_id": "p15662081",
+      "study_id": "s55470878",
+      "dicom_id": "0710b151-dfa61e7a-eb10eed4-13decfa4-8273e261",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_017",
+      "patient_id": "p17253958",
+      "study_id": "s54480811",
+      "dicom_id": "0745ad7e-4c5bae0c-83a848a7-afbc6a01-1ce944d8",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_018",
+      "patient_id": "p14823207",
+      "study_id": "s55984473",
+      "dicom_id": "083308e8-f7fc18ff-39514880-0fc76231-4709fe01",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_019",
+      "patient_id": "p11897016",
+      "study_id": "s58110315",
+      "dicom_id": "0887a93d-46f2011c-0e34f948-db6a245b-f906e3d5",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_021",
+      "patient_id": "p12367601",
+      "study_id": "s54902631",
+      "dicom_id": "09ce63a4-d5c2bfdd-6d1c9fe9-b9313d2b-f7284729",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_022",
+      "patient_id": "p19287786",
+      "study_id": "s59091095",
+      "dicom_id": "09db6f26-6d748832-9a4a3417-186b72a4-aaa0cd3e",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_023",
+      "patient_id": "p12930426",
+      "study_id": "s57178791",
+      "dicom_id": "09f1c688-fb47ef00-74e92f78-f9e80afc-c9911922",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_024",
+      "patient_id": "p17804052",
+      "study_id": "s52718314",
+      "dicom_id": "0a58f235-13ac293e-e2a206d3-ae402d32-6d5e05cd",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_026",
+      "patient_id": "p16097925",
+      "study_id": "s51134319",
+      "dicom_id": "0c1807dd-f150225c-d0c4b36f-9f627ce4-73bb2146",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_027",
+      "patient_id": "p16954495",
+      "study_id": "s52977891",
+      "dicom_id": "0c777ee2-2ac4c792-6c52a955-52e2eac0-5e849664",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_030",
+      "patient_id": "p14180570",
+      "study_id": "s53826368",
+      "dicom_id": "0e41c0c3-e8d38ca6-1816fb2b-c581263d-1572385f",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_031",
+      "patient_id": "p11468192",
+      "study_id": "s59632546",
+      "dicom_id": "1005b918-bb3bca5a-ae1189e9-f871e62a-0c98ee6d",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_032",
+      "patient_id": "p14987393",
+      "study_id": "s59012265",
+      "dicom_id": "10cb57fc-b95678a1-0b994bae-d6efb434-57103f95",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_033",
+      "patient_id": "p19243474",
+      "study_id": "s57182590",
+      "dicom_id": "1131dbca-a567910c-bf8cfd5e-15151b09-7ad0a0a6",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_034",
+      "patient_id": "p14139331",
+      "study_id": "s55965444",
+      "dicom_id": "113dcb56-48a2d63b-6fd9dede-6d588028-3c6c21d9",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_035",
+      "patient_id": "p11844144",
+      "study_id": "s59429364",
+      "dicom_id": "11445664-b66017fe-b89d44dc-7dbae066-61367eaa",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_036",
+      "patient_id": "p11305073",
+      "study_id": "s50889933",
+      "dicom_id": "1290ac09-084d443b-579443d1-e276c5df-2d4ee178",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_037",
+      "patient_id": "p16015533",
+      "study_id": "s59937280",
+      "dicom_id": "12e31810-ee29a935-d370c78c-647f1a93-6711d17b",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_038",
+      "patient_id": "p12436820",
+      "study_id": "s55721728",
+      "dicom_id": "13f74761-e38df178-8df3d0a6-5283f32f-ffaaae12",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_039",
+      "patient_id": "p16568389",
+      "study_id": "s52106460",
+      "dicom_id": "145831f0-dc6a9856-605825a0-966612fb-72f96f3f",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_040",
+      "patient_id": "p16191519",
+      "study_id": "s52376941",
+      "dicom_id": "16566e1d-a19c8451-c902faa7-38be8665-aad81289",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_041",
+      "patient_id": "p19945642",
+      "study_id": "s51880304",
+      "dicom_id": "1791b2c7-36a45e03-4b55f61f-72fa83eb-f08952dc",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_042",
+      "patient_id": "p17977928",
+      "study_id": "s50760492",
+      "dicom_id": "181a994e-098b46fb-f02512e4-dc3d1c80-3b6dd4ad",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_043",
+      "patient_id": "p16356013",
+      "study_id": "s58352595",
+      "dicom_id": "18504e85-e53a865c-dcf67b53-edf1a04f-d952847a",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_044",
+      "patient_id": "p14516996",
+      "study_id": "s50357548",
+      "dicom_id": "188fd949-b522a2f2-999d4012-ee391afb-2e20b96f",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_045",
+      "patient_id": "p12843379",
+      "study_id": "s54100819",
+      "dicom_id": "18f0827e-c55971db-0dc7b736-fe9b12ac-564404a7",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_046",
+      "patient_id": "p11528924",
+      "study_id": "s54285204",
+      "dicom_id": "191e012d-ab959ee2-429f38de-bbce29c1-6aafa6ab",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_048",
+      "patient_id": "p13469377",
+      "study_id": "s59385067",
+      "dicom_id": "1a9036a7-f6645d14-6f93c905-041a858f-745ca82a",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_049",
+      "patient_id": "p15833469",
+      "study_id": "s57883509",
+      "dicom_id": "1b0b0385-a72d064d-be1f11ed-a39331d1-dde8f464",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_050",
+      "patient_id": "p13368848",
+      "study_id": "s52680823",
+      "dicom_id": "1b881d90-fc6367b1-f9b0b338-d0731477-299d073f",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_051",
+      "patient_id": "p12856008",
+      "study_id": "s54941302",
+      "dicom_id": "1bce2d50-36bbf552-1d9c9f88-90ede7d7-a6382b6f",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_052",
+      "patient_id": "p17011771",
+      "study_id": "s56421061",
+      "dicom_id": "1bd8e3ab-6681b18a-6292a8a1-07a08db3-48a7abf6",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_053",
+      "patient_id": "p14602966",
+      "study_id": "s55414778",
+      "dicom_id": "1bdbfd56-609e9116-040781f8-a73e624e-7c6e9f3b",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_054",
+      "patient_id": "p19096918",
+      "study_id": "s51749973",
+      "dicom_id": "1c97e7a9-ce7daacf-4d255cca-ce1d0f74-7559c6cd",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_055",
+      "patient_id": "p12988419",
+      "study_id": "s55086498",
+      "dicom_id": "1d29f52b-c02f74b1-4e71b918-8878515b-f980dae0",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_056",
+      "patient_id": "p14862629",
+      "study_id": "s58745940",
+      "dicom_id": "1e24943b-e30866de-c228479a-0af9ac9d-9564b949",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_057",
+      "patient_id": "p17647207",
+      "study_id": "s56980410",
+      "dicom_id": "1e3a51e1-19d146d5-ea05a42a-ec7a34d7-f251c88d",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_058",
+      "patient_id": "p16072879",
+      "study_id": "s52544484",
+      "dicom_id": "211e4c41-55609031-2a94544b-e8d1e2e7-4ea54877",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_059",
+      "patient_id": "p15808118",
+      "study_id": "s57730086",
+      "dicom_id": "2128188b-03f6220d-334d3546-aca86297-05d5e6b4",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_060",
+      "patient_id": "p10993512",
+      "study_id": "s51229858",
+      "dicom_id": "21966143-cec1d4ce-50ae890a-c759fdbe-304953b1",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_062",
+      "patient_id": "p10903792",
+      "study_id": "s58614235",
+      "dicom_id": "24bec92e-63b01207-fd74aa66-2a8b208f-27224dd0",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_063",
+      "patient_id": "p17693753",
+      "study_id": "s50849255",
+      "dicom_id": "2577b081-c65a3a97-870ec2a8-96658cc1-4aa4b2a6",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_064",
+      "patient_id": "p16108338",
+      "study_id": "s54427996",
+      "dicom_id": "25af9aed-898c1718-e64fb5e9-f655f29c-b77109e6",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_065",
+      "patient_id": "p19986230",
+      "study_id": "s50379095",
+      "dicom_id": "27d2ca4c-93c1fe0c-3104a1a6-1f1118dd-14ae6eac",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_066",
+      "patient_id": "p16660935",
+      "study_id": "s54829079",
+      "dicom_id": "27d440b6-d3c1f1b4-c8036fc1-e3317e44-30a95a01",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_068",
+      "patient_id": "p16675572",
+      "study_id": "s56635388",
+      "dicom_id": "2862bdaa-79619ec5-45abf01a-d9dbbe9a-a6d6ecef",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_069",
+      "patient_id": "p15179275",
+      "study_id": "s53961145",
+      "dicom_id": "2a1c4f00-674e514f-b2052369-c1208987-096c9a80",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_070",
+      "patient_id": "p12822417",
+      "study_id": "s55344983",
+      "dicom_id": "2a5d8444-1c021e56-501b5a14-cf12c7a2-18ac8469",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_071",
+      "patient_id": "p12215941",
+      "study_id": "s53532266",
+      "dicom_id": "2aee3eca-ddf6adea-80e26b80-ff12f81b-46dc2827",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_073",
+      "patient_id": "p15647220",
+      "study_id": "s56351966",
+      "dicom_id": "2b8d79e9-2662e822-32dd7af9-6a76e695-ebe82821",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_075",
+      "patient_id": "p14047359",
+      "study_id": "s55051972",
+      "dicom_id": "2c5b53d3-3653bc54-b4ea350c-c4ec69f1-c23743f0",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_076",
+      "patient_id": "p10692509",
+      "study_id": "s56425809",
+      "dicom_id": "2c6c011b-7f29a9c7-060d5031-2afd7608-8f312ba3",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_077",
+      "patient_id": "p17201678",
+      "study_id": "s51253744",
+      "dicom_id": "2c6e6ccb-956daf59-b6493d1a-eaa7be57-bb3a7935",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_078",
+      "patient_id": "p16237702",
+      "study_id": "s54919114",
+      "dicom_id": "2ca7d8ff-be016c15-0e95353b-657e316e-ebd0504f",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_079",
+      "patient_id": "p14942310",
+      "study_id": "s57148763",
+      "dicom_id": "2d40e27c-e780bb33-132a089e-a59bbe05-564002e6",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_080",
+      "patient_id": "p13822447",
+      "study_id": "s51121509",
+      "dicom_id": "2d84210d-71dba5d8-26cace25-dcb67e68-9eaf99b1",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_081",
+      "patient_id": "p15581146",
+      "study_id": "s50057579",
+      "dicom_id": "2e0833eb-3ee48755-eb7aaf9d-cde4e218-e513ece9",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_082",
+      "patient_id": "p17112656",
+      "study_id": "s54649982",
+      "dicom_id": "2ecfac0a-c478c3a7-e091af95-aab3b042-a91f4249",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_083",
+      "patient_id": "p17950066",
+      "study_id": "s59393382",
+      "dicom_id": "2f2da075-115e38d3-86ffe905-11aa8a04-1a1c3bd5",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_084",
+      "patient_id": "p12791659",
+      "study_id": "s51894136",
+      "dicom_id": "2fa97251-aa6d7925-57f1d5fa-17a121c9-e8a840dc",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_086",
+      "patient_id": "p15251892",
+      "study_id": "s59154370",
+      "dicom_id": "3114af38-431f4e58-90f2a4c3-fc05fa95-3ca76bc6",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_088",
+      "patient_id": "p13880916",
+      "study_id": "s57860636",
+      "dicom_id": "323f8641-8ec900ce-3eb4e200-ebe8ccd2-a80f179e",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_089",
+      "patient_id": "p12502386",
+      "study_id": "s58318196",
+      "dicom_id": "324be286-92634790-f881d4f8-947f9cab-3d3e99c2",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_090",
+      "patient_id": "p16975438",
+      "study_id": "s59776439",
+      "dicom_id": "335963fb-daa0c168-34c0c9ef-1ad658f6-62263686",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_091",
+      "patient_id": "p13839087",
+      "study_id": "s54948744",
+      "dicom_id": "349d62c7-b95ae7f6-b724e1d5-720bd56b-b16c5695",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_093",
+      "patient_id": "p16116913",
+      "study_id": "s58836145",
+      "dicom_id": "361fa609-dfb1f1e3-90c4c761-6e03bdca-ea1ffb72",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_094",
+      "patient_id": "p17938416",
+      "study_id": "s57945085",
+      "dicom_id": "370f4921-7a6644ba-5761cb31-6bee2248-c19e4971",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_095",
+      "patient_id": "p16202057",
+      "study_id": "s50591205",
+      "dicom_id": "37345491-9a3d0bbf-1d89a05d-168880eb-b94bc364",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_096",
+      "patient_id": "p17641228",
+      "study_id": "s51088710",
+      "dicom_id": "380c338a-bb72736a-c62896e6-1ad6998a-16a0714a",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_098",
+      "patient_id": "p12648153",
+      "study_id": "s54124690",
+      "dicom_id": "38951f86-0b434994-c9114a7a-9be72cee-74267063",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_099",
+      "patient_id": "p11794355",
+      "study_id": "s51320866",
+      "dicom_id": "38f4bf79-c09fb316-7b149ba8-77338645-c62fe03f",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_100",
+      "patient_id": "p12360014",
+      "study_id": "s57407339",
+      "dicom_id": "393cc608-1ddbd8d3-616ac02b-e5d49da6-945352cb",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_101",
+      "patient_id": "p16181440",
+      "study_id": "s56702883",
+      "dicom_id": "394637eb-e247c96d-df1080c5-877c6c73-e9d7d5c6",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_102",
+      "patient_id": "p16224552",
+      "study_id": "s57357537",
+      "dicom_id": "3958a946-1c2821e6-5e7c07d1-ea367729-e50c0a85",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_103",
+      "patient_id": "p17169478",
+      "study_id": "s59659310",
+      "dicom_id": "3a7b3594-bf268483-dbca4f66-873bccb6-514aba09",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_104",
+      "patient_id": "p11115587",
+      "study_id": "s52851061",
+      "dicom_id": "3abdc9db-a2901688-073fef3d-3c627641-0fccfe5d",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_106",
+      "patient_id": "p15206209",
+      "study_id": "s57367460",
+      "dicom_id": "3af10fe7-a6001aed-1da8ed17-7ecf7cbd-e06e2839",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_107",
+      "patient_id": "p16672541",
+      "study_id": "s55709627",
+      "dicom_id": "3b1371a5-13e6ad1f-7a61c88a-450f3621-622b4284",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_109",
+      "patient_id": "p16039201",
+      "study_id": "s56251145",
+      "dicom_id": "3b9251c6-897855cc-3803c9ae-6210d599-8947794c",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_110",
+      "patient_id": "p11422357",
+      "study_id": "s51136120",
+      "dicom_id": "3bf93bd6-f67ac035-f355bc60-e9065324-355d56b1",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_111",
+      "patient_id": "p17804606",
+      "study_id": "s53204043",
+      "dicom_id": "3cfb3c4f-b00af8ca-4a3d70ce-16989074-08bcba60",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_112",
+      "patient_id": "p19280440",
+      "study_id": "s58775991",
+      "dicom_id": "3d8019ee-e178c5af-093006b2-5703f5bd-7c93d7db",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_113",
+      "patient_id": "p19160511",
+      "study_id": "s50888436",
+      "dicom_id": "3db1fcc5-f136df3c-e05348ef-bc427237-0f631c92",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_114",
+      "patient_id": "p14256117",
+      "study_id": "s56473110",
+      "dicom_id": "3de8b3bb-75a4d283-f0fa8221-26a993ae-5ab5fbe3",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_115",
+      "patient_id": "p16628623",
+      "study_id": "s55972160",
+      "dicom_id": "3f1b172a-525b15c6-6bc1b652-f28ecbc2-49a21d7d",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_117",
+      "patient_id": "p19564280",
+      "study_id": "s52790758",
+      "dicom_id": "400d255d-84d163eb-c54a4987-eb83b886-6f7b9fb3",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_118",
+      "patient_id": "p14148161",
+      "study_id": "s53742235",
+      "dicom_id": "41119ec0-2390fa91-6bf85f4a-10fefb31-10ccdf6e",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_119",
+      "patient_id": "p12724975",
+      "study_id": "s56827357",
+      "dicom_id": "41143630-340c77d0-1a129f54-1a2ef4f7-cf9ee2bf",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_120",
+      "patient_id": "p19866759",
+      "study_id": "s50422139",
+      "dicom_id": "41208c5f-c6a61a9c-76737d24-f5318acb-085853e1",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_121",
+      "patient_id": "p12931948",
+      "study_id": "s55220645",
+      "dicom_id": "436340bb-70c0811b-a4123fcc-8c241721-cb6b5942",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_122",
+      "patient_id": "p13551252",
+      "study_id": "s51260577",
+      "dicom_id": "4366fc8b-d25697cf-2eefd050-78b8ad21-4a698e24",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_123",
+      "patient_id": "p11246165",
+      "study_id": "s52372684",
+      "dicom_id": "43d15ded-1802b1ca-9f6ec300-3920a884-6ffedcd7",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_124",
+      "patient_id": "p16919147",
+      "study_id": "s58900743",
+      "dicom_id": "44dfb924-aa531eca-de68dd22-8cb16e27-1f9c03a7",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_125",
+      "patient_id": "p12886251",
+      "study_id": "s50703920",
+      "dicom_id": "44ec5566-a8ca3ad9-bc23e9bf-d4d2ff08-aa12657b",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_127",
+      "patient_id": "p12223158",
+      "study_id": "s52946041",
+      "dicom_id": "46d75ba0-a2abd4ac-e3fcc169-14606ffe-a501a4a8",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_128",
+      "patient_id": "p12707202",
+      "study_id": "s59547360",
+      "dicom_id": "46f2aa1c-a1ce3ef3-f3586553-ea26b773-06858e3c",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_129",
+      "patient_id": "p15212228",
+      "study_id": "s54438088",
+      "dicom_id": "4726c9f1-e3710eb3-2c1ebe41-c18e13d0-b74739a2",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_130",
+      "patient_id": "p13880645",
+      "study_id": "s51897757",
+      "dicom_id": "473297e3-46d31d37-d08676a1-d1f86168-6f1f0efb",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_131",
+      "patient_id": "p15022247",
+      "study_id": "s56541844",
+      "dicom_id": "47ca7cb0-dad6bb91-dbddcd39-01470bef-42986a4c",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_132",
+      "patient_id": "p16479007",
+      "study_id": "s57909910",
+      "dicom_id": "47f944de-92996e32-8eadb7b4-4ceb5c96-b6691929",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_134",
+      "patient_id": "p14410216",
+      "study_id": "s56086035",
+      "dicom_id": "48c09f5d-9dd9f3ab-62281d2f-a4a5937e-f97dd86f",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_135",
+      "patient_id": "p12006801",
+      "study_id": "s53603607",
+      "dicom_id": "48d12ed0-403669fe-c229f08c-61379efc-9303d30f",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_136",
+      "patient_id": "p19096168",
+      "study_id": "s50281572",
+      "dicom_id": "48d412b7-07495563-6ab1e000-abf9def9-f91fc4d9",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_138",
+      "patient_id": "p13450784",
+      "study_id": "s56315689",
+      "dicom_id": "49965cc6-deaa19c2-0a5eca03-5d0ce8a1-67580347",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_139",
+      "patient_id": "p15871027",
+      "study_id": "s57446416",
+      "dicom_id": "4aba9152-12f7ec49-fa9a29b0-94f7a280-11319d21",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_141",
+      "patient_id": "p19482563",
+      "study_id": "s53089967",
+      "dicom_id": "4afd79a4-74eeb356-b43bd418-d8eee2be-d433fcbf",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_142",
+      "patient_id": "p15682302",
+      "study_id": "s58736842",
+      "dicom_id": "4b84238d-80713b3c-90f2f040-4f281d01-9172a2dc",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_143",
+      "patient_id": "p13273820",
+      "study_id": "s50608153",
+      "dicom_id": "4bc8ca37-ec07f2ef-4f3b08c4-f5a0ddab-e5656b35",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_145",
+      "patient_id": "p15528228",
+      "study_id": "s55044531",
+      "dicom_id": "4c4f179d-eb883511-fb549b63-4981bec3-967b056a",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_147",
+      "patient_id": "p14665029",
+      "study_id": "s52147150",
+      "dicom_id": "4ccd6d9c-806d5417-d31728b7-ec7eb8bf-2e95ac48",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_148",
+      "patient_id": "p17052884",
+      "study_id": "s58937829",
+      "dicom_id": "4cd9b1d4-21beb7fd-d41d7d10-6b163aee-90e365ec",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_149",
+      "patient_id": "p13044775",
+      "study_id": "s58924144",
+      "dicom_id": "4d771e53-4b0919fc-52890ba4-2465aa84-0e479869",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_150",
+      "patient_id": "p12839549",
+      "study_id": "s54150790",
+      "dicom_id": "4d9fc35b-ef8fd357-7e1431a5-c63bc6d6-0bd538b9",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_153",
+      "patient_id": "p19969031",
+      "study_id": "s54877992",
+      "dicom_id": "4e78a467-5eede0ee-476cb29e-af0db15d-69c4465c",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_154",
+      "patient_id": "p15373486",
+      "study_id": "s55496555",
+      "dicom_id": "4ebadbad-ca70b5bb-289debca-02308dc7-36272080",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_155",
+      "patient_id": "p15559032",
+      "study_id": "s56809738",
+      "dicom_id": "4f3089ab-955b9546-a458b286-d036a69d-94b2e41a",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_157",
+      "patient_id": "p17654843",
+      "study_id": "s58559853",
+      "dicom_id": "5000f8fd-684ea279-a1e1308e-cfce9b0c-e1eeae50",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_158",
+      "patient_id": "p14002356",
+      "study_id": "s51115478",
+      "dicom_id": "508267b7-d547c1f5-90ce1a83-80b7b354-c67574ab",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_159",
+      "patient_id": "p15570850",
+      "study_id": "s58490514",
+      "dicom_id": "5172172b-a75c52f3-d0d2bcc2-fc0443a7-fae84169",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_162",
+      "patient_id": "p11212873",
+      "study_id": "s53762508",
+      "dicom_id": "52117609-b59d4ebd-52c7b52f-db36024d-ceb8cb10",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_163",
+      "patient_id": "p16799095",
+      "study_id": "s58806478",
+      "dicom_id": "5298c5ce-2c1f3efb-7ababa4f-b1b934ca-8be48e33",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_165",
+      "patient_id": "p19287866",
+      "study_id": "s51805161",
+      "dicom_id": "52f14da5-928c691f-cef6e952-191f0011-cfb84928",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_166",
+      "patient_id": "p19998497",
+      "study_id": "s50311574",
+      "dicom_id": "53a6e508-c64868f0-cea054db-f7610b25-ef5fb32a",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_167",
+      "patient_id": "p12793414",
+      "study_id": "s54141893",
+      "dicom_id": "53e49c0c-f8dec646-9b709a06-95da0618-74ceb824",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_168",
+      "patient_id": "p11006497",
+      "study_id": "s55413422",
+      "dicom_id": "54335756-2947f0c0-7bdc0d3b-c67125a0-24c7fec5",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_169",
+      "patient_id": "p14557977",
+      "study_id": "s53267359",
+      "dicom_id": "5449e5e9-ad8da8bc-32876dfa-77e526da-61070339",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_170",
+      "patient_id": "p10680329",
+      "study_id": "s58474868",
+      "dicom_id": "559a4998-c29c68df-ec6db2d8-07219b06-55cceff2",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_171",
+      "patient_id": "p16684213",
+      "study_id": "s59478771",
+      "dicom_id": "55bddbb4-f057eae5-0704f501-c48e09d0-4afa49ab",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_172",
+      "patient_id": "p11111102",
+      "study_id": "s59778034",
+      "dicom_id": "57374d49-7a97d007-a2b356c4-b5905ee4-df5e9426",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_173",
+      "patient_id": "p14253650",
+      "study_id": "s58037530",
+      "dicom_id": "5798f71b-7a4ac41b-ad7c78f6-e34dee54-c4041ef2",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_174",
+      "patient_id": "p11829995",
+      "study_id": "s58988769",
+      "dicom_id": "587cb161-1c454e21-af4f32dc-c12bcefb-45380899",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_177",
+      "patient_id": "p17737924",
+      "study_id": "s51811703",
+      "dicom_id": "59833c27-65ea2d80-bab706ed-49ed704c-c228ddb7",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_178",
+      "patient_id": "p16673847",
+      "study_id": "s51856299",
+      "dicom_id": "59994912-87e0beac-92f5b7d7-0a20bf84-0a3f27e9",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_179",
+      "patient_id": "p13412512",
+      "study_id": "s54189240",
+      "dicom_id": "5a0997b2-689b67f9-18f5982c-0baa2190-877e8244",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_180",
+      "patient_id": "p13122104",
+      "study_id": "s58298917",
+      "dicom_id": "5ea0a2e3-279fa689-07afdef3-949ccdb9-82e1bce8",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_181",
+      "patient_id": "p13925079",
+      "study_id": "s57314708",
+      "dicom_id": "5ec052ae-407d9dd9-161c2b81-8fdd93df-8c324dea",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_182",
+      "patient_id": "p17252985",
+      "study_id": "s56279829",
+      "dicom_id": "5ec9c423-3e87f163-3eeba883-8fad5931-b6659672",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_183",
+      "patient_id": "p10678335",
+      "study_id": "s53343765",
+      "dicom_id": "600b88e8-cdeb206f-24980db9-a88d5336-a9ab05ba",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_185",
+      "patient_id": "p16289474",
+      "study_id": "s54429484",
+      "dicom_id": "61298358-d1d176b3-bade1419-5279e90c-fa47fc84",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_186",
+      "patient_id": "p12409604",
+      "study_id": "s50855541",
+      "dicom_id": "6221d6cd-9903c97e-9ed530b0-c56f4a29-e4aaad83",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_188",
+      "patient_id": "p19243401",
+      "study_id": "s57101156",
+      "dicom_id": "635fcd1f-11af2a65-c6d165a9-fc6822d2-560fd246",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_189",
+      "patient_id": "p14723419",
+      "study_id": "s55565688",
+      "dicom_id": "63666cdc-f7dd25b3-de07e1f0-e1ebb006-d4b392e1",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_191",
+      "patient_id": "p13209155",
+      "study_id": "s56912837",
+      "dicom_id": "64e1302b-a25eeadc-268f32e1-4314bf1d-da3f4de4",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_192",
+      "patient_id": "p12106566",
+      "study_id": "s51591730",
+      "dicom_id": "653cd7ea-047932e4-af6089d4-52836b88-de491f72",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_193",
+      "patient_id": "p15775528",
+      "study_id": "s56448753",
+      "dicom_id": "655a3207-136829c2-31f6d6cc-dc3d22f4-8cd3f02f",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_194",
+      "patient_id": "p16300198",
+      "study_id": "s58338685",
+      "dicom_id": "655c3a0f-30907211-dbd83a4b-a1826c20-e7763a28",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_195",
+      "patient_id": "p15729731",
+      "study_id": "s54035665",
+      "dicom_id": "657880ba-bba0d3f5-fa74a240-4d289446-56913a87",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_196",
+      "patient_id": "p15621159",
+      "study_id": "s59292546",
+      "dicom_id": "6628ebbb-e9bb8079-17b0ec91-1913dd5f-7f42a58b",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_198",
+      "patient_id": "p14173344",
+      "study_id": "s59201584",
+      "dicom_id": "671f3a3e-221de8c3-0fa97b51-4ff046ae-39b82afa",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_201",
+      "patient_id": "p12706984",
+      "study_id": "s51503517",
+      "dicom_id": "676ac094-48152b11-2b1fcd07-7abfc405-fa272730",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_202",
+      "patient_id": "p10518993",
+      "study_id": "s52207898",
+      "dicom_id": "684f3a01-4c76e72f-bd660f89-a94d0e42-2a467332",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_203",
+      "patient_id": "p10429665",
+      "study_id": "s55239625",
+      "dicom_id": "687685b8-f74b39b4-20e806bd-592b283d-94353c92",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_205",
+      "patient_id": "p17049363",
+      "study_id": "s52056015",
+      "dicom_id": "695dba81-c2761547-5e01e7c7-c86c7475-01735c2e",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_207",
+      "patient_id": "p10553635",
+      "study_id": "s55080622",
+      "dicom_id": "6a8ac2ce-f832ced8-ae86f37a-dfe6ffdb-f488abc2",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_209",
+      "patient_id": "p12957707",
+      "study_id": "s59788377",
+      "dicom_id": "6bcf7ea1-7d6d22d2-acc8b8c1-846af6af-78841c71",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_210",
+      "patient_id": "p14654027",
+      "study_id": "s55508093",
+      "dicom_id": "6cdb6b7f-b148ac65-a9c4b283-42b1fb29-c6bf53c7",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_211",
+      "patient_id": "p11999272",
+      "study_id": "s56039952",
+      "dicom_id": "6f585851-1ab953a5-57cfeb49-5692506c-5c8d216e",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_212",
+      "patient_id": "p16503587",
+      "study_id": "s56534681",
+      "dicom_id": "6fe46088-61997c2e-c7a0c880-1cdd382d-c1a7eeaa",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_213",
+      "patient_id": "p11966699",
+      "study_id": "s52066024",
+      "dicom_id": "70146be7-493e5cef-63ce50ad-28d1b378-e735d4f4",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_214",
+      "patient_id": "p19326320",
+      "study_id": "s50060005",
+      "dicom_id": "7043f115-64c66454-9a100387-a568ed02-6d799312",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_215",
+      "patient_id": "p15525007",
+      "study_id": "s51377833",
+      "dicom_id": "713008c9-d8c1c943-855aa72d-ec3cc539-cdbef6a7",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_216",
+      "patient_id": "p13174516",
+      "study_id": "s58384656",
+      "dicom_id": "727a9fd0-0388f4bb-49792794-dd925792-c0cd042f",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_217",
+      "patient_id": "p13495762",
+      "study_id": "s52898536",
+      "dicom_id": "7284f3ab-7388b049-f547ed1c-a55ce489-f235d467",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_218",
+      "patient_id": "p14253816",
+      "study_id": "s59714293",
+      "dicom_id": "731618d1-78c00794-bbf45872-0eab40ad-b0346191",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_219",
+      "patient_id": "p15650925",
+      "study_id": "s58313672",
+      "dicom_id": "7325a4ad-56c62704-bb44d9f9-a7bc288f-b195b550",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_221",
+      "patient_id": "p16598160",
+      "study_id": "s59932623",
+      "dicom_id": "735bca80-22a4cd39-40c0d276-70f4edfa-bd556b55",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_222",
+      "patient_id": "p17402692",
+      "study_id": "s51029215",
+      "dicom_id": "73f441ab-52bbe5af-ae54c86a-11beb952-3125c9b8",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_223",
+      "patient_id": "p13976104",
+      "study_id": "s59820109",
+      "dicom_id": "744b4457-623a5abe-1e09d058-61b46900-acb7683a",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_225",
+      "patient_id": "p14932781",
+      "study_id": "s52910153",
+      "dicom_id": "7591788d-5cf88f9b-1fb362d8-8ba8c189-9c189d2d",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_226",
+      "patient_id": "p17911840",
+      "study_id": "s50590324",
+      "dicom_id": "770e644c-00f3ebc7-0f15fa96-b27ad599-ec48eab8",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_227",
+      "patient_id": "p16526693",
+      "study_id": "s55446851",
+      "dicom_id": "77bff2e2-3b1cb92a-877eb77e-f1a5e818-b3704ddb",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_228",
+      "patient_id": "p10469579",
+      "study_id": "s59343449",
+      "dicom_id": "7a7c17cb-6156d82a-6139f457-b51744e5-ad135041",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_229",
+      "patient_id": "p10680329",
+      "study_id": "s54197100",
+      "dicom_id": "7b06a9f9-7fa05d00-3b464e66-8c729c40-0ec1ff52",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_230",
+      "patient_id": "p16908798",
+      "study_id": "s54863625",
+      "dicom_id": "7b455dd6-425ab454-7bbfc8f6-bc3b6d34-93f13622",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_235",
+      "patient_id": "p11198939",
+      "study_id": "s54787712",
+      "dicom_id": "7f74f313-329ebfde-6200c498-291ec82c-32f6b753",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_237",
+      "patient_id": "p10854947",
+      "study_id": "s56795547",
+      "dicom_id": "802fba40-3ab4d90f-d7730a3f-c6899ec0-74293a9a",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_238",
+      "patient_id": "p16863257",
+      "study_id": "s54933394",
+      "dicom_id": "80b5e62a-6b7afec0-66ef3b70-65071be5-6fe3de96",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_239",
+      "patient_id": "p19055351",
+      "study_id": "s55264251",
+      "dicom_id": "80f2a14f-994428c2-56794d09-6858a837-b4218239",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_240",
+      "patient_id": "p16690146",
+      "study_id": "s54863731",
+      "dicom_id": "80f82b6e-76277879-bc431851-193770ac-9f209cb8",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_241",
+      "patient_id": "p15143186",
+      "study_id": "s50900904",
+      "dicom_id": "80ff2749-ef33c2f2-d427a6e0-fd7af72f-ab3908ab",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_242",
+      "patient_id": "p11855255",
+      "study_id": "s58498219",
+      "dicom_id": "814063da-07cf6500-fd70a424-b77bc144-73d88eb6",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_243",
+      "patient_id": "p10627407",
+      "study_id": "s52618851",
+      "dicom_id": "8160a75c-838c6407-fe86dbbc-c9e575a5-2f7f9a31",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_244",
+      "patient_id": "p17435828",
+      "study_id": "s56428127",
+      "dicom_id": "81f25519-90aef32d-db733456-ff55c7f6-8fbb6148",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_246",
+      "patient_id": "p14496947",
+      "study_id": "s51296703",
+      "dicom_id": "82f41b1e-829c6eb1-ff0f9388-638a6a66-479e6668",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_247",
+      "patient_id": "p15655083",
+      "study_id": "s59443706",
+      "dicom_id": "8384b7b2-3d508895-e46f209d-3479d8cd-4d0bff58",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_248",
+      "patient_id": "p17058328",
+      "study_id": "s50178318",
+      "dicom_id": "83c1507d-2e4b14ef-e78d109f-384d44e9-a6fc2dab",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_249",
+      "patient_id": "p13279129",
+      "study_id": "s58274868",
+      "dicom_id": "83e8ec84-02a02fbf-e9990094-4d026afa-0b7d5125",
+      "primary_category": "pulmonary_edema"
+    }
+  ],
+  "val_dev_cases": [
+    {
+      "case_id": "CASE_EXP_DEV_011",
+      "patient_id": "p14548229",
+      "study_id": "s53645928",
+      "dicom_id": "0513c4fc-ff9f45a7-b32258f2-36c7b973-2207a7a9",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_016",
+      "patient_id": "p17377807",
+      "study_id": "s50075778",
+      "dicom_id": "073f99ae-76a38cb2-9807b53d-1f97b379-5265003d",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_020",
+      "patient_id": "p14455452",
+      "study_id": "s56063789",
+      "dicom_id": "089d9277-6a342029-80c99f6b-3eff4b35-a1f3d9b8",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_025",
+      "patient_id": "p13975291",
+      "study_id": "s51140249",
+      "dicom_id": "0b573d4b-fece5236-ea941b33-c752a0ab-b5cfdd68",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_028",
+      "patient_id": "p19062100",
+      "study_id": "s56819554",
+      "dicom_id": "0dadd63f-c9912615-ea44f52e-d5a575d1-ee73f2e8",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_029",
+      "patient_id": "p16132343",
+      "study_id": "s55231622",
+      "dicom_id": "0dd0f9b9-26aa646d-9f85da4f-aae57f3d-ec8b04b2",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_047",
+      "patient_id": "p12087289",
+      "study_id": "s50660859",
+      "dicom_id": "194a8876-d5c7faaa-ea5115d7-510c9747-f452ccbc",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_061",
+      "patient_id": "p11950244",
+      "study_id": "s53509607",
+      "dicom_id": "22d8e6cb-815553ec-dfd58ae0-3fc65b02-ad5af599",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_067",
+      "patient_id": "p16178416",
+      "study_id": "s57134082",
+      "dicom_id": "2845da60-2efbf07b-ec967cb8-1fad4bfe-7fc57e49",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_072",
+      "patient_id": "p17455506",
+      "study_id": "s54632672",
+      "dicom_id": "2b6194a8-124949d3-78be056f-77345cd8-7f852069",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_074",
+      "patient_id": "p11350319",
+      "study_id": "s53781735",
+      "dicom_id": "2b9e76e1-8d38e325-3e55f097-c99ada77-ab002f6c",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_085",
+      "patient_id": "p11586389",
+      "study_id": "s53467013",
+      "dicom_id": "30d615f2-3c1a706f-6d4c205a-2e4bd8da-5ab0a720",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_087",
+      "patient_id": "p11006310",
+      "study_id": "s54711440",
+      "dicom_id": "31efc046-eb68d191-a5f03cba-ceb84e8f-3c985995",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_092",
+      "patient_id": "p16766035",
+      "study_id": "s59505045",
+      "dicom_id": "3510a92a-992440dd-764a8e4c-4c349707-1a9792e9",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_097",
+      "patient_id": "p15491652",
+      "study_id": "s52267806",
+      "dicom_id": "380c9395-d6af3b18-b10d0584-c52b41b8-1ecdf1f1",
+      "primary_category": "atelectasis"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_105",
+      "patient_id": "p15696371",
+      "study_id": "s51136547",
+      "dicom_id": "3adf5204-06d3cd8d-d1ed00c1-3498d2bf-f91f4b61",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_108",
+      "patient_id": "p14554793",
+      "study_id": "s51696033",
+      "dicom_id": "3b690a8c-ddc651fa-8c148093-853d2108-8d2dfa64",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_116",
+      "patient_id": "p11053589",
+      "study_id": "s56374336",
+      "dicom_id": "3ff536d0-58474ed7-f99f6fc1-54ca116d-4838ad24",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_126",
+      "patient_id": "p15717895",
+      "study_id": "s50408015",
+      "dicom_id": "45bc36a3-65df9214-170f5931-58bf0ff5-b76f9c9e",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_133",
+      "patient_id": "p10667992",
+      "study_id": "s53900228",
+      "dicom_id": "4813edd4-76d624cb-b4a2904c-96c9935f-25f89196",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_137",
+      "patient_id": "p11975528",
+      "study_id": "s58466293",
+      "dicom_id": "49013565-a2155eb4-57beb7ef-a8659ebc-d9f14c69",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_140",
+      "patient_id": "p16471314",
+      "study_id": "s55268169",
+      "dicom_id": "4abc7878-5794784b-75df7399-22393356-341e136c",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_144",
+      "patient_id": "p12727273",
+      "study_id": "s56255751",
+      "dicom_id": "4c1a5111-555065c1-b8d324a1-4d7cc3df-6e22fb22",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_146",
+      "patient_id": "p15189222",
+      "study_id": "s55712035",
+      "dicom_id": "4c60e108-a8d24b54-d9146fa6-37b48316-bf122f43",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_151",
+      "patient_id": "p15526304",
+      "study_id": "s58494927",
+      "dicom_id": "4e32b0c9-2ed293cc-83c2631d-05631b1c-5d444552",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_152",
+      "patient_id": "p13323391",
+      "study_id": "s56448097",
+      "dicom_id": "4e4ef871-ca074a76-fffa884e-734ab0cd-976ff997",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_156",
+      "patient_id": "p14420647",
+      "study_id": "s55852404",
+      "dicom_id": "4fbca568-3d2a04ff-4456b630-751cb4b8-3b3cbf3f",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_160",
+      "patient_id": "p13399590",
+      "study_id": "s55930313",
+      "dicom_id": "518f43f7-2a02f219-a8b2140b-119cd332-c0125280",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_161",
+      "patient_id": "p12070588",
+      "study_id": "s59746942",
+      "dicom_id": "51b8af66-810bb802-1f142b67-8b07c4fb-3fc1efc5",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_164",
+      "patient_id": "p14637230",
+      "study_id": "s55659858",
+      "dicom_id": "52d2d4d3-ab51a50d-862f8ad2-3304e0c2-f2ebacaa",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_175",
+      "patient_id": "p12067284",
+      "study_id": "s54243032",
+      "dicom_id": "58bb03e2-e0b4c1c2-764e13b6-5fae94b7-769e718b",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_176",
+      "patient_id": "p15587131",
+      "study_id": "s52554427",
+      "dicom_id": "58ec9013-05ce7155-a111a8a5-c3065ea6-d07a2c74",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_184",
+      "patient_id": "p11535733",
+      "study_id": "s51270617",
+      "dicom_id": "60949d6a-19fa6fb4-a9d83339-6a6b5799-d946f10a",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_187",
+      "patient_id": "p16118525",
+      "study_id": "s55084101",
+      "dicom_id": "62b6951c-9e1b7aff-6cb1459c-511d4843-266945db",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_190",
+      "patient_id": "p19795930",
+      "study_id": "s54989798",
+      "dicom_id": "63bba4a8-c1a264a7-85b45160-33218bb6-36b705d9",
+      "primary_category": "support_devices"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_197",
+      "patient_id": "p10975446",
+      "study_id": "s59969148",
+      "dicom_id": "66cab843-95809cae-6a67db82-36faecab-8a75c30e",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_199",
+      "patient_id": "p10500002",
+      "study_id": "s57969985",
+      "dicom_id": "6733df97-22eb1108-293a5675-2d4752fe-84f6d3b5",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_200",
+      "patient_id": "p12932354",
+      "study_id": "s57839253",
+      "dicom_id": "6760aa29-64431847-61f0f74c-d97fe18c-ce3456ab",
+      "primary_category": "pulmonary_edema"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_204",
+      "patient_id": "p19902791",
+      "study_id": "s50068864",
+      "dicom_id": "6943c6d4-4ef9c4c5-d2505f70-77bce5a0-4e5fda97",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_206",
+      "patient_id": "p17766862",
+      "study_id": "s54137770",
+      "dicom_id": "69cdf30e-651d85df-5843410f-a4ebfd3d-51b2637f",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_208",
+      "patient_id": "p17108130",
+      "study_id": "s54345681",
+      "dicom_id": "6af9ee52-1f6fe629-d81619c7-85ef19b8-fd3b4343",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_220",
+      "patient_id": "p12802517",
+      "study_id": "s56161349",
+      "dicom_id": "73443af3-012c0fad-cf71212c-b06a13aa-02079cdc",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_224",
+      "patient_id": "p19747287",
+      "study_id": "s51763515",
+      "dicom_id": "74b9220f-92b6b565-f9e4ca04-4035131d-03d164e6",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_231",
+      "patient_id": "p14661031",
+      "study_id": "s58514117",
+      "dicom_id": "7c37b09b-c55fb0e3-c649e1ad-70e9c283-0d959b69",
+      "primary_category": "cardiomegaly"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_232",
+      "patient_id": "p14995724",
+      "study_id": "s56626240",
+      "dicom_id": "7c987d03-61b8328a-980a99da-996187f4-a214beb9",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_233",
+      "patient_id": "p12727617",
+      "study_id": "s55311333",
+      "dicom_id": "7e6a80a5-0bd85fab-79ec1295-78320350-9d9cfde7",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_234",
+      "patient_id": "p17731115",
+      "study_id": "s51976648",
+      "dicom_id": "7eaa7f2e-088d7028-34a55d4e-e3a19563-dc5c6b52",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_236",
+      "patient_id": "p16403314",
+      "study_id": "s52040222",
+      "dicom_id": "8002f7f5-0afbc292-4c0d7cd6-2d367e09-3cab5800",
+      "primary_category": "pneumonia_consolidation"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_245",
+      "patient_id": "p17230481",
+      "study_id": "s55183953",
+      "dicom_id": "81feed73-6d61c842-feba55bd-93fffeb9-101d228a",
+      "primary_category": "normal"
+    },
+    {
+      "case_id": "CASE_EXP_DEV_250",
+      "patient_id": "p10975446",
+      "study_id": "s50572011",
+      "dicom_id": "d25f054a-e8199cdc-c669cb2e-ebcfb082-54c205b7",
+      "primary_category": "normal"
+    }
+  ],
+  "expanded_test_locked_cases": [
+    {
+      "case_id": "CASE_EXP_TEST_001",
+      "patient_id": "p15974198",
+      "study_id": "s59878370",
+      "dicom_id": "014d4aed-acffbea9-d6fca9ee-736689dd-5c1da71f",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_002",
+      "patient_id": "p10877812",
+      "study_id": "s54331294",
+      "dicom_id": "0207cf06-dbf119ad-4c1ed5d9-19bd6d55-5c0af385",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_003",
+      "patient_id": "p11323860",
+      "study_id": "s56423647",
+      "dicom_id": "0403ad5f-c5eecef6-f43bd985-81acc510-12d917a7",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_004",
+      "patient_id": "p12604446",
+      "study_id": "s59246897",
+      "dicom_id": "047cee43-febc0dbc-c090646c-e655c728-c0bb1ece",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_005",
+      "patient_id": "p12876131",
+      "study_id": "s55685512",
+      "dicom_id": "05263ced-216b17aa-db1515bc-f353385d-7fd2bb23",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_006",
+      "patient_id": "p16755391",
+      "study_id": "s53040223",
+      "dicom_id": "0a1752a2-12a0a637-9eae19e4-e89007a7-7fd04133",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_007",
+      "patient_id": "p12976207",
+      "study_id": "s52071577",
+      "dicom_id": "116f2bc2-c9e71d7e-9efe0648-8843979f-27f399f2",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_008",
+      "patient_id": "p12579739",
+      "study_id": "s56271791",
+      "dicom_id": "12a2b7be-9b5613cf-c47cabe7-5d4c2a27-13d9c47a",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_009",
+      "patient_id": "p19801386",
+      "study_id": "s59564865",
+      "dicom_id": "136001fa-a87c50cb-ed56abd0-3e6ebf1a-ca2ec1ff",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_010",
+      "patient_id": "p11012637",
+      "study_id": "s56854359",
+      "dicom_id": "1425eaa8-5f8daafd-777e3719-7760a576-cfd96f2d",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_011",
+      "patient_id": "p12354194",
+      "study_id": "s50190426",
+      "dicom_id": "1491b98c-3d794a4d-b78b7102-2c692e4e-f57c15a6",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_012",
+      "patient_id": "p14463777",
+      "study_id": "s53255233",
+      "dicom_id": "160577ed-0a72af29-0d413ea0-ed4c3a6f-a6b49092",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_013",
+      "patient_id": "p11298578",
+      "study_id": "s56716552",
+      "dicom_id": "1673dbc4-d128ac61-437215ab-9b4bc570-cc5738e2",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_014",
+      "patient_id": "p14851188",
+      "study_id": "s51470644",
+      "dicom_id": "168be384-eb222b99-2ca8f334-e8f933e6-ef166f46",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_015",
+      "patient_id": "p11189676",
+      "study_id": "s57090883",
+      "dicom_id": "175882be-f7334d29-ca3d0fca-b100aa77-4bca85be",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_016",
+      "patient_id": "p16731679",
+      "study_id": "s55105446",
+      "dicom_id": "1843210a-4d0f5bf6-7b684c31-d3de9205-e23851cf",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_017",
+      "patient_id": "p17597240",
+      "study_id": "s52817635",
+      "dicom_id": "18ca7c7e-a342813f-0c058dd8-76f055eb-403988df",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_018",
+      "patient_id": "p15845271",
+      "study_id": "s52861334",
+      "dicom_id": "1a6218da-0aee8982-a75c99e7-37f4d9c7-77aff074",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_019",
+      "patient_id": "p11026054",
+      "study_id": "s59580448",
+      "dicom_id": "1b8ce047-7dfe6a9b-7f7914d6-404f5a51-8e015a1a",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_020",
+      "patient_id": "p13991458",
+      "study_id": "s52093255",
+      "dicom_id": "1e076f94-90da7cea-0275366e-71fe73a5-612f99e7",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_021",
+      "patient_id": "p12716528",
+      "study_id": "s52588947",
+      "dicom_id": "20b00aff-151d2b83-fd54ea85-c2e674b5-cae81486",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_022",
+      "patient_id": "p17740473",
+      "study_id": "s56698313",
+      "dicom_id": "21f9e718-15cd4d75-1794be25-63d86b39-2f917587",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_023",
+      "patient_id": "p17281190",
+      "study_id": "s59867439",
+      "dicom_id": "2222cb1f-ad32c315-c3fad6fc-05e6e221-b7ae959d",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_024",
+      "patient_id": "p16881085",
+      "study_id": "s56378460",
+      "dicom_id": "2337297e-0b79440c-48097ede-6b135db7-643b5211",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_025",
+      "patient_id": "p15082940",
+      "study_id": "s51534574",
+      "dicom_id": "2391928d-7e49fb20-9d4c89e7-1edc8616-41ba02f4",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_026",
+      "patient_id": "p17964648",
+      "study_id": "s54031859",
+      "dicom_id": "23f4453b-3187c705-2a237542-3354beb0-e61091aa",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_027",
+      "patient_id": "p12986647",
+      "study_id": "s53304821",
+      "dicom_id": "242118cd-6bdba063-adaca217-6416aa90-0ee50864",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_028",
+      "patient_id": "p17729489",
+      "study_id": "s55691624",
+      "dicom_id": "24b703b4-c83a32ea-07546e5f-7e2744b6-c3a1418f",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_029",
+      "patient_id": "p19875621",
+      "study_id": "s56472355",
+      "dicom_id": "26cffd48-857b34e6-d4255381-04082a07-36cd364a",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_030",
+      "patient_id": "p10778034",
+      "study_id": "s59367945",
+      "dicom_id": "26d7b22d-6c09510c-402111d7-d31e8e2f-4582fe37",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_031",
+      "patient_id": "p15954601",
+      "study_id": "s51180049",
+      "dicom_id": "271a1c52-f44aca0f-244e09e9-4eca6d5b-bf76f0f9",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_032",
+      "patient_id": "p12471680",
+      "study_id": "s55620518",
+      "dicom_id": "2799ad7b-2ce98473-5885e93a-dcc23c62-fe0719ec",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_033",
+      "patient_id": "p13655979",
+      "study_id": "s59650682",
+      "dicom_id": "2dafe2ee-0866ae7a-358d8bb5-7fe40870-c05f49cc",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_034",
+      "patient_id": "p16397027",
+      "study_id": "s53232990",
+      "dicom_id": "2e2c3a56-3b503c6c-dec4f6c9-2891feda-814b954a",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_035",
+      "patient_id": "p13833101",
+      "study_id": "s51898305",
+      "dicom_id": "2e6034b8-eaf232a7-d136bb2f-e252bb31-d06393b1",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_036",
+      "patient_id": "p14337110",
+      "study_id": "s58275274",
+      "dicom_id": "32d7f43e-b4d448f5-da21c8eb-9d334ca2-922f8170",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_037",
+      "patient_id": "p15790605",
+      "study_id": "s52939478",
+      "dicom_id": "331e29b5-19a6b6be-e39f63f6-fa7c39b6-719d8508",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_038",
+      "patient_id": "p14610274",
+      "study_id": "s53070729",
+      "dicom_id": "33a0540b-52fbbc1e-c5532b9d-85879acb-1015a092",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_039",
+      "patient_id": "p17466107",
+      "study_id": "s52590317",
+      "dicom_id": "33c83813-70572f6e-f0bb8e9a-b19a3981-ce8148ab",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_040",
+      "patient_id": "p17029405",
+      "study_id": "s55670644",
+      "dicom_id": "35fa2a7b-594e52f0-fb2b00e3-a6d80d84-d430467b",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_041",
+      "patient_id": "p11929103",
+      "study_id": "s50078800",
+      "dicom_id": "35fea1db-371d90fc-1c8a614a-3c105bf3-07ccef43",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_042",
+      "patient_id": "p14919586",
+      "study_id": "s58796385",
+      "dicom_id": "3610709f-b3c58ebc-df90bdd5-95c45e32-8b32569c",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_043",
+      "patient_id": "p17267281",
+      "study_id": "s58061289",
+      "dicom_id": "3724e2c5-8001a8db-fc96c5c1-fc1ad0cc-19b092c9",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_044",
+      "patient_id": "p15649400",
+      "study_id": "s52175097",
+      "dicom_id": "3ae8a680-b8b03dbf-80777cdd-adc1564b-c0d0f1a4",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_045",
+      "patient_id": "p12255996",
+      "study_id": "s56711896",
+      "dicom_id": "3b7d454b-107b0c46-71f901b1-55ab974d-97216028",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_046",
+      "patient_id": "p19052988",
+      "study_id": "s54960496",
+      "dicom_id": "3b9f1802-c0f24560-6ba61c2f-35f9f195-05400ce9",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_047",
+      "patient_id": "p16926631",
+      "study_id": "s52244564",
+      "dicom_id": "3bf7293b-56d2b89a-7bef0b67-03317c7b-5bc85aef",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_048",
+      "patient_id": "p13859433",
+      "study_id": "s56222792",
+      "dicom_id": "3c7d71b0-383da7fc-80f78f8c-6be2da46-3614e059",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_049",
+      "patient_id": "p15125816",
+      "study_id": "s53745696",
+      "dicom_id": "3ce3b693-0721b987-9744e4a8-cf887340-997d0f0f",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_050",
+      "patient_id": "p17300432",
+      "study_id": "s52934866",
+      "dicom_id": "3d4b90d0-f0b949f4-56941ee8-519fe3cd-aa4033c7",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_051",
+      "patient_id": "p17626490",
+      "study_id": "s54755379",
+      "dicom_id": "3df03fa7-c511bc2b-05c70846-545f7cf9-1af9b114",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_052",
+      "patient_id": "p16753209",
+      "study_id": "s58097145",
+      "dicom_id": "3e144160-b491637d-e56c0ba2-99b657b8-47951343",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_053",
+      "patient_id": "p11572460",
+      "study_id": "s51849973",
+      "dicom_id": "4013fdec-c45b3edf-c9d581b3-66ebce53-8038000c",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_054",
+      "patient_id": "p10737408",
+      "study_id": "s57292936",
+      "dicom_id": "42129ce4-60759151-2961e757-ed99e1bc-5fbd5220",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_055",
+      "patient_id": "p11840874",
+      "study_id": "s59690842",
+      "dicom_id": "42ee5e37-1a3559f4-9067a618-cd5389e9-87b47296",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_056",
+      "patient_id": "p11636169",
+      "study_id": "s50819334",
+      "dicom_id": "441ea517-5b96425c-cb3f61cc-ab1310a2-263e33b4",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_057",
+      "patient_id": "p14972735",
+      "study_id": "s51075332",
+      "dicom_id": "4516c138-7deb819c-73031090-da63460c-4e015eb4",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_058",
+      "patient_id": "p13784230",
+      "study_id": "s53854830",
+      "dicom_id": "46357936-157a0f24-ee5b8efc-94da32a3-7fa0c12b",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_059",
+      "patient_id": "p19093092",
+      "study_id": "s54376163",
+      "dicom_id": "47ae3734-3c1d0e6d-41e1aa00-4804c2a5-a2daca3b",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_060",
+      "patient_id": "p19600190",
+      "study_id": "s55539927",
+      "dicom_id": "47dfeb0c-8e458a02-45f28fed-7fc401ae-5d14d721",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_061",
+      "patient_id": "p17649893",
+      "study_id": "s58590361",
+      "dicom_id": "4a851f47-14562437-ce9c3e45-af437c5d-d15290d1",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_062",
+      "patient_id": "p19457288",
+      "study_id": "s56611394",
+      "dicom_id": "4c18cfff-5abf4161-d6fea1e9-66d87145-9e49bdca",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_063",
+      "patient_id": "p12932363",
+      "study_id": "s55101664",
+      "dicom_id": "4c53a098-83df4afe-35d70d3d-b72f26f4-9cf365f2",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_064",
+      "patient_id": "p14084190",
+      "study_id": "s50216579",
+      "dicom_id": "4ca70b48-a0999862-23742317-d866e7dd-1c9ac334",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_065",
+      "patient_id": "p15978979",
+      "study_id": "s50384896",
+      "dicom_id": "4ccbb927-b7d1ceb7-d2e640cd-ce9b7a4f-8879072e",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_066",
+      "patient_id": "p14771014",
+      "study_id": "s59712347",
+      "dicom_id": "4de3b906-58b53e1d-27ad92d5-ca85ff56-83cffd81",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_067",
+      "patient_id": "p11320106",
+      "study_id": "s55999850",
+      "dicom_id": "4dfe1c80-b6b3f91f-d6add418-3e6c062b-20958527",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_068",
+      "patient_id": "p10869691",
+      "study_id": "s59483806",
+      "dicom_id": "4e58a5a7-887ff5a0-de137edc-dad64ae4-03ba5de0",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_069",
+      "patient_id": "p15486932",
+      "study_id": "s52967497",
+      "dicom_id": "5039e35b-87c10539-951c799b-c0f0996e-566040f4",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_070",
+      "patient_id": "p15253658",
+      "study_id": "s57504124",
+      "dicom_id": "5398cbb2-2de4e608-e77b3868-7438b69b-9a0c4b81",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_071",
+      "patient_id": "p19103929",
+      "study_id": "s58592678",
+      "dicom_id": "549ecb47-d11f83fb-3d046073-a25b947e-9d926b9f",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_072",
+      "patient_id": "p16919585",
+      "study_id": "s56024483",
+      "dicom_id": "566fa3b7-edc87c7e-b141b647-d5aaf331-896c84f8",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_073",
+      "patient_id": "p11843648",
+      "study_id": "s55828298",
+      "dicom_id": "5857bb02-c98b462f-36e533b8-fdfd50de-180985dd",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_074",
+      "patient_id": "p14294216",
+      "study_id": "s58840050",
+      "dicom_id": "597cdcdc-de26c96e-a31f6e22-683a78bd-06e3b34c",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_075",
+      "patient_id": "p17322845",
+      "study_id": "s54589346",
+      "dicom_id": "5a1e60e2-68e086b6-a40f136e-c4612393-97071385",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_076",
+      "patient_id": "p19035431",
+      "study_id": "s50147799",
+      "dicom_id": "5af08cf1-e9c0dc06-c5840705-5e80b9f0-423c42d9",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_077",
+      "patient_id": "p16300096",
+      "study_id": "s54886158",
+      "dicom_id": "5b1765d5-77a8025f-dd1db2ba-7ee01363-b0369c8d",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_078",
+      "patient_id": "p15610631",
+      "study_id": "s59150383",
+      "dicom_id": "5bc7f32a-d1e93cca-6360ecd5-75ec637a-974a8e3e",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_079",
+      "patient_id": "p19023440",
+      "study_id": "s54846709",
+      "dicom_id": "5c71ed09-d94d331b-9d7ac3e5-868f0d12-f1c22d70",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_080",
+      "patient_id": "p13792998",
+      "study_id": "s51298827",
+      "dicom_id": "5c8cab9d-1aab790e-7b2dc419-d7d6f51e-0f656bb5",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_081",
+      "patient_id": "p13066324",
+      "study_id": "s57263945",
+      "dicom_id": "5ea4c3cd-4b6d0e73-14e95925-b30d860d-ff690dd5",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_082",
+      "patient_id": "p13027516",
+      "study_id": "s59357559",
+      "dicom_id": "5f0bf387-cddca559-d58e9d9a-55da65fe-560a4f7d",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_083",
+      "patient_id": "p17217487",
+      "study_id": "s51919328",
+      "dicom_id": "5f2fc307-08317061-cee7bb05-372a015f-da75d6d3",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_084",
+      "patient_id": "p13748634",
+      "study_id": "s51949631",
+      "dicom_id": "6021c402-c9ddaeef-502874cb-8d9df3c1-332573d6",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_085",
+      "patient_id": "p13724767",
+      "study_id": "s56680789",
+      "dicom_id": "609aa8ad-ddec36e4-ec630b6b-3513e975-9d7e9788",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_086",
+      "patient_id": "p13093114",
+      "study_id": "s52675841",
+      "dicom_id": "60f01c41-678b6d9a-6acb0886-ae43b3c1-e2d5abbd",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_087",
+      "patient_id": "p11461300",
+      "study_id": "s59948950",
+      "dicom_id": "62b13ec2-577c9ea8-1a0eb7b7-d8aa5c0a-d57e9d7c",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_088",
+      "patient_id": "p13332932",
+      "study_id": "s55222082",
+      "dicom_id": "63ffd6a6-fe3cbab7-fa0a3127-3bcfa429-4b6d7f9e",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_089",
+      "patient_id": "p16684992",
+      "study_id": "s51424076",
+      "dicom_id": "659336a9-30ac42f4-c19feafa-7d3de8dd-57060289",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_090",
+      "patient_id": "p16905933",
+      "study_id": "s53951212",
+      "dicom_id": "65a2f615-3d2088b8-e1297f47-cab1c5b7-c7482bde",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_091",
+      "patient_id": "p15597078",
+      "study_id": "s52139046",
+      "dicom_id": "66070168-6b2aa91d-09c8e1ce-5a9064dd-e7f86e87",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_092",
+      "patient_id": "p14010906",
+      "study_id": "s59014844",
+      "dicom_id": "66eb9281-a0d4439a-ecc03ab2-cdfa7411-b285216a",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_093",
+      "patient_id": "p12946414",
+      "study_id": "s56380311",
+      "dicom_id": "6798fc5c-c118230d-79514b77-75d2e5cd-ae68f1bd",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_094",
+      "patient_id": "p10501557",
+      "study_id": "s52664904",
+      "dicom_id": "6badb1b6-333179f3-71f60fd0-80c7c82c-03597ba2",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_095",
+      "patient_id": "p14881769",
+      "study_id": "s50046286",
+      "dicom_id": "6c66827a-78e06073-60cf53c9-2bf3fbee-96d2cbda",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_096",
+      "patient_id": "p12844682",
+      "study_id": "s58386843",
+      "dicom_id": "6c7ecd09-2a66c768-26b1a80e-445bb37a-4fbcdd38",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_097",
+      "patient_id": "p12250782",
+      "study_id": "s54959159",
+      "dicom_id": "70300c7d-f58053cd-13fdedc9-b2a0ac98-7a6997f0",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_098",
+      "patient_id": "p14645355",
+      "study_id": "s50800137",
+      "dicom_id": "714a76c2-1a585566-1685dc18-fc46370a-fc0164ce",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_099",
+      "patient_id": "p19581826",
+      "study_id": "s58343274",
+      "dicom_id": "73bb4483-baf5dc29-648aa375-90161200-08c266ac",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_100",
+      "patient_id": "p11801290",
+      "study_id": "s52097122",
+      "dicom_id": "7408f72d-86b35213-cc2fa13c-d3e7facf-86aae3ca",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_101",
+      "patient_id": "p17924703",
+      "study_id": "s52369902",
+      "dicom_id": "74fe54ef-e21dc16b-8f7da07a-54119690-ca08626c",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_102",
+      "patient_id": "p12053638",
+      "study_id": "s52415359",
+      "dicom_id": "75613300-3e383413-a9b38c95-49e3e5e9-b3a4d6ce",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_103",
+      "patient_id": "p16476036",
+      "study_id": "s56366868",
+      "dicom_id": "75d7ac70-6b7f4247-e2d5e156-2d36c2a1-6169a361",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_104",
+      "patient_id": "p19518697",
+      "study_id": "s58590204",
+      "dicom_id": "76b15c01-bff08826-d41324e4-e0802c5e-cb174b86",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_105",
+      "patient_id": "p13158876",
+      "study_id": "s58331949",
+      "dicom_id": "77130e63-8852d030-21df4df0-0a6a2fa5-eae593a8",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_106",
+      "patient_id": "p14591912",
+      "study_id": "s58563295",
+      "dicom_id": "772e608b-ca33a7f9-f244cf95-5f708a04-afcad040",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_107",
+      "patient_id": "p11456797",
+      "study_id": "s55575740",
+      "dicom_id": "77a5ed84-212281b8-ed6a8e7d-06e5ac72-c718a25f",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_108",
+      "patient_id": "p11770833",
+      "study_id": "s55769499",
+      "dicom_id": "793bd032-60a53a93-f71a35da-37192dce-c3ea4476",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_109",
+      "patient_id": "p19371747",
+      "study_id": "s51854861",
+      "dicom_id": "79de7ee4-19ca01a5-5e31d5a6-2dbeffce-2fd42fd7",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_110",
+      "patient_id": "p12980071",
+      "study_id": "s54266315",
+      "dicom_id": "7b377d56-7c5839e7-98847d22-eff68288-0f611161",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_111",
+      "patient_id": "p13336663",
+      "study_id": "s59460249",
+      "dicom_id": "7b3813da-d6424541-fd7483ff-7e8e9693-1dbc7260",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_112",
+      "patient_id": "p11932774",
+      "study_id": "s55657315",
+      "dicom_id": "7c3cdbf1-6b4a38df-634e714b-1a9c6cfd-6eeb072d",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_113",
+      "patient_id": "p19936204",
+      "study_id": "s52825804",
+      "dicom_id": "7d7412a1-777d8e26-5c376fca-e471bf4f-3cc1bc37",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_114",
+      "patient_id": "p11052292",
+      "study_id": "s59744100",
+      "dicom_id": "7eb41f90-52f594be-efe00a55-c5134b5a-960933e4",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_115",
+      "patient_id": "p17201840",
+      "study_id": "s55277734",
+      "dicom_id": "7feb6dd3-ebde561d-d43cef2e-591c2c69-a5231027",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_116",
+      "patient_id": "p19901104",
+      "study_id": "s53047478",
+      "dicom_id": "83a59816-1255144d-73c9e9d5-4ec14af1-cc6b0b55",
+      "primary_category": "unknown"
+    },
+    {
+      "case_id": "CASE_EXP_TEST_117",
+      "patient_id": "p15427942",
+      "study_id": "s57578130",
+      "dicom_id": "84c38cc6-94deef69-e9407547-a24011a8-eac1cedd",
+      "primary_category": "unknown"
+    }
+  ]
+}

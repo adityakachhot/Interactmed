@@ -1,0 +1,133 @@
+# TASK 14: Frozen Configuration Manifest for Evidence-Aware Hybrid Pipeline
+# =========================================================================
+# Date: 2026-10-17
+# Architecture: MedGemma 4B (VLM) + TransVG Task 3 Ep5 (Grounding) + DenseNet-121 (Classifier)
+# Environment: Apple Silicon M3, PyTorch MPS, Ollama Local Server
+
+metadata:
+  pipeline_name: "InteractMed-VLM Evidence-Aware Hybrid Pipeline"
+  version: "1.2.0-frozen"
+  evaluation_stage: "Held-Out Verification Ready"
+  governance: "Strictly patient-disjoint; locked test cohort sealed pending gate approval"
+
+models:
+  vlm_report_generator:
+    model_name: "medgemma:4b"
+    engine: "Ollama Local Inference"
+    endpoint: "http://127.0.0.1:11434/api/generate"
+    active_prompt_version: "Production Prompt v3 (PROMPT_V3_RESEARCH)"
+    temperature: 0.0
+    num_predict: 140
+    stream: false
+
+  visual_grounding_model:
+    architecture: "TransVG-AGPT"
+    checkpoint_relative_path: "checkpoints/multipathology/run_02_continuation_to_6ep/best_model_val_iou.pth"
+    checkpoint_sha256: "2816afcf8ae5948e2c45abb25209a3285cb275a8b14d03a59cc99045b753458d"
+    training_epoch: "Task 3 Epoch 5"
+    device: "mps"
+    input_resolution: [640, 640]
+    output_format: "normalized [xmin, ymin, xmax, ymax] in [0, 1]"
+
+  auxiliary_classifier:
+    library: "torchxrayvision==1.5.5"
+    architecture: "DenseNet-121"
+    weights_name: "densenet121-res224-all"
+    weights_file: "nih-pc-chex-mimic_ch-google-openi-kaggle-densenet121-d121-tw-lr001-rot45-tr15-sc15-seed0-best.pt"
+    weights_sha256: "56524913dd16a906422e8d8b66a7a5c46be1d82eb7ac012d8103776f1aa68899"
+    device: "mps"
+    input_resolution: 224
+    preprocessing:
+      dynamic_range_scale: "[-1024.0, 1024.0]"
+      aspect_preserving_resize_crop: true
+      channels: 1
+
+category_mapping:
+  mapped_findings:
+    cardiomegaly:
+      source_labels: ["Cardiomegaly", "Enlarged Cardiomediastinum"]
+      aggregation: "max"
+    pleural_effusion:
+      source_labels: ["Effusion"]
+      aggregation: "direct"
+    pneumothorax:
+      source_labels: ["Pneumothorax"]
+      aggregation: "direct"
+    pneumonia_consolidation:
+      source_labels: ["Pneumonia", "Consolidation", "Infiltration"]
+      aggregation: "max"
+    pulmonary_edema:
+      source_labels: ["Edema"]
+      aggregation: "direct"
+    atelectasis:
+      source_labels: ["Atelectasis"]
+      aggregation: "direct"
+  unmapped_pathologies_tracked:
+    - "Emphysema"
+    - "Fibrosis"
+    - "Pleural_Thickening"
+    - "Nodule"
+    - "Mass"
+    - "Hernia"
+    - "Lung Lesion"
+    - "Fracture"
+
+threshold_policy:
+  operating_review_threshold: 0.62
+  rationale: "Selected on development cohort to maximize alert recall (100.0%) and achieve 0.0% case-level false-normal rate for safety screening."
+  balanced_f1_threshold: 0.64
+  balanced_f1_rationale: "Identified via 5-fold cross-validation as F1-maximizing operating point (F1: 0.5463, cuts false-positive alerts by 38%)."
+  semantic_interpretation: "Secondary review signals only; NEVER converted into confirmed diagnostic text assertions."
+
+subsystems:
+  device_extraction:
+    engine: "MedGemma Structured Pass"
+    target_category: "support_devices"
+    output_schema: "JSON {devices_present: bool, device_types: List[str]}"
+
+  regional_review:
+    margin_padding: 0.15
+    min_crop_dimension: 32
+    prompt: "4-section structured regional prompt (TARGET FINDING, IMAGE OBSERVATIONS, ASSESSMENT, LIMITATIONS)"
+    stances_preserved: ["supported", "not_supported", "indeterminate", "not_assessable"]
+
+  cross_report_consistency:
+    module: "src/consistency_service.py"
+    review_required_triggers:
+      1: "Multi-source confirmation conflict (Grounding + Classifier confirm finding vs whole report clear)"
+      2: "Evidence discordance advisory (Classifier score >= threshold vs whole report negative/omitted)"
+      3: "Diagnostic uncertainty (Regional or whole-image assessment marked indeterminate)"
+      4: "Internal regional report contradiction (Observation affirms pathology vs assessment denies it)"
+      5: "Whole-image internal contradiction (Observations positive vs impression declares clear/normal)"
+    safety_invariants:
+      - "Original generated reports remain immutable"
+      - "Provenance preserved across all models"
+      - "Missing classifier result treated as unavailable evidence, never converted to normality"
+      - "Unsupported queries remain flagged as unsupported"
+
+datasets_and_manifests:
+  development_cohort:
+    file_path: "artifacts/fine_tuning_cohort/val_dev.jsonl"
+    sha256: "4ef9cda7ca54ff7f97dcb6501a07503c19f1ab11450f40686ca2a24916e44ed1"
+    sample_size: 50
+    unique_patients: 49
+    abnormal_cases: 36
+    normal_controls: 14
+
+  quarantined_test_cohort:
+    manifest_path: "artifacts/report_evaluation/expanded_cohort/expanded_manifest.csv"
+    manifest_sha256: "53809d78c12279bb15246556aeee6d07a9d6d4685e9f154bcc784ced749e95d5"
+    reference_store_path: "artifacts/report_evaluation/expanded_cohort/expanded_reference_store.json"
+    reference_store_sha256: "64950c65a5dd01396525c5a65553999e1e0b38b663ef78284216c391e4b96237"
+    split_name: "expanded_test"
+    sample_size: 117
+    unique_patients: 117
+    status: "SEALED PENDING GATING VERIFICATION"
+
+evaluation_metric_definitions:
+  case_false_normal_rate: "Fraction of abnormal reference cases where generated output asserts 0 findings (False Normal Cases / Abnormal Cases)"
+  finding_omission_rate: "Fraction of reference findings omitted from generated findings list (FN / Total Reference Findings)"
+  case_omission_rate: "Fraction of cases where >=1 reference finding was omitted (Cases with FN > 0 / Total Cases)"
+  unsupported_assertion_rate: "Fraction of cases where >=1 ungrounded finding was asserted (Cases with FP > 0 / Total Cases)"
+  micro_f1: "Harmonic mean of finding-level precision and recall across all cases"
+  macro_f1: "Unweighted arithmetic mean of per-category F1 across the 7 standardized finding categories"

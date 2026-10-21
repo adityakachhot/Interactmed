@@ -1,0 +1,3 @@
+threshold,policy_role,total_cases,abnormal_cases,normal_controls,total_reference_findings,tp_findings,fp_findings,fn_findings,micro_precision,precision_ci_95,micro_recall,recall_ci_95,micro_f1,case_false_normal_rate,case_false_normal_ci_95,finding_omission_rate,cases_with_false_alert,median_latency_ms,p95_latency_ms
+0.62,High-Sensitivity Review Advisory,117,84,33,197,191,264,6,0.4198,"[0.3753, 0.4656]",0.9695,"[0.9352, 0.986]",0.5859,0/84 (0.0%),"[0.0, 0.0437]",6/197 (3.0%),106/117 (90.6%),203.8,218.2
+0.64,Balanced Diagnostic Alert,117,84,33,197,136,76,61,0.6415,"[0.575, 0.703]",0.6904,"[0.6227, 0.7508]",0.665,22/84 (26.2%),"[0.1798, 0.3648]",61/197 (31.0%),52/117 (44.4%),203.8,218.2

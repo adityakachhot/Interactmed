@@ -1,0 +1,92 @@
+# configs/medgemma_cloud_finetune.yaml
+# ===================================
+# InteractMed-VLM: MedGemma 4B Parameter-Efficient Fine-Tuning Cloud Configuration
+# Target Hardware: NVIDIA A100 (40GB/80GB VRAM) on Google Colab Pro / Vertex AI / Lambda Labs
+# Base Model: google/medgemma-4b-it (Gemma 3 Multimodal Architecture)
+
+experiment:
+  name: "medgemma_4b_lora_cloud_run_01"
+  description: "Controlled Tier 2 LoRA fine-tuning on multimodal projector & language decoder with frozen SigLIP vision tower"
+  seed: 42
+  tier: 2
+
+hardware_requirements:
+  accelerator: "NVIDIA CUDA GPU"
+  min_compute_capability: 8.0 # Ampere or Hopper (A100, H100, L4)
+  min_vram_gb: 40.0
+  required_dtype: "bfloat16"
+
+model:
+  model_id: "google/medgemma-4b-it"
+  model_class: "AutoModelForImageTextToText"
+  processor_class: "AutoProcessor"
+  torch_dtype: "bfloat16"
+  device_map: "auto"
+  attn_implementation: "eager" # Use flash_attention_2 if installed on A100
+  min_transformers_version: "4.50.0"
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_quant_storage: "bfloat16"
+
+lora:
+  task_type: "CAUSAL_LM"
+  r: 16
+  lora_alpha: 16
+  lora_dropout: 0.05
+  bias: "none"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+    - "multi_modal_projector.linear_1"
+    - "multi_modal_projector.linear_2"
+  freeze_vision_tower: true # Strict scientific baseline isolation
+  modules_to_save:
+    - "lm_head"
+    - "embed_tokens"
+
+data:
+  train_file: "artifacts/fine_tuning_cohort/train_dev.jsonl"
+  val_file: "artifacts/fine_tuning_cohort/val_dev.jsonl"
+  manifest_file: "artifacts/medgemma_finetuning/task9_run_01/frozen_partitions_manifest.json"
+  locked_test_partition: "expanded_test" # PERMANENTLY LOCKED & EXCLUDED
+  max_image_resolution: 896 # Native SigLIP grid (256 visual tokens)
+  max_prompt_length: 512
+  max_target_length: 512
+  ignore_index: -100
+
+training:
+  output_dir: "checkpoints/medgemma_lora_cloud_run_01"
+  num_train_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 16 # Effective batch size = 16
+  learning_rate: 1.0e-4
+  warmup_ratio: 0.05
+  lr_scheduler_type: "cosine"
+  weight_decay: 0.01
+  max_grad_norm: 0.3
+  gradient_checkpointing: true
+  optim: "paged_adamw_8bit"
+  bf16: true
+  fp16: false
+  logging_steps: 5
+  eval_strategy: "epoch"
+  save_strategy: "epoch"
+  save_total_limit: 2
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  early_stopping_patience: 2
+  report_to: "tensorboard"
+  logging_dir: "checkpoints/medgemma_lora_cloud_run_01/runs"
+  remove_unused_columns: false
+  resume_from_checkpoint: null # Set to checkpoint directory path to resume

@@ -1,0 +1,288 @@
+[
+  {
+    "case_idx": 1,
+    "file_name": "0f768188-ace0476b-e815f596-4bcca8f6-f6614985 copy.jpg",
+    "dicom_id": "0f768188-ace0476b-e815f596-4bcca8f6-f6614985",
+    "candidate_query": "pneumothorax",
+    "grounding_box": [
+      860.9,
+      1605.91,
+      1251.44,
+      1909.32
+    ],
+    "regional_report": "QUERY EVALUATED: pneumothorax\nSTATUS: not_supported\nLATERALITY: left\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: The left lung appears relatively clear, with no obvious signs of pneumothorax such as a pleural line or absence of lung markings.\nWHOLE_IMAGE_CONTEXT: The radiograph shows a relatively normal appearance of the left lung.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 32.57516687497264
+  },
+  {
+    "case_idx": 2,
+    "file_name": "138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe.jpg",
+    "dicom_id": "138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe",
+    "candidate_query": "pneumothorax",
+    "grounding_box": [
+      745.58,
+      1353.22,
+      1185.19,
+      1671.08
+    ],
+    "regional_report": "QUERY EVALUATED: pneumothorax\nSTATUS: not_supported\nLATERALITY: left\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: There is a pleural effusion in the left hemithorax, with a possible small pneumothorax at the apex.\nWHOLE_IMAGE_CONTEXT: The left hemithorax appears to have a pleural effusion, which could be related to the presence of a small pneumothorax.\nRECOMMENDATION: incorporate_in_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 43.61989916599123
+  },
+  {
+    "case_idx": 3,
+    "file_name": "19b74f79-7ad317b1-887496c3-2645db29-48245a51 copy.jpg",
+    "dicom_id": "19b74f79-7ad317b1-887496c3-2645db29-48245a51",
+    "candidate_query": "cardiomegaly",
+    "grounding_box": [
+      344.28,
+      1090.38,
+      657.37,
+      1412.16
+    ],
+    "regional_report": "QUERY EVALUATED: cardiomegaly\nSTATUS: not_supported\nLATERALITY: bilateral\nCONFIDENCE_LEVEL: moderate\nREGIONAL_OBSERVATION: The heart appears enlarged, but the assessment is limited by the portable nature of the image and the presence of multiple lines and tubes.\nWHOLE_IMAGE_CONTEXT: The image shows a portable chest radiograph with multiple lines and tubes. The heart size appears enlarged, but the assessment is limited by the portable nature of the image and the presence of multiple lines and tubes.\nRECOMMENDATION: incorporate_in_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 52.49688229197636
+  },
+  {
+    "case_idx": 4,
+    "file_name": "238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1 copy.jpg",
+    "dicom_id": "238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1",
+    "candidate_query": "pneumothorax",
+    "grounding_box": [
+      1225.04,
+      1642.31,
+      1759.92,
+      2032.52
+    ],
+    "regional_report": "QUERY EVALUATED: pneumothorax\nSTATUS: not_supported\nLATERALITY: right\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: Normal bronchovascular markings without air bronchogram or consolidation.\nWHOLE_IMAGE_CONTEXT: The radiograph shows normal lung parenchyma.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 39.74209516705014
+  },
+  {
+    "case_idx": 5,
+    "file_name": "2f5e274a-749f1c06-1c8be147-4fabf575-e333e808.jpg",
+    "dicom_id": "2f5e274a-749f1c06-1c8be147-4fabf575-e333e808",
+    "candidate_query": "consolidation",
+    "grounding_box": [
+      1524.26,
+      1208.78,
+      1941.39,
+      1684.43
+    ],
+    "regional_report": "QUERY EVALUATED: consolidation\nSTATUS: not_supported\nLATERALITY: left\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: The regional crop shows normal bronchovascular markings without air bronchogram or consolidation.\nWHOLE_IMAGE_CONTEXT: The left lung appears clear.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 42.17578504100675
+  },
+  {
+    "case_idx": 6,
+    "file_name": "350a19d2-7329f60d-17416b9a-d6eca016-187e6876.jpg",
+    "dicom_id": "350a19d2-7329f60d-17416b9a-d6eca016-187e6876",
+    "candidate_query": "cardiomegaly",
+    "grounding_box": [
+      529.67,
+      1400.53,
+      1011.88,
+      1733.23
+    ],
+    "regional_report": "QUERY EVALUATED: cardiomegaly\nSTATUS: not_supported\nLATERALITY: midline\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: The heart size appears normal.\nWHOLE_IMAGE_CONTEXT: The heart size appears normal.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 50.935894374968484
+  },
+  {
+    "case_idx": 7,
+    "file_name": "3bea0373-0d10dd77-1cac5b90-651be924-d343b184.jpg",
+    "dicom_id": "3bea0373-0d10dd77-1cac5b90-651be924-d343b184",
+    "candidate_query": "pleural effusion",
+    "grounding_box": [
+      399.87,
+      1326.07,
+      880.79,
+      1868.74
+    ],
+    "regional_report": "QUERY EVALUATED: pleural effusion\nSTATUS: not_supported\nLATERALITY: bilateral\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: There are hazy opacities in both lung fields, but no clear pleural effusion is identified.\nWHOLE_IMAGE_CONTEXT: The hazy opacities could be due to various factors, including pulmonary edema, atelectasis, or other infiltrates.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 40.307753124972805
+  },
+  {
+    "case_idx": 8,
+    "file_name": "3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61.jpg",
+    "dicom_id": "3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61",
+    "candidate_query": "pleural effusion",
+    "grounding_box": [
+      285.83,
+      1266.31,
+      548.5,
+      1559.56
+    ],
+    "regional_report": "QUERY EVALUATED: pleural effusion\nSTATUS: not_supported\nLATERALITY: unspecified\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: The regional crop shows normal lung parenchyma without any obvious signs of pleural effusion, such as blunting of the costophrenic angles or fluid in the pleural space.\nWHOLE_IMAGE_CONTEXT: The radiograph shows a normal heart size, mediastinal contours, and no other significant abnormalities.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 53.440223125042394
+  },
+  {
+    "case_idx": 9,
+    "file_name": "5f090a4b-dc8a796d-726db5a0-62f19c9f-58cccd6f.jpg",
+    "dicom_id": "5f090a4b-dc8a796d-726db5a0-62f19c9f-58cccd6f",
+    "candidate_query": "pneumothorax",
+    "grounding_box": [
+      145.79,
+      1042.54,
+      476.53,
+      1263.62
+    ],
+    "regional_report": "QUERY EVALUATED: pneumothorax\nSTATUS: not_supported\nLATERALITY: left\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: The left lung appears relatively clear, with no obvious signs of pneumothorax such as a pleural line or absence of lung markings. There is some increased opacity in the lower lung fields, but it is not specific enough to suggest pneumothorax.\nWHOLE_IMAGE_CONTEXT: The right lung appears clear. The patient has a chest tube in place on the left.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 55.23686304100556
+  },
+  {
+    "case_idx": 10,
+    "file_name": "dcdc4bd9-4301b111-2a65a814-ee8e7bc5-7f0b9a5a.jpg",
+    "dicom_id": "dcdc4bd9-4301b111-2a65a814-ee8e7bc5-7f0b9a5a",
+    "candidate_query": "cardiomegaly",
+    "grounding_box": [
+      264.96,
+      1223.62,
+      599.71,
+      1612.95
+    ],
+    "regional_report": "QUERY EVALUATED: cardiomegaly\nSTATUS: not_supported\nLATERALITY: midline\nCONFIDENCE_LEVEL: low\nREGIONAL_OBSERVATION: The heart appears to be enlarged, but the image quality is suboptimal and the heart size is difficult to accurately assess.\nWHOLE_IMAGE_CONTEXT: The heart size appears to be mildly enlarged, but the image quality is poor, making it difficult to definitively assess cardiomegaly.\nRECOMMENDATION: omit_from_report",
+    "regional_stance": "unknown",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 53.861618000024464
+  },
+  {
+    "case_idx": 11,
+    "file_name": "f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47.jpg",
+    "dicom_id": "f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47",
+    "candidate_query": "cardiomegaly",
+    "grounding_box": [
+      370.06,
+      1393.06,
+      719.69,
+      1743.91
+    ],
+    "regional_report": "QUERY EVALUATED: cardiomegaly\nSTATUS: supported\nLATERALITY: midline\nCONFIDENCE_LEVEL: high\nREGIONAL_OBSERVATION: The heart appears enlarged, with increased cardiac silhouette.\nWHOLE_IMAGE_CONTEXT: The heart size is significantly increased, suggesting cardiomegaly.\nRECOMMENDATION: incorporate_in_report",
+    "regional_stance": "supported",
+    "preds": {
+      "cardiomegaly": true,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": true
+    },
+    "is_normal": false,
+    "is_false_normal": false,
+    "latency_s": 50.25463933305582
+  }
+]

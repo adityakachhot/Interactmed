@@ -1,0 +1,11 @@
+image_id,filename,file_size_bytes,dimensions,color_mode,sha256_hash,preprocessed_dims,base64_payload_valid,aspect_ratio_preserved,full_fov_confirmed,error_status
+dev_img_01_0f768188,0f768188-ace0476b-e815f596-4bcca8f6-f6614985 copy.jpg,2343041,2544x3056,L,c325e69bb6d91a35,852x1024,True,True,True,none
+dev_img_02_138f8635,138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe.jpg,1778607,3056x2544,L,8294d8437d22e6bf,1024x852,True,True,True,none
+dev_img_03_19b74f79,19b74f79-7ad317b1-887496c3-2645db29-48245a51 copy.jpg,1556022,2683x2539,L,ee8681da296057d4,1024x969,True,True,True,none
+dev_img_04_238ce890,238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1 copy.jpg,2145697,2755x2539,L,a0cd1c1f5491a945,1023x943,True,True,True,none
+dev_img_05_2f5e274a,2f5e274a-749f1c06-1c8be147-4fabf575-e333e808.jpg,1494183,2539x3050,L,e5107f5f7b81c0bd,852x1024,True,True,True,none
+dev_img_06_350a19d2,350a19d2-7329f60d-17416b9a-d6eca016-187e6876.jpg,1608099,3056x2544,L,ce9f8b99a12d81bc,1024x852,True,True,True,none
+dev_img_07_3bea0373,3bea0373-0d10dd77-1cac5b90-651be924-d343b184.jpg,1616005,2544x3056,L,7017b42e9fbd1a79,852x1024,True,True,True,none
+dev_img_08_3daa2f39,3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61.jpg,968830,1736x2022,L,79285887c0f60233,879x1024,True,True,True,none
+control_empty_bytes,empty.png,0,0x0,none,e3b0c44298fc1c14,none,False,False,False,Empty image payload rejected
+control_corrupted_bytes,corrupted.jpg,64,invalid,none,9b247f20f64b8b6c,none,False,False,False,Image decode error rejected

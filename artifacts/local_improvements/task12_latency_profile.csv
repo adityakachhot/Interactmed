@@ -1,0 +1,10 @@
+component,mean_ms,median_ms,p95_ms,device,notes
+1. Whole-Image VLM Generation,14493.2,14420.0,16770.0,Ollama CPU/Metal,Autoregressive generation
+2. Specialized Device Extraction,5699.4,5726.5,5875.9,Ollama CPU/Metal,Structured JSON pass
+3. TransVG Visual Grounding,442.4,439.5,464.0,PyTorch MPS,Single forward pass
+4. Regional Crop & Resizing,47.8,47.5,52.0,PIL CPU,Margin padding & crop
+5. Regional Review VLM,9849.4,9838.0,10106.2,Ollama CPU/Metal,Regional crop review
+6. Cross-Report Consistency Engine,0.1,0.1,0.2,In-Memory CPU,Deterministic rules
+7. Auxiliary Pretrained Classifier,215.8,208.8,231.1,PyTorch MPS,DenseNet-121 224x224
+8. Baseline Pipeline End-to-End,14493.2,14420.0,16770.0,Combined,Prompt v3 alone
+9. Evidence-Aware Pipeline End-to-End,30748.0,30751.8,33244.4,Combined,Full multi-model review

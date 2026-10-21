@@ -1,0 +1,6 @@
+cohort_name,total_patients,total_studies,unique_images,train_dev_patient_overlap,val_dev_patient_overlap,task7_dev_patient_overlap,task8_dev_patient_overlap,expanded_test_patient_overlap,exposure_and_governance_role,independent_status
+Training (train_dev),199,200,200,199,0,0,51,0,Prepared supervised fine-tuning training set; 51 patients exposed to Task 8 benchmark,Development partition
+Validation (val_dev),49,50,50,0,49,0,9,0,Validation loss monitoring and checkpoint early stopping; 9 patients exposed to Task 8 benchmark,Development partition
+Task 7 Dev (11 Cases),8,11,11,0,0,8,0,0,Initial pilot benchmark for Prompt v3-v6 development; disjoint from expanded cohort,Development partition
+Task 8 Dev (60 Cases),60,60,60,51,9,0,60,0,Expanded 4-strategy controlled evaluation; drawn from expanded_dev (NOT independent of train/val),Development evidence
+Locked Test (expanded_test),117,117,117,0,0,0,0,117,Permanently locked & quarantined benchmark; zero prior exposure to prompts or fine-tuning,Strictly independent held-out

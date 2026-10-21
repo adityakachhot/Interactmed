@@ -1,0 +1,39 @@
+{
+  "experiment": "medgemma_4b_pilot_tier2",
+  "timestamp": "2026-10-17T00:07:36Z",
+  "hardware_state": "Apple Silicon (MPS), unified 16GB RAM, no CUDA/bitsandbytes",
+  "preflight_optimization_test": {
+    "steps": 20,
+    "learning_rate": 0.0001,
+    "initial_loss": 9.2493,
+    "final_loss": 5.8421,
+    "loss_curve": [
+      {
+        "step": 1,
+        "loss": 9.2493
+      },
+      {
+        "step": 5,
+        "loss": 9.0986
+      },
+      {
+        "step": 10,
+        "loss": 8.7049
+      },
+      {
+        "step": 15,
+        "loss": 7.7389
+      },
+      {
+        "step": 20,
+        "loss": 5.8421
+      }
+    ],
+    "status": "PASS: monotonic gradient descent verified"
+  },
+  "full_training_status": {
+    "executed": false,
+    "reason": "Hardware blocker: Full 4-bit QLoRA fine-tuning requires NVIDIA A100 GPU (>=40GB VRAM) supporting bfloat16. Local node is Apple Silicon macOS.",
+    "colab_runbook": "notebooks/medgemma_finetune_colab.ipynb prepared for cloud A100 deployment."
+  }
+}

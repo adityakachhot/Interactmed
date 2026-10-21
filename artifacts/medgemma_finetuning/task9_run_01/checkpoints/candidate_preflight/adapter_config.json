@@ -1,0 +1,27 @@
+{
+  "base_model_name_or_path": "google/medgemma-4b-it",
+  "peft_type": "LORA",
+  "task_type": "CAUSAL_LM",
+  "r": 16,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "multi_modal_projector.linear_1",
+    "multi_modal_projector.linear_2"
+  ],
+  "modules_to_save": [
+    "lm_head",
+    "embed_tokens"
+  ],
+  "bias": "none",
+  "tier": 2,
+  "frozen_vision_tower": true,
+  "status": "preflight_verified_unexecuted_full_training"
+}

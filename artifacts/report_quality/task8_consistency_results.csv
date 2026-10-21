@@ -1,0 +1,61 @@
+case_idx,safe_case_id,patient_id,review_required,review_reasons,v6_query,v6_regional_stance
+1,CASE_EXP_DEV_027,p16954495,False,Compatible across pathways,cardiomegaly,unknown
+2,CASE_EXP_DEV_040,p16191519,False,Compatible across pathways,cardiomegaly,unknown
+3,CASE_EXP_DEV_089,p12502386,False,Compatible across pathways,cardiomegaly,unknown
+4,CASE_EXP_DEV_136,p19096168,False,Compatible across pathways,cardiomegaly,unknown
+5,CASE_EXP_DEV_138,p13450784,False,Compatible across pathways,cardiomegaly,unknown
+6,CASE_EXP_DEV_204,p19902791,False,Compatible across pathways,cardiomegaly,unknown
+7,CASE_EXP_DEV_229,p10680329,False,Compatible across pathways,cardiomegaly,unknown
+8,CASE_EXP_DEV_231,p14661031,False,Compatible across pathways,cardiomegaly,unknown
+9,CASE_EXP_DEV_248,p17058328,False,Compatible across pathways,cardiomegaly,unknown
+10,CASE_EXP_DEV_023,p12930426,False,Compatible across pathways,pneumothorax,not_supported
+11,CASE_EXP_DEV_029,p16132343,False,Compatible across pathways,atelectasis,unknown
+12,CASE_EXP_DEV_058,p16072879,False,Compatible across pathways,pleural effusion,unknown
+13,CASE_EXP_DEV_071,p12215941,False,Compatible across pathways,pleural effusion,unknown
+14,CASE_EXP_DEV_097,p15491652,False,Compatible across pathways,pneumothorax,unknown
+15,CASE_EXP_DEV_113,p19160511,False,Compatible across pathways,atelectasis,unknown
+16,CASE_EXP_DEV_114,p14256117,False,Compatible across pathways,atelectasis,unknown
+17,CASE_EXP_DEV_155,p15559032,False,Compatible across pathways,atelectasis,unknown
+18,CASE_EXP_DEV_226,p17911840,False,Compatible across pathways,pneumothorax,unknown
+19,CASE_EXP_DEV_006,p12868507,False,Compatible across pathways,pneumothorax,unknown
+20,CASE_EXP_DEV_018,p14823207,False,Compatible across pathways,pneumothorax,unknown
+21,CASE_EXP_DEV_035,p11844144,False,Compatible across pathways,support apparatus,unknown
+22,CASE_EXP_DEV_045,p12843379,False,Compatible across pathways,pneumothorax,unknown
+23,CASE_EXP_DEV_122,p13551252,False,Compatible across pathways,support apparatus,unknown
+24,CASE_EXP_DEV_168,p11006497,False,Compatible across pathways,support apparatus,unknown
+25,CASE_EXP_DEV_190,p19795930,False,Compatible across pathways,support apparatus,unknown
+26,CASE_EXP_DEV_195,p15729731,False,Compatible across pathways,support apparatus,unknown
+27,CASE_EXP_DEV_237,p10854947,False,Compatible across pathways,pneumothorax,unknown
+28,CASE_EXP_DEV_246,p14496947,False,Compatible across pathways,support apparatus,unknown
+29,CASE_EXP_DEV_005,p10527186,True,Conflicting AI assessments — review required,pneumothorax,supported
+30,CASE_EXP_DEV_007,p14358686,False,Compatible across pathways,cardiomegaly,not_supported
+31,CASE_EXP_DEV_008,p11234565,False,Compatible across pathways,cardiomegaly,unknown
+32,CASE_EXP_DEV_012,p12591968,False,Compatible across pathways,cardiomegaly,unknown
+33,CASE_EXP_DEV_022,p19287786,False,Compatible across pathways,pneumothorax,unknown
+34,CASE_EXP_DEV_026,p16097925,False,Compatible across pathways,pleural effusion,not_supported
+35,CASE_EXP_DEV_030,p14180570,True,Conflicting AI assessments — review required,pleural effusion,supported
+36,CASE_EXP_DEV_032,p14987393,False,Compatible across pathways,cardiomegaly,not_supported
+37,CASE_EXP_DEV_033,p19243474,False,Compatible across pathways,cardiomegaly,unknown
+38,CASE_EXP_DEV_043,p16356013,False,Compatible across pathways,pleural effusion,unknown
+39,CASE_EXP_DEV_004,p15599510,False,Compatible across pathways,pneumothorax,unknown
+40,CASE_EXP_DEV_009,p12815514,False,Compatible across pathways,consolidation,unknown
+41,CASE_EXP_DEV_010,p12429112,False,Compatible across pathways,pleural effusion,unknown
+42,CASE_EXP_DEV_015,p15662081,False,Compatible across pathways,pleural effusion,not_supported
+43,CASE_EXP_DEV_017,p17253958,False,Compatible across pathways,pleural effusion,unknown
+44,CASE_EXP_DEV_020,p14455452,False,Compatible across pathways,pleural effusion,unknown
+45,CASE_EXP_DEV_024,p17804052,False,Compatible across pathways,consolidation,unknown
+46,CASE_EXP_DEV_036,p11305073,False,Compatible across pathways,pleural effusion,unknown
+47,CASE_EXP_DEV_037,p16015533,False,Compatible across pathways,pleural effusion,unknown
+48,CASE_EXP_DEV_039,p16568389,False,Compatible across pathways,pleural effusion,not_supported
+49,CASE_EXP_DEV_041,p19945642,False,Compatible across pathways,pleural effusion,unknown
+50,CASE_EXP_DEV_044,p14516996,False,Compatible across pathways,pneumothorax,unknown
+51,CASE_EXP_DEV_001,p15184836,False,Compatible across pathways,heart,not_supported
+52,CASE_EXP_DEV_002,p12930467,False,Compatible across pathways,pneumothorax,unknown
+53,CASE_EXP_DEV_003,p17992323,False,Compatible across pathways,pneumothorax,unknown
+54,CASE_EXP_DEV_011,p14548229,False,Compatible across pathways,heart,unknown
+55,CASE_EXP_DEV_013,p15649581,False,Compatible across pathways,pneumothorax,unknown
+56,CASE_EXP_DEV_014,p12262788,False,Compatible across pathways,pneumothorax,not_supported
+57,CASE_EXP_DEV_016,p17377807,False,Compatible across pathways,pleural effusion,unknown
+58,CASE_EXP_DEV_019,p11897016,False,Compatible across pathways,pleural effusion,unknown
+59,CASE_EXP_DEV_021,p12367601,False,Compatible across pathways,pneumothorax,unknown
+60,CASE_EXP_DEV_025,p13975291,False,Compatible across pathways,pleural effusion,unknown

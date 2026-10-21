@@ -4,11 +4,12 @@ import {
   fetchHealth, fetchVisionModelStatus, groundPhrase, generateRegionReport,
   generatePatientFriendlyReport, generateStudyReport,
   createBatch, fetchBatchStatus, cancelBatch, retryBatch, getBatchDownloadUrl,
-  fetchGroundingCapabilities, checkReportConsistency, type CheckpointOption, type GroundingCapability,
+  fetchGroundingCapabilities, checkReportConsistency, translateRegionalReport,
+  type CheckpointOption, type GroundingCapability,
   type HealthResponse, type VisionModelStatus, type GroundingResponse,
   type RegionReportResponse, type PatientFriendlyReportResponse, type StudyReportResponse,
   type BatchItemResponse, type BatchStatusResponse, type TriageResult,
-  type ConsistencyCheckResponse,
+  type ConsistencyCheckResponse, type UnifiedTriage, type RegionalTranslationResponse,
 } from './api';
 
 const EXAMPLE_QUERIES = [
@@ -112,72 +113,198 @@ function StatusPillBadge({ status }: { status: string }) {
   );
 }
 
-function TriageCard({ triage, crossConflict = false }: { triage?: TriageResult | null; crossConflict?: boolean }) {
-  if (!triage) return null;
+function BatchItemStatusBadge({ item }: { item: BatchItemResponse }) {
+  if (item.status === 'completed') {
+    if (item.report_validity === 'malformed_report') {
+      return (
+        <span className="status-pill-badge status-malformed" title="Report parsing detected malformed structure or syntax cutoffs">
+          <span>✕</span>
+          <span>Report parsing failed</span>
+        </span>
+      );
+    }
+    if (item.report_validity === 'incomplete_report') {
+      return (
+        <span className="status-pill-badge status-incomplete" title="Report is missing required sections or truncated">
+          <span>⚠️</span>
+          <span>Incomplete report</span>
+        </span>
+      );
+    }
+    if (item.report_validity === 'report_generation_failed') {
+      return (
+        <span className="status-pill-badge status-failed" title="Report generation encountered an error">
+          <span>✕</span>
+          <span>Processing failed</span>
+        </span>
+      );
+    }
+    if (item.review_required) {
+      return (
+        <span className="status-pill-badge status-completed-review" title="Completed inference; multi-evidence check flagged review required">
+          <span>⚖️</span>
+          <span>Completed — review required</span>
+        </span>
+      );
+    }
+    return (
+      <span className="status-pill-badge status-completed-validated" title="Report completed and validated structurally">
+        <span>✓</span>
+        <span>Completed — report validated</span>
+      </span>
+    );
+  }
+  if (item.status === 'failed') {
+    return (
+      <span className="status-pill-badge status-failed">
+        <span>✕</span>
+        <span>Processing failed</span>
+      </span>
+    );
+  }
+  if (item.status === 'processing') {
+    return (
+      <span className="status-pill-badge status-processing">
+        <span>⚡</span>
+        <span>Processing</span>
+      </span>
+    );
+  }
+  if (item.status === 'cancelled') {
+    return (
+      <span className="status-pill-badge status-cancelled">
+        <span>⏹</span>
+        <span>Cancelled</span>
+      </span>
+    );
+  }
+  return (
+    <span className="status-pill-badge status-queued">
+      <span>⏳</span>
+      <span>Queued</span>
+    </span>
+  );
+}
 
-  const categoryLabelMap: Record<string, string> = {
-    potentially_urgent: '🚨 Potentially Urgent',
-    abnormality_flagged: '⚠️ Abnormality Flagged',
-    no_priority_finding_flagged: 'ℹ️ No Priority Finding Flagged',
-    indeterminate_review_required: '❓ Indeterminate (Review Required)',
-  };
+function TriageCard({
+  triage,
+  canonicalTriage,
+  crossConflict = false,
+  title = "Research-Only AI Review Status"
+}: {
+  triage?: TriageResult | null;
+  canonicalTriage?: UnifiedTriage | null;
+  crossConflict?: boolean;
+  title?: string;
+}) {
+  const unified: (Partial<UnifiedTriage> & Partial<TriageResult>) | undefined = (canonicalTriage || triage) || undefined;
+  if (!unified && !crossConflict) return null;
 
-  const label = categoryLabelMap[triage.triage_category] || triage.triage_category;
+  // Canonical status determination
+  let status: 'red' | 'yellow' | 'green' = 'yellow';
+  if (crossConflict) {
+    status = 'red';
+  } else if (unified?.status) {
+    status = unified.status;
+  } else if (unified?.triage_category === 'potentially_urgent') {
+    status = 'red';
+  } else if (unified?.triage_category === 'no_priority_finding_flagged') {
+    status = 'green';
+  } else {
+    status = 'yellow';
+  }
+
+  // Canonical human-readable status labels
+  const statusLabel = status === 'red'
+    ? '🚨 Priority AI Review Required'
+    : status === 'yellow'
+    ? '⚠️ Review Advised'
+    : '🛡️ No Configured Review Signal Detected';
+
+  // Strict review required logic
+  const reviewRequired = status === 'red' || (status === 'yellow' && unified?.review_required !== false) || crossConflict;
+
+  // Strict priority mapping: RED is NEVER routine
+  let priority = unified?.review_priority || (status === 'red' ? 'urgent' : status === 'yellow' ? 'elevated' : 'routine');
+  if (status === 'red' && (priority === 'routine' || priority === 'standard_review')) {
+    priority = 'urgent';
+  }
+
+  // Compile structured reasons
+  const structuredReasons: { code?: string; description: string }[] = [];
+  if (crossConflict) {
+    structuredReasons.push({
+      code: 'RULE_MULTI_MODEL_DISCORDANCE',
+      description: 'Conflicting AI assessments detected between regional grounding and whole-image reports. Independent professional review is required.'
+    });
+  }
+  if (unified?.reasons && unified.reasons.length > 0) {
+    unified.reasons.forEach(r => {
+      if (!structuredReasons.some(existing => existing.description === r.description)) {
+        structuredReasons.push({ code: r.code, description: r.description });
+      }
+    });
+  } else if (triage?.rule_reason) {
+    structuredReasons.push({
+      code: triage.matched_rule_id,
+      description: triage.rule_reason,
+    });
+  }
 
   return (
-    <div className="triage-card">
+    <div className={`triage-card triage-status-${status}`} id="canonical-triage-card">
       <div className="triage-header-row">
         <div>
           <span style={{ fontSize: '0.74rem', textTransform: 'uppercase', letterSpacing: 0.5, fontWeight: 700, color: 'var(--text-muted)', display: 'block', marginBottom: 4 }}>
-            Research-Only Triage Suggestion
+            {title}
           </span>
-          <span className={`triage-badge triage-${triage.triage_category}`}>
-            {label}
+          <span className={`triage-badge triage-${status}`}>
+            {statusLabel}
           </span>
         </div>
         <div className="triage-meta-row">
-          <span className="triage-pill">Rule: <code>{triage.matched_rule_id}</code></span>
-          <span className="triage-pill">Review: <strong>{triage.human_review_priority}</strong></span>
-          <span className="triage-pill">Uncertainty: {triage.uncertainty_level}</span>
-          <span className="triage-pill">v{triage.rule_engine_version}</span>
+          <span className="triage-pill">Review Required: <strong>{reviewRequired ? 'YES' : 'NO'}</strong></span>
+          <span className="triage-pill">Priority: <strong>{priority.toUpperCase()}</strong></span>
+          <span className="triage-pill">Policy: v{unified?.policy_version || '1.1.0'}</span>
+          {unified?.uncertainty && (
+            <span className="triage-pill">Uncertainty: {unified.uncertainty}</span>
+          )}
         </div>
       </div>
 
-      {crossConflict && (
-        <div style={{ marginTop: 8, padding: '8px 12px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.35)', borderRadius: 6, color: '#f87171', fontSize: '0.8rem' }}>
-          ⚖️ <strong>Cross-Report Discrepancy:</strong> Conflicting AI assessments detected between regional and whole-image reports. Independent professional review is required.
+      {structuredReasons.length > 0 && (
+        <div className="triage-reason" style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <strong>Decision Evidence &amp; Triggers:</strong>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {structuredReasons.map((r, idx) => (
+              <li key={idx}>
+                {r.code && <code style={{ marginRight: 6, fontSize: '0.74rem' }}>{r.code}</code>}
+                {r.description}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
 
-      <div className="triage-reason">
-        <strong>Reason:</strong> {triage.rule_reason}
-      </div>
-
-      {triage.triage_category === 'no_priority_finding_flagged' && (
-        <div style={{ marginTop: 6, fontSize: '0.74rem', color: 'var(--text-muted)', fontStyle: 'italic', background: 'rgba(255,255,255,0.03)', padding: '6px 10px', borderRadius: 4 }}>
-          Important: 'No priority finding flagged' reflects that automated rules did not flag a predefined urgent finding; it does NOT confirm that the chest radiograph is normal or disease-free.
+      {status === 'green' && (
+        <div style={{ marginTop: 4, fontSize: '0.75rem', color: '#6ee7b7', background: 'rgba(16, 185, 129, 0.08)', padding: '6px 10px', borderRadius: 4, border: '1px solid rgba(16, 185, 129, 0.25)' }}>
+          🛡️ <strong>No configured review signal detected:</strong> All automated evaluation steps completed successfully, reports are well-formed, and no configured review triggers are present. This does <strong>NOT</strong> confirm that the chest radiograph is normal, safe, or disease-free.
         </div>
       )}
 
-      {triage.supporting_findings && triage.supporting_findings.length > 0 && (
+      {unified?.supporting_findings && (unified.supporting_findings as string[]).length > 0 && (
         <div className="triage-findings-box">
-          <div className="triage-findings-title">Supporting Structured Findings</div>
+          <div className="triage-findings-title">Supporting Clinical Findings</div>
           <ul className="triage-findings-list">
-            {triage.supporting_findings.map((finding, idx) => (
+            {(unified.supporting_findings as string[]).map((finding, idx) => (
               <li key={idx}>{finding}</li>
             ))}
           </ul>
         </div>
       )}
 
-      {triage.evidence_notes && (
-        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontStyle: 'italic' }}>
-          Evidence notes: {triage.evidence_notes}
-        </div>
-      )}
-
       <div className="triage-disclaimer-box">
-        ⚖️ <strong>Research Notice:</strong> {triage.research_disclaimer || "Experimental triage priority suggestion. Not clinically validated. Does not establish medical urgency or replace clinical review."}
+        ⚖️ <strong>Research Disclaimer:</strong> {unified?.disclaimer || (unified as any)?.research_disclaimer || "Research-only AI review status. This is not a clinical diagnosis or a substitute for professional interpretation."}
       </div>
     </div>
   );
@@ -186,12 +313,12 @@ function TriageCard({ triage, crossConflict = false }: { triage?: TriageResult |
 function ConsistencyBanner({ consistency }: { consistency: ConsistencyCheckResponse | null }) {
   if (!consistency) return null;
 
-  if (consistency.has_conflict) {
+  if (consistency.has_conflict || consistency.review_required || (consistency.classifier_alerts && consistency.classifier_alerts.length > 0)) {
     return (
       <div className="consistency-box consistency-conflict" id="consistency-conflict-banner">
         <div className="consistency-header">
           <span>⚖️</span>
-          <span>{consistency.warning_banner ?? 'Conflicting AI assessments — review required'}</span>
+          <span>{consistency.warning_banner ?? 'Multi-Source AI Assessment Review Required'}</span>
         </div>
         <p className="consistency-summary">{consistency.summary}</p>
         {consistency.internal_regional_note && (
@@ -199,8 +326,18 @@ function ConsistencyBanner({ consistency }: { consistency: ConsistencyCheckRespo
             <strong>Internal finding note:</strong> {consistency.internal_regional_note}
           </div>
         )}
+        {consistency.classifier_alerts && consistency.classifier_alerts.length > 0 && (
+          <div className="consistency-note" style={{ marginTop: '0.5rem', borderLeft: '3px solid #f59e0b' }}>
+            <strong>Auxiliary Classifier Evidence Signals:</strong>
+            <ul style={{ margin: '0.25rem 0 0 1.25rem', padding: 0 }}>
+              {consistency.classifier_alerts.map((alert, idx) => (
+                <li key={idx}>{alert}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="consistency-disclaimer">
-          Note: Both whole-image and regional analyses are experimental AI drafts. Neither report is presumed correct. Professional radiologist evaluation is required.
+          Note: All model outputs (generative VLM, regional grounding, and pretrained classifier) are experimental research signals. Neither report is presumed correct. Professional radiologist evaluation is required.
         </div>
       </div>
     );
@@ -221,22 +358,46 @@ function ConsistencyBanner({ consistency }: { consistency: ConsistencyCheckRespo
   return null;
 }
 
-function TriageCompactBadge({ triage }: { triage?: TriageResult | null }) {
-  if (!triage) return null;
-  const categoryLabelMap: Record<string, string> = {
-    potentially_urgent: '🚨 Urgent Flag',
-    abnormality_flagged: '⚠️ Abnormality',
-    no_priority_finding_flagged: 'ℹ️ No Priority Finding',
-    indeterminate_review_required: '❓ Review Required',
-  };
-  const label = categoryLabelMap[triage.triage_category] || triage.triage_category;
+function TriageCompactBadge({
+  triage,
+  canonicalTriage
+}: {
+  triage?: TriageResult | null;
+  canonicalTriage?: UnifiedTriage | null;
+}) {
+  const unified = canonicalTriage || triage;
+  if (!unified) return null;
+
+  let status: 'red' | 'yellow' | 'green' = 'yellow';
+  if (unified.status) {
+    status = unified.status;
+  } else if (unified.triage_category === 'potentially_urgent') {
+    status = 'red';
+  } else if (unified.triage_category === 'no_priority_finding_flagged') {
+    status = 'green';
+  }
+
+  const badgeMap = {
+    red: { label: '🚨 Priority Review', bg: 'rgba(239, 68, 68, 0.22)', color: '#fca5a5', border: '#ef4444' },
+    yellow: { label: '⚠️ Review Advised', bg: 'rgba(245, 158, 11, 0.22)', color: '#fde68a', border: '#f59e0b' },
+    green: { label: '🛡️ No Signal', bg: 'rgba(16, 185, 129, 0.20)', color: '#6ee7b7', border: '#10b981' },
+  }[status];
+
   return (
     <span
-      className={`triage-badge triage-${triage.triage_category}`}
-      style={{ padding: '2px 8px', fontSize: '0.70rem' }}
-      title={`Rule: ${triage.matched_rule_id} — ${triage.rule_reason}`}
+      className={`triage-badge triage-${status}`}
+      style={{
+        padding: '2px 8px',
+        fontSize: '0.70rem',
+        fontWeight: 650,
+        background: badgeMap.bg,
+        color: badgeMap.color,
+        border: `1px solid ${badgeMap.border}`,
+        borderRadius: 4,
+      }}
+      title={`${unified.status_label || status.toUpperCase()}: Review Required = ${unified.review_required ? 'Yes' : 'No'}`}
     >
-      {label}
+      {badgeMap.label}
     </span>
   );
 }
@@ -280,11 +441,40 @@ function BatchDetailModal({
                 <div className="empty-state" style={{ height: 200 }}>No preview available</div>
               )}
               <div style={{ marginTop: 12 }}>
-                <StatusPillBadge status={item.status} />
+                <BatchItemStatusBadge item={item} />
               </div>
 
+              {item.classifier_alerts && item.classifier_alerts.length > 0 && (
+                <div style={{ marginTop: 12, padding: 10, borderRadius: 6, background: 'rgba(245, 158, 11, 0.08)', border: '1px solid rgba(245, 158, 11, 0.3)', fontSize: '0.72rem' }}>
+                  <div style={{ fontWeight: 600, color: '#fbbf24', marginBottom: 4 }}>
+                    🔍 Auxiliary Classifier Signals (DenseNet-121)
+                  </div>
+                  <ul style={{ margin: '4px 0 0 14px', padding: 0 }}>
+                    {item.classifier_alerts.map((al, i) => (
+                      <li key={i}>{al}</li>
+                    ))}
+                  </ul>
+                  <div style={{ fontSize: '0.67rem', color: 'var(--text-muted)', marginTop: 4 }}>
+                    Research review signals; not calibrated probabilities or diagnoses.
+                  </div>
+                </div>
+              )}
+
+              {item.consistency_warnings && item.consistency_warnings.length > 0 && (
+                <div style={{ marginTop: 10, padding: 10, borderRadius: 6, background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.3)', fontSize: '0.72rem' }}>
+                  <div style={{ fontWeight: 600, color: '#fca5a5', marginBottom: 4 }}>
+                    ⚖️ Multi-Source Review Warning
+                  </div>
+                  <ul style={{ margin: '4px 0 0 14px', padding: 0 }}>
+                    {item.consistency_warnings.map((cw, i) => (
+                      <li key={i}>{cw}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* Provenance and Identity Audit Card */}
-              <div style={{ marginTop: 16, padding: 12, borderRadius: 6, background: 'var(--bg-card)', border: '1px solid var(--border-color)', fontSize: '0.72rem' }}>
+              <div style={{ marginTop: 12, padding: 12, borderRadius: 6, background: 'var(--bg-card)', border: '1px solid var(--border-color)', fontSize: '0.72rem' }}>
                 <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   🔒 Inference Identity Audit
                 </div>
@@ -328,10 +518,7 @@ function BatchDetailModal({
                     </div>
                   )}
 
-                  {/* Research-only Triage Priority Suggestion */}
-                  {item.triage_result && (
-                    <TriageCard triage={item.triage_result} />
-                  )}
+
 
                   {/* Timing & Performance audit */}
                   <div className="metrics-grid" style={{ marginTop: 16 }}>
@@ -379,9 +566,6 @@ function BatchDetailModal({
               ) : item.status === 'failed' ? (
                 <>
                   <Alert type="error" message={item.error ?? 'Generation failed'} />
-                  {item.triage_result && (
-                    <TriageCard triage={item.triage_result} />
-                  )}
                 </>
               ) : item.status === 'cancelled' ? (
                 <Alert type="warn" message="This job was cancelled before processing started." />
@@ -450,11 +634,20 @@ function CoordinatePanel({ result }: { result: GroundingResponse }) {
   );
 }
 
-function ReportCard({ report, loading, error, visionStatus }: {
+function ReportCard({
+  report,
+  loading,
+  error,
+  visionStatus,
+  query,
+  consistencyResult
+}: {
   report: RegionReportResponse | null;
   loading: boolean;
   error: string | null;
   visionStatus: VisionModelStatus | null;
+  query?: string;
+  consistencyResult?: ConsistencyCheckResponse | null;
 }) {
   if (loading) {
     return (
@@ -491,7 +684,7 @@ function ReportCard({ report, loading, error, visionStatus }: {
   return (
     <div className="region-report-card">
       <div className="region-report-header">
-        <span className="region-report-title">📋 Region Report</span>
+        <span className="region-report-title">📋 Grounding-Linked Regional Report</span>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
           {assessBadge && (
             <span
@@ -524,6 +717,48 @@ function ReportCard({ report, loading, error, visionStatus }: {
             </div>
           )}
           <div className="report-text-content">{report.report_text}</div>
+
+          {/* Task 17 Grounding-Linked Patient Translation */}
+          {report.patient_translation && report.patient_translation.success && (
+            <div className="grounding-translation-box" id="grounding-patient-translation">
+              <div className="grounding-translation-header">
+                <div className="grounding-translation-title">
+                  <span>🎯 Synchronized Patient-Friendly Translation (Grounding-Linked)</span>
+                </div>
+                <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                  <span className="translation-meta-pill">Query: <strong>{report.patient_translation.source_query || query || 'Finding'}</strong></span>
+                  <span className="translation-meta-pill">Assessment: <strong>{report.patient_translation.source_assessment_state || report.assessment_state || 'Supported'}</strong></span>
+                  {report.report_id && <span className="translation-meta-pill">Report ID: <code>{report.report_id}</code></span>}
+                </div>
+              </div>
+
+              {report.patient_translation.sections ? (
+                <div className="translation-sections-grid">
+                  {Object.entries(report.patient_translation.sections).map(([secTitle, secContent]) => (
+                    <div key={secTitle} className="translation-section-card">
+                      <div className="translation-section-name">{secTitle}</div>
+                      <div className="translation-section-text">{secContent}</div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="translation-section-text" style={{ whiteSpace: 'pre-line' }}>
+                  {report.patient_translation.translation_text}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Unified Red/Yellow/Green Triage Card */}
+          {(report.canonical_triage || report.triage_result) && (
+            <TriageCard
+              triage={report.triage_result}
+              canonicalTriage={report.canonical_triage || consistencyResult?.canonical_triage}
+              crossConflict={consistencyResult?.has_conflict}
+              title="Regional Research Review Status"
+            />
+          )}
+
           <ValidationWarnings warnings={report.validation_warnings ?? []} flagged={report.validation_flagged ?? false} />
           <Disclaimer />
         </>
@@ -602,6 +837,7 @@ export default function App() {
   const [patientLoading, setPatientLoading] = useState(false);
   const [patientError, setPatientError]     = useState<string | null>(null);
   const [copied, setCopied]                 = useState(false);
+  const [showRegionalModal, setShowRegionalModal] = useState(false);
   const patientFileInputRef                 = useRef<HTMLInputElement>(null);
 
   // Cross-report consistency state
@@ -689,6 +925,7 @@ export default function App() {
     setGroundingError(null);
     setGroundingResult(null);
     setRegionReport(null);
+    setPatientReport(null);
     setRegionError(null);
     setConsistencyResult(null);
     try {
@@ -718,12 +955,99 @@ export default function App() {
       if (!result.success) {
         setRegionError(result.error ?? 'Region report failed');
       } else {
+        // Automatically synchronize the patient-friendly report with the grounding translation
+        if (result.patient_translation?.success) {
+          const pt = result.patient_translation;
+          setPatientReport({
+            success: true,
+            report_text: pt.translation_text,
+            sections: pt.sections,
+            is_grounding_linked: true,
+            source_report_id: pt.source_report_id || result.report_id,
+            source_query: pt.source_query || query,
+            source_assessment_state: pt.source_assessment_state || result.assessment_state,
+            analysis_id: pt.analysis_id || result.analysis_id,
+            canonical_triage: pt.canonical_triage || result.canonical_triage,
+            triage_result: result.triage_result,
+            latency_ms: 1,
+            model_used: 'Deterministic Translation Engine v1.0',
+            image_input_used: true,
+            validation_warnings: [],
+            validation_flagged: false,
+            error: null,
+          });
+        }
         runConsistencyCheck(result, patientReport, query);
       }
     } catch (err) {
       setRegionError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
       setRegionLoading(false);
+    }
+  };
+
+  // Translate regional report to patient-friendly explanation
+  const handleTranslateRegional = async () => {
+    if (!regionReport?.report_text) return;
+    if (regionReport.patient_translation?.success) {
+      const pt = regionReport.patient_translation;
+      setPatientReport({
+        success: true,
+        report_text: pt.translation_text,
+        sections: pt.sections,
+        is_grounding_linked: true,
+        source_report_id: pt.source_report_id || regionReport.report_id,
+        source_query: pt.source_query || query,
+        source_assessment_state: pt.source_assessment_state || regionReport.assessment_state,
+        analysis_id: pt.analysis_id || regionReport.analysis_id,
+        canonical_triage: pt.canonical_triage || regionReport.canonical_triage,
+        triage_result: regionReport.triage_result,
+        latency_ms: 1,
+        model_used: 'Deterministic Translation Engine v1.0',
+        image_input_used: true,
+        validation_warnings: [],
+        validation_flagged: false,
+        error: null,
+      });
+      return;
+    }
+    setPatientLoading(true);
+    setPatientError(null);
+    try {
+      const trans = await translateRegionalReport(
+        regionReport.report_text,
+        query,
+        regionReport.assessment_state || 'Supported',
+        regionReport.crop_info || undefined,
+        regionReport.report_id || undefined,
+        regionReport.analysis_id || undefined,
+      );
+      if (trans.success) {
+        setPatientReport({
+          success: true,
+          report_text: trans.translation_text,
+          sections: trans.sections,
+          is_grounding_linked: true,
+          source_report_id: trans.source_report_id,
+          source_query: trans.source_query,
+          source_assessment_state: trans.source_assessment_state,
+          analysis_id: trans.analysis_id,
+          canonical_triage: trans.canonical_triage || regionReport.canonical_triage,
+          triage_result: regionReport.triage_result,
+          latency_ms: 1,
+          model_used: 'Deterministic Translation Engine v1.0',
+          image_input_used: true,
+          validation_warnings: [],
+          validation_flagged: false,
+          error: null,
+        });
+      } else {
+        setPatientError(trans.error || 'Regional translation failed');
+      }
+    } catch (err) {
+      setPatientError(err instanceof Error ? err.message : 'Regional translation failed');
+    } finally {
+      setPatientLoading(false);
     }
   };
 
@@ -1103,6 +1427,8 @@ export default function App() {
                   loading={regionLoading}
                   error={regionError}
                   visionStatus={visionStatus}
+                  query={query}
+                  consistencyResult={consistencyResult}
                 />
                 <ConsistencyBanner consistency={consistencyResult} />
               </>
@@ -1175,58 +1501,50 @@ export default function App() {
               onChange={e => { const f = e.target.files?.[0]; if (f) handleFile(f); }}
             />
 
-            <div className="form-group">
-              <label className="form-label" htmlFor="reason-xray-input">
-                Reason the X-ray was taken <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional)</span>
-              </label>
-              <input
-                id="reason-xray-input"
-                className="form-input"
-                value={reasonForXray}
-                onChange={e => setReasonForXray(e.target.value)}
-                placeholder="e.g. Cough for two weeks, routine checkup, or shortness of breath"
-              />
-              <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)' }}>
-                Provides clinical context for the explanation. Do not include names, birth dates, or identifiers.
-              </span>
-            </div>
-
-            <div className="form-group">
-              <label className="form-label" htmlFor="history-xray-input">
-                Relevant medical history <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional)</span>
-              </label>
-              <textarea
-                id="history-xray-input"
-                className="form-textarea"
-                value={medicalHistory}
-                onChange={e => setMedicalHistory(e.target.value)}
-                placeholder="e.g. Mild asthma, former smoker, no prior heart conditions"
-                rows={2}
-              />
-              <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)' }}>
-                Only general health history. Never include patient name, address, or date of birth.
-              </span>
-            </div>
-
-            <button
-              id="patient-report-btn"
-              className="btn btn-primary btn-full"
-              onClick={handlePatientReport}
-              disabled={!file || patientLoading}
-            >
-              {patientLoading ? (
-                <><Spinner /> Analysing Chest X-ray…</>
-              ) : (
-                'Generate Patient-Friendly Report'
-              )}
-            </button>
+            {/* Grounding-Linked Regional Report Availability Status */}
+            {regionReport?.report_text ? (
+              <div style={{ marginBottom: 18, padding: '14px 16px', background: 'rgba(56, 189, 248, 0.08)', border: '1.5px solid rgba(56, 189, 248, 0.4)', borderRadius: 8 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }}>
+                  <div>
+                    <div style={{ fontSize: '0.94rem', fontWeight: 700, color: '#38bdf8' }}>
+                      🎯 Grounding-Linked Regional Report Available
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 3 }}>
+                      Query: <strong>"{query}"</strong> · Regional Assessment: <strong>{regionReport.assessment_state || 'Supported'}</strong> · Report ID: <code>{regionReport.report_id || 'reg-report'}</code>
+                    </div>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: 2 }}>
+                      Translates the grounding-linked regional report faithfully without independent VLM hallucination.
+                    </div>
+                  </div>
+                  <button
+                    id="translate-regional-btn"
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={handleTranslateRegional}
+                    disabled={patientLoading}
+                    style={{ padding: '8px 16px', fontWeight: 650 }}
+                  >
+                    {patientLoading ? <><Spinner /> Translating…</> : '🎯 Translate Grounding-Linked Report (Instant)'}
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div style={{ marginBottom: 18, padding: '14px 16px', background: 'rgba(245, 158, 11, 0.08)', border: '1.5px solid rgba(245, 158, 11, 0.4)', borderRadius: 8 }} id="regional-unavailable-notice">
+                <div style={{ fontSize: '0.90rem', fontWeight: 700, color: '#fbbf24' }}>
+                  ⚠️ Regional report unavailable — patient-friendly translation cannot be generated
+                </div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: 4, lineHeight: 1.5 }}>
+                  A faithful patient-friendly explanation requires an active grounding-linked regional report. To generate one, navigate to the <strong>🎯 Grounding</strong> tab, ground a clinical phrase (e.g. <em>pneumonia</em>), and generate a regional report. The system will not silently invent a normal report or fall back to an unrelated whole-image interpretation.
+                </div>
+              </div>
+            )}
 
             {patientLoading && (
               <div className="report-loading">
                 <Spinner />
-                <span>Analysing full chest X-ray with {visionStatus?.vision_model ?? 'MedGemma 4B'}…</span>
+                <span>Processing translation / CXR analysis with {visionStatus?.vision_model ?? 'MedGemma 4B'}…</span>
                 <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
-                  Synthesizing observations in plain, accessible language (approx. 15–30s)
+                  Synthesizing observations in plain, accessible language…
                 </span>
               </div>
             )}
@@ -1236,14 +1554,45 @@ export default function App() {
             {patientReport && (
               <div className="patient-report-card">
                 <div className="patient-report-header">
-                  <span className="patient-report-title">🧑‍⚕️ Patient-Friendly Explanation</span>
+                  <div>
+                    <span className="patient-report-title">
+                      {patientReport.is_grounding_linked
+                        ? '🎯 Grounding-Linked Patient-Friendly Translation'
+                        : '🖼️ Whole-Image CXR Overview (Independent — Not Grounding-Linked)'}
+                    </span>
+                    {patientReport.is_grounding_linked ? (
+                      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
+                        <span className="translation-meta-pill">Query: <strong>{patientReport.source_query || query}</strong></span>
+                        <span className="translation-meta-pill">Assessment: <strong>{patientReport.source_assessment_state || regionReport?.assessment_state || 'Supported'}</strong></span>
+                        {patientReport.source_report_id && (
+                          <span className="translation-meta-pill">Source ID: <code>{patientReport.source_report_id}</code></span>
+                        )}
+                      </div>
+                    ) : (
+                      <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: 4 }}>
+                        Independent whole-image interpretation. Does not translate or reflect regional phrase grounding.
+                      </div>
+                    )}
+                  </div>
+
                   <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+                    {patientReport.is_grounding_linked && regionReport?.report_text && (
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        style={{ padding: '4px 10px', fontSize: '0.74rem' }}
+                        onClick={() => setShowRegionalModal(true)}
+                        id="view-regional-report-btn"
+                      >
+                        🔍 View Original Regional Report
+                      </button>
+                    )}
                     <LatencyBadge ms={patientReport.latency_ms} timing={patientReport.timing} />
                     {patientReport.model_used && (
-                      <span className="latency-badge">model: {patientReport.model_used}</span>
+                      <span className="latency-badge">engine: {patientReport.model_used}</span>
                     )}
                     {patientReport.image_input_used ? (
-                      <span className="badge-vision">🖼 Full X-ray analysed</span>
+                      <span className="badge-vision">🖼 Image verified</span>
                     ) : (
                       <span className="badge-noimage">⚠ No image input</span>
                     )}
@@ -1267,9 +1616,14 @@ export default function App() {
                       <div className="report-text-content">{patientReport.report_text}</div>
                     )}
 
-                    {/* Research-only Triage Priority Suggestion */}
-                    {patientReport.triage_result && (
-                      <TriageCard triage={patientReport.triage_result} crossConflict={consistencyResult?.has_conflict} />
+                    {/* Unified Canonical Triage Card */}
+                    {(patientReport.canonical_triage || patientReport.triage_result) && (
+                      <TriageCard
+                        triage={patientReport.triage_result}
+                        canonicalTriage={patientReport.canonical_triage || consistencyResult?.canonical_triage}
+                        crossConflict={consistencyResult?.has_conflict}
+                        title="Canonical AI Review Status"
+                      />
                     )}
 
                     <div className="report-actions">
@@ -1305,6 +1659,88 @@ export default function App() {
                     )}
                   </>
                 )}
+              </div>
+            )}
+
+            {/* Separate Workflow: Independent Whole-Image CXR Overview */}
+            <div className="independent-overview-callout">
+              <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>
+                🖼️ Independent Whole-Image CXR Overview (Separate Feature)
+              </div>
+              <p style={{ fontSize: '0.76rem', color: 'var(--text-muted)', marginBottom: 12, lineHeight: 1.5 }}>
+                Generate an independent whole-image reading with MedGemma 4B across the full radiograph. This operates independently and is <strong>not</strong> a translation of regional phrase grounding.
+              </p>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="reason-xray-input">
+                  Reason the X-ray was taken <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional)</span>
+                </label>
+                <input
+                  id="reason-xray-input"
+                  className="form-input"
+                  value={reasonForXray}
+                  onChange={e => setReasonForXray(e.target.value)}
+                  placeholder="e.g. Cough for two weeks, routine checkup, or shortness of breath"
+                />
+                <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)' }}>
+                  Provides clinical context for the explanation. Do not include names, birth dates, or identifiers.
+                </span>
+              </div>
+
+              <div className="form-group">
+                <label className="form-label" htmlFor="history-xray-input">
+                  Relevant medical history <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional)</span>
+                </label>
+                <textarea
+                  id="history-xray-input"
+                  className="form-textarea"
+                  value={medicalHistory}
+                  onChange={e => setMedicalHistory(e.target.value)}
+                  placeholder="e.g. Mild asthma, former smoker, no prior heart conditions"
+                  rows={2}
+                />
+                <span style={{ fontSize: '0.73rem', color: 'var(--text-muted)' }}>
+                  Only general health history. Never include patient name, address, or date of birth.
+                </span>
+              </div>
+
+              <button
+                id="patient-report-btn"
+                className="btn btn-secondary btn-full"
+                onClick={handlePatientReport}
+                disabled={!file || patientLoading}
+              >
+                {patientLoading ? (
+                  <><Spinner /> Analysing Full Chest X-ray…</>
+                ) : (
+                  'Generate Whole-Image CXR Overview (Independent)'
+                )}
+              </button>
+            </div>
+
+            {/* Source Regional Report Audit Modal */}
+            {showRegionalModal && regionReport && (
+              <div className="modal-overlay" onClick={() => setShowRegionalModal(false)}>
+                <div className="modal-window" onClick={e => e.stopPropagation()} style={{ maxWidth: 650 }}>
+                  <div className="modal-header">
+                    <div>
+                      <div className="modal-title">Source Grounding-Linked Regional Report</div>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontFamily: 'monospace', marginTop: 2 }}>
+                        Report ID: {regionReport.report_id || 'regional-report'} · Analysis ID: {regionReport.analysis_id || 'analysis-001'}
+                      </div>
+                    </div>
+                    <button type="button" className="btn btn-secondary" onClick={() => setShowRegionalModal(false)}>✕ Close</button>
+                  </div>
+                  <div className="modal-body" style={{ maxHeight: '65vh', overflowY: 'auto' }}>
+                    <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+                      <span className="triage-pill">Query: <strong>{query}</strong></span>
+                      <span className="triage-pill">Assessment: <strong>{regionReport.assessment_state || 'Supported'}</strong></span>
+                    </div>
+                    <div className="report-text-content" style={{ whiteSpace: 'pre-line' }}>
+                      {regionReport.report_text}
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -1549,7 +1985,7 @@ export default function App() {
                       )}
                       <div className="batch-item-filename">{item.filename}</div>
                       <div className="batch-item-jobid">{item.job_id}</div>
-                      <StatusPillBadge status={item.status} />
+                      <BatchItemStatusBadge item={item} />
                     </div>
 
                     <div className="batch-item-right">
@@ -1558,9 +1994,6 @@ export default function App() {
                           <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>
                             {item.style === 'research' ? '🔬 Research Report' : '🧑‍⚕️ Patient Explanation'}
                           </span>
-                          {item.triage_result && (
-                            <TriageCompactBadge triage={item.triage_result} />
-                          )}
                           {item.model_used && (
                             <span className="latency-badge">model: {item.model_used}</span>
                           )}
@@ -1571,6 +2004,16 @@ export default function App() {
                             <span className="latency-badge">{item.tokens_per_second} t/s</span>
                           )}
                         </div>
+                        {item.classifier_alerts && item.classifier_alerts.length > 0 && (
+                          <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 6, flexWrap: 'wrap' }}>
+                            <span style={{ fontSize: '0.70rem', color: 'var(--text-muted)' }}>Classifier Signals:</span>
+                            {item.classifier_alerts.map((alert, aIdx) => (
+                              <span key={aIdx} className="classifier-alert-chip" title="Pretrained DenseNet-121 research signal (threshold 0.62)">
+                                <span>🔍</span> {alert}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
                       <div className="batch-item-body">

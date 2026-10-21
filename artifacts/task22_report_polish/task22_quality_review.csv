@@ -1,0 +1,9 @@
+image_id,filename,t21_word_count,t22_word_count,word_reduction,t21_checklist_count,t22_checklist_count,checklist_reduction,unsupported_assertions,device_catalogues,findings_impression_contradictions,validation_warnings_count,latency_ms,status
+dev_img_01_0f768188,0f768188-ace0476b-e815f596-4bcca8f6-f6614985 copy.jpg,77,22,55,6,0,6,0,0,None,0,22624.1,PASS
+dev_img_02_138f8635,138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe.jpg,45,27,18,2,0,2,0,0,None,0,24307.5,PASS
+dev_img_03_19b74f79,19b74f79-7ad317b1-887496c3-2645db29-48245a51 copy.jpg,68,29,39,5,0,5,0,0,None,0,47155.8,PASS
+dev_img_04_238ce890,238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1 copy.jpg,73,27,46,5,0,5,0,0,None,0,45479.3,PASS
+dev_img_05_2f5e274a,2f5e274a-749f1c06-1c8be147-4fabf575-e333e808.jpg,77,25,52,5,0,5,0,0,None,0,27445.8,PASS
+dev_img_06_350a19d2,350a19d2-7329f60d-17416b9a-d6eca016-187e6876.jpg,70,34,36,5,0,5,0,0,None,0,27407.7,PASS
+dev_img_07_3bea0373,3bea0373-0d10dd77-1cac5b90-651be924-d343b184.jpg,75,27,48,5,0,5,0,0,None,0,29559.3,PASS
+dev_img_08_3daa2f39,3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61.jpg,42,30,12,2,0,2,0,0,None,0,29013.9,PASS

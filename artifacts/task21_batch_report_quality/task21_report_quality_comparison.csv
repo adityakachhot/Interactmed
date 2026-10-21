@@ -1,0 +1,9 @@
+image_id,filename,before_word_count,after_word_count,before_findings_count,after_findings_count,before_warnings_count,after_warnings_count,before_latency_ms,after_latency_ms,device_hallucinations_before,device_hallucinations_after,false_normals_before,false_normals_after,clinical_coherence_gain
+dev_img_01_0f768188,0f768188-ace0476b-e815f596-4bcca8f6-f6614985 copy.jpg,104,77,14,20,3,0,25000.0,22063.67,1,0,1,0,high
+dev_img_02_138f8635,138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe.jpg,46,45,12,15,1,0,25000.0,20063.64,0,0,0,0,high
+dev_img_03_19b74f79,19b74f79-7ad317b1-887496c3-2645db29-48245a51 copy.jpg,150,68,26,20,3,0,25000.0,27166.3,1,0,1,0,high
+dev_img_04_238ce890,238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1 copy.jpg,45,73,9,20,2,0,25000.0,55514.16,0,0,0,0,high
+dev_img_05_2f5e274a,2f5e274a-749f1c06-1c8be147-4fabf575-e333e808.jpg,45,77,9,20,2,0,25000.0,46433.59,0,0,0,0,high
+dev_img_06_350a19d2,350a19d2-7329f60d-17416b9a-d6eca016-187e6876.jpg,45,70,9,20,0,0,25000.0,40289.24,0,0,0,0,high
+dev_img_07_3bea0373,3bea0373-0d10dd77-1cac5b90-651be924-d343b184.jpg,47,75,9,20,2,0,25000.0,43605.12,0,0,0,0,high
+dev_img_08_3daa2f39,3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61.jpg,46,42,12,15,1,0,25000.0,36349.87,0,0,0,0,high

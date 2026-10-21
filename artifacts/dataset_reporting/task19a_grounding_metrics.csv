@@ -1,0 +1,28 @@
+model_name,finding_name,split,eligible_pairs,mean_best_match_iou,recall_at_iou_050,recall_at_iou_075,invalid_or_missing_box_count,mean_latency_ms
+TransVG Baseline,Pneumonia,mscxr_held_out_test,18,0.4834,0.5556,0.2222,0,279.98
+TransVG Baseline,Pneumothorax,mscxr_held_out_test,28,0.5096,0.6071,0.1786,0,163.19
+TransVG Baseline,Consolidation,mscxr_held_out_test,21,0.2932,0.2857,0.0952,0,180.45
+TransVG Baseline,Atelectasis,mscxr_held_out_test,13,0.3212,0.3077,0.0769,0,164.81
+TransVG Baseline,Edema,mscxr_held_out_test,13,0.1619,0.0769,0.0,0,164.97
+TransVG Baseline,Cardiomegaly,mscxr_held_out_test,42,0.8247,1.0,0.7619,0,171.76
+TransVG Baseline,Lung Opacity,mscxr_held_out_test,10,0.4667,0.5,0.0,0,216.78
+TransVG Baseline,Pleural Effusion,mscxr_held_out_test,18,0.4137,0.4444,0.2222,0,228.32
+TransVG Baseline,OVERALL_MICRO_AVERAGE,mscxr_held_out_test,163,0.504,0.5706,0.2945,0,191.27
+TransVG RSNA Fine-tuned (3ep),Pneumonia,mscxr_held_out_test,18,0.4515,0.6111,0.1111,0,163.79
+TransVG RSNA Fine-tuned (3ep),Pneumothorax,mscxr_held_out_test,28,0.1979,0.1429,0.0,0,162.72
+TransVG RSNA Fine-tuned (3ep),Consolidation,mscxr_held_out_test,21,0.2759,0.2381,0.0476,0,198.19
+TransVG RSNA Fine-tuned (3ep),Atelectasis,mscxr_held_out_test,13,0.2367,0.2308,0.0,0,171.76
+TransVG RSNA Fine-tuned (3ep),Edema,mscxr_held_out_test,13,0.1965,0.0769,0.0,0,168.94
+TransVG RSNA Fine-tuned (3ep),Cardiomegaly,mscxr_held_out_test,42,0.4092,0.119,0.0,0,187.43
+TransVG RSNA Fine-tuned (3ep),Lung Opacity,mscxr_held_out_test,10,0.2589,0.2,0.0,0,229.07
+TransVG RSNA Fine-tuned (3ep),Pleural Effusion,mscxr_held_out_test,18,0.257,0.1667,0.0,0,200.84
+TransVG RSNA Fine-tuned (3ep),OVERALL_MICRO_AVERAGE,mscxr_held_out_test,163,0.3037,0.2086,0.0184,0,183.27
+TransVG Multi-Pathology (Task 3 Epoch 5),Pneumonia,mscxr_held_out_test,18,0.5418,0.5556,0.3333,0,166.66
+TransVG Multi-Pathology (Task 3 Epoch 5),Pneumothorax,mscxr_held_out_test,28,0.5455,0.75,0.25,0,163.49
+TransVG Multi-Pathology (Task 3 Epoch 5),Consolidation,mscxr_held_out_test,21,0.3198,0.4286,0.1429,0,176.64
+TransVG Multi-Pathology (Task 3 Epoch 5),Atelectasis,mscxr_held_out_test,13,0.3603,0.4615,0.0769,0,164.85
+TransVG Multi-Pathology (Task 3 Epoch 5),Edema,mscxr_held_out_test,13,0.214,0.0769,0.0,0,165.1
+TransVG Multi-Pathology (Task 3 Epoch 5),Cardiomegaly,mscxr_held_out_test,42,0.839,1.0,0.8571,0,171.57
+TransVG Multi-Pathology (Task 3 Epoch 5),Lung Opacity,mscxr_held_out_test,10,0.4655,0.5,0.1,0,204.95
+TransVG Multi-Pathology (Task 3 Epoch 5),Pleural Effusion,mscxr_held_out_test,18,0.43,0.5556,0.1667,0,210.42
+TransVG Multi-Pathology (Task 3 Epoch 5),OVERALL_MICRO_AVERAGE,mscxr_held_out_test,163,0.5328,0.638,0.3497,0,175.58

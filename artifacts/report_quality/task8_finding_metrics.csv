@@ -1,0 +1,37 @@
+strategy,finding,tp,fp,fn,tn,precision,recall,specificity,f1_score,prevalence_count,total_cases
+Baseline (Prompt v3),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14,60
+Baseline (Prompt v3),pleural_effusion,0,0,19,41,0.0,0.0,1.0,0.0,19,60
+Baseline (Prompt v3),pneumothorax,0,0,36,24,0.0,0.0,1.0,0.0,36,60
+Baseline (Prompt v3),lung_opacity,1,5,21,33,0.1667,0.0455,0.8684,0.0714,22,60
+Baseline (Prompt v3),atelectasis,4,7,18,31,0.3636,0.1818,0.8158,0.2424,22,60
+Baseline (Prompt v3),pulmonary_edema,2,9,8,41,0.1818,0.2,0.82,0.1905,10,60
+Baseline (Prompt v3),support_devices,13,0,8,39,1.0,0.619,1.0,0.7647,21,60
+Baseline (Prompt v3),OVERALL_MICRO_AVG,20,21,124,255,0.4878,0.1389,0.9239,0.2162,144,420
+Baseline (Prompt v3),OVERALL_MACRO_F1,20,21,124,255,0.4878,0.1389,0.9239,0.1813,144,420
+Strategy A (Prompt v4),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14,60
+Strategy A (Prompt v4),pleural_effusion,0,0,19,41,0.0,0.0,1.0,0.0,19,60
+Strategy A (Prompt v4),pneumothorax,0,0,36,24,0.0,0.0,1.0,0.0,36,60
+Strategy A (Prompt v4),lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22,60
+Strategy A (Prompt v4),atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22,60
+Strategy A (Prompt v4),pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10,60
+Strategy A (Prompt v4),support_devices,21,39,0,0,0.35,1.0,0.0,0.5185,21,60
+Strategy A (Prompt v4),OVERALL_MICRO_AVG,21,39,123,237,0.35,0.1458,0.8587,0.2059,144,420
+Strategy A (Prompt v4),OVERALL_MACRO_F1,21,39,123,237,0.35,0.1458,0.8587,0.0741,144,420
+Strategy B (Streamlined v5),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14,60
+Strategy B (Streamlined v5),pleural_effusion,0,0,19,41,0.0,0.0,1.0,0.0,19,60
+Strategy B (Streamlined v5),pneumothorax,0,0,36,24,0.0,0.0,1.0,0.0,36,60
+Strategy B (Streamlined v5),lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22,60
+Strategy B (Streamlined v5),atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22,60
+Strategy B (Streamlined v5),pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10,60
+Strategy B (Streamlined v5),support_devices,18,4,3,35,0.8182,0.8571,0.8974,0.8372,21,60
+Strategy B (Streamlined v5),OVERALL_MICRO_AVG,18,4,126,272,0.8182,0.125,0.9855,0.2169,144,420
+Strategy B (Streamlined v5),OVERALL_MACRO_F1,18,4,126,272,0.8182,0.125,0.9855,0.1196,144,420
+Strategy C (Grounding Review v6),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14,60
+Strategy C (Grounding Review v6),pleural_effusion,1,0,18,41,1.0,0.0526,1.0,0.1,19,60
+Strategy C (Grounding Review v6),pneumothorax,1,0,35,24,1.0,0.0278,1.0,0.0541,36,60
+Strategy C (Grounding Review v6),lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22,60
+Strategy C (Grounding Review v6),atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22,60
+Strategy C (Grounding Review v6),pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10,60
+Strategy C (Grounding Review v6),support_devices,21,39,0,0,0.35,1.0,0.0,0.5185,21,60
+Strategy C (Grounding Review v6),OVERALL_MICRO_AVG,23,39,121,237,0.371,0.1597,0.8587,0.2233,144,420
+Strategy C (Grounding Review v6),OVERALL_MACRO_F1,23,39,121,237,0.371,0.1597,0.8587,0.0961,144,420

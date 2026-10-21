@@ -1,0 +1,12 @@
+Category,Metric,Numerator,Denominator,Value,Source
+Processing Reliability,Submitted Jobs,10,10,10,batch_b000715d_summary.csv
+Processing Reliability,Completed Jobs Rate,10,10,100.0%,batch_b000715d_summary.csv
+Processing Reliability,Baseline Structurally Valid Reports,1,10,10.0%,task16_report_validation_results.csv
+Processing Reliability,Baseline Malformed Reports (Mangling),9,10,90.0%,task16_report_validation_results.csv
+Processing Reliability,Baseline Truncated/Incomplete Reports,0,10,0.0%,task16_report_validation_results.csv
+Report Quality,Reference Finding Omission Rate,9,11,81.8%,task16_image_level_audit.csv
+Report Quality,Device Recognition Error Rate,2,11,18.2%,task16_image_level_audit.csv
+Triage & Review,Aux Classifier Discordance / Conflict Rate,10,11,90.9%,task16_consistency_results.csv
+Triage & Review,Improved Review Required Rate,11,11,100.0%,task16_triage_mapping_audit.csv
+Latency Profile,Median End-to-End Latency,22702.6,ms,22.70s,batch_b000715d_summary.csv
+Latency Profile,P95 End-to-End Latency,24868.4,ms,24.87s,batch_b000715d_summary.csv

@@ -1,0 +1,61 @@
+case_idx,safe_case_id,patient_id,conflict_flag,conflict_message,regional_query,regional_stance,has_device,device_details
+1,CASE_EXP_DEV_027,p16954495,False,Compatible across pathways,cardiomegaly,unknown,False,none
+2,CASE_EXP_DEV_040,p16191519,False,Compatible across pathways,cardiomegaly,unknown,False,none
+3,CASE_EXP_DEV_089,p12502386,False,Compatible across pathways,cardiomegaly,unknown,False,none
+4,CASE_EXP_DEV_136,p19096168,False,Compatible across pathways,cardiomegaly,unknown,False,none
+5,CASE_EXP_DEV_138,p13450784,False,Compatible across pathways,cardiomegaly,unknown,True,none
+6,CASE_EXP_DEV_204,p19902791,False,Compatible across pathways,cardiomegaly,unknown,False,none
+7,CASE_EXP_DEV_229,p10680329,False,Compatible across pathways,cardiomegaly,unknown,False,none
+8,CASE_EXP_DEV_231,p14661031,False,Compatible across pathways,cardiomegaly,unknown,False,none
+9,CASE_EXP_DEV_248,p17058328,False,Compatible across pathways,cardiomegaly,unknown,False,none
+10,CASE_EXP_DEV_023,p12930426,False,Compatible across pathways,pneumothorax,not_supported,False,none
+11,CASE_EXP_DEV_029,p16132343,False,Compatible across pathways,atelectasis,unknown,True,nasogastric tube
+12,CASE_EXP_DEV_058,p16072879,False,Compatible across pathways,pleural effusion,unknown,False,none
+13,CASE_EXP_DEV_071,p12215941,False,Compatible across pathways,pleural effusion,unknown,True,nasogastric tube
+14,CASE_EXP_DEV_097,p15491652,False,Compatible across pathways,pneumothorax,unknown,True,right-sided central venous catheter
+15,CASE_EXP_DEV_113,p19160511,False,Compatible across pathways,atelectasis,unknown,True,tracheostomy tube
+16,CASE_EXP_DEV_114,p14256117,False,Compatible across pathways,atelectasis,unknown,False,none
+17,CASE_EXP_DEV_155,p15559032,False,Compatible across pathways,atelectasis,unknown,False,none
+18,CASE_EXP_DEV_226,p17911840,False,Compatible across pathways,pneumothorax,unknown,False,none
+19,CASE_EXP_DEV_006,p12868507,False,Compatible across pathways,pneumothorax,unknown,True,intubation tube
+20,CASE_EXP_DEV_018,p14823207,False,Compatible across pathways,pneumothorax,unknown,True,central venous catheter
+21,CASE_EXP_DEV_035,p11844144,False,Compatible across pathways,support apparatus,unknown,True,transvenous pacemaker
+22,CASE_EXP_DEV_045,p12843379,False,Compatible across pathways,pneumothorax,unknown,True,nasogastric tube
+23,CASE_EXP_DEV_122,p13551252,False,Compatible across pathways,support apparatus,unknown,False,none
+24,CASE_EXP_DEV_168,p11006497,False,Compatible across pathways,support apparatus,unknown,True,nasogastric tube
+25,CASE_EXP_DEV_190,p19795930,False,Compatible across pathways,support apparatus,unknown,True,transvenous pacemaker
+26,CASE_EXP_DEV_195,p15729731,False,Compatible across pathways,support apparatus,unknown,True,nasogastric tube
+27,CASE_EXP_DEV_237,p10854947,False,Compatible across pathways,pneumothorax,unknown,True,ECG lead
+28,CASE_EXP_DEV_246,p14496947,False,Compatible across pathways,support apparatus,unknown,True,nasogastric tube
+29,CASE_EXP_DEV_005,p10527186,True,"Contradiction: Regional review confirmed pneumothorax supported, but whole-image omitted finding.",pneumothorax,supported,True,none
+30,CASE_EXP_DEV_007,p14358686,False,Compatible across pathways,cardiomegaly,not_supported,True,intubation tube
+31,CASE_EXP_DEV_008,p11234565,False,Compatible across pathways,cardiomegaly,unknown,True,intubation tube
+32,CASE_EXP_DEV_012,p12591968,False,Compatible across pathways,cardiomegaly,unknown,False,none
+33,CASE_EXP_DEV_022,p19287786,False,Compatible across pathways,pneumothorax,unknown,False,none
+34,CASE_EXP_DEV_026,p16097925,False,Compatible across pathways,pleural effusion,not_supported,True,nasogastric tube
+35,CASE_EXP_DEV_030,p14180570,True,"Contradiction: Regional review confirmed pleural_effusion supported, but whole-image omitted finding.",pleural effusion,supported,True,endotracheal tube
+36,CASE_EXP_DEV_032,p14987393,False,Compatible across pathways,cardiomegaly,not_supported,False,none
+37,CASE_EXP_DEV_033,p19243474,False,Compatible across pathways,cardiomegaly,unknown,False,none
+38,CASE_EXP_DEV_043,p16356013,False,Compatible across pathways,pleural effusion,unknown,False,none
+39,CASE_EXP_DEV_004,p15599510,False,Compatible across pathways,pneumothorax,unknown,False,none
+40,CASE_EXP_DEV_009,p12815514,False,Compatible across pathways,consolidation,unknown,False,none
+41,CASE_EXP_DEV_010,p12429112,False,Compatible across pathways,pleural effusion,unknown,False,none
+42,CASE_EXP_DEV_015,p15662081,False,Compatible across pathways,pleural effusion,not_supported,False,none
+43,CASE_EXP_DEV_017,p17253958,False,Compatible across pathways,pleural effusion,unknown,True,endotracheal tube
+44,CASE_EXP_DEV_020,p14455452,False,Compatible across pathways,pleural effusion,unknown,False,none
+45,CASE_EXP_DEV_024,p17804052,False,Compatible across pathways,consolidation,unknown,False,none
+46,CASE_EXP_DEV_036,p11305073,False,Compatible across pathways,pleural effusion,unknown,False,none
+47,CASE_EXP_DEV_037,p16015533,False,Compatible across pathways,pleural effusion,unknown,False,none
+48,CASE_EXP_DEV_039,p16568389,False,Compatible across pathways,pleural effusion,not_supported,True,nasogastric tube
+49,CASE_EXP_DEV_041,p19945642,False,Compatible across pathways,pleural effusion,unknown,True,right internal jugular central venous catheter
+50,CASE_EXP_DEV_044,p14516996,False,Compatible across pathways,pneumothorax,unknown,False,none
+51,CASE_EXP_DEV_001,p15184836,False,Compatible across pathways,heart,not_supported,False,none
+52,CASE_EXP_DEV_002,p12930467,False,Compatible across pathways,pneumothorax,unknown,False,none
+53,CASE_EXP_DEV_003,p17992323,False,Compatible across pathways,pneumothorax,unknown,False,none
+54,CASE_EXP_DEV_011,p14548229,False,Compatible across pathways,heart,unknown,False,none
+55,CASE_EXP_DEV_013,p15649581,False,Compatible across pathways,pneumothorax,unknown,False,none
+56,CASE_EXP_DEV_014,p12262788,False,Compatible across pathways,pneumothorax,not_supported,False,none
+57,CASE_EXP_DEV_016,p17377807,False,Compatible across pathways,pleural effusion,unknown,False,none
+58,CASE_EXP_DEV_019,p11897016,False,Compatible across pathways,pleural effusion,unknown,False,none
+59,CASE_EXP_DEV_021,p12367601,False,Compatible across pathways,pneumothorax,unknown,False,none
+60,CASE_EXP_DEV_025,p13975291,False,Compatible across pathways,pleural effusion,unknown,False,none

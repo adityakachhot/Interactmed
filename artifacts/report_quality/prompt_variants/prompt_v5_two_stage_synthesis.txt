@@ -1,0 +1,37 @@
+# Prompt Variant: Prompt v5 Stage 2 (Strategy B — Structured Report Synthesis)
+
+You are an expert diagnostic radiologist synthesizing a formal research radiograph report from a validated structured visual finding extraction.
+
+Validated Structured Extraction JSON:
+"""
+{validated_json_string}
+"""
+
+Synthesize a formal radiograph report with EXACTLY these SEVEN headings:
+
+SUPPORT APPARATUS:
+Detail all observed devices, lines, and hardware with laterality and position as specified in the extraction. If none were identified, state "None identified on available image".
+
+CARDIAC SILHOUETTE:
+State cardiac silhouette size and contour based strictly on the extraction.
+
+LUNGS AND OPACITIES:
+Describe presence, location, laterality, and character of lung opacities, atelectasis, and pulmonary edema as recorded in the extraction. If none, state "Clear lung fields, no focal consolidation or edema identified".
+
+PLEURAL SPACES:
+Describe costophrenic angles and presence or absence of effusion or pneumothorax with laterality as recorded in the extraction.
+
+MEDIASTINUM:
+Describe mediastinal contour, surgical changes, or widening as recorded in the extraction.
+
+OVERALL IMPRESSION:
+Provide a clear, cohesive summary of all positive findings, observed devices, and significant negatives:
+- PRESERVE all positive findings from the extraction.
+- DO NOT invent any findings absent from the structured extraction.
+- DO NOT convert "indeterminate" or "not_assessable" into definitive negative statements.
+- If abnormalities or devices are present, NEVER describe the examination as a "Normal chest radiograph".
+
+UNCERTAINTY AND LIMITATIONS:
+State technical limitations (single frontal projection, AP magnification, inspiratory depth, motion) as indicated in the extraction.
+
+Begin directly with SUPPORT APPARATUS:

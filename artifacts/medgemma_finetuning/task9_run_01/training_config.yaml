@@ -1,0 +1,98 @@
+# configs/medgemma_finetune.yaml
+# ==============================
+# Controlled MedGemma 4B Parameter-Efficient Fine-Tuning Pilot Configuration
+# InteractMed-VLM — Tier 2 Adaptation: Multimodal Projector & Language LoRA
+# Vision Encoder: FROZEN
+#
+# Target Architecture: Gemma 3 Multimodal (4.3B parameters, 2560 embedding dim)
+# Official Hugging Face Weights: google/medgemma-4b-it
+# Note: Training requires NVIDIA GPU supporting bfloat16 (>=40 GB VRAM, e.g. A100)
+# DO NOT train on quantized Ollama GGUF file.
+
+experiment:
+  name: "medgemma_4b_pilot_tier2"
+  description: "Supervised fine-tuning on full-image-to-report pairs using LoRA on language decoder and multimodal projector with frozen vision tower"
+  seed: 42
+  tier: 2 # Tier 1 = Prompt baseline, Tier 2 = Projector + Language LoRA, Tier 3 = Selective Vision LoRA
+
+model:
+  model_id: "google/medgemma-4b-it"
+  model_class: "AutoModelForImageTextToText" # Gemma3ForConditionalGeneration in transformers >= 4.50.0
+  processor_class: "AutoProcessor"
+  torch_dtype: "bfloat16"
+  device_map: "auto"
+  attn_implementation: "eager" # Use "flash_attention_2" on Ampere/Hopper if installed
+  min_transformers_version: "4.50.0"
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_quant_storage: "bfloat16"
+
+lora:
+  task_type: "CAUSAL_LM"
+  r: 16
+  lora_alpha: 16
+  lora_dropout: 0.05
+  bias: "none"
+  # Target modules: LoRA applied to language attention & MLP, plus multimodal projector
+  # Can use "all-linear" or explicit module names below:
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  adapt_projector: true # Adds multi_modal_projector linear layers
+  freeze_vision_tower: true # Strictly frozen for Tier 1 -> Tier 2 attribution
+  modules_to_save:
+    - "lm_head"
+    - "embed_tokens"
+
+data:
+  train_file: "artifacts/fine_tuning_cohort/train_dev.jsonl"
+  val_file: "artifacts/fine_tuning_cohort/val_dev.jsonl"
+  manifest_file: "artifacts/fine_tuning_cohort/dataset_manifest.csv"
+  max_image_resolution: 896 # Native SigLIP resolution in MedGemma (1024px/1536px are downsampled to this grid)
+  max_prompt_length: 512
+  max_target_length: 512
+  ignore_index: -100
+
+training:
+  output_dir: "checkpoints/medgemma_lora_tier2"
+  num_train_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 16 # Effective batch size = 16
+  learning_rate: 1.0e-4
+  warmup_ratio: 0.05
+  lr_scheduler_type: "cosine"
+  weight_decay: 0.01
+  max_grad_norm: 0.3
+  gradient_checkpointing: true
+  optim: "paged_adamw_8bit" # Use "adamw_torch_fused" if unquantized or full VRAM
+  bf16: true
+  fp16: false
+  logging_steps: 5
+  eval_strategy: "steps"
+  eval_steps: 25
+  save_strategy: "steps"
+  save_steps: 25
+  save_total_limit: 2
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  report_to: "tensorboard"
+  logging_dir: "checkpoints/medgemma_lora_tier2/runs"
+  remove_unused_columns: false
+
+dry_run:
+  enabled: false
+  max_train_samples: 2
+  max_eval_samples: 2
+  overfit_single_batch: false
+  overfit_steps: 20

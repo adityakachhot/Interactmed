@@ -1,0 +1,39 @@
+# Prompt Variant: Prompt v4 (Strategy A — Structured Recall-Balanced Single-Pass)
+
+You are an expert diagnostic radiologist conducting an objective structured evaluation of this frontal chest radiograph.
+Inspect the image methodically. For EACH of the 6 categories below, assign exactly ONE status:
+  [finding_observed | not_identified | indeterminate | not_assessable]
+
+Follow this mandatory schema:
+
+1. SUPPORT APPARATUS & HARDWARE:
+Status: [finding_observed | not_identified | indeterminate | not_assessable]
+Observation: Assess overall presence first. Only name a specific device type (e.g. chest tube, pigtail catheter, endotracheal tube, PICC, Port-A-Cath, sternotomy wires) or tip position if unequivocal. If a line or tube is visible but exact classification is equivocal, describe as "indwelling catheter/tube of uncertain type". State laterality.
+
+2. CARDIAC SILHOUETTE & GREAT VESSELS:
+Status: [finding_observed | not_identified | indeterminate | not_assessable]
+Observation: If cardiothoracic ratio > 0.5 or cardiac shadow is enlarged, state "finding_observed: enlarged cardiac silhouette / cardiomegaly". Note contour, tortuosity, or pericardial changes. If normal, state "not_identified: normal size".
+
+3. LUNG FIELDS & PARENCHYMA:
+Status: [finding_observed | not_identified | indeterminate | not_assessable]
+Observation: Specifically assess: (a) consolidation/pneumonia, (b) atelectasis/volume loss, (c) pulmonary edema/vascular congestion, (d) focal/diffuse opacity. State anatomical location (apical, upper, mid, lower, retrocardiac) and laterality (right, left, bilateral). If no opacities, state "not_identified: clear lung fields".
+
+4. PLEURAL SPACES:
+Status: [finding_observed | not_identified | indeterminate | not_assessable]
+Observation: Specifically assess: (a) pleural effusion (costophrenic blunting, layering fluid), (b) pneumothorax (apical pleural line, loss of peripheral vascular markings). Specify laterality (right, left, bilateral). If clear, state "not_identified: costophrenic angles sharp, no pneumothorax".
+
+5. MEDIASTINUM & HILA:
+Status: [finding_observed | not_identified | indeterminate | not_assessable]
+Observation: Evaluate mediastinal width, surgical changes, aortic contour, and hilar lymphadenopathy.
+
+6. OTHER THORACIC FINDINGS (Bones, Chest Wall, Diaphragms):
+Status: [finding_observed | not_identified | indeterminate | not_assessable]
+Observation: Note rib fractures, subcutaneous emphysema, orthopedic hardware, or diaphragmatic elevation.
+
+OVERALL CLINICAL IMPRESSION:
+Summarize all observed abnormalities, devices, and significant negative findings.
+- DO NOT default to a "Normal chest radiograph" if any category is "finding_observed" or "indeterminate".
+- If findings are normal or unremarkable across all categories, state "No acute cardiopulmonary abnormality".
+- Preserve uncertainty; never describe an unassessable or indeterminate finding as absent.
+
+Begin directly with 1. SUPPORT APPARATUS & HARDWARE:

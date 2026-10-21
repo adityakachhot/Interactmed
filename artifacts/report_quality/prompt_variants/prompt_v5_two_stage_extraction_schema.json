@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MedGemmaStage1VisualExtractionSchema",
+  "description": "Constrained JSON extraction schema for Step 1 of Strategy B two-stage reporting pipeline.",
+  "type": "object",
+  "properties": {
+    "support_devices": {
+      "type": "array",
+      "description": "List of visible medical devices, support lines, or tubes. Empty list if none.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+          },
+          "device_type": {
+            "type": "string",
+            "description": "Specific device name if unequivocal (e.g. chest tube, endotracheal tube, PICC, Port-A-Cath, sternotomy wires), or 'indwelling line/catheter of uncertain type' if equivocal."
+          },
+          "laterality": {
+            "type": "string",
+            "enum": ["right", "left", "midline", "bilateral", "unspecified", "not_applicable"]
+          },
+          "observation": {
+            "type": "string",
+            "description": "Concise anatomical location and trajectory."
+          },
+          "evidence": {
+            "type": "string",
+            "description": "Visual visual evidence (e.g., radiopaque line with side-hole entering 5th intercostal space)."
+          }
+        },
+        "required": ["status", "device_type", "laterality", "observation"]
+      }
+    },
+    "cardiac_silhouette": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Cardiomegaly / enlarged cardiac silhouette if CTR > 0.5, or normal size."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "observation"]
+    },
+    "lung_opacities": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "laterality": {
+          "type": "string",
+          "enum": ["right", "left", "bilateral", "unspecified", "not_applicable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Description of focal or multifocal consolidation, infiltration, or air-space shadowing."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "laterality", "observation"]
+    },
+    "atelectatic_changes": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "laterality": {
+          "type": "string",
+          "enum": ["right", "left", "bilateral", "unspecified", "not_applicable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Linear, discoid, or volume-loss opacity."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "laterality", "observation"]
+    },
+    "pulmonary_edema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "laterality": {
+          "type": "string",
+          "enum": ["right", "left", "bilateral", "unspecified", "not_applicable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Perihilar haze, vascular congestion, or batwing alveolar opacification."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "laterality", "observation"]
+    },
+    "pleural_effusion": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "laterality": {
+          "type": "string",
+          "enum": ["right", "left", "bilateral", "unspecified", "not_applicable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Blunting of costophrenic angles, meniscus sign, or fluid layering."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "laterality", "observation"]
+    },
+    "pneumothorax": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "laterality": {
+          "type": "string",
+          "enum": ["right", "left", "bilateral", "unspecified", "not_applicable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Visceral pleural line with peripheral lucency devoid of bronchovascular markings."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "laterality", "observation"]
+    },
+    "mediastinum": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["finding_observed", "not_identified", "indeterminate", "not_assessable"]
+        },
+        "observation": {
+          "type": "string",
+          "description": "Normal contour, widening, or hilar enlargement."
+        },
+        "evidence": {
+          "type": "string"
+        }
+      },
+      "required": ["status", "observation"]
+    },
+    "technical_limitations": {
+      "type": "object",
+      "properties": {
+        "projection": {
+          "type": "string",
+          "enum": ["AP", "PA", "indeterminate"]
+        },
+        "inspiratory_effort": {
+          "type": "string",
+          "enum": ["adequate", "suboptimal", "indeterminate"]
+        },
+        "rotation": {
+          "type": "string",
+          "enum": ["none", "present", "indeterminate"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": ["projection"]
+    }
+  },
+  "required": [
+    "support_devices",
+    "cardiac_silhouette",
+    "lung_opacities",
+    "atelectatic_changes",
+    "pulmonary_edema",
+    "pleural_effusion",
+    "pneumothorax",
+    "mediastinum",
+    "technical_limitations"
+  ]
+}

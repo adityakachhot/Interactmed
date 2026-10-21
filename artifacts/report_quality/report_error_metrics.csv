@@ -1,0 +1,5 @@
+strategy,false_normal_count,total_abnormal_cases,false_normal_rate,total_finding_omissions,total_reference_findings,finding_omission_rate,unsupported_assertions_fp,unsupported_assertion_rate,device_presence_recall,device_presence_precision,device_presence_f1,average_latency_s
+Baseline (Prompt v3),8,11,0.7273,38,42,0.9048,3,0.0857,0.4286,1.0,0.6,19.47
+Strategy A (Prompt v4),8,11,0.7273,35,42,0.8333,4,0.1143,1.0,0.6364,0.7778,21.18
+Strategy B (Two-Stage v5),11,11,1.0,32,42,0.7619,12,0.3429,0.0,0.0,0.0,54.67
+Strategy C (Grounding Review v6),0,11,0.0,34,42,0.8095,4,0.1143,1.0,0.6364,0.7778,46.79

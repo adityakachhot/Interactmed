@@ -1,0 +1,6 @@
+strategy,false_normal_count,total_abnormal_cases,false_normal_rate,omissions_count,total_reference_findings,omission_rate,unsupported_assertions_fp,assertion_rate,schema_validity_rate,median_latency_s,p95_latency_s,bootstrap_95ci
+Baseline (Prompt v3),3,58,0.0517,124,144,0.8611,21,0.0729,1.0,15.33,19.25,[0.1348 - 0.2995]
+Whole-Image Only (Prompt v4),58,58,1.0,123,144,0.8542,39,0.1354,1.0,17.34,22.2,[0.1354 - 0.2727]
+Specialized Device (Prompt v5),36,58,0.6207,126,144,0.875,4,0.0139,1.0,31.59,41.66,[0.1370 - 0.2953]
+Targeted Grounding (Prompt v6),0,58,0.0,121,144,0.8403,39,0.1354,1.0,44.07,54.26,[0.1532 - 0.2956]
+Integrated Hybrid Pipeline,36,58,0.6207,124,144,0.8611,4,0.0139,1.0,73.92,93.79,[0.1557 - 0.3147]

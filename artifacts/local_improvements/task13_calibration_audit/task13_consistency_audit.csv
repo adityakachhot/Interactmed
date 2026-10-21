@@ -1,0 +1,6 @@
+scenario_id,scenario_name,query,finding_status,regional_stance,review_required,expected_review_required,alerts_count,classifier_discordance,audit_pass
+SCEN_1,Classifier elevated while whole-image report negative,pneumonia,conflicting,supported,True,True,1,True,True
+SCEN_2,Grounding-assisted review supports finding while whole-image omits it,pneumonia,conflicting,supported,True,True,0,False,True
+SCEN_3,Both auxiliary sources negative but generated report indeterminate,pneumonia,compatible,indeterminate,True,True,0,False,True
+SCEN_4,Classifier output is missing (None) or malformed,pneumonia,compatible,unknown,False,False,0,False,True
+SCEN_5,Query belongs to an unsupported category,rare_lymphoma_mass,single_report_only,unknown,False,False,0,False,True

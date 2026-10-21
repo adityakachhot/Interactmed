@@ -806,6 +806,26 @@ body {
   color: #86efac;
   border: 1px solid rgba(34, 197, 94, 0.35);
 }
+.status-completed-validated {
+  background: rgba(34, 197, 94, 0.14);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.45);
+}
+.status-completed-review {
+  background: rgba(245, 158, 11, 0.14);
+  color: #fde047;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+.status-incomplete {
+  background: rgba(249, 115, 22, 0.14);
+  color: #fdba74;
+  border: 1px solid rgba(249, 115, 22, 0.45);
+}
+.status-malformed {
+  background: rgba(239, 68, 68, 0.14);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.45);
+}
 .status-failed {
   background: rgba(239, 68, 68, 0.12);
   color: #fca5a5;
@@ -815,6 +835,32 @@ body {
   background: rgba(249, 115, 22, 0.12);
   color: var(--orange);
   border: 1px solid rgba(249, 115, 22, 0.35);
+}
+
+.classifier-alert-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.triage-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.70rem;
+  font-family: monospace;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(99, 102, 241, 0.12);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 @keyframes pulse {
@@ -1064,3 +1110,113 @@ body {
   border-top: 1px dashed rgba(255,255,255,0.1);
   padding-top: 6px;
 }
+
+/* ── Task 17 Canonical Red / Yellow / Green Triage ────────────────────────── */
+.triage-card.triage-status-red {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid #ef4444;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.12);
+}
+.triage-card.triage-status-yellow {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1.5px solid #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.10);
+}
+.triage-card.triage-status-green {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid #10b981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.10);
+}
+
+.triage-badge.triage-red {
+  background: rgba(239, 68, 68, 0.22);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+}
+.triage-badge.triage-yellow {
+  background: rgba(245, 158, 11, 0.22);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+}
+.triage-badge.triage-green {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.5);
+}
+
+/* ── Task 17 Grounding-Linked Patient Translation UI ─────────────────────────── */
+.grounding-translation-box {
+  margin-top: 16px;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.grounding-translation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+.grounding-translation-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.translation-meta-pill {
+  font-size: 0.73rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.translation-sections-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.translation-section-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+
+.translation-section-name {
+  font-size: 0.76rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #38bdf8;
+  margin-bottom: 4px;
+}
+
+.translation-section-text {
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.independent-overview-callout {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(148, 163, 184, 0.06);
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+}
+

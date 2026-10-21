@@ -1,0 +1,6 @@
+strategy,device_tp,device_fp,device_fn,device_tn,precision,recall,specificity,f1_score,total_annotated_device_cases
+Baseline (Prompt v3),13,0,8,39,1.0,0.619,1.0,0.7647,21
+Whole-Image Only (Prompt v4),21,39,0,0,0.35,1.0,0.0,0.5185,21
+Specialized Device (Prompt v5),18,4,3,35,0.8182,0.8571,0.8974,0.8372,21
+Targeted Grounding (Prompt v6),21,39,0,0,0.35,1.0,0.0,0.5185,21
+Integrated Hybrid Pipeline,18,4,3,35,0.8182,0.8571,0.8974,0.8372,21

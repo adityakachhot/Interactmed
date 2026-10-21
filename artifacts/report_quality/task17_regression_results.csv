@@ -1,0 +1,13 @@
+Test ID,Scenario Name,Query,Regional Assessment,Whole Image State,Report Validity,Expected Status,Actual Status,Expected Priority,Actual Priority,Review Required,Result
+Test A,Regional / patient-friendly mismatch & multi-source contradiction,pneumonia,Supported,Lungs clear,completed_valid,red,red,urgent,urgent,True,PASS
+Test B,Compatible reports without false conflict,pneumonia,Supported,Focal pneumonia reported,completed_valid,yellow,yellow,elevated,elevated,True,PASS
+Test C1,Regional assessment indeterminate,pneumonia,Indeterminate,Not evaluated,completed_valid,yellow,yellow,elevated,elevated,True,PASS
+Test C2,Regional assessment not assessable,pneumonia,Not assessable,Not evaluated,completed_valid,yellow,yellow,elevated,elevated,True,PASS
+Test D,Unsupported grounding query capability,rib fracture (unsupported),Supported,Not evaluated,completed_valid,yellow,yellow,elevated,elevated,True,PASS
+Test E,Source attribution and identity audit,pneumonia,Not supported,Not evaluated,completed_valid,N/A (Schema),N/A (Schema),N/A,N/A,N/A,PASS
+Test F1,Direct urgent finding (tension pneumothorax),tension pneumothorax,N/A,Tension pneumothorax,completed_valid,red,red,urgent,urgent,True,PASS
+Test F2,Cross-model discordance (consistency conflict),pneumonia,Supported,Lungs clear,completed_valid,red,red,urgent,urgent,True,PASS
+Test F3,Processing failure (report generation failed),pneumonia,N/A,Generation failure,report_generation_failed,red,red,urgent,urgent,True,PASS
+Test G1,Green-state safety (concordant negative),pneumonia,Not supported,No priority findings,completed_valid,green,green,routine,routine,False,PASS
+Test G2,Evaluation failure safety guardrail,pneumonia,Not evaluated,Malformed,malformed_report,yellow,yellow,elevated,elevated,True,PASS
+Test H,Batch CSV export identity & status persistence,N/A,N/A,Clear lungs,completed_valid,green,green,routine,routine,False,PASS

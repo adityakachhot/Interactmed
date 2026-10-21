@@ -1,0 +1,49 @@
+dicom_id,target_finding,phrase_query,baseline_omissions,baseline_device_errors,baseline_false_normal,combined_omissions,combined_device_errors,combined_false_normal,reconciled_finding_count,review_required
+0bd6e8c7-8a005ad1-8975bd65-6f25528f-28f4a2c8,pneumonia,left basilar opacity,0,1,True,2,0,True,4,True
+59de830c-85ab88f1-16604bfd-1950e54a-d006459e,pneumonia,focal consolidative opacity at the base of left lung,0,1,True,2,0,True,4,True
+52c1d3b2-6f9c5443-4ced7bd4-b9e524cb-b8d18187,pneumonia,New consolidative opacity in the lingula,0,1,True,2,0,True,4,True
+288a7d41-dfc9638d-24b10d18-6dc6eafc-df0208d2,pneumonia,Widespread opacities in the right lung and left lower lung,0,1,True,2,0,True,4,True
+288a7d41-dfc9638d-24b10d18-6dc6eafc-df0208d2,pneumonia,Widespread opacities in the right lung and left lower lung,0,1,True,2,0,True,4,True
+202bc2a9-0c9efe8c-8c7e352e-89630d49-45996c81,pneumonia,patchy bibasilar opacities,0,1,True,2,0,True,4,True
+1e16b6b4-d5a7ebf8-78fae5b1-fa122b81-cb68fb7c,pneumothorax,Left apical pneumothorax,0,0,False,0,0,False,1,True
+24e489d8-affaee96-e41cd0c2-f1099291-3a0c4737,pneumothorax,minimal lateral pneumothorax,0,0,False,0,0,False,1,True
+0b4c1a22-3e135e03-be0016c2-90436561-ec493812,pneumothorax,right apical pneumothorax seen,0,0,False,0,0,False,1,True
+1a117114-891ccfc4-5dc0b7e0-d7998745-38412c46,pneumothorax,A small to moderate left pneumothorax,0,0,False,0,0,False,1,True
+399118d1-15101922-19d14364-5128b5f5-383753e3,pneumothorax,pneumothorax,0,0,False,0,0,False,1,True
+399118d1-15101922-19d14364-5128b5f5-383753e3,pneumothorax,pneumothorax,0,0,False,0,0,False,1,True
+543ddf75-b40274a0-27806ef2-e0231e20-9a290d39,consolidation,"there is patchy consolidation in the lungs, left greater than right",0,1,True,1,0,True,2,True
+543ddf75-b40274a0-27806ef2-e0231e20-9a290d39,consolidation,"there is patchy consolidation in the lungs, left greater than right",0,1,True,1,0,True,2,True
+543ddf75-b40274a0-27806ef2-e0231e20-9a290d39,consolidation,"there is patchy consolidation in the lungs, left greater than right",0,1,True,1,0,True,2,True
+b87403e9-8463e40a-a104367f-cb96ab7e-b13e08a2,consolidation,AP chest compared to DEID and DEID: Severe right lung consolidation has developed or worsened appreciably since DEID,0,1,True,1,0,True,2,True
+027ed427-b023757e-7391ee80-7a5da2fb-b3ae0b4e,consolidation,"patchy consolidation in the bilateral lungs, left greater than right",0,1,True,1,0,True,2,True
+027ed427-b023757e-7391ee80-7a5da2fb-b3ae0b4e,consolidation,"patchy consolidation in the bilateral lungs, left greater than right",0,1,True,1,0,True,2,True
+46bdab14-1fa0233c-c0b0841d-4c0869de-6564ff0d,atelectasis,bibasilar atelectasis noted,0,0,False,0,0,False,2,True
+46bdab14-1fa0233c-c0b0841d-4c0869de-6564ff0d,atelectasis,bibasilar atelectasis noted,0,0,False,0,0,False,2,True
+08e51cae-edca79cd-73712013-7f37b98e-5563104d,atelectasis,bibasilar layering opacities likely represent pleural fluid and adjacent atelectasis,0,0,False,0,0,False,2,True
+08e51cae-edca79cd-73712013-7f37b98e-5563104d,atelectasis,bibasilar layering opacities likely represent pleural fluid and adjacent atelectasis,0,0,False,0,0,False,2,True
+92666ac1-70ccc2f3-66bc3d47-ed08bd0e-d444a359,atelectasis,the right lung is atelectatic,0,0,False,1,0,False,3,True
+ae00ad94-bc780297-f273a669-1fff3fa9-9875f668,atelectasis,Lungs are unchanged in appearance including bibasal atelectasis,0,0,False,0,0,False,2,True
+9a787985-bcd29b50-34898f62-6318238f-18daa47d,edema,Unchanged mild pulmonary edema,0,0,False,1,0,False,3,True
+9a787985-bcd29b50-34898f62-6318238f-18daa47d,edema,Unchanged mild pulmonary edema,0,0,False,1,0,False,3,True
+8ed6a6ad-c16fd0bc-b37b3cf9-26cb0c8b-be526f04,edema,mild diffuse ground-glass opacity most likely represents pulmonary edema,0,0,False,1,0,False,3,True
+8ed6a6ad-c16fd0bc-b37b3cf9-26cb0c8b-be526f04,edema,mild diffuse ground-glass opacity most likely represents pulmonary edema,0,0,False,1,0,False,3,True
+5b07d9a6-0d3955a8-5134f6fa-5357ca78-485cd5af,edema,peribronchial cuffing consistent with pulmonary edema,0,0,False,1,0,False,3,True
+5b07d9a6-0d3955a8-5134f6fa-5357ca78-485cd5af,edema,peribronchial cuffing consistent with pulmonary edema,0,0,False,1,0,False,3,True
+4d38b9f3-a9018744-8d4055a9-ad096f86-90630477,cardiomegaly,cardiac silhouette is enlarged,0,0,True,1,0,True,2,True
+9a787985-bcd29b50-34898f62-6318238f-18daa47d,cardiomegaly,enlarged cardiac silhouette,0,0,True,0,0,True,2,True
+ff63bc32-158e159a-561853c6-5f8809e4-2f7d857a,cardiomegaly,cardiac silhouette is enlarged,0,0,True,1,0,True,2,True
+855ef6b3-abc053ff-4f0d5671-e53627b6-1296929f,cardiomegaly,moderate cardiomegaly is present,0,0,True,0,0,True,1,True
+aad777f0-bafee278-ec965ffa-b22018a2-6f74c9a9,cardiomegaly,cardiac silhouette is enlarged,0,0,True,1,0,True,2,True
+196d67f4-76299d82-bd4cb9df-61731295-eee17a76,cardiomegaly,mild cardiomegaly,0,0,True,0,0,True,1,True
+7c17f8c6-00e14ab0-5ec77692-208b5095-0f6e09f3,lung_opacity,subtle patchy right mid lung zone opacity,0,0,False,1,0,False,3,True
+10abfd75-dbb0cb76-ba525896-f9a77aa4-d08cc9d7,lung_opacity,patchy right lower lung zone opacities medialy,0,0,False,1,0,False,3,True
+0bc83348-93094daa-1aa25636-d1b5caf5-7a05a229,lung_opacity,patchy ground-glass opacities at the right lung base,0,0,False,1,0,False,3,True
+de9e7463-d51a6b2a-2601990d-3ca399d2-0f7a8df4,lung_opacity,patchy ground-glass opacities in the right costophrenic angle,0,0,False,1,0,False,3,True
+c065eceb-35cfd7ec-585b80e8-40d92614-b9fe29a8,lung_opacity,patchy ground-glass opacities at the left lung base,0,0,False,1,0,False,3,True
+d1935e38-bf72f688-646772e8-395c6a5f-1cdfc7a6,lung_opacity,right basilar pulmonary opacity,0,0,False,1,0,False,3,True
+062ef786-947c4176-86b62a54-348600b0-14d47230,pleural_effusion,There is likely a small left pleural effusion,0,0,False,1,0,False,2,True
+37c8f63f-c1cee6cc-dd1dc3ce-34fe7536-53a6439b,pleural_effusion,Small bilateral pleural effusions,0,0,False,1,0,False,2,True
+37c8f63f-c1cee6cc-dd1dc3ce-34fe7536-53a6439b,pleural_effusion,Small bilateral pleural effusions,0,0,False,1,0,False,2,True
+0b3a6a16-11201c88-13ea4677-11095be4-d3885a68,pleural_effusion,Small left pleural effusion,0,0,False,1,0,False,2,True
+16d4240e-453c3fab-75913781-14422f9b-5cff0c73,pleural_effusion,Small bilateral pleural effusion is presumed,0,0,False,1,0,False,2,True
+16d4240e-453c3fab-75913781-14422f9b-5cff0c73,pleural_effusion,Small bilateral pleural effusion is presumed,0,0,False,1,0,False,2,True

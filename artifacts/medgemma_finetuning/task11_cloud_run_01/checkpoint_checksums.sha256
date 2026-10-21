@@ -1,0 +1,8 @@
+# Task 11 Cloud Run 01 Frozen Configuration and Partition Checksums
+# Note: Checkpoint weights (adapter_model.safetensors) are not present because full cloud fine-tuning
+# was blocked by hardware incompatibility (no NVIDIA CUDA GPU). In accordance with Task 11 Section 4,
+# training was halted without simulation or fabrication.
+
+66eaa1e1a4fc4fe59e013f6b61219044d27a4d5b8bbc368669966fbf576f5201  frozen_config.yaml
+90509b80bd92ae8758106ffca85ccfb20351db52ea9026ca05227b27e0b17481  train_dev.jsonl
+4ef9cda7ca54ff7f97dcb6501a07503c19f1ab11450f40686ca2a24916e44ed1  val_dev.jsonl

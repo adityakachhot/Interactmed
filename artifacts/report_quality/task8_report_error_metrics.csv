@@ -1,0 +1,5 @@
+strategy,false_normal_count,total_abnormal_cases,false_normal_rate,finding_omissions,total_reference_findings,finding_omission_rate,unsupported_assertions_fp,unsupported_assertion_rate,device_presence_recall,device_presence_precision,device_presence_f1,schema_validity_rate,usable_report_rate,median_latency_s,p95_latency_s,bootstrap_f1_95ci
+Baseline (Prompt v3),3,58,0.0517,124,144,0.8611,21,0.0761,0.619,1.0,0.7647,1.0,1.0,15.33,19.25,[0.1348 - 0.2995]
+Strategy A (Prompt v4),58,58,1.0,123,144,0.8542,39,0.1413,1.0,0.35,0.5185,1.0,1.0,17.34,22.2,[0.1354 - 0.2727]
+Strategy B (Streamlined v5),36,58,0.6207,126,144,0.875,4,0.0145,0.8571,0.8182,0.8372,1.0,1.0,31.59,41.66,[0.137 - 0.2953]
+Strategy C (Grounding Review v6),0,58,0.0,121,144,0.8403,39,0.1413,1.0,0.35,0.5185,1.0,1.0,44.07,54.26,[0.1532 - 0.2956]

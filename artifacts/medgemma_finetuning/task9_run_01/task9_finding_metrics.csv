@@ -1,0 +1,41 @@
+strategy,finding,tp,fp,fn,tn,precision,recall,specificity,f1_score,prevalence
+Baseline (Prompt v3),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14
+Baseline (Prompt v3),pleural_effusion,0,0,19,41,0.0,0.0,1.0,0.0,19
+Baseline (Prompt v3),pneumothorax,0,0,36,24,0.0,0.0,1.0,0.0,36
+Baseline (Prompt v3),lung_opacity,1,5,21,33,0.1667,0.0455,0.8684,0.0714,22
+Baseline (Prompt v3),atelectasis,4,7,18,31,0.3636,0.1818,0.8158,0.2424,22
+Baseline (Prompt v3),pulmonary_edema,2,9,8,41,0.1818,0.2,0.82,0.1905,10
+Baseline (Prompt v3),support_devices,13,0,8,39,1.0,0.619,1.0,0.7647,21
+Baseline (Prompt v3),OVERALL_MICRO_AVG,20,21,124,255,0.4878,0.1389,0.9239,0.2162,144
+Whole-Image Only (Prompt v4),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14
+Whole-Image Only (Prompt v4),pleural_effusion,0,0,19,41,0.0,0.0,1.0,0.0,19
+Whole-Image Only (Prompt v4),pneumothorax,0,0,36,24,0.0,0.0,1.0,0.0,36
+Whole-Image Only (Prompt v4),lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22
+Whole-Image Only (Prompt v4),atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22
+Whole-Image Only (Prompt v4),pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10
+Whole-Image Only (Prompt v4),support_devices,21,39,0,0,0.35,1.0,0.0,0.5185,21
+Whole-Image Only (Prompt v4),OVERALL_MICRO_AVG,21,39,123,237,0.35,0.1458,0.8587,0.2059,144
+Specialized Device (Prompt v5),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14
+Specialized Device (Prompt v5),pleural_effusion,0,0,19,41,0.0,0.0,1.0,0.0,19
+Specialized Device (Prompt v5),pneumothorax,0,0,36,24,0.0,0.0,1.0,0.0,36
+Specialized Device (Prompt v5),lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22
+Specialized Device (Prompt v5),atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22
+Specialized Device (Prompt v5),pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10
+Specialized Device (Prompt v5),support_devices,18,4,3,35,0.8182,0.8571,0.8974,0.8372,21
+Specialized Device (Prompt v5),OVERALL_MICRO_AVG,18,4,126,272,0.8182,0.125,0.9855,0.2169,144
+Targeted Grounding (Prompt v6),cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14
+Targeted Grounding (Prompt v6),pleural_effusion,1,0,18,41,1.0,0.0526,1.0,0.1,19
+Targeted Grounding (Prompt v6),pneumothorax,1,0,35,24,1.0,0.0278,1.0,0.0541,36
+Targeted Grounding (Prompt v6),lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22
+Targeted Grounding (Prompt v6),atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22
+Targeted Grounding (Prompt v6),pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10
+Targeted Grounding (Prompt v6),support_devices,21,39,0,0,0.35,1.0,0.0,0.5185,21
+Targeted Grounding (Prompt v6),OVERALL_MICRO_AVG,23,39,121,237,0.371,0.1597,0.8587,0.2233,144
+Integrated Hybrid Pipeline,cardiomegaly,0,0,14,46,0.0,0.0,1.0,0.0,14
+Integrated Hybrid Pipeline,pleural_effusion,1,0,18,41,1.0,0.0526,1.0,0.1,19
+Integrated Hybrid Pipeline,pneumothorax,1,0,35,24,1.0,0.0278,1.0,0.0541,36
+Integrated Hybrid Pipeline,lung_opacity,0,0,22,38,0.0,0.0,1.0,0.0,22
+Integrated Hybrid Pipeline,atelectasis,0,0,22,38,0.0,0.0,1.0,0.0,22
+Integrated Hybrid Pipeline,pulmonary_edema,0,0,10,50,0.0,0.0,1.0,0.0,10
+Integrated Hybrid Pipeline,support_devices,18,4,3,35,0.8182,0.8571,0.8974,0.8372,21
+Integrated Hybrid Pipeline,OVERALL_MICRO_AVG,20,4,124,272,0.8333,0.1389,0.9855,0.2381,144

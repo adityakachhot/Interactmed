@@ -1,0 +1,6 @@
+pipeline_stage,micro_precision,micro_recall,micro_f1,omission_count,unsupported_assertion_count,device_error_count,false_normal_rate,contradiction_rate,mean_latency_ms,batch_isolation_status
+1. Production Baseline,0.6364,0.875,0.7368,0,12,12,0.375,0.0,120.45,verified_isolated
+2. Evidence Schema Only,0.6364,0.875,0.7368,0,0,0,0.375,0.0,122.18,verified_isolated
+3. Anatomy-Aware Reconciliation,0.6364,0.875,0.7368,0,0,0,0.0,0.0,124.19,verified_isolated
+4. Improved Grounding Phrases,0.6364,0.875,0.7368,0,0,0,0.0,0.0,130.0,verified_isolated
+5. Combined Task 19A Pipeline,0.6364,0.875,0.7368,40,0,0,0.0,0.0,132.28,verified_isolated

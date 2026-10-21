@@ -1,0 +1,343 @@
+[
+  {
+    "case_idx": 1,
+    "file_name": "0f768188-ace0476b-e815f596-4bcca8f6-f6614985 copy.jpg",
+    "dicom_id": "0f768188-ace0476b-e815f596-4bcca8f6-f6614985",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"central line, likely a central venous catheter\",\n      \"evidence\": \"visual features of a central line\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation or infiltrates\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"AP\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"AP projection, adequate inspiration\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 33.56351337500382
+  },
+  {
+    "case_idx": 2,
+    "file_name": "138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe.jpg",
+    "dicom_id": "138f8635-f0427bf9-8fd0a81f-7004c876-f913b5fe",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"not_applicable\",\n      \"observation\": \"not_applicable\",\n      \"evidence\": \"not_applicable\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"not_applicable\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"not_applicable\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"not_applicable\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"not_applicable\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"not_applicable\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"mediastinum\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"not_applicable\",\n    \"evidence\": \"not_applicable\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"not_applicable\",\n    \"inspiratory_effort\": \"not_applicable\",\n    \"rotation\": \"not_applicable\",\n    \"notes\": \"not_applicable\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 38.65852395904949
+  },
+  {
+    "case_idx": 3,
+    "file_name": "19b74f79-7ad317b1-887496c3-2645db29-48245a51 copy.jpg",
+    "dicom_id": "19b74f79-7ad317b1-887496c3-2645db29-48245a51",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"central line, likely a central venous catheter\",\n      \"evidence\": \"central line\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"AP\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"AP projection, adequate inspiration\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 53.98520587501116
+  },
+  {
+    "case_idx": 4,
+    "file_name": "238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1 copy.jpg",
+    "dicom_id": "238ce890-bbec475f-c82ec6bb-7080bd2f-c4b471f1",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"tube/line is not clearly visualized\",\n      \"evidence\": \"no visible tube/line\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio is normal\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation or infiltrates\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion or Kerley lines\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"no widened mediastinum\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"PA\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"PA view, adequate inspiration, no rotation\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 60.00410812604241
+  },
+  {
+    "case_idx": 5,
+    "file_name": "2f5e274a-749f1c06-1c8be147-4fabf575-e333e808.jpg",
+    "dicom_id": "2f5e274a-749f1c06-1c8be147-4fabf575-e333e808",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"unspecified\",\n      \"observation\": \"unspecified\",\n      \"evidence\": \"unspecified\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"unspecified\",\n    \"evidence\": \"unspecified\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"unspecified\",\n    \"evidence\": \"unspecified\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"unspecified\",\n    \"evidence\": \"unspecified\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"unspecified\",\n    \"evidence\": \"unspecified\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"unspecified\",\n    \"evidence\": \"unspecified\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"AP\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"technical limitations\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 60.8770515829674
+  },
+  {
+    "case_idx": 6,
+    "file_name": "350a19d2-7329f60d-17416b9a-d6eca016-187e6876.jpg",
+    "dicom_id": "350a19d2-7329f60d-17416b9a-d6eca016-187e6876",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"right-sided central venous catheter\",\n      \"evidence\": \"visual features of a catheter\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"PA\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"PA view, adequate inspiration, no rotation\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 57.32935549993999
+  },
+  {
+    "case_idx": 7,
+    "file_name": "3bea0373-0d10dd77-1cac5b90-651be924-d343b184.jpg",
+    "dicom_id": "3bea0373-0d10dd77-1cac5b90-651be924-d343b184",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"right subclavian line\",\n      \"evidence\": \"visual features\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"normal mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"PA\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"PA view\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 59.27289712498896
+  },
+  {
+    "case_idx": 8,
+    "file_name": "3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61.jpg",
+    "dicom_id": "3daa2f39-89cf3e9d-6be38a60-2cd19002-964fed61",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"right-sided central venous catheter\",\n      \"evidence\": \"visual features of a catheter\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"AP\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"AP projection, adequate inspiration\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 58.0880778330029
+  },
+  {
+    "case_idx": 9,
+    "file_name": "5f090a4b-dc8a796d-726db5a0-62f19c9f-58cccd6f.jpg",
+    "dicom_id": "5f090a4b-dc8a796d-726db5a0-62f19c9f-58cccd6f",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"central line, likely a central venous catheter\",\n      \"evidence\": \"central line\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"not_identified\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"PA\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"Adequate inspiration. No obvious technical limitations.\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 63.53633287601406
+  },
+  {
+    "case_idx": 10,
+    "file_name": "dcdc4bd9-4301b111-2a65a814-ee8e7bc5-7f0b9a5a.jpg",
+    "dicom_id": "dcdc4bd9-4301b111-2a65a814-ee8e7bc5-7f0b9a5a",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"right-sided central venous catheter\",\n      \"evidence\": \"visual features\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"AP\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"AP chest radiograph\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nClear costophrenic angles, no effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. Normal size and contour. Normal mediastinal contour.",
+    "latency_s": 58.01660479203565
+  },
+  {
+    "case_idx": 11,
+    "file_name": "f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47.jpg",
+    "dicom_id": "f7b69ee3-db7f264c-fca7d1c7-1d372fc0-02b35a47",
+    "raw_json": "{```json\n{\n  \"support_devices\": [\n    {\n      \"status\": \"not_identified\",\n      \"device_type\": \"indwelling tube/line of uncertain type\",\n      \"laterality\": \"right\",\n      \"observation\": \"right-sided central venous catheter\",\n      \"evidence\": \"visual features of a catheter\"\n    }\n  ],\n  \"cardiac_silhouette\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal size\",\n    \"evidence\": \"cardiothoracic ratio\"\n  },\n  \"lung_opacities\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no focal consolidation\",\n    \"evidence\": \"no airspace opacification\"\n  },\n  \"atelectatic_changes\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no atelectatic changes\",\n    \"evidence\": \"no crowding of bronchovascular markings\"\n  },\n  \"pulmonary_edema\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pulmonary edema\",\n    \"evidence\": \"no vascular congestion\"\n  },\n  \"pleural_effusion\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pleural effusion\",\n    \"evidence\": \"no blunting of costophrenic sulcus\"\n  },\n  \"pneumothorax\": {\n    \"status\": \"not_identified\",\n    \"laterality\": \"unspecified\",\n    \"observation\": \"no pneumothorax\",\n    \"evidence\": \"no visceral pleural line\"\n  },\n  \"mediastinum\": {\n    \"status\": \"normal\",\n    \"observation\": \"normal mediastinal contour\",\n    \"evidence\": \"normal mediastinal width\"\n  },\n  \"technical_limitations\": {\n    \"projection\": \"AP\",\n    \"inspiratory_effort\": \"adequate\",\n    \"rotation\": \"none\",\n    \"notes\": \"AP chest radiograph\"\n  }\n}",
+    "parsed_json": {},
+    "json_valid": false,
+    "stage1_preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": false,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": false,
+      "support_devices": false
+    },
+    "synth_report": "SUPPORT APPARATUS:\nNone identified on available image.\n\nCARDIAC SILHOUETTE:\nNormal size and contour.\n\nLUNGS AND OPACITIES:\nClear lung fields, no focal consolidation or edema identified.\n\nPLEURAL SPACES:\nCostophrenic angles clear. No effusion or pneumothorax identified.\n\nMEDIASTINUM:\nNormal mediastinal contour.\n\nOVERALL IMPRESSION:\nClear lung fields, no focal consolidation or edema identified. No effusion or pneumothorax identified. Normal mediastinal contour.\n\nUNCERTAINTY AND LIMITATIONS:\nSingle frontal projection, AP magnification, inspiratory depth, motion.",
+    "preds": {
+      "cardiomegaly": false,
+      "pleural_effusion": false,
+      "pneumothorax": true,
+      "lung_opacity": false,
+      "atelectasis": false,
+      "pulmonary_edema": true,
+      "support_devices": false
+    },
+    "is_normal": true,
+    "is_false_normal": true,
+    "impression": "Clear lung fields, no focal consolidation or edema identified. No effusion or pneumothorax identified. Normal mediastinal contour.",
+    "latency_s": 58.06452704197727
+  }
+]

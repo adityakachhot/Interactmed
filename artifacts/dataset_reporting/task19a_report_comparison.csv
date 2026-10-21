@@ -1,0 +1,10 @@
+finding_name,baseline_precision,baseline_recall,baseline_f1,improved_precision,improved_recall,improved_f1,f1_delta,evaluation_cases
+pneumonia,0.0,0.0,0.0,0.0,0.0,0.0,0.0,6
+consolidation,0.5,1.0,0.6667,0.5,1.0,0.6667,0.0,6
+pleural_effusion,1.0,1.0,1.0,1.0,1.0,1.0,0.0,6
+pneumothorax,1.0,1.0,1.0,1.0,1.0,1.0,0.0,6
+pulmonary_edema,1.0,1.0,1.0,1.0,1.0,1.0,0.0,6
+cardiomegaly,1.0,1.0,1.0,1.0,1.0,1.0,0.0,6
+atelectasis,0.5,1.0,0.6667,0.5,1.0,0.6667,0.0,6
+lung_opacity,0.3333,1.0,0.5,0.3333,1.0,0.5,0.0,6
+MACRO_AVERAGE,0.7143,0.8571,0.7292,0.7143,0.8571,0.7292,0.0,48

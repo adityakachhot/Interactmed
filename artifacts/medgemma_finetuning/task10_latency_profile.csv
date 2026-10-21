@@ -1,0 +1,9 @@
+component,cold_start_s,warm_median_s,warm_p95_s,warm_mean_s,warm_min_s,warm_max_s,pct_of_total_warm
+1. Whole-Image VLM (Prompt v4),16.3179,12.7435,13.9652,13.0796,12.6586,14.1726,42.6
+2. Dedicated Device Extraction (v5),6.0487,5.8152,5.9218,5.7112,5.2813,5.9334,19.44
+3. TransVG Grounding Localization,7.9762,0.4672,0.5123,0.419,0.2244,0.5169,1.56
+4. Regional Image Preparation (Crop),0.0482,0.0539,0.0737,0.0525,0.0256,0.0766,0.18
+5. Regional Review VLM (Prompt v6),8.6638,10.0172,11.6974,9.9071,7.7737,11.8202,33.48
+6. Cross-Report Consistency Service,0.005,0.0015,0.0031,0.0018,0.0006,0.0034,0.01
+7. Report Synthesis and Parsing,0.0001,0.0,0.0001,0.0,0.0,0.0001,0.0
+Total End-to-End Pipeline,39.1321,29.9158,30.3178,29.2683,26.8823,30.359,100.0
